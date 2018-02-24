@@ -1,0 +1,11 @@
+rofi.fullscreen: true
+rofi.color-enabled: true
+rofi.font: Roboto 32
+rofi.eh: 1
+rofi.line-margin: 20
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.lines: 3
+rofi.width: 100
+rofi.padding: 200
+rofi.bw: 0

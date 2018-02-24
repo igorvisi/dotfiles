@@ -1,0 +1,43 @@
+! ============
+!   Couleurs
+! ============
+*background: #222D32
+*foreground: #B2BBBF
+*secondary:  #AAB3C0
+*active:     #00BCD4
+*urgent:     #bf616a
+
+
+!black
+*color0:     #1D1D26
+*color8:     #928374
+!red
+*color1:     #E20049
+*color9:     #E20049
+!green
+*color2:     #A3BE8C
+*color10:    #00D965
+!yellow
+*color3:     #FFCC66
+*color11:    #D9AD57
+!blue
+*color4:     #00BFFF
+*color12:    #00A3D9
+!magenta
+*color5:     #FF3399
+*color13:    #BD2671
+!cyan
+*color6:     #7874A6
+*color14:    #535172
+!white
+*color7:     #F8F8F0
+*color15:    #B3B3AD
+
+! ======
+! Rofi color
+! ======
+rofi.color-window: argb:e81d1d26,argb:00292f37,#00BCD4
+rofi.color-normal: argb:02000000,#B3B3AD,argb:02000000,argb:02000000,#00BCD4
+rofi.color-active: argb:02000000,#B3B3AD,argb:02000000,argb:02000000,#B3B3AD
+rofi.color-urgent: argb:02000000,#B3B3AD,argb:02000000,argb:02000000,#B3B3AD
+

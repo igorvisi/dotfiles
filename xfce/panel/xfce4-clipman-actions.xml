@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+	<action>
+		<name>Cloner ?</name>
+		<regex>sdfskdlf</regex>
+		<group>0</group>
+		<commands>
+			<command>
+				<name>Oui</name>
+				<exec>dsdkfjs</exec>
+			</command>
+		</commands>
+	</action>
+	<action>
+		<name>Télécharger ?</name>
+		<regex>^(http:|https:)?\/\/(www\.)?(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?$</regex>
+		<group>0</group>
+		<commands>
+			<command>
+				<name>Juste une vidéo</name>
+				<exec>youtube</exec>
+			</command>
+			<command>
+				<name>Toute la playlist</name>
+				<exec>youtube</exec>
+			</command>
+		</commands>
+	</action>
+	<action>
+		<name>URL longue</name>
+		<regex>http://[^\s]{120,}</regex>
+		<group>0</group>
+		<commands>
+			<command>
+				<name>Raccourcir l&apos;URL</name>
+				<exec>exo-open http://tinyurl.com/create.php?url=\0</exec>
+			</command>
+		</commands>
+	</action>
+</actions>

@@ -1,0 +1,17 @@
+curl
+fzf
+gawk
+git
+grc
+htop
+mtools
+ngrep
+nvim
+pygmentize
+ranger
+tcpdump
+tmux
+trash-cli
+wget
+xclip
+zsh

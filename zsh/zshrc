@@ -1,0 +1,77 @@
+# From https://github.com/igorvisi/dotfiles/
+# Load antigen
+autoload antigen
+source ~/.dotfiles/antigen/antigen.zsh
+# Load the oh-my-zsh's library
+antigen use oh-my-zsh
+
+antigen bundles <<__EOF__
+adb
+command-not-found
+common-aliases
+git
+git-flow
+emoji
+gem
+github
+go
+last-working-dir
+sudo
+sharat87/autoenv
+ssh-agent
+supercrabtree/k
+z
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
+__EOF__
+
+# antigen theme igorvisi/fibo-zsh-theme fibo
+
+antigen apply
+autoload -U promptinit; promptinit
+prompt pure
+
+# Automatically list directory contents on `cd`.
+auto-ls () {
+	emulate -L zsh;
+	# explicit sexy ls'ing as aliases arent honored in here.
+	hash gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFh --color --group-directories-first || ls
+}
+chpwd_functions=( auto-ls $chpwd_functions )
+
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+
+# history mgmt
+# http://www.refining-linux.org/archives/49/ZSH-Gem-15-Shared-history/
+setopt inc_append_history
+setopt share_history
+
+# Correct typo in commande.
+setopt correct
+# Don't add all duplicates command line.
+setopt hist_ignore_all_dups
+
+# Load personal global variables like PATH ...
+source $HOME/.global
+# Useful Shell functions.
+source $HOME/.functions
+# The file contains my aliases.
+source $HOME/.aliases
+
+# Load some usefull functions for zsh prompt
+source $HOME/.zsh/keymap.zsh
+source $HOME/.zsh/zsh-notify.zsh
+source $HOME/.zsh/zsh-histdb/sqlite-history.zsh
+source $HOME/.zsh/zsh-syntax-highlighting-filetypes.zsh
+
+# Load Node Version Manager (NVM)
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+#
+# Launch vocab(https://github.com/igorvisi/vocab), script for learning new words.
+#if which vocab > /dev/null; then
+#	vocab
+#fi

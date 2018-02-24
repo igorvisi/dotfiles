@@ -1,0 +1,4 @@
+gem:  --no-document
+install: --no-rdoc --no-ri --env-shebang
+update: --no-rdoc --no-ri
+

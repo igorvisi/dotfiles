@@ -1,0 +1,25 @@
+#!/bin/sh
+grubFingerprint=$(sudo md5sum /boot/grub/grub.cfg)
+kernelFingerprint=$(sudo md5sum /boot/initramfs-linux.img )
+savedGrubFingerprint=$(sudo cat /home/visi/.checsum/grub)
+savedKernelFingerprint=$(sudo cat /home/visi/.checsum/kernel)
+
+
+if [[ $grubFingerprint != $savedGrubFingerprint ]] || [[ $kernelFingerprint != $savedKernelFingerprint ]] ; then
+ zenity --error --text=" \t \t \t Le Black Pearl est compromis ! \n
+
+Fichiers compromis :
+$grubFingerprint 
+$kernelFingerprint 
+\n Si tu n\'as pas eu à toucher au Kernel ou au Grub \n Reinstalles le système en changeant les mots de passe  \n ou executes la commande autodestructrice 
+
+\n Toutes les connexions vers l'exterieur seront bloquées à partir de ce moment" --title="Kernel Checking ..." --height=20
+sudo iptables -F
+sudo iptables -P INPUT DROP
+sudo iptables -P OUTPUT DROP
+sudo iptables -P FORWARD DROP
+
+zenity --notification --text="Pare-feu : toute connexion vers l\'exterieur est bloquée "
+
+fi
+

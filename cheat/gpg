@@ -1,0 +1,25 @@
+
+# Lister les clés
+gpg --list-secret-keys --keyid-format LONG
+
+# Chiffrer pour l'utilisateur dont on a la clé
+gpg --recipient 'nomUser' --encrypt fichier
+  
+# Chiffrer avec ma clé privée
+gpg2 --sign fichier
+
+# Crypter un fichier avec une passphrase
+gpg -c fichier
+
+# Décrypter un fichier
+gpg --decrypt
+
+# Générer une clé
+gpg --full-gen-key --expert 
+ 
+# Modifier une clé
+gpg --edit-keys name@domaine # name@domaine peut être 603CD0A0 
+
+# Supprimer une clé
+gpg --delete-secret-keys utilisateur@mail.com
+gpg --delete-keys utilisateur@mail.com

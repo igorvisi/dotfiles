@@ -1,0 +1,163 @@
+{
+	"editor.multiCursorModifier": "ctrlCmd",
+	"editor.formatOnPaste": true,
+	"workbench.colorTheme": "Material Theme",
+	"workbench.iconTheme": "ayu",
+	"workbench.startupEditor": "none",
+	"editor.fontFamily":"'Fira Code Medium', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 17,
+	"editor.tabSize": 4,
+	"editor.renderWhitespace": "boundary",
+	"editor.tabCompletion": true,
+	"editor.fontWeight": "800",
+	"editor.lineNumbers": "relative",
+	"editor.renderLineHighlight": "all",
+	"workbench.sideBar.location": "left",
+	"editor.minimap.enabled": true,
+	"debug.allowBreakpointsEverywhere": true,
+	"zenMode.hideTabs": false,
+	"zenMode.hideStatusBar": false,
+	"terminal.integrated.fontSize": 16,
+	"vim.useCtrlKeys": true,
+	"vim.useSystemClipboard": true,
+	"puglint.enable": true,
+	"files.trimTrailingWhitespace": true,
+	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter": false,
+	"auto-close-tag.SublimeText3Mode": true,
+	"auto-close-tag.fullMode": true,
+	"editor.insertSpaces": false,
+	"color-highlight.markerType": "underline",
+	"pugbeautify.fillTab": true,
+	"window.zoomLevel": 0,
+	"vim.searchHighlightColor": "rgb(71, 59 108)",
+	"vim.handleKeys": {
+		"<C-a>": false,
+		"<C-d>": false,
+		"<C-x>": false,
+		"<C-w>": false,
+		"<C-c>": false
+	},
+	"vim.otherModesKeyBindingsNonRecursive":
+	[
+	{
+		"before": ["z", "z"],
+		"after": [],
+		"commands": [
+			{
+				"command": "workbench.action.files.save",
+				"args": []
+			}
+		]
+	},
+	{
+		"before": ["<C-y>"],
+		"after": ["4", "<C-y>"]
+	},
+	{
+		"before": ["<C-e>"],
+		"after": ["4", "<C-e>"]
+	},
+	{
+		"before": ["Y"],
+		"after": ["y", "$"]
+	},
+	{
+		"before": ["<leader>", "o"],
+		"after": ["o", "<Esc>"]
+	},
+	{
+		"before": ["<leader>","O"],
+		"after": ["O","<Esc>"]
+	}
+  ],
+  "vim.insertModeKeyBindings": [
+	{
+		"before": ["j", "k"],
+		"after": ["<Esc>"]
+	},
+	{
+		"before": ["z", "z"],
+		"after": [],
+		"commands": [
+			{
+			"command": "workbench.action.files.save",
+			"args": []
+			}
+		]
+	}
+	],
+	"gitlens.annotations.line.trailing.format": "${message} • ${authorAgo}",
+	"go.gopath": "/home/visi/.golang",
+	"extensions.ignoreRecommendations": true,
+	"vim.hlsearch": true,
+	"vim.incsearch": true,
+	"vim.leader": ",",
+	"editor.detectIndentation": false,
+	"java.home": "/usr/lib/jvm/java-8-openjdk",
+	"gitlens.gitExplorer.files.layout": "auto",
+	"vim.disableExtension": false,
+	"gitlens.advanced.messages": {
+		"suppressCommitHasNoPreviousCommitWarning": false,
+		"suppressCommitNotFoundWarning": false,
+		"suppressFileNotUnderSourceControlWarning": false,
+		"suppressGitVersionWarning": false,
+		"suppressLineUncommittedWarning": false,
+		"suppressNoRepositoryWarning": false,
+		"suppressUpdateNotice": false,
+		"suppressWelcomeNotice": true
+	},
+	"liveServer.settings.port": 8000,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"explorer.confirmDelete": false,
+	"git.enableSmartCommit": true,
+	"java.errors.incompleteClasspath.severity": "ignore",
+	"emmet.triggerExpansionOnTab": true,
+	"editor.selectionHighlight": false,
+	"vim.enableNeovim": true,
+	"vim.cmdLineInitialColon": true,
+	"newFile.defaultFileExtension": ".js",
+	"newFile.expandBraces": true,
+	"newFile.defaultBaseFileName": "file",
+	"newFile.relativeTo": "project",
+	"newFile.showPathRelativeTo": "project",
+	"svgviewer.enableautopreview": true,
+	"indentRainbow.colors": [
+		"rgba(61,64,16,0.1)",
+		"rgba(32,64,32,0.1)",
+		"rgba(64,32,64,0.1)",
+		"rgba(16,48,48,0.1)"
+	],
+	"indentRainbow.errorColor": "rgba(232, 83, 98,0.1)",
+	"indenticator.width": 1,
+	"editor.wordWrap": "bounded",
+	"editor.mouseWheelZoom": true,
+	"workbench.editor.tabSizing": "shrink",
+	"workbench.colorCustomizations": {
+		"editor.background": "#222D32",
+		"editorWhitespace.foreground": "#2A3539",
+		"scrollbar.shadow": "#222D3200",
+		"terminal.background": "#222D32",
+		"statusBar.noFolderBackground": "#222D32",
+		"statusBar.background": "#222D32",
+		"statusBar.foreground": "#B2BBBF",
+		"activityBar.background": "#222D32",
+		"sideBar.background": "#222D32",
+		"panel.background": "#222D32",
+		"editorGutter.background": "#222D32",
+		"editorLineNumber.foreground": "#515b5f",
+		"tab.activeBorder": "#00BCD4",
+		"tab.activeBackground": "#222D32",
+		"tab.activeForeground": "#B2BBBF",
+		"tab.inactiveBackground": "#222D32",
+		"tab.border": "#222D32",
+		"sideBarSectionHeader.background": "#222D32",
+		"badge.foreground": "#B2BBBF",
+		"editorGroupHeader.tabsBackground": "#222D32"
+	},
+	"gitlens.currentLine.format": "${message} • ${authorAgo}",
+	"editor.minimap.renderCharacters": false,
+	"eslint.autoFixOnSave": true,
+	"eslint.alwaysShowStatus": true
+}

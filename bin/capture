@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# get screen capture with same name format with my Android phone screen capture
+
+scrot 'Screenshot_%Y%m%d-%H%M%S.png'  -e 'mv $f ~/Bilili/Screenshots'  &&
+notify-send --icon=applets-screenshooter "Capture prise"

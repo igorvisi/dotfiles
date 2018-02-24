@@ -1,0 +1,27 @@
+#!/bin/bash 
+# Get words or expression in ~/.dict file which looks like
+# WORD ; MEANING
+# EXPRESSION ; MEANING
+
+if [ ! -e ~/.dict ] ; then
+	touch ~/.dict
+fi
+
+if [ -s ~/.dict ]; then
+		clear
+		# Get the number of line in ~/.dict file 
+		lineNumber=$(wc -l ~/.dict | cut -d ' ' -f1 )
+		# Get a random number between 1 and $lineNumber 
+		randomLine=$(( RANDOM % $lineNumber +1))
+		# Get phrase in the $randomLine 
+		chosenPhrase=$(sed -n ${randomLine}p ~/.dict)
+		# Divide the phrase in two part : WORD and MEANING
+		leftPart=$( echo $chosenPhrase | cut -d ';' -f1)
+		rightPart=$( echo $chosenPhrase | cut -d ';' -f2)
+
+		echo -e "\e[4mWORD|EXPRESSION\e[0m:\e[31m $leftPart\e[0m"
+		echo -e "\e[4mMEANING\e[0m:\e[92m$rightPart\e[0m"
+fi
+
+
+

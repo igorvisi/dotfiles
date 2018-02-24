@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Idea Ultimate
+Icon=idea
+Exec="/opt/idea/bin/idea.sh" %f
+Comment=The perfect Tool for coding
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-idea

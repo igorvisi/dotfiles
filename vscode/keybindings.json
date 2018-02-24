@@ -1,0 +1,246 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+	{
+		"key": "f3 f3",
+		"command": "bookmarks.toggle",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+k",
+		"command": "-bookmarks.toggle",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "f6",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "shift+escape",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "f7",
+		"command": "workbench.debug.action.toggleRepl"
+	},
+	{
+		"key": "alt+f8",
+		"command": "-workbench.debug.action.toggleRepl"
+	},
+	{
+		"key": "f3 right",
+		"command": "bookmarks.jumpToNext",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+l",
+		"command": "-bookmarks.jumpToNext",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "f3 left",
+		"command": "bookmarks.jumpToPrevious",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+j",
+		"command": "-bookmarks.jumpToPrevious",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+d",
+		"command": "editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-editor.action.copyLinesDownAction",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "f3 down",
+		"command": "bookmarks.list"
+	},
+	{
+		"key": "f3 up",
+		"command": "bookmarks.clear"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "editor.action.selectHighlights",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+l",
+		"command": "-editor.action.selectHighlights",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+		"when": "inFilesPicker && inQuickOpen"
+	},
+	{
+		"key": "ctrl+shift+e",
+		"command": "workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+f",
+		"command": "-extension.vim_ctrl+f",
+		"when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "toggleVim"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "gitlens.toggleCodeLens",
+		"when": "editorTextFocus && gitlens:canToggleCodeLens && gitlens:isTracked"
+	},
+	{
+		"key": "shift+alt+b",
+		"command": "-gitlens.toggleCodeLens",
+		"when": "editorTextFocus && gitlens:canToggleCodeLens && gitlens:isTracked"
+	},
+	{
+		"key": "ctrl+alt+b",
+		"command": "workbench.action.tasks.build"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "-workbench.action.tasks.build"
+	},
+	{
+		"key": "ctrl+m",
+		"command": "markdown.showPreviewToSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+k v",
+		"command": "-markdown.showPreviewToSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+m",
+		"command": "-editor.action.toggleTabFocusMode"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "f8",
+		"command": "editor.debug.action.toggleBreakpoint",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "f9",
+		"command": "-editor.debug.action.toggleBreakpoint",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "f9",
+		"command": "workbench.action.toggleSidebarVisibility",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "alt+9",
+		"command": "-workbench.action.toggleSidebarVisibility",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "ctrl+t ctrl+t",
+		"command": "-tabify"
+	},
+	{
+		"key": "ctrl+shift+t",
+		"command": "-extension.tabSpacer"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "-workbench.action.git.sync"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "-extension.vim_ctrl+t",
+		"when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+shift+t",
+		"command": "workbench.action.showAllSymbols"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "-workbench.action.showAllSymbols"
+	},
+	{
+		"key": "ctrl+shift+t",
+		"command": "-workbench.action.reopenClosedEditor"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "workbench.action.gotoSymbol"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-workbench.action.gotoSymbol"
+	},
+	{
+		"key": "ctrl+down",
+		"command": "cursorColumnSelectDown",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+down",
+		"command": "-cursorColumnSelectDown",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+up",
+		"command": "cursorColumnSelectUp",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+up",
+		"command": "-cursorColumnSelectUp",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "f3 left",
+		"command": "bookmarks.listFromAllFiles"
+	},
+	{
+		"key": "ctrl+alt+t",
+		"command": "untabify"
+	},
+	{
+		"key": "ctrl+t ctrl+u",
+		"command": "-untabify"
+	},
+	{
+		"key": "alt+f10",
+		"command": "workbench.action.tasks.runTask"
+	},
+	{
+		"key": "shift+alt+f10",
+		"command": "-workbench.action.tasks.runTask"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "newFile.createNewFile"
+	},
+	{
+		"key": "ctrl+alt+n",
+		"command": "-newFile.createNewFile"
+	}
+]

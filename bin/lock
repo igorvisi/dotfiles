@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+icon="$HOME/.lock.png"
+tmpbg='/tmp/screen.png'
+
+_lock(){
+i3lock -n -e -i "$tmpbg" --indicator  \
+    --insidecolor=475263ff --ringcolor=475263ff --line-uses-inside \
+    --keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
+    --insidevercolor=fecf4dff --insidewrongcolor=d23c3dff \
+    --ringvercolor=fecf4dff --ringwrongcolor=d23c3dff \
+    --radius=40 --veriftext="😉" --wrongtext="😡"
+}
+
+scrot "$tmpbg"
+convert "$tmpbg"  -channel RGBA  -blur 0x8  "$tmpbg"
+convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
+
+if [[ $1 = "suspend" ]]; then
+ systemctl suspend && _lock 
+elif [[ $1 = "hibernate" ]]; then
+  systemctl hibernate
+else 
+  _lock
+fi

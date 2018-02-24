@@ -1,0 +1,5 @@
+# ISOs
+/var/lib/vz/template/iso/
+
+# On virtualbox / No acceleator found
+disable KVM hardware virtualization option (VM Options tab)

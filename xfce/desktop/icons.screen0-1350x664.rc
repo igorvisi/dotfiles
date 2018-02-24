@@ -1,0 +1,15 @@
+[xfdesktop-version-4.10.3+-rcfile_format]
+4.10.3+=true
+
+[Corbeille]
+row=0
+col=0
+
+[/]
+row=1
+col=0
+
+[/home/visi]
+row=2
+col=0
+

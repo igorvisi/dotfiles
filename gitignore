@@ -1,0 +1,31 @@
+
+# Jetbreains
+.idea/*
+
+# Visual Studio Code
+.vscode/*
+
+# git credential file
+.gitconfig.local
+
+
+# no thx
+node_modules
+vendor
+
+# Folder view configuration files
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Trashes
+
+# Compiled Python files
+*.pyc
+
+
+# random
+shilocation

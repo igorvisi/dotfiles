@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DataGrip
+Icon=datagrip
+Exec="/opt/data-grip/bin/datagrip.sh" %f
+Comment=The perfect Tool to manage databases
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-datagrip

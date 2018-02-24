@@ -1,0 +1,27 @@
+# Follow symlinks
+--follow
+
+# Add file types
+-type-set=css=.css,.less,.scss,.styl
+--type-set=styl=.styl
+--type-set=less=.less
+--type-set=html=.html,.mustache,.handlebars,.tmpl
+--type-set=json=.json
+--type-set=md=.markdown,.md
+--type-set=svg=.svg
+--type-set=ts=.ts
+--type-set=js=.js,.jsx
+--type-set=jsx=.jsx
+--type-set=style=.scss,.sass,.styl,.less,.css
+
+# Ignore directory
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=doc
+--ignore-dir=node_modules
+--ignore-dir=git
+--ignore-dir=coverage
+
+--pager=less -RFX
+

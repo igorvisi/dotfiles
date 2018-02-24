@@ -1,0 +1,16 @@
+# Inspect HTTP requests
+mitmproxy -p 9050
+proxychains curl ipinfo.io
+tsocks
+
+# Tor
+torify curl ipinfo.io
+torsocks
+
+# Others
+mitmproxy
+tinyproxy
+stunnel
+
+# HTTPS MIM
+https://gist.github.com/jeremiahsnapp/6426298

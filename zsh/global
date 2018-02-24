@@ -1,0 +1,97 @@
+#!/bin/bash
+
+# Open source directory
+export OPENSOURCE=$HOME/Codes/Open/
+
+# https://github.com/chrisallenlane/cheat
+export DEFAULT_CHEAT_DIR=$HOME/.dotfiles/cheat # cli command cheatsheet
+export CHEATPATH=$HOME/Mikanda/Cours/Cheat # Course's cheatsheet
+export CHEATCOLORS=true
+
+# Add the current directory in the PATH
+export PATH=$PATH:.
+export PATH=$PATH:./node_modules/.bin/
+
+# PATH for golang packages
+export GOPATH=$HOME/.golang
+export PATH=$PATH:${GOPATH}/bin
+
+# PATH for gems with rbenv 
+export PATH=$HOME/.rbenv/bin:$PATH 
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH=$PATH:$GEM_HOME/bin
+
+#PATH for python packages installed by pip --user  without sudo
+export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
+export PATH=$PATH:$PY_BIN
+export PIP_CONFIG_FILE=$HOME/.pip.conf
+
+# Pure prompt
+export PURE_PROMPT_SYMBOL=
+
+# PATH for global node packages directory 
+# export NVM_DIR=$HOME/.dotfiles/nvm
+# PATH=$PATH:`yarn global bin --offline`
+NPM_CONFIG_PREFIX=~/.npm-packages
+NPM_PACKAGES="${HOME}/.npm-packages"
+NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
+PATH=$PATH:${NPM_PACKAGES}/bin
+
+# Android tools
+export PATH=$PATH:/opt/android-sdk/tools/
+export PATH=$PATH:/opt/android-sdk/tools/bin/
+export ANDROID_HOME=/opt/android-sdk
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH
+# Delete if you already modified MANPATH elsewhere in your config
+export MANPATH=${NPM_PACKAGES}/share/man:$(manpath)
+
+# Personal Apps
+export PATH=$PATH:$HOME/Bin
+
+# Assume the terminal supports 256 colours
+# export TERM="screen-256color"
+# neovim as default
+export EDITOR="nvim"
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Prefer French and use UTF-8
+export LC_ALL="fr_FR.UTF-8"
+export LANG="fr_FR"
+
+# Use standard ISO 8601 timestamp
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+export HISTTIMEFORMAT='%F %T '
+
+# keep history up to date, across sessions, in realtime
+#  http://unix.stackexchange.com/a/48113
+export HISTCONTROL="erasedups:ignoreboth"       # no duplicate entries
+export HISTSIZE=100000                          # big big history (default is 500)
+export HISTFILESIZE=$HISTSIZE                   # big big history
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:todo_*:t_*:history:which:b:c:clear:cd:z" # for bash
+
+# Proxy
+# export http_proxy="http://localhost:3128/" 
+# export HTTP_PROXY=$http_proxy 
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+
+# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+if type -p dircolors >/dev/null ; then
+	if [[ -f ~/.dir_colors ]] ; then
+		eval $(dircolors -b ~/.dir_colors)
+	elif [[ -f /etc/DIR_COLORS ]] ; then
+		eval $(dircolors -b /etc/DIR_COLORS)
+	fi
+fi

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=ArgoUML
+Icon=java
+Exec= java -jar /home/visi/Mikanda/Applications/JVM/ArgoUML/argouml.jar
+Comment= Draw UML Diagramms
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=argo-uml

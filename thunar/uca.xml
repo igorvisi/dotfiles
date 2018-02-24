@@ -1,0 +1,160 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions>
+<action>
+	<icon>accessories-text-editor</icon>
+	<name>Ouvrir avec Scite</name>
+	<unique-id>1509947818050480-4</unique-id>
+	<command>scite %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<text-files/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Ouvrir un terminal ici</name>
+	<unique-id>1504349608344638-1</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
+	<description>Exemple d&apos;une action personnalisée</description>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+<action>
+	<icon>visual-studio-code</icon>
+	<name>Ouvrir avec VS Code</name>
+	<unique-id>1505386547702634-10</unique-id>
+	<command>code %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>preferences-system-search</icon>
+	<name>Rechercher avec Catfish</name>
+	<unique-id>1505382188550559-3</unique-id>
+	<command>catfish --path=%f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>vlc</icon>
+	<name>Ouvrir avec VLC</name>
+	<unique-id>1505849651010786-2</unique-id>
+	<command>vlc --overlay %F</command>
+	<description></description>
+	<patterns>*.part;*</patterns>
+	<directories/>
+	<audio-files/>
+	<other-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>application-x-compress</icon>
+	<name>Extraire ici (zip)</name>
+	<unique-id>1505384164362410-5</unique-id>
+	<command>unzip %f</command>
+	<description></description>
+	<patterns>*.zip</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>system-file-manager</icon>
+	<name>Ouvrir en mode root</name>
+	<unique-id>1505384439089182-7</unique-id>
+	<command>pkexec thunar %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>application-x-compress</icon>
+	<name>Extraire ici (bzip2)</name>
+	<unique-id>1505384042827230-4</unique-id>
+	<command>tar xjf %n</command>
+	<description></description>
+	<patterns>*.tar.bz2;*.tbz2</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>meld</icon>
+	<name>Comparer avec meld</name>
+	<unique-id>1505386167386517-8</unique-id>
+	<command>meld %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>subdownloader</icon>
+	<name>Télécharger les sous-titres anglais</name>
+	<unique-id>1505387359415295-12</unique-id>
+	<command>periscope -l en %F &amp;&amp; zenity --info --title &quot;Succès&quot; --text &quot;Les sous-titres ont été télécahrgés avec succès&quot; || zenity --error --title &quot;Erreur&quot; --text &quot; Les sous-titres n&apos;ont pas pu être téléchargés&quot;</command>
+	<description>Need python-periscope and zenity</description>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>wps-office-dot</icon>
+	<name>Convertir en ODT</name>
+	<unique-id>1505388025993751-17</unique-id>
+	<command>unoconv -f odt %F</command>
+	<description>Need unoconv installed</description>
+	<patterns>*.doc;*.docx</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>pdfshuffler</icon>
+	<name>Convertir en PDF</name>
+	<unique-id>1505388007640481-16</unique-id>
+	<command>unoconv -f pdf %F</command>
+	<description>Need unoconv installed</description>
+	<patterns>*.doc;*.docx;.*.odt;*.odp;*.pps;*.ppt;*.xls;*.xldx;*.ods;*.pptx</patterns>
+	<other-files/>
+</action>
+<action>
+	<icon>clipboard</icon>
+	<name>Copier le chémin absolu</name>
+	<unique-id>1505388833482118-19</unique-id>
+	<command>realpath %f | xclip -in -selection clipboard</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>drive-harddisk-ieee1394</icon>
+	<name>Usage du disque avec baobab</name>
+	<unique-id>1505681051351409-4</unique-id>
+	<command>baobab %f</command>
+	<description>needs baobab</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>intellij</icon>
+	<name>Ouvrir avec Idea</name>
+	<unique-id>1506362510041850-2</unique-id>
+	<command>/opt/idea/bin/idea.sh %F</command>
+	<description>Need IntelliJ IDEA</description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+<action>
+	<icon>datagrip</icon>
+	<name>Ouvrir avec DataGrip</name>
+	<unique-id>1506362800127795-6</unique-id>
+	<command> /opt/data-grip/bin/datagrip.sh  %F</command>
+	<description>DataBases</description>
+	<patterns>*</patterns>
+	<directories/>
+	<text-files/>
+</action>
+</actions>
