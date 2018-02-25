@@ -122,7 +122,6 @@
 	"newFile.defaultBaseFileName": "file",
 	"newFile.relativeTo": "project",
 	"newFile.showPathRelativeTo": "project",
-	"svgviewer.enableautopreview": true,
 	"indentRainbow.colors": [
 		"rgba(61,64,16,0.1)",
 		"rgba(32,64,32,0.1)",
