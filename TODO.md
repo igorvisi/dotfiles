@@ -213,9 +213,9 @@ chmod +x install && ./install
 
 ### récuperer les configuration pacman.conf, crontab, la liste de logiciels et packages
 
-### installation des logiciels avec yaourt, vscode et npm
+### installation des logiciels avec yay, vscode et npm
 ```bash
-cat .extra/packages/yaourt.txt | xargs yaourt -Su
+cat .extra/packages/yay.txt | xargs yay -Su
 cat .extra/packages/vscode.tx | xargs code --install-extension
 cat .extra/packages/yarn.txt | xargs n2,5pm -g i
 ```
