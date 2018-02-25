@@ -31,7 +31,7 @@ workon() {
 # Search everywhere
 # usage: lcf plymouth 
 lcf() {
-		locate $* F # F is a global alias. See in .aliases file
+		locate $*|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c"  # F is a global alias. See in .aliases file
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
