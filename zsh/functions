@@ -379,18 +379,7 @@ backup() { tar zcvf $1.`date --rfc-3339=date`.bak.tar.gz $1/ }
 #Create a directory and enter it
 mcd () { mkdir -p "$@" && cd "$@"}
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# git commit browser. Needs fzf
-log() {
-	git log --graph --color=always \
-			--format="%C(auto)%h%d %G? %s %C(black)%C(bold)%cr" "$@" |
-	fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
-			--bind "ctrl-m:execute:
-								echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
-								xargs -I % sh -c 'git show --color=always % | less -R'"
-}
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #cp with progress bar
 cp_p () { rsync -WavP --human-readable --recursive -P $1 $2 }
 
