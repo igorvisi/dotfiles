@@ -4,12 +4,7 @@ icon="$HOME/.lock.png"
 tmpbg='/tmp/screen.png'
 
 _lock(){
-i3lock -n -e -i "$tmpbg" --indicator  \
-    --insidecolor=475263ff --ringcolor=475263ff --line-uses-inside \
-    --keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
-    --insidevercolor=fecf4dff --insidewrongcolor=d23c3dff \
-    --ringvercolor=fecf4dff --ringwrongcolor=d23c3dff \
-    --radius=40 --veriftext="😉" --wrongtext="😡"
+i3lock -n -e -i "$tmpbg" -u
 }
 
 scrot "$tmpbg"

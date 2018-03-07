@@ -17,6 +17,7 @@ alias wk='cd ~/Workspace/'
 alias wkf='workoff'
 alias wkn='workon'
 
+
 alias which='which -a'
 alias c='clear'
 alias chx='chmod +x'
@@ -56,6 +57,8 @@ alias vim='nvim'
 alias vr='vim -R'
 # mimic vim functions
 alias :q='exit'
+
+alias abd='adb' # typo
 
 # Edit conf file quickly
 alias zshconf='vim ~/.zshrc'

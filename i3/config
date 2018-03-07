@@ -202,7 +202,7 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 
 #::::::::::::::::::::::::: Autostart apps ::::::::::::::::::::::::::#
-exec_always --no-startup-id feh --no-fehbg -R 180 --bg-scale ~/Bilili/Wallpapers/wallpaper # Set wallpaper
+exec_always --no-startup-id nitrogen --restore # Set wallpaper
 exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
 exec --no-startup-id compton # compositor for X11
 exec --no-startup-id unclutter -noevents -keystroke -idle 5 # make cursor invisible when you are taping text or after 5s of inactivity
@@ -213,6 +213,7 @@ exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id bitwarden # Password manager
 exec --no-startup-id evolution # Mail
+# exec --no-startup-id xfce4-panel
 exec --no-startup-id caffeine
 
 # For authentification
@@ -275,6 +276,7 @@ for_window [class="GParted"] floating enable
 for_window [class="Xsane"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [class="(?i)blueman"] floating enable
+for_window [class="sample.Main|dev.Main"] floating enable # Floating for dev GUI
 #::::::::::::::::::::::::: APPEARANCE ::::::::::::::::::::::::::#
 for_window [class="^.*"] border pixel 1
 gaps inner 8

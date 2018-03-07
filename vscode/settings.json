@@ -158,5 +158,6 @@
 	"gitlens.currentLine.format": "${message} • ${authorAgo}",
 	"editor.minimap.renderCharacters": false,
 	"eslint.autoFixOnSave": true,
-	"eslint.alwaysShowStatus": true
+	"eslint.alwaysShowStatus": true,
+	"diffEditor.ignoreTrimWhitespace": true
 }

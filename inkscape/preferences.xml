@@ -325,7 +325,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="mm"
+       unit="px"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -431,7 +431,7 @@
        precision="2"
        fontsize="10"
        id="measure"
-       unit="mm" />
+       unit="px" />
   </group>
   <group
      id="palette">
@@ -578,8 +578,8 @@
        page="0"
        x="0"
        y="0"
-       w="484"
-       h="508"
+       w="1"
+       h="1"
        visible="1"
        state="3"
        placement="1" />
@@ -682,8 +682,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="484"
-       h="570"
+       w="1"
+       h="1"
        visible="1"
        state="3"
        placement="1">
@@ -692,7 +692,7 @@
          value="drawing" />
       <group
          id="defaultxdpi"
-         value="111" />
+         value="126" />
       <group
          value="0"
          id="hideexceptselected" />
@@ -1099,7 +1099,7 @@
      org.inkscape.print.latex.destination="/tmp/inkscape-clipboard-export" />
   <group
      id="desktop"
-     style="line-height:1.25;font-size:15.98666699px;-inkscape-font-specification:'Roboto Bold';font-family:Roboto;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;stroke:none;stroke-width:3.51496063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#800000;opacity:1">
+     style="line-height:1.25;font-size:15.98666699px;-inkscape-font-specification:Roboto;font-family:Roboto;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;stroke:none;stroke-width:3.51496063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#ffffff;opacity:1">
     <group
        width="1366"
        height="744"

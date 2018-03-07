@@ -97,6 +97,20 @@
 	<other-files/>
 </action>
 <action>
+	<icon>builder-symbolic</icon>
+	<name>Suppression sécurisée</name>
+	<unique-id>1519548503511710-1</unique-id>
+	<command>srm -r %F</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
 	<icon>meld</icon>
 	<name>Comparer avec meld</name>
 	<unique-id>1505386167386517-8</unique-id>

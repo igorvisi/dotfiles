@@ -75,3 +75,9 @@ source $HOME/.zsh/zsh-syntax-highlighting-filetypes.zsh
 #if which vocab > /dev/null; then
 #	vocab
 #fi
+
+###-tns-completion-start-###
+if [ -f /home/visi/.tnsrc ]; then 
+    source /home/visi/.tnsrc 
+fi
+###-tns-completion-end-###
