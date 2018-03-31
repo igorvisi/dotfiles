@@ -7,10 +7,15 @@ _lock(){
 i3lock -n -e -i "$tmpbg" -u
 }
 
+# Screen blured as background 
 scrot "$tmpbg"
 convert "$tmpbg"  -channel RGBA  -blur 0x8  "$tmpbg"
 convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
 
+# Pause for spotify,Vlc, Rhytmbox and paroles
+playerctl play-pause; if pgrep -x parole ; then parole -p; fi
+
+# Suspend or hibernate
 if [[ $1 = "suspend" ]]; then
  systemctl suspend && _lock 
 elif [[ $1 = "hibernate" ]]; then
@@ -18,3 +23,6 @@ elif [[ $1 = "hibernate" ]]; then
 else 
   _lock
 fi
+
+# If still locked after 20 seconds, turn off screen.
+sleep 20 && pgrep -x i3lock && xset dpms force off
