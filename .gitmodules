@@ -3,4 +3,4 @@
 	url = https://github.com/anishathalye/dotbot
 [submodule "antigen"]
 	path = antigen
-	url = https://gihub.com/zsh-users/antigen
+	url = https://github.com/zsh-users/antigen
