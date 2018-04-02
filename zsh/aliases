@@ -196,7 +196,7 @@ alias p='ps -u $USER'
 alias l='ls -ltFh'
 alias ll='ls -ahlFG | less -X'
 alias lf='ls F' # F global alias of fzf
-alias ls='ls --color'
+alias ls='ls -hN --color=auto --group-directories-first'
 alias la='ls -ltFhA'
 alias lg='ls -al|grep'
 # Listings for zsh with git features github.com/supercrabtree/k
