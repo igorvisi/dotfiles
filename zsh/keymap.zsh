@@ -23,7 +23,7 @@ bindkey '^e'    vi-end-of-line
 bindkey '^[[3~' vi-delete-char 
 
 
-bindkey '^ ' vi-forward-word
+bindkey '^[[1;3C' vi-forward-word
 # bind UP and DOWN arrow keys for history search
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-beginning-search-backward

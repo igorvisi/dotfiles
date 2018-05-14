@@ -36,7 +36,7 @@ if &term =~ '256color'
 	highlight Type cterm=italic
 	highlight Normal ctermbg=none
 	highlight Normal ctermfg=grey
-	highlight LineNr  ctermfg=grey
+	highlight LineNr  ctermfg=black
 
 
 

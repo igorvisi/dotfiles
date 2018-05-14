@@ -9,6 +9,7 @@ antigen bundles <<__EOF__
 adb
 command-not-found
 common-aliases
+djui/alias-tips
 git
 git-flow
 emoji
@@ -28,18 +29,11 @@ zsh-users/zsh-syntax-highlighting
 __EOF__
 
 # antigen theme igorvisi/fibo-zsh-theme fibo
-
+antigen theme denysdovhan/spaceship-prompt spaceship
 antigen apply
-autoload -U promptinit; promptinit
-prompt pure
 
-# Automatically list directory contents on `cd`.
-auto-ls () {
-	emulate -L zsh;
-	# explicit sexy ls'ing as aliases arent honored in here.
-	hash gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFh --color --group-directories-first || ls
-}
-chpwd_functions=( auto-ls $chpwd_functions )
+autoload -U promptinit; promptinit
+prompt spaceship
 
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -81,3 +75,4 @@ if [ -f /home/visi/.tnsrc ]; then
     source /home/visi/.tnsrc 
 fi
 ###-tns-completion-end-###
+fpath=($fpath "/home/visi/.zfunctions")

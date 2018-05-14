@@ -42,8 +42,11 @@ bindsym $alt+F4 kill
 # start a terminal
 bindsym $mod+Return exec termite `xcwd`
 
-#Program launcher (i.e. Rofi)
-bindsym $mod+d exec rofi -show drun -display-drun "Lancer "
+#Program launcher
+bindsym $mod+d exec rofi -theme ~/.config/rofi/theme.rasi -show drun -show-icons -display-drun "Lancer"
+
+#Show runing programs
+bindsym $mod+n exec rofi -theme ~/.config/rofi/theme.rasi -show window -show-icons -display-window "Aller à"
 
 # File manager
 bindsym $mod+z exec thunar `xcwd`
@@ -52,7 +55,7 @@ bindsym $mod+z exec thunar `xcwd`
 bindsym $mod+p exec " sleep 1s; gpick -p"
 
 # Typora a markdow editor
-bindsym $mod+b exec typora ~/.extra/blog/
+bindsym $mod+b exec boostnote
 
 # change focus
 bindsym $mod+j focus down
@@ -85,11 +88,11 @@ bindsym Print exec "~/Bin/capture"
 
 bindsym Control+Print exec "xfce4-screenshooter -r" 
 
-# play | pause | next | previous on Spotify or Rhythmbox.  Need playerctl
-bindsym $mod+Control+Down exec "playerctl play-pause"
-bindsym $mod+Control+Up exec "playerctl play-pause"
-bindsym $mod+Control+Right exec "playerctl next"
-bindsym $mod+Control+Left exec "playerctl previous"
+# play | pause | next | previous on Spotify, Rhythmbox, Vlc and Parole.  Need playerctl
+bindsym $mod+Control+Down exec "playerctl play-pause ; if pgrep -x parole ; then parole -p; fi"
+bindsym $mod+Control+Up exec "playerctl play-pause ; if pgrep -x parole ; then parole -p; fi"
+bindsym $mod+Control+Right exec "playerctl next ;  if pgrep -x parole ; then parole -N; fi"
+bindsym $mod+Control+Left exec "playerctl previous ; if pgrep -x parole ; then parole -P; fi"
 
 # Raise/Lower and mute volume with volnoti popup ( AUR: volnoti-brightness-git )
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
@@ -211,8 +214,13 @@ exec --no-startup-id "~/.keymap.sh" # remap keys
 exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id conky -c ~/.config/conky/agenda
+exec --no-startup-id conky -c ~/.config/conky/tools
 exec --no-startup-id bitwarden # Password manager
 exec --no-startup-id evolution # Mail
+exec --no-startup-id owncloud
+exec --no-startup-id redshift-gtk
+exec --no-startup-id kdeconnect-indicator
 # exec --no-startup-id xfce4-panel
 exec --no-startup-id caffeine
 
@@ -242,18 +250,19 @@ assign [class="Slack"]  $ws8
 assign [class="Spotify|spotify|Vlc|Rhythmbox|Musixmatch|Parole" ]  $ws7
 
 # Git
-assign [class="GitKraken" ]  $ws4
+assign [class="GitKraken|Boostnote" ]  $ws4
 # Projet manager tools
 assign [class="freeter"]  $ws4
 # Data Base 
 assign [class="jetbrains-datagrip|PacketTracer7"] $ws4
 
 # Office
-assign [class="Et|Wpp|Wps"]  $ws0
+assign [class="libreoffice|DesktopEditors"]  $ws0
+
 
 # Others
 assign [class="Transmission|KeeWeb|Bitwarden"]  $ws9
-assign [class="org.cryptomator.launcher.MainApplication|VirtualBox|Boostnote|Gnome-chess|Pychess|Zeal|MuPDF|Zathura" ]  $ws0
+assign [class="org.cryptomator.launcher.MainApplication|VirtualBox|Gnome-chess|Pychess|Zeal|MuPDF|Zathura" ]  $ws0
 
 # Force some app to move to their assigned workspace
 for_window [class="Spotify"] move to workspace $ws7
@@ -273,7 +282,7 @@ for_window [class="^Gpick$"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Klavaro"] floating enable
 for_window [class="GParted"] floating enable
-for_window [class="Xsane"] floating enable
+for_window [class="Xsane|Onboard"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [class="(?i)blueman"] floating enable
 for_window [class="sample.Main|dev.Main"] floating enable # Floating for dev GUI

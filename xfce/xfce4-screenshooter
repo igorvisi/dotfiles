@@ -1,8 +1,8 @@
 delay=5
-region=1
+region=3
 action=1
 show_mouse=0
-screenshot_dir=file:/home/visi/Bilili/Screenshots
+screenshot_dir=file:/home/visi/Boyambi
 app=gthumb
 last_user=
 

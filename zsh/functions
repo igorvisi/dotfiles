@@ -104,13 +104,6 @@ gifify() {
 remindme() { sleep $1; zenity --info --title "Rappel" --text $2 & }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# a 'cat' with beautiful colors
-# Needs pygmentize
-	# usage : ca .zshrc
-ca(){ pygmentize -O style=monokai -f console256 -g $@ |less -XNFR }
-
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Launch php server on public dir if not directory is precised
 phpd(){
 	local directory="public"

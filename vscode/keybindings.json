@@ -242,5 +242,19 @@
 	{
 		"key": "ctrl+alt+n",
 		"command": "-newFile.createNewFile"
+	},
+	{
+		"key": "[Backquote] 2",
+		"command": "workbench.action.terminal.split",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+5",
+		"command": "-workbench.action.terminal.split",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "shift+f6",
+		"command": "workbench.action.terminal.newInActiveWorkspace"
 	}
 ]

@@ -1,12 +1,12 @@
 {
 	"editor.multiCursorModifier": "ctrlCmd",
 	"editor.formatOnPaste": true,
-	"workbench.colorTheme": "Material Theme",
-	"workbench.iconTheme": "ayu",
+	"workbench.colorTheme": "Palenight Theme",
+	"workbench.iconTheme": "material-icon-theme",
 	"workbench.startupEditor": "none",
-	"editor.fontFamily":"'Fira Code Medium', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
+	"editor.fontFamily": "'Fira Code Medium', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
 	"editor.fontLigatures": true,
-	"editor.fontSize": 17,
+	"editor.fontSize": 18,
 	"editor.tabSize": 4,
 	"editor.renderWhitespace": "boundary",
 	"editor.tabCompletion": true,
@@ -36,57 +36,102 @@
 		"<C-a>": false,
 		"<C-d>": false,
 		"<C-x>": false,
-		"<C-w>": false,
+		"<C-y>": false,
 		"<C-c>": false
 	},
-	"vim.otherModesKeyBindingsNonRecursive":
-	[
-	{
-		"before": ["z", "z"],
-		"after": [],
-		"commands": [
-			{
-				"command": "workbench.action.files.save",
-				"args": []
-			}
-		]
-	},
-	{
-		"before": ["<C-y>"],
-		"after": ["4", "<C-y>"]
-	},
-	{
-		"before": ["<C-e>"],
-		"after": ["4", "<C-e>"]
-	},
-	{
-		"before": ["Y"],
-		"after": ["y", "$"]
-	},
-	{
-		"before": ["<leader>", "o"],
-		"after": ["o", "<Esc>"]
-	},
-	{
-		"before": ["<leader>","O"],
-		"after": ["O","<Esc>"]
-	}
-  ],
-  "vim.insertModeKeyBindings": [
-	{
-		"before": ["j", "k"],
-		"after": ["<Esc>"]
-	},
-	{
-		"before": ["z", "z"],
-		"after": [],
-		"commands": [
-			{
-			"command": "workbench.action.files.save",
-			"args": []
-			}
-		]
-	}
+	"vim.otherModesKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"z",
+				"z"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.files.save",
+					"args": []
+				},
+				{
+					"command": "workbench.action.closeActiveEditor",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": [
+				"<C-y>"
+			],
+			"after": [
+				"4",
+				"<C-y>"
+			]
+		},
+		{
+			"before": [
+				"<C-e>"
+			],
+			"after": [
+				"4",
+				"<C-e>"
+			]
+		},
+		{
+			"before": [
+				"Y"
+			],
+			"after": [
+				"y",
+				"$"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"o"
+			],
+			"after": [
+				"o",
+				"<Esc>"
+			]
+		},
+		{
+			"before": [
+				"<leader>",
+				"O"
+			],
+			"after": [
+				"O",
+				"<Esc>"
+			]
+		}
+	],
+	"vim.insertModeKeyBindings": [
+		{
+			"before": [
+				"j",
+				"k"
+			],
+			"after": [
+				"<Esc>"
+			]
+		},
+		{
+			"before": [
+				"z",
+				"z"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.files.save",
+					"args": []
+				},
+				{
+					"command": "workbench.action.closeActiveEditor",
+					"args": []
+				}
+			]
+		}
 	],
 	"gitlens.annotations.line.trailing.format": "${message} • ${authorAgo}",
 	"go.gopath": "/home/visi/.golang",
@@ -97,7 +142,7 @@
 	"editor.detectIndentation": false,
 	"java.home": "/usr/lib/jvm/java-8-openjdk",
 	"gitlens.gitExplorer.files.layout": "auto",
-	"vim.disableExtension": false,
+	"vim.disableExtension": true,
 	"gitlens.advanced.messages": {
 		"suppressCommitHasNoPreviousCommitWarning": false,
 		"suppressCommitNotFoundWarning": false,
@@ -105,15 +150,18 @@
 		"suppressGitVersionWarning": false,
 		"suppressLineUncommittedWarning": false,
 		"suppressNoRepositoryWarning": false,
+		"suppressResultsExplorerNotice": false,
+		"suppressShowKeyBindingsNotice": true,
 		"suppressUpdateNotice": false,
 		"suppressWelcomeNotice": true
 	},
+	"gitlens.advanced.telemetry.enabled": false,
 	"liveServer.settings.port": 8000,
 	"liveServer.settings.donotShowInfoMsg": true,
 	"explorer.confirmDelete": false,
 	"git.enableSmartCommit": true,
 	"java.errors.incompleteClasspath.severity": "ignore",
-	"emmet.triggerExpansionOnTab": true,
+	"emmet.triggerExpansionOnTab": false,
 	"editor.selectionHighlight": false,
 	"vim.enableNeovim": true,
 	"vim.cmdLineInitialColon": true,
@@ -153,11 +201,25 @@
 		"tab.border": "#222D32",
 		"sideBarSectionHeader.background": "#222D32",
 		"badge.foreground": "#B2BBBF",
-		"editorGroupHeader.tabsBackground": "#222D32"
+		"editorGroupHeader.tabsBackground": "#222D32",
+		"editor.codeLens": "#585a5a"
 	},
 	"gitlens.currentLine.format": "${message} • ${authorAgo}",
 	"editor.minimap.renderCharacters": false,
+	"editor.formatOnSave": true,
 	"eslint.autoFixOnSave": true,
 	"eslint.alwaysShowStatus": true,
-	"diffEditor.ignoreTrimWhitespace": true
+	"diffEditor.ignoreTrimWhitespace": true,
+	"gitlens.keymap": "chorded",
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**.class": true /* For java file*/
+	},
+	"explorer.confirmDragAndDrop": false,
+	"scm.alwaysShowProviders": true,
+	"vim.neovimPath": "/usr/bin/nvim"
 }

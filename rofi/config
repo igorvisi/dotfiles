@@ -1,4 +1,5 @@
 rofi.fullscreen: true
+rofi.fake-transparency:	true
 rofi.color-enabled: true
 rofi.font: Roboto 32
 rofi.eh: 1
@@ -9,3 +10,4 @@ rofi.lines: 3
 rofi.width: 100
 rofi.padding: 200
 rofi.bw: 0
+rofi.opacity: 20

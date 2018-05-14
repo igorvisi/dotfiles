@@ -9,6 +9,7 @@
     #Directories
     ~/Bin: bin
     ~/.config/catfish: catfish
+    ~/.config/conky: conky
     ~/.config/dunst: dunst
     ~/.config/Code/User: vscode
     ~/.config/gpick: gpick
@@ -31,6 +32,8 @@
     ~/.aliases: zsh/aliases
     ~/.config/compton.conf:
     ~/.config/transmission/settings.json: transmission/settings.json
+    ~/.config/umbrellorc:
+    ~/.config/user-dirs.dirs:
     ~/.classifier-master.conf:
     ~/.crontab :
     ~/.dir_colors:
@@ -40,7 +43,6 @@
     ~/.gitconfig:
     ~/.gitignore:
     ~/.global: zsh/global
-    ~/.gtkrc-2.0:
     ~/.ideavimrc: jetbrains/ideavimrc
     ~/.inputrc:
     ~/.keymap.sh: keyboard/keymap.sh
@@ -48,7 +50,8 @@
     ~/.npmrc:
     ~/.psqlrc:
     ~/.config/screenkey.json: screenkey.json
-    ~/.screenshot.png:
+    ~/.screenshot.png: Screenshot.png
+    ~/.tigrc: tigrc
     ~/.tmux.conf:
     ~/.xinitrc:
     ~/.xmodmap.conf: keyboard/xmodmap.conf

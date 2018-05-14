@@ -146,6 +146,7 @@ yay -Suy --noconfirm --needed ; # Update Archlinux
 npm update -g ; # Update node packages from yarn
 antigen update ;
 ~/.tmux/plugins/tpm/bin/update_plugins all; # Update tmux plugins
+gpg --keyserver pgp.mit.edu --refresh-keys # Refresh gpg keys
 code; # Open vscode for update plugins
 neovim ; # Open neovim for update plugins
 '
@@ -203,13 +204,13 @@ alias lg='ls -al|grep'
 alias k='k -h'
 
 # generic colouriser
-GRC=`which grc`
-if [[ -n "$GRC" ]];then
-	alias colourify="$GRC -es --colour=auto"
-	for app in {diff,make,gcc,g++,ping,traceroute,mtr}; do
-		alias "$app"='colourify '$app
-	done
-fi
+# GRC=`which grc`
+# if [[ -n "$GRC" ]];then
+# 	alias colourify="$GRC -es --colour=auto"
+# 	for app in {diff,make,gcc,g++,ping,traceroute,mtr}; do
+# 		alias "$app"='colourify '$app
+# 	done
+# fi
 
 # Usefull systemd aliases
 # Instead of 'systemctl start service' just enter 'start service'

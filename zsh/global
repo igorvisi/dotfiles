@@ -77,7 +77,7 @@ export HISTCONTROL="erasedups:ignoreboth"       # no duplicate entries
 export HISTSIZE=100000                          # big big history (default is 500)
 export HISTFILESIZE=$HISTSIZE                   # big big history
 # Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:todo_*:t_*:history:which:b:c:clear:cd:z" # for bash
+export HISTIGNORE="&:[ ]*:exit:ssh:rm:scp:ls:bg:fg:history:which:b:c:clear:cd:z" # for bash
 
 # Proxy
 # export http_proxy="http://localhost:3128/" 

@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="106.066"
-         height="96.9746"
+         width="1123.26"
+         height="497.809"
          rx="0"
          ry="0" />
       <eventcontext
@@ -333,11 +333,11 @@
        gradientdrag="1"
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:'AtlandSketches BB';font-style:normal;font-weight:normal;font-size:60px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'AtlandSketches BB';font-stretch:normal;font-variant:normal"
        selcue="1">
       <group
-         display_unit="0"
-         id="lineheight" />
+         id="lineheight"
+         display_unit="0" />
     </eventcontext>
     <eventcontext
        id="nodes"
@@ -426,12 +426,12 @@
        offset="0"
        offsetunits="mm" />
     <group
-       offset="5"
-       scale="100"
-       precision="2"
-       fontsize="10"
+       unit="px"
        id="measure"
-       unit="px" />
+       fontsize="10"
+       precision="2"
+       scale="100"
+       offset="5" />
   </group>
   <group
      id="palette">
@@ -552,7 +552,7 @@
   </group>
   <group
      id="colorselector"
-     page="0" />
+     page="1" />
   <group
      id="embedded">
     <group
@@ -578,10 +578,10 @@
        page="0"
        x="0"
        y="0"
-       w="1"
-       h="1"
-       visible="1"
-       state="3"
+       w="362"
+       h="490"
+       visible="0"
+       state="2"
        placement="1" />
     <group
        id="filtereffects" />
@@ -637,8 +637,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="1"
-       h="1"
+       w="699"
+       h="709"
        visible="1"
        placement="1" />
     <group
@@ -682,10 +682,10 @@
        panel_border="0"
        x="0"
        y="0"
-       w="1"
-       h="1"
+       w="472"
+       h="530"
        visible="1"
-       state="3"
+       state="2"
        placement="1">
       <group
          id="exportarea"
@@ -694,15 +694,15 @@
          id="defaultxdpi"
          value="126" />
       <group
-         value="0"
-         id="hideexceptselected" />
+         id="hideexceptselected"
+         value="1" />
     </group>
     <group
        id="save_as"
-       default="org.inkscape.output.pdf.cairorenderer"
+       default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/visi/.extra/docs/CV"
+       path="/home/visi/.extra/docs/Design Stuff/Logo"
        use_current_dir="1" />
     <group
        id="save_copy"
@@ -1099,12 +1099,12 @@
      org.inkscape.print.latex.destination="/tmp/inkscape-clipboard-export" />
   <group
      id="desktop"
-     style="line-height:1.25;font-size:15.98666699px;-inkscape-font-specification:Roboto;font-family:Roboto;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;stroke:none;stroke-width:3.51496063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#ffffff;opacity:1">
+     style="line-height:1.25;font-size:26.66666667px;-inkscape-font-specification:'Roboto Bold';font-family:Roboto;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;stroke:#000000;stroke-width:3.51496063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#B2BBBF;opacity:1">
     <group
-       width="1366"
-       height="744"
-       x="0"
-       y="24"
+       width="441"
+       height="726"
+       x="915"
+       y="32"
        fullscreen="0"
        id="geometry"
        maximized="0" />

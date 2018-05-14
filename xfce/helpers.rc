@@ -1,3 +1,4 @@
 TerminalEmulator=custom-TerminalEmulator
 WebBrowser=chromium
+MailReader=evolution
 
