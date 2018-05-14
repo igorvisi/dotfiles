@@ -1,0 +1,68 @@
+favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,bitwarden.desktop,visual-studio-code.desktop,boostnote.desktop,chromium.desktop,darktable.desktop,slack.desktop,org.gnome.Evolution.desktop,veracrypt.desktop,gnome-chess.desktop
+recent=exo-file-manager.desktop,plank.desktop,exo-terminal-emulator.desktop,jetbrains-idea.desktop,xfce-settings-manager.desktop,xfce4-settings-editor.desktop,incognito.desktop,org.valapanel.application.desktop,org.kde.kdeconnect.kcm.desktop,org.kde.kdeconnect.nonplasma.desktop
+button-title=Applications
+button-icon=yd-ind-error
+button-single-row=false
+show-button-title=true
+show-button-icon=true
+launcher-show-name=true
+launcher-show-description=true
+launcher-show-tooltip=true
+item-icon-size=2
+hover-switch-category=false
+category-show-name=true
+category-icon-size=1
+load-hierarchy=false
+recent-items-max=10
+favorites-in-recent=true
+display-recent-default=false
+position-search-alternate=false
+position-commands-alternate=false
+position-categories-alternate=false
+menu-width=499
+menu-height=740
+menu-opacity=100
+command-settings=xfce4-settings-manager
+show-command-settings=true
+command-lockscreen=/home/visi/Bin/lock
+show-command-lockscreen=true
+command-switchuser=gdmflexiserver
+show-command-switchuser=true
+command-logout=xfce4-session-logout
+show-command-logout=true
+command-menueditor=menulibre
+show-command-menueditor=true
+command-profile=mugshot
+show-command-profile=true
+search-actions=5
+
+[action0]
+name=Pages de manuel
+pattern=#
+command=exo-open --launch TerminalEmulator man %s
+regex=false
+
+[action1]
+name=Recherche web
+pattern=?
+command=exo-open --launch WebBrowser https://duckduckgo.com/?q=%u
+regex=false
+
+[action2]
+name=Wikipédia
+pattern=!w
+command=exo-open --launch WebBrowser https://en.wikipedia.org/wiki/%u
+regex=false
+
+[action3]
+name=Exécuter dans un terminal
+pattern=!
+command=exo-open --launch TerminalEmulator %s
+regex=false
+
+[action4]
+name=Ouvrir l’emplacement
+pattern=^(file|http|https):\\/\\/(.*)$
+command=exo-open \\0
+regex=true
+
