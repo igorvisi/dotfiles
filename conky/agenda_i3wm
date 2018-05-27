@@ -43,13 +43,13 @@ use_spacer yes
 
 minimum_size 0 0
 TEXT
-${voffset 10}${color B2BBBF}${font GE Inspira:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color FFD42A}${font GE Inspira:pixelsize=42}${time %d} ${voffset -15}${color B2BBBF}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}${offset -148}${time %A}${font}
-${voffset 1}${offset 12}${font Ubuntu:pixelsize=12}${color FFD42A}/${offset 9}${color B2BBBF}${fs_used_perc /}%${offset 30}${color FFD42A}/home${offset 9}${color B2BBBF}${fs_used_perc /home}%${offset 30}${color FFD42A}/var${offset 9}${color B2BBBF}${fs_used_perc /var}%${offset 30}${color FFD42A}RAM ${offset 9}${color B2BBBF}$memperc% ${offset 30}${color FFD42A}CPU ${offset 9}${color B2BBBF}${cpu cpu0}%
+${voffset 10}${color 4D4D4D}${font GE Inspira:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color B28C81}${font GE Inspira:pixelsize=42}${time %d} ${voffset -15}${color 4D4D4D}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}${offset -148}${time %A}${font}
+${voffset 1}${offset 12}${font Ubuntu:pixelsize=12}${color B28C81}/${offset 9}${color 4D4D4D}${fs_used_perc /}%${offset 30}${color B28C81}/home${offset 9}${color 4D4D4D}${fs_used_perc /home}%${offset 30}${color B28C81}/var${offset 9}${color 4D4D4D}${fs_used_perc /var}%${offset 30}${color B28C81}RAM ${offset 9}${color 4D4D4D}$memperc% ${offset 30}${color B28C81}CPU ${offset 9}${color 4D4D4D}${cpu cpu0}%
 
-${voffset 5}${font GE Inspira:pixelsize=25}${color FFD42A}AGENDA
-${font Ubuntu:pixelsize=12}${color FFD42A}${color B2BBBF}${exec khal list}
-${voffset 5}${font GE Inspira:pixelsize=25}${color FFD42A}TODO
-${font Ubuntu:pixelsize=12}${color FFD42A}${color B2BBBF}${exec todo list} 
+${voffset 5}${font GE Inspira:pixelsize=25}${color B28C81}AGENDA
+${font Ubuntu:pixelsize=12}${color B28C81}${color 4D4D4D}${exec khal list}
+${voffset 5}${font GE Inspira:pixelsize=25}${color B28C81}TODO
+${font Ubuntu:pixelsize=12}${color B28C81}${color 4D4D4D}${exec todo list} 
 
 
 
