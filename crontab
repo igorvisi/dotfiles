@@ -4,11 +4,11 @@
 #==============================================================================================================#
 #  Min  | Heure |  Jour  |  Mois  |  J/sem.  |  Commandes                                                      #
 #==============================================================================================================#
-   *       1        *        *         *       /home/visi/Bin/save-my-packages.sh 
-   *       1        *        *         *       /home/visi/.local/bin/classifier -d /home/visi/Boyambi 
+   30      *       *        *         *       /home/visi/Bin/save-my-packages.sh 
+   30      *       *        *         *       /home/visi/.local/bin/classifier -d /home/visi/Boyambi 
 #  *       *        *        *         *        
 #  *       *        *        *         *        
 #  *       *        *        *         *        
 #==============================================================================================================#
-# 1 : Save installed packages : pacman, npm global, pip, visual studio code,.. [ Every hour ]
-# 2 : Organize files in my download directory [ Every hour ]
+# 1 : Save installed packages : pacman, npm global, pip, visual studio code,.. [Every 30 minutes]
+# 2 : Organize files in my download directory [Every 30 minutes]
