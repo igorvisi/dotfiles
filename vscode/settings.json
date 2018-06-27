@@ -2,7 +2,7 @@
 	"editor.multiCursorModifier": "ctrlCmd",
 	"editor.formatOnPaste": true,
 	"workbench.colorTheme": "Palenight Theme",
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": "eq-material-theme-icons-palenight",
 	"workbench.startupEditor": "none",
 	"editor.fontFamily": "'Fira Code Medium', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
 	"editor.fontLigatures": true,
@@ -39,15 +39,13 @@
 		"<C-y>": false,
 		"<C-c>": false
 	},
-	"vim.otherModesKeyBindingsNonRecursive": [
-		{
+	"vim.otherModesKeyBindingsNonRecursive": [{
 			"before": [
 				"z",
 				"z"
 			],
 			"after": [],
-			"commands": [
-				{
+			"commands": [{
 					"command": "workbench.action.files.save",
 					"args": []
 				},
@@ -105,8 +103,7 @@
 			]
 		}
 	],
-	"vim.insertModeKeyBindings": [
-		{
+	"vim.insertModeKeyBindings": [{
 			"before": [
 				"j",
 				"k"
@@ -121,8 +118,7 @@
 				"z"
 			],
 			"after": [],
-			"commands": [
-				{
+			"commands": [{
 					"command": "workbench.action.files.save",
 					"args": []
 				},
@@ -142,7 +138,7 @@
 	"editor.detectIndentation": false,
 	"java.home": "/usr/lib/jvm/java-8-openjdk",
 	"gitlens.gitExplorer.files.layout": "auto",
-	"vim.disableExtension": true,
+	"vim.disableExtension": false,
 	"gitlens.advanced.messages": {
 		"suppressCommitHasNoPreviousCommitWarning": false,
 		"suppressCommitNotFoundWarning": false,
@@ -213,6 +209,7 @@
 	"gitlens.keymap": "chorded",
 	"files.exclude": {
 		"**/.git": true,
+		"nodes_modules": true,
 		"**/.svn": true,
 		"**/.hg": true,
 		"**/CVS": true,
@@ -221,5 +218,9 @@
 	},
 	"explorer.confirmDragAndDrop": false,
 	"scm.alwaysShowProviders": true,
-	"vim.neovimPath": "/usr/bin/nvim"
+	"vim.neovimPath": "/usr/bin/nvim",
+	"gitlens.historyExplorer.enabled": true,
+	"emmet.includeLanguages": {
+		"mjml": "html"
+	}
 }

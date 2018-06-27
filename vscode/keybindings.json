@@ -256,5 +256,9 @@
 	{
 		"key": "shift+f6",
 		"command": "workbench.action.terminal.newInActiveWorkspace"
+	},
+	{
+		"key": "ctrl+shift+k",
+		"command": "workbench.action.focusQuickOpen"
 	}
 ]
