@@ -11,7 +11,7 @@ precmd(){
 	histdb-update-outcome
 	# notify for long commands [ https://github.com/igorvisi/dotfiles/zsh/zsh-notify.zsh)
 	long-command-done-notify
-	
+
 }
 
 
@@ -29,7 +29,7 @@ workon() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Search everywhere
-# usage: lcf plymouth 
+# usage: lcf plymouth
 lcf() {
 		locate $*|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c"  # F is a global alias. See in .aliases file
 }
@@ -178,7 +178,7 @@ clone() {
 	if [[ -e composer.json ]]; then
 		composer install
 	fi
-	if [[ -e Gemfile ]]; then 
+	if [[ -e Gemfile ]]; then
 	    bundle install  --path ./vendor/bundle/
 	fi
 }
@@ -186,8 +186,8 @@ clone() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
-	local port="${1:-8000}"
-	 python -m http.server "$port"
+	local port="${1:-3000}"
+	browser-sync --port "$port" .
 }
 
 
@@ -301,7 +301,7 @@ vb() {
 # e.g: gcrypt 'Igor Visi' password.txt
 gcrypt() { gpg2 --recipient $1 --sign --encrypt $2 }
 # e.g: bcrypt password.txt
-bcrypt() { tar zcv $1|gpg2 --recipient salut@igorvisi.com --sign --encrypt -o $1.tar.gz.gpg }
+bcrypt() { tar zcv $1|gpg2 --recipient salut@igorvisi.xyz --sign --encrypt -o $1.tar.gz.gpg }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Human readable file size (binary size)
