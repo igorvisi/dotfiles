@@ -259,6 +259,8 @@ systemctl enable powertop.service # powertop
 ## Rappel
 
 ### Récupérer un système endommagé avec chroot
+
+```shell
 sudo mount --bind /dev /mnt/dev
 sudo mount -t proc /proc /mnt/proc
 sudo mount --bind /run /mnt/run
@@ -266,5 +268,24 @@ sudo mount -t sysfs /sys /mnt/sys
 net-setup eth0 # connexion internet
 sudo cp /etc/resolv.conf /mnt/resolv.conf*
 sudo chroot /mnt/ zsh
+```
 
+### Renouvellement des clés GPG
 
+```shell
+gpg --decrypt gpg_keys.tar.xz.gpg gpg_keys.tar.xz
+tar Jxvf gpg_keys.tar.xz
+gpg --import D4444496.priv.asc
+gpg --edit-key D4444496
+
+gpg --export --armor D4444496 > D4444496.pub.asc
+gpg --export-secret-keys --armor D4444496 > D4444496.priv.asc
+gpg --export-secret-subkeys --armor D4444496 > D4444496.sub_priv.asc
+gpg --output D4444496.rev.asc --gen-revoke D4444496
+
+gpg --delete-secret-key D4444496
+gpg --import D4444496.sub_priv.asc
+tar Jcvf gpg_keys.tar.xz D4444496.*
+gpg -c gpg_keys.tar.xz
+srm D4444496.* gpg_keys.tar.xz
+```
