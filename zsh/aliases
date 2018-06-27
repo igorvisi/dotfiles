@@ -2,7 +2,7 @@
 alias -g G='|grep'
 alias -g F='|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c " '
 alias -g C='|cb' # cb (see in .function file) copy to clipboard
-alias -g L='less -XNFR'
+alias -g L='|less -XNFR'
 alias -g N='> /dev/null 2>&1'
 alias -g S='| sort'
 alias -g T='| wc -l'
@@ -20,7 +20,7 @@ alias wkn='workon'
 
 alias which='which -a'
 alias c='clear'
-alias chx='chmod +x'
+alias chx='chmod u+x'
 # Vocab(https://github.com/igorvisi/vocab), script for learning new words
 alias b='vocab'
 
@@ -34,8 +34,8 @@ alias hf='fc -n -l 1 |fzf --tac --exact --ansi --no-sort --reverse --tiebreak=in
 alias cb='clipcopy'
 
 # Copy SSH and GPG public key
-alias cbssh='cb ~/.extra/keys/ssh_id_rsa.pub'
-alias cbgpg='cb  ~/.extra/keys/gpg_rsa_pub.asc'
+alias cbssh='cb ~/.extra/keys/SSH/ssh_id_rsa.pub'
+alias cbgpg='cb  ~/.extra/keys/GPG/D4444496.pub.asc'
 # Copy current working directory
 alias cbwd="pwd | clipcopy"
 
@@ -44,11 +44,6 @@ alias dotinstall='~/.dotfiles/install'
 alias dotconf='nvim ~/.dotfiles/install.conf.yaml'
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
-# https://github.com/AlexisBRENON/oh-my-zsh-reminder 
-alias t_add='todo_add_task'
-alias t_done='todo_task_done'
-alias t_t='echo "" > ~/.todo.sav'
 
 # I prefer neovim
 alias vim='nvim'
@@ -148,7 +143,7 @@ antigen update ;
 ~/.tmux/plugins/tpm/bin/update_plugins all; # Update tmux plugins
 gpg --keyserver pgp.mit.edu --refresh-keys # Refresh gpg keys
 code; # Open vscode for update plugins
-neovim ; # Open neovim for update plugins
+nvim ; # Open neovim for update plugins
 '
 # Resolve mojibake problems with UTF-8 . e.g: �l�ments -- éléments.
 # conv Directory to test and conv --notest Directory to apply.
