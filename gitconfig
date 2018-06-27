@@ -99,8 +99,8 @@
 [diff]
 	compactionHeuristic = true
 [user]
-	email = salut.visi+git@gmail.com
+	email = salut.visi@gmail.com
 	name = igorvisi
-	signingkey = 69D00004
+	signingkey = D4444496
 [commit] 
         gpgsign = true
