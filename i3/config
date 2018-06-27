@@ -61,6 +61,7 @@ bindsym $mod+b exec boostnote
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+bindsym $mod+h focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left  focus left
@@ -103,9 +104,8 @@ bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixe
 bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 2 && volnoti-show -s /usr/share/pixmaps/volnoti/display-brightness-symbolic.svg $(xbacklight -get)"
 bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 2 && volnoti-show -s /usr/share/pixmaps/volnoti/display-brightness-symbolic.svg $(xbacklight -get)"
 
-
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+c split h
 # split in vertical orientation
 bindsym $mod+v split v
 
@@ -206,7 +206,6 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 #::::::::::::::::::::::::: Autostart apps ::::::::::::::::::::::::::#
 exec_always --no-startup-id nitrogen --restore # Set wallpaper
-exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
 exec --no-startup-id compton # compositor for X11
 exec --no-startup-id unclutter -noevents -keystroke -idle 5 # make cursor invisible when you are taping text or after 5s of inactivity
 exec --no-startup-id xedgewarp -b # make easy to switch cursor between screen with different size
@@ -215,11 +214,10 @@ exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id conky -c ~/.config/conky/agenda_i3wm
-exec --no-startup-id bitwarden # Password manager
+# exec --no-startup-id bitwarden # Password manager
 exec --no-startup-id evolution # Mail
 exec --no-startup-id owncloud
 exec --no-startup-id redshift-gtk
-exec --no-startup-id kdeconnect-indicator
 # exec --no-startup-id xfce4-panel
 exec --no-startup-id caffeine
 
@@ -227,6 +225,10 @@ exec --no-startup-id caffeine
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Lock in case of user inactivity under X
 exec --no-startup-id xautolock -time 10 -corners 0-00 -locker "~/Bin/lock" &
+
+exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
+exec --no-startup-id kdeconnect-indicator
+
 
 #::::::::::::::::::::::::: App assigned in workspace ::::::::::::::::::::::::::#
 # Terminal in Workspace 6
@@ -239,7 +241,7 @@ assign [class="Thunar|Caja|Pcmanfm" ]  $ws1
 assign [class="Chromium|Firefox|Opera" ]  $ws2
 
 # Editors and IDE in Workspace 3
-assign [class="Code|jetbrains-idea|Typora" ]  $ws3
+assign [class="Code|jetbrains-idea|Typora|jetbrains-studio|sun-awt-X11-XFramePeer" ]  $ws3
 
 # Messageries & Mails
 assign [class="Geary|Evolution"]  $ws5
@@ -281,6 +283,7 @@ for_window [class="^Gpick$"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Klavaro"] floating enable
 for_window [class="GParted"] floating enable
+for_window [class="albert"] floating enable gaps inner 0
 for_window [class="Xsane|Onboard"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [class="(?i)blueman"] floating enable
