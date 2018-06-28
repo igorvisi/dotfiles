@@ -39,7 +39,7 @@
 		"<C-y>": false,
 		"<C-c>": false
 	},
-	"vim.otherModesKeyBindingsNonRecursive": [{
+	"vim.normalModeKeyBindingsNonRecursive": [{
 			"before": [
 				"z",
 				"z"
