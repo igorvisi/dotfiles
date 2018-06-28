@@ -54,6 +54,9 @@ bindsym $mod+z exec thunar `xcwd`
 # Color picker
 bindsym $mod+p exec " sleep 1s; gpick -p"
 
+# Clipboard manager
+bindsym $mod+x exec " clipmenu"
+
 # Typora a markdow editor
 bindsym $mod+b exec boostnote
 
@@ -212,7 +215,6 @@ exec --no-startup-id xedgewarp -b # make easy to switch cursor between screen wi
 exec --no-startup-id "~/.keymap.sh" # remap keys
 exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
-exec --no-startup-id xfce4-clipman
 exec --no-startup-id conky -c ~/.config/conky/agenda_i3wm
 # exec --no-startup-id bitwarden # Password manager
 exec --no-startup-id evolution # Mail
