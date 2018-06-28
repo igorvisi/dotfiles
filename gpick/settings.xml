@@ -39,17 +39,17 @@
 <close_to_tray type="bool">false</close_to_tray>
 <color_source type="string">color_picker</color_source>
 <minimize_to_tray type="bool">false</minimize_to_tray>
-<paned_position type="int32">473</paned_position>
+<paned_position type="int32">474</paned_position>
 <save_restore_palette type="bool">true</save_restore_palette>
 <secondary_color_source type="string">variations</secondary_color_source>
 <single_instance type="bool">true</single_instance>
 <start_in_tray type="bool">false</start_in_tray>
-<vertical_paned_position type="int32">376</vertical_paned_position>
+<vertical_paned_position type="int32">396</vertical_paned_position>
 <window type="dynv">
-<height type="int32">540876910</height>
-<width type="int32">1869182051</width>
-<x type="int32">538976288</x>
-<y type="int32">1853187616</y>
+<height type="int32">527</height>
+<width type="int32">1024</width>
+<x type="int32">290</x>
+<y type="int32">96</y>
 </window>
 </main>
 <options type="dynv">

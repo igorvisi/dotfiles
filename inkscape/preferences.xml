@@ -31,7 +31,7 @@
        state="1" />
     <group
        id="rulers"
-       state="1" />
+       state="0" />
     <group
        id="scrollbars"
        state="1" />
@@ -132,8 +132,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="1123.26"
-         height="497.809"
+         width="1398.41"
+         height="778.731"
          rx="0"
          ry="0" />
       <eventcontext
@@ -170,13 +170,15 @@
          style="fill:red;"
          end="0"
          start="0"
-         usecurrent="1" />
+         usecurrent="1"
+         rx="7.14413"
+         ry="7.14413" />
       <eventcontext
          id="star"
-         magnitude="4"
+         magnitude="5"
          style="fill:yellow;"
          usecurrent="1"
-         proportion="0.36571"
+         proportion="0.481984"
          rounded="0"
          randomized="0"
          isflatsided="0" />
@@ -203,7 +205,8 @@
          mode="drag"
          selcue="1"
          style="stroke-width:1px;"
-         usecurrent="0" />
+         usecurrent="0"
+         freehand-mode="0" />
     </group>
     <eventcontext
        id="calligraphic"
@@ -325,7 +328,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px"
+       unit="mm"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -333,7 +336,7 @@
        gradientdrag="1"
        font_sample="AaBbCcIiPpQq12369$€¢?.;/()"
        show_sample_in_list="1"
-       style="fill:black;fill-opacity:1;stroke:none;font-family:'AtlandSketches BB';font-style:normal;font-weight:normal;font-size:60px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'AtlandSketches BB';font-stretch:normal;font-variant:normal"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:'Noto Color Emoji';font-style:normal;font-weight:normal;font-size:60px;line-height:1.25;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Noto Color Emoji';font-stretch:normal;font-variant:normal"
        selcue="1">
       <group
          id="lineheight"
@@ -426,7 +429,7 @@
        offset="0"
        offsetunits="mm" />
     <group
-       unit="px"
+       unit="mm"
        id="measure"
        fontsize="10"
        precision="2"
@@ -578,11 +581,11 @@
        page="0"
        x="0"
        y="0"
-       w="362"
-       h="490"
-       visible="0"
+       w="472"
+       h="771"
+       visible="1"
        state="2"
-       placement="1" />
+       placement="5" />
     <group
        id="filtereffects" />
     <group
@@ -620,7 +623,19 @@
     <group
        id="xml" />
     <group
-       id="find" />
+       id="find"
+       panel_size="1"
+       panel_ratio="100"
+       panel_mode="1"
+       panel_wrap="0"
+       panel_border="0"
+       x="0"
+       y="0"
+       w="472"
+       h="273"
+       visible="1"
+       state="3"
+       placement="1" />
     <group
        id="spellcheck"
        w="200"
@@ -637,8 +652,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="699"
-       h="709"
+       w="1"
+       h="1"
        visible="1"
        placement="1" />
     <group
@@ -649,11 +664,11 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="20"
+       page="37"
        x="0"
        y="44"
-       w="1366"
-       h="768" />
+       w="707"
+       h="726" />
     <group
        id="gradienteditor" />
     <group
@@ -683,13 +698,13 @@
        x="0"
        y="0"
        w="472"
-       h="530"
+       h="771"
        visible="1"
        state="2"
-       placement="1">
+       placement="5">
       <group
          id="exportarea"
-         value="drawing" />
+         value="page" />
       <group
          id="defaultxdpi"
          value="126" />
@@ -702,7 +717,7 @@
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/visi/.extra/docs/Design Stuff/Logo"
+       path="/home/visi/.extra/docs/Design/Perso"
        use_current_dir="1" />
     <group
        id="save_copy"
@@ -721,7 +736,7 @@
        ask="1"
        link="embed"
        scale="auto"
-       forcexdpi="0" />
+       forcexdpi="1" />
     <group
        id="debug"
        redirect="0" />
@@ -949,7 +964,7 @@
        value="0" />
     <group
        id="stickyzoom"
-       value="0" />
+       value="1" />
     <group
        id="selcue"
        value="2" />
@@ -1096,16 +1111,17 @@
      org.inkscape.print.wmf.FixPPTPatternAsHatch="0"
      org.inkscape.print.wmf.textToPath="1"
      org.inkscape.print.wmf.destination="/tmp/inkscape-clipboard-export"
-     org.inkscape.print.latex.destination="/tmp/inkscape-clipboard-export" />
+     org.inkscape.print.latex.destination="/tmp/inkscape-clipboard-export"
+     org.inkscape.input.gdkpixbuf.jpg.dpi="from_default" />
   <group
      id="desktop"
-     style="line-height:1.25;font-size:26.66666667px;-inkscape-font-specification:'Roboto Bold';font-family:Roboto;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;stroke:#000000;stroke-width:3.51496063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#B2BBBF;opacity:1">
+     style="line-height:1.25;font-size:53.33333333px;-inkscape-font-specification:'Noto Color Emoji';font-family:'Noto Color Emoji';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;stroke:#4985b1;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#5599ff;opacity:0.509">
     <group
-       width="441"
-       height="726"
-       x="915"
-       y="32"
-       fullscreen="0"
+       width="1366"
+       height="744"
+       x="0"
+       y="24"
+       fullscreen="1"
        id="geometry"
        maximized="0" />
     <group
