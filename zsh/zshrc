@@ -32,10 +32,6 @@ __EOF__
 antigen theme denysdovhan/spaceship-prompt spaceship
 antigen apply
 
-autoload -U promptinit; promptinit
-prompt spaceship
-
-
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 
@@ -49,6 +45,8 @@ setopt correct
 # Don't add all duplicates command line.
 setopt hist_ignore_all_dups
 
+# Remove command lines from the history list when the first character on the line is a space
+setopt HIST_IGNORE_SPACE
 # Load personal global variables like PATH ...
 source $HOME/.global
 # Useful Shell functions.
