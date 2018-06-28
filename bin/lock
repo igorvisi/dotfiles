@@ -17,7 +17,7 @@ playerctl pause; if pgrep -x parole ; then parole -p; fi
 
 # Suspend or hibernate
 if [[ $1 = "suspend" ]]; then
- systemctl suspend && _lock 
+ systemctl suspend -i && _lock 
 elif [[ $1 = "hibernate" ]]; then
   systemctl hibernate
 else 

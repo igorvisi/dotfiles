@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Pratique pour télécharger plusieurs fichiers différents de même nom (comme les vidéos des MOOCs) dans un fichier texte !
+# Pratique pour télécharger plusieurs fichiers différents de même nom (comme les vidéos des MOOCs) depuis un fichier texte contenant les URL !
 if [ -z $1 ]; then
 	echo " Utilisation: fwget fichier.txt"
 else
