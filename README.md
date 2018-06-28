@@ -4,14 +4,14 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ![Screenshot](Screenshot.png)
 
-[more screenshots](https://imgur.com/gallery/oXv0i ).
+More screenshots or Workflow ? In my instagram [@roigivis](https://instagram.com/roigivis).
 
 ## My setup
 
-* **[Arch Linux](https://archlinux.com/)** 👌🏿 a simple and basic linux distribution ;
-* **[i3wm](https://i3wm.org/)** a lightweight and customizable desktop environnement for linux ;
-* **[Zsh](https://www.zsh.org/)** like shell with **[Antigen](http://antigen.sharats.me/)** a plugin manager for zsh and **[Oh-My-Zsh](http://ohmyz.sh/)** framework ;
-* **[Visual Studio Code](https://code.visualstudio.com/)** ♥ (+ **[vim Keymap](https://github.com/VSCodeVim/Vim)** 💪🏿 ) my favorite editor .
+- **[Arch Linux](https://archlinux.com/)** 👌🏿 a simple and basic linux distribution ;
+- **[i3wm](https://i3wm.org/)** a lightweight and customizable desktop environnement for linux ;
+- **[Zsh](https://www.zsh.org/)** like shell with **[Antigen](http://antigen.sharats.me/)** a plugin manager for zsh and **[Oh-My-Zsh](http://ohmyz.sh/)** framework ;
+- **[Visual Studio Code](https://code.visualstudio.com/)** ♥ (+ **[vim Keymap](https://github.com/VSCodeVim/Vim)** 💪🏿 ) my favorite editor .
 
 ## Thanks to…
 
