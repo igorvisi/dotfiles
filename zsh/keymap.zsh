@@ -21,6 +21,7 @@ bindkey -M viins "  " magic-space  # double space to make a normal space from gl
 bindkey '^a'    vi-beginning-of-line
 bindkey '^e'    vi-end-of-line
 bindkey '^[[3~' vi-delete-char 
+bindkey '^l' vi-forward-word
 
 
 bindkey '^[[1;3C' vi-forward-word
