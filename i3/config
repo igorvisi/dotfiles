@@ -220,6 +220,7 @@ exec --no-startup-id conky -c ~/.config/conky/agenda_i3wm
 exec --no-startup-id evolution # Mail
 exec --no-startup-id owncloud
 exec --no-startup-id redshift-gtk
+exec --no-startup-id clipmenud # Clipboard manager
 # exec --no-startup-id xfce4-panel
 exec --no-startup-id caffeine
 
