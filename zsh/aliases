@@ -189,10 +189,10 @@ alias open='xdg-open'
 # Process I launch
 alias p='ps -u $USER'
 # Powerfull ls
-alias l='ls -ltFh'
+alias l='ls -l'
 alias ll='ls -ahlFG | less -X'
 alias lf='ls F' # F global alias of fzf
-alias ls='ls -hN --color=auto --group-directories-first'
+alias ls='exa -h --color=auto --group-directories-first' # exa is a modern replacement for ls
 alias la='ls -ltFhA'
 alias lg='ls -al|grep'
 # Listings for zsh with git features github.com/supercrabtree/k
