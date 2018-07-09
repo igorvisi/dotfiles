@@ -7,7 +7,7 @@ alias -g N='> /dev/null 2>&1'
 alias -g S='| sort'
 alias -g T='| wc -l'
 alias -g P='$(clippaste)'
-alias -g V='|ca' # see ca in function file
+alias -g V='& progress -mp $!'
 
 # Bash with debug
 alias bashx='bash -x'

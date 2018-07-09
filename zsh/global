@@ -87,6 +87,8 @@ export HISTIGNORE="&:[ ]*:exit:ssh:rm:scp:ls:bg:fg:history:which:b:c:clear:cd:z"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+#corrects errors in previous console commands
+eval $(thefuck --alias fk)
 
 # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
 if type -p dircolors >/dev/null ; then
