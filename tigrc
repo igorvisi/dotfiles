@@ -80,10 +80,12 @@ bind generic ul stage-update-line
 bind generic us stage-split-chunk
 
 bind generic c  none
+bind generic ca @git add .
 bind generic cb @?git checkout "%(prompt Name of branch: )"
 bind generic cc !git commit
+bind generic cm ?@git commit -s -m "%(prompt Message of commit: )"
 bind generic cn !?@git commit --amend --no-edit
-bind generic cm !?@git commit -a 
+bind generic cs @git checkout -b "%(prompt Name of new branch to switch: )"
 
 
 bind generic zz quit
