@@ -217,7 +217,7 @@ exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id conky -c ~/.config/conky/agenda_i3wm
 # exec --no-startup-id bitwarden # Password manager
-exec --no-startup-id evolution # Mail
+# exec --no-startup-id evolution # Mail
 exec --no-startup-id owncloud
 exec --no-startup-id redshift-gtk
 exec --no-startup-id clipmenud # Clipboard manager
@@ -230,7 +230,7 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id xautolock -time 10 -corners 0-00 -locker "~/Bin/lock" &
 
 exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
-exec --no-startup-id kdeconnect-indicator
+exec_always --no-startup-id "killall kdeconnect-indicator ; kdeconnect-indicator " # Connect my phone with pc
 
 
 #::::::::::::::::::::::::: App assigned in workspace ::::::::::::::::::::::::::#
