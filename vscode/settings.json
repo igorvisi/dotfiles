@@ -1,8 +1,8 @@
 {
 	"editor.multiCursorModifier": "ctrlCmd",
 	"editor.formatOnPaste": true,
-	"workbench.colorTheme": "Palenight Theme",
-	"workbench.iconTheme": "eq-material-theme-icons-palenight",
+	"workbench.colorTheme": "Jumper (rainglow)",
+	"workbench.iconTheme": "eq-material-theme-icons-ocean",
 	"workbench.startupEditor": "none",
 	"editor.fontFamily": "'Fira Code Medium', 'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'",
 	"editor.fontLigatures": true,
@@ -222,5 +222,6 @@
 	"gitlens.historyExplorer.enabled": true,
 	"emmet.includeLanguages": {
 		"mjml": "html"
-	}
+	},
+	"materialTheme.fixIconsRunning": false
 }
