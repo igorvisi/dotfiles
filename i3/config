@@ -254,7 +254,7 @@ assign [class="Slack"]  $ws8
 assign [class="Spotify|spotify|Vlc|Rhythmbox|Musixmatch|Parole" ]  $ws7
 
 # Git
-assign [class="GitKraken|Boostnote" ]  $ws4
+assign [class="GitKraken|Boostnote|Simplenote" ]  $ws4
 # Projet manager tools
 assign [class="freeter"]  $ws4
 # Data Base 
