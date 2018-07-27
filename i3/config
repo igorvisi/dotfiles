@@ -57,6 +57,8 @@ bindsym $mod+p exec " sleep 1s; gpick -p"
 # Clipboard manager
 bindsym $mod+x exec " clipmenu"
 
+bindsym $mod+Control+x exec --no-startup-id "xkill"
+
 # Typora a markdow editor
 bindsym $mod+b exec boostnote
 
