@@ -40,8 +40,9 @@ bindkey "\e\e" sudo-command-line
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
-# allow ctrl-r to perform backward search in history
+# allow ctrl-r or ctrl-fto perform backward search in history
 bindkey '^r' history-incremental-search-backward
+bindkey '^f' history-incremental-search-backward
 
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
