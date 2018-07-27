@@ -328,7 +328,7 @@
        id="lpetool"
        mode="drag"
        style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;"
-       unit="px"
+       unit="mm"
        show_bbox="1" />
     <eventcontext
        id="text"
@@ -434,7 +434,7 @@
        precision="2"
        fontsize="10"
        id="measure"
-       unit="px" />
+       unit="mm" />
   </group>
   <group
      id="palette">
@@ -578,7 +578,7 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="2"
+       page="0"
        x="0"
        y="0"
        w="1"
@@ -652,8 +652,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="1"
-       h="1"
+       w="718"
+       h="708"
        visible="1"
        placement="1" />
     <group
@@ -728,7 +728,7 @@
     <group
        id="open"
        enable_preview="1"
-       path="/home/visi/.extra/docs/CV/" />
+       path="/home/visi/.extra/docs/Design/Perso/Logo/" />
     <group
        id="import"
        enable_preview="1"
@@ -1115,12 +1115,12 @@
      org.inkscape.input.gdkpixbuf.jpg.dpi="from_default" />
   <group
      id="desktop"
-     style="line-height:1.25;font-size:266.66666667px;-inkscape-font-specification:'911 Porscha Bold, ';font-family:'911 Porscha Bold';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;stroke:none;stroke-width:3.77952756;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#ffffff;opacity:1">
+     style="line-height:1.25;font-size:266.66666667px;-inkscape-font-specification:'911 Porscha Bold, ';font-family:'911 Porscha Bold';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;stroke:none;stroke-width:3.77952756;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:evenodd;fill-opacity:1;fill:#CFD8DC;opacity:1">
     <group
-       width="1366"
-       height="744"
-       x="0"
-       y="24"
+       width="915"
+       height="424"
+       x="339"
+       y="149"
        fullscreen="0"
        id="geometry"
        maximized="1" />
