@@ -36,7 +36,7 @@ window {
     background-color: @background;
     border:           0;
     transparency:     "screenshot";
-    padding:          100;
+    padding:          5;
 }
 mainbox {
     border:  0;
@@ -54,7 +54,7 @@ listview {
     fixed-height: 0;
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      20px ;
+    spacing:      0px 10px;
     scrollbar:    false;
     padding:      2px 0px 0px ;
 }
@@ -99,10 +99,10 @@ element alternate.active {
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
-    width:        4px ;
+    width:        1px ;
     border:       0;
     handle-color: @normal-foreground;
-    handle-width: 8px ;
+    handle-width: 2px ;
     padding:      0;
 }
 sidebar {
