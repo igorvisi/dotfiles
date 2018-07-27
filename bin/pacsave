@@ -2,4 +2,4 @@
 
 yay -Qqt > $HOME/.extra/packages/yay.txt
 code --list-extensions > $HOME/.extra/packages/vscode.txt
-npm list -json -g --depth=0 > $HOME/.extra/packages/npm.txt
+npm list -parseable -g --depth=0 | cut -d/ -f7 > $HOME/.extra/packages/npm.txt
