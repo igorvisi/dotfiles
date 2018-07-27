@@ -1,21 +1,25 @@
 # Étapes de l'installation d'Arch Linux
 
 Ce n'est pas un script ! Ceci me permet de me rappeler certaines étapes !
+
 ## 1. Partitionnement
+
 Table de partition MBR
+
 - **512Mo** pour **/boot**
-[si UEFI]
-Table de partition GPT
-- **/boot** **1Go** en FAT32.
-Il faut qu’elle soit étiquetée en EF00 à sa création.
-Pour le swap, c’est la référence 8200.
+  [si UEFI]
+  Table de partition GPT
+- **1Go** pour **/boot** en FAT32.
+  Il faut qu’elle soit étiquetée en EF00 à sa création.
+  Pour le swap, c’est la référence 8200.
 
+* **100%** Reste en **luks** -> **vg** :
 
-- **100%** Reste en **luks** -> **vg** :
-	- **RAM+1Go** pour swap -> **vg-swap**
-	- **~100Go** pour /var -> **vg-var**
-	- **~50Go** pour / -> **vg-root**
-	- **100%FREE** pour /home -> **vg-home**
+1.  **RAM+1Go** pour swap -> **vg-swap**
+2.  **~100Go** pour /var -> **vg-var**
+3.  **~50Go** pour / -> **vg-root**
+4.  **100%FREE** pour /home -> **vg-home**
+
 ```shell
 # Ecraser les données
 dd if=/dev/urandom of=/dev/sda2
@@ -58,7 +62,6 @@ cat /dev/zero > /mnt/home/zeros ;sync ; rm /mnt/home/zeros
 ```shell
 cd /tmp/
 wget https://archlinux/iso/latest/... archlinux-boostrap..
-
 ```
 
 ## 3. Chroot dans l'environnement Arch Boostrap
@@ -116,27 +119,30 @@ tar xzf /tmp/archlinux-boostrap.. /tmp
 ## 6. Installation grub
 
 - Teste si on est sur UEFI ou BIOS ?
-   ```shell
-     efivars on /sys/firmware/efi/efivars type efivars (rw,nosuid,nodev   noexec,relatime)
-   ```
+
+```shell
+    efivars on /sys/firmware/efi/efivars type efivars (rw,nosuid,nodev   noexec,relatime)
+```
+
 - Si UEFI
-	```shell
-	   grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
-	   mkdir /boot/EFI/boot
-	   cp /boot/EFI/arch_grub/grubx64.efi /boot/EFI/boot/bootx64.efi
-	```
+
+```shell
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck mkdir /boot/EFI/boot cp /boot/EFI/arch_grub/grubx64.efi /boot/EFI/boot/bootx64.efi`
+```
+
 - Si BIOS
-	```shell
-	grub-install --no-floppy --recheck /dev/sda
-	```
+
+```shell
+grub-install --no-floppy --recheck /dev/sda
+```
 
 ## 7. Utilisateur
 
-```shell
+````shell
 # changer mot de passe du root
 passwd root
 
-# création d'un utilisateur administrateur
+# création utilisateur administrateur
 useradd  -m  -G  autologin,nopasswdlogin,wheel -c 'Nom complet de l’utilisateur' -s  /bin/zsh  nom-de-l’utilisateur
 passwd nom-de-l’utilisateur
 
@@ -147,11 +153,9 @@ nvim /etc/sudoers
 file /etc/systemd/system/powertop.service
 [Unit]
 Description=Powertop tunings
-
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/powertop --auto-tune
-
 [Install]
 WantedBy=multi-user.target
 
@@ -159,26 +163,22 @@ WantedBy=multi-user.target
 file /etc/systemd/system/wakelock.service
 [Unit]
 Description= Lock the screen on resume after suspend
-
 [Service]
 User=visi
 Type=forking
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/sh -c "/home/visi/Bin/lock"
-
 [Install]
 WantedBy=suspend.target
 
 # Laptop Mode and swapiness
 file /etc/sysctl.d/laptop.conf
 vm.laptop_mode = 5
-
 cat /etc/sysctl.d/99-sysctl.conf
 vm.swappiness=10
 
 # Action comme fermer le couvercle ou appuyer sur le bouton power
 vim /etc/systemd/login.conf
-
 HandlePowerKey=suspend
 HandleLidSwithc=suspend
 HandleHibernateKey=hibernate
@@ -189,36 +189,39 @@ w /sys/power/pm_async - - - - 0
 w /sys/power/image_size - - - - 8589934592
 
 ```bash
-# se connecter en tant nom-de-l'utilisateur
-su nom-de-l'utilsateur
-```
+# se connecter en tant nom-de-utilisateur
+su nom-de-utilsateur
+# Changer le shell par défaut pour zsh
+chsh -s /bin/zsh
+````
 
 ## 8. Dotfiles
-```bash
-wget http://mirrors.antergos.com/antergos/x86_64/antergos-keyring
- && sudo pacman -U /tmp/antergos-keyring
-```
 
 ### installation de dotfiles
+
 ```bash
 git clone https://github.com/igorvisi/dotfiles ~/.dotfiles
-git submodule init && git submodule update
-cd ~/.dotfiles && cp dotbot/tools/git-submodule/install .
+cd ~/.dotfiles && git submodule init && git submodule update
+cp dotbot/tools/git-submodule/install .
 chmod +x install && ./install
 ```
 
-### installation de Hubic, git-encrypt et enfcs
+### installation de nextcloud(owncloud), gpg et enfcs
+
+### récupération des données sur nextcloud
 
 ### importation clés SSH et GPG
 
 ### récuperer les configuration pacman.conf, crontab, la liste de logiciels et packages
 
 ### installation des logiciels avec yay, vscode et npm
+
 ```bash
 cat .extra/packages/yay.txt | xargs yay -Su
 cat .extra/packages/vscode.tx | xargs code --install-extension
 cat .extra/packages/yarn.txt | xargs n2,5pm -g i
 ```
+
 ### dernières rétouches
 
 - ForwardToSyslog=yes on /etc/systemd/journald.conf
@@ -254,7 +257,6 @@ systemctl enable org.cups.cupsd  # cups pour les imprimantes
 systemctl enable bluetooth  # uniquement si on a du matériel bluetooth
 systemctl enable powertop.service # powertop
 ```
-
 
 ## Rappel
 
