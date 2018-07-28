@@ -204,6 +204,7 @@ git clone https://github.com/igorvisi/dotfiles ~/.dotfiles
 cd ~/.dotfiles && git submodule init && git submodule update
 cp dotbot/tools/git-submodule/install .
 chmod +x install && ./install
+tic -x ~/.dotfiles/termite/termite.info # Si SSH remote
 ```
 
 ### installation de nextcloud(owncloud), gpg et enfcs
