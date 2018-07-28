@@ -57,7 +57,6 @@
 
 # rewrites of repo paths
 [url "git@github.com:"]
-	insteadOf = "https://github.com/"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 	pushInsteadOf = "https://github.com/"
@@ -75,7 +74,7 @@
 
 # Working without ssh keys from other computers
 [url "https://github.com/igorvisi/dotfiles"]
-	insteadOf = "git@github.com/igorvisi/dotfiles"
+	insteadOf = "git@github.com:igorvisi/dotfiles"
 
 [github]
         user = igorvisi
