@@ -29,7 +29,7 @@ zsh-users/zsh-syntax-highlighting
 __EOF__
 
 # antigen theme igorvisi/fibo-zsh-theme fibo
-antigen theme denysdovhan/spaceship-prompt spaceship
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 antigen apply
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
