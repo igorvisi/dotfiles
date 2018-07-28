@@ -62,6 +62,10 @@
 	pushInsteadOf = "git://github.com/"
 	pushInsteadOf = "https://github.com/"
 
+# Working without ssh keys from other computers
+[url "https://github.com/igorvisi/dotfiles"]
+	insteadOf = "git@github.com/igorvisi/dotfiles"
+
 [url "git://github.com/"]
 	insteadOf = "github:"
 
