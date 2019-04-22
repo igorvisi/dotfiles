@@ -1,0 +1,30 @@
+{
+    "type": "script",
+    "description": "Texte copi\u00e9 en miniscule",
+    "store": {},
+    "modes": [
+        1
+    ],
+    "usageCount": 8,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": true,
+    "abbreviation": {
+        "abbreviations": [
+            "LcX"
+        ],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

@@ -1,0 +1,126 @@
+source ~/.xinitrc
+
+# Personal Directories
+export BACKUPDIR=/run/media/backup
+export CODEDIR=$HOME/Codes
+export DOCDIR=$HOME/Docs
+export DOWNLOADDIR=$HOME/Tl
+export OFFLINEDIR=$HOME/.offline
+export OPENSOURCEDIR=$CODEDIR/Open
+export PACSAVEDIR=$HOME/.extra/packages
+export PICTUREDIR=$HOME/Pics
+export SCREENSHOTDIR=$PICTUREDIR/Screenshots
+export WORKSPACE=$CODEDIR/Workspace
+# export CDPATH="":$HOME:$CODEDIR/Clients:$OPENSOURCEDIR
+
+umask -S "u=rwx,g=,o="
+
+systemctl --user import-environment PATH
+
+# neovim as default cli editor
+export EDITOR=nvim
+
+# GPG default key
+export GPGKEY=0x9E000216F11111A5
+
+# https://github.com/chrisallenlane/cheat
+export DEFAULT_CHEAT_DIR=$HOME/.dotfiles/cli_tools/cheat # cli command cheatsheet
+export CHEATPATH=$DOCDIR/Cours/Cheat # University course's cheatsheet
+export CHEATCOLORS=true
+
+# Add the current directory in the PATH
+export PATH=$PATH:.
+export PATH=$PATH:./node_modules/.bin
+
+# PATH for golang packages
+export GOPATH=$OFFLINEDIR/golang
+export PATH=$PATH:${GOPATH}/bin
+
+# PATH for gems with rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH=$PATH:$GEM_HOME/bin
+
+#PATH for python packages installed by pip --user  without sudo
+export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
+export PATH=$PATH:$PY_BIN
+export PIP_CONFIG_FILE=$HOME/.config/pip.conf
+
+# Prompt
+export SPACESHIP_PROMPT_ORDER=(
+user
+dir
+host
+node
+git_branch
+git_status
+exec_time
+line_sep
+jobs
+char
+)
+
+export SPACESHIP_PACKAGE_SYMBOL=""
+export SPACESHIP_CHAR_SYMBOL="❯ "
+export SPACESHIP_JOBS_SYMBOL="»"
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_DIR_TRUNC_PREFIX=".../"
+
+# PATH for global node packages directory
+# PATH=$PATH:`yarn global bin --offline`
+NPM_CONFIG_PREFIX=~/.lib/npm
+NPM_PACKAGES="${HOME}/.offline/npm"
+NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
+PATH=$PATH:${NPM_PACKAGES}/bin
+# nvm
+export NVM_DIR="$HOME/.dotfiles/dev/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Android tools
+export PATH=$PATH:$HOME/.android/Sdk/platform-tools
+export ANDROID_HOME=$HOME/.android/
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export PATH=$PATH:$JAVA_HOME/bin
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH
+# Delete if you already modified MANPATH elsewhere in your config
+export MANPATH=${NPM_PACKAGES}/share/man:$(manpath)
+
+# Personal Apps
+export PATH=$PATH:$HOME/Bin
+
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Prefer French and use UTF-8
+export LC_ALL=fr_FR.UTF-8
+export LANG=fr_FR.UTF-8
+export LC_TIME=en_US
+# Use standard ISO 8601 timestamp
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+export HISTTIMEFORMAT='%F %T '
+
+# keep history up to date, across sessions, in realtime
+#  http://unix.stackexchange.com/a/48113
+export HISTCONTROL="erasedups:ignoreboth"       # no duplicate entries
+export HISTSIZE=1000000                          # big big history (default is 500)
+export HISTFILESIZE=$HISTSIZE                   # big big history
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ssh:rm:scp:ls:bg:fg:history:which:b:c:clear:cd:z:zz" # for bash
+
+# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
+if type -p dircolors >/dev/null ; then
+	if [[ -f ~/.dir_colors ]] ; then
+		eval $(dircolors -b ~/.dir_colors)
+	elif [[ -f /etc/DIR_COLORS ]] ; then
+		eval $(dircolors -b /etc/DIR_COLORS)
+	fi
+fi
+
+

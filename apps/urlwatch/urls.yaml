@@ -1,0 +1,18 @@
+name: "New emojis"
+url: "https://raw.githubusercontent.com/emojione/emojione/master/extras/alpha-codes/eac.json"
+max_tries: 3
+---
+name: "EmojiOne font"
+url: "https://github.com/emojione/emojione-assets/releases/latest"
+filter: element-by-class:f1 flex-auto min-width-0 text-normal,html2text
+max_tries: 3
+---
+name: "verdaccio"
+url: "https://github.com/verdaccio/verdaccio/releases/latest"
+filter:
+  - xpath: '(//div[contains(@class,"release-timeline-tags")]//h4)[1]/a'
+  - html2text: re
+max_tries: 3
+---
+url pour
+ - ReactJS ReactNative KoaJS ExpressJS Gatsby Hasura BulmaCss Papirus-gtk Adapta Wordpress Electron PassportJS AdonisJS AboutMeRSS Archlinux chrome-dev-beta

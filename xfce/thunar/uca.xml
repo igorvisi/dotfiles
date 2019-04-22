@@ -1,28 +1,8 @@
 <?xml encoding="UTF-8" version="1.0"?>
 <actions>
 <action>
-	<icon>visual-studio-code</icon>
-	<name>Ouvrir avec VS Code</name>
-	<unique-id>1514623895243339-1</unique-id>
-	<command>code -a %F</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-	<text-files/>
-</action>
-<action>
-	<icon>intellij</icon>
-	<name>Ouvrir avec Idea</name>
-	<unique-id>1506362510041850-2</unique-id>
-	<command>/opt/idea/bin/idea.sh %F</command>
-	<description>Need IntelliJ IDEA</description>
-	<patterns>*</patterns>
-	<directories/>
-	<text-files/>
-</action>
-<action>
 	<icon>utilities-terminal</icon>
-	<name>Ouvrir un terminal ici</name>
+	<name>Terminal ici</name>
 	<unique-id>1504349608344638-1</unique-id>
 	<command>exo-open --working-directory %f --launch TerminalEmulator</command>
 	<description>Exemple d&apos;une action personnalisée</description>
@@ -31,35 +11,8 @@
 	<directories/>
 </action>
 <action>
-	<icon>accessories-text-editor</icon>
-	<name>Ouvrir avec Scite</name>
-	<unique-id>1509947818050480-4</unique-id>
-	<command>scite %F</command>
-	<description></description>
-	<patterns>*</patterns>
-	<text-files/>
-</action>
-<action>
-	<icon>preferences-system-search</icon>
-	<name>Rechercher avec Catfish</name>
-	<unique-id>1505382188550559-3</unique-id>
-	<command>catfish --path=%f</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
-	<icon>preferences-desktop-wallpaper-symbolic</icon>
-	<name>Définir comme fond d&apos;écran</name>
-	<unique-id>1514459445123097-3</unique-id>
-	<command>ln -sf %f /home/visi/Bilili/Wallpapers/wallpaper</command>
-	<description>feh --big-scale /home/visi/Bilili/Wallpapers/wallpaper doit être executé</description>
-	<patterns>*</patterns>
-	<image-files/>
-</action>
-<action>
 	<icon>vlc</icon>
-	<name>Ouvrir avec VLC</name>
+	<name>VLC</name>
 	<unique-id>1505849651010786-2</unique-id>
 	<command>vlc --overlay %F</command>
 	<description></description>
@@ -73,7 +26,7 @@
 	<icon>application-x-compress</icon>
 	<name>Extraire ici (zip)</name>
 	<unique-id>1505384164362410-5</unique-id>
-	<command>unzip %f</command>
+	<command>extract %f</command>
 	<description></description>
 	<patterns>*.zip</patterns>
 	<other-files/>
@@ -88,46 +41,13 @@
 	<directories/>
 </action>
 <action>
-	<icon>application-x-compress</icon>
-	<name>Extraire ici (bzip2)</name>
-	<unique-id>1505384042827230-4</unique-id>
-	<command>tar xjf %n</command>
-	<description></description>
-	<patterns>*.tar.bz2;*.tbz2</patterns>
-	<other-files/>
-</action>
-<action>
-	<icon>builder-symbolic</icon>
-	<name>Suppression sécurisée</name>
-	<unique-id>1519548503511710-1</unique-id>
-	<command>srm -r %F</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-	<audio-files/>
+	<icon></icon>
+	<name>JPEG Optim</name>
+	<unique-id>1542619832610200-1</unique-id>
+	<command>for file in %F; do jpegoptim --strip-all -of &quot;$file&quot;; done</command>
+	<description>Losslessly optimize JPEGs, by optimizing the Huffman tables and stripping comments and EXIF metadata from the file.</description>
+	<patterns>*.jpg;*.jpeg</patterns>
 	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
-</action>
-<action>
-	<icon>meld</icon>
-	<name>Comparer avec meld</name>
-	<unique-id>1505386167386517-8</unique-id>
-	<command>meld %F</command>
-	<description></description>
-	<patterns>*</patterns>
-	<directories/>
-	<text-files/>
-</action>
-<action>
-	<icon>subdownloader</icon>
-	<name>Télécharger les sous-titres anglais</name>
-	<unique-id>1505387359415295-12</unique-id>
-	<command>periscope -l en %F &amp;&amp; zenity --info --title &quot;Succès&quot; --text &quot;Les sous-titres ont été télécahrgés avec succès&quot; || zenity --error --title &quot;Erreur&quot; --text &quot; Les sous-titres n&apos;ont pas pu être téléchargés&quot;</command>
-	<description>Need python-periscope and zenity</description>
-	<patterns>*</patterns>
-	<video-files/>
 </action>
 <action>
 	<icon>clipboard</icon>
@@ -142,14 +62,5 @@
 	<other-files/>
 	<text-files/>
 	<video-files/>
-</action>
-<action>
-	<icon>drive-harddisk-ieee1394</icon>
-	<name>Usage du disque avec baobab</name>
-	<unique-id>1505681051351409-4</unique-id>
-	<command>baobab %f</command>
-	<description>needs baobab</description>
-	<patterns>*</patterns>
-	<directories/>
 </action>
 </actions>

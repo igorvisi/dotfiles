@@ -1,6 +1,9 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "antigen"]
-	path = antigen
+[submodule "apps/nvm"]
+	path = apps/nvm
+	url = https://github.com/creationix/nvm
+[submodule "shell/zsh/antigen"]
+	path = shell/zsh/antigen
 	url = https://github.com/zsh-users/antigen

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Backups directories to disk/server/...
+# $BACKUPDIR in ~/.global
+
+directories=(Codes Docs Podcast Templates Tl Videos .android .AndroidStudio3.1 .cache .dict .extra .fonts .gnupg .gradle .IntelliJIdea2018.2 .local .scenebuilder .vscode-oss .VirtualBox\ VMs )
+
+if [ -z $1 ]; then
+	echo "Backup to $BACKUPDIR"
+	rsync -av $directories $BACKUPDIR
+else
+	echo "Backup to $1"
+	rsync -av $directories $1
+fi

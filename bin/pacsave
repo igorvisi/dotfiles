@@ -1,5 +1,7 @@
 #!/bin/bash
 
-yay -Qqt > $HOME/.extra/packages/yay.txt
+${PACSAVEDIR:=$HOME}
+pacman -Qqme > $HOME/.extra/packages/aur.txt
+pacman -Qqne > $HOME/.extra/packages/pacman.txt
 code --list-extensions > $HOME/.extra/packages/vscode.txt
 npm list -parseable -g --depth=0 | cut -d/ -f7 > $HOME/.extra/packages/npm.txt

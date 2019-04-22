@@ -1,0 +1,30 @@
+# Android Debug Bridge
+
+# installer à partir d'un APK se trouvant dans la machine
+adb install /path/to/apk/file
+adb install -s /path/to/apk/file # Installer dans la carte SD
+
+# supprimer l'application 
+adb uninstall PACKAGE
+adb uninstall -k PACKAGE # garder le cache et les données
+adb shell pm uninstall -k --user 0  # supprimer les applications par défaut
+adb backup -f "/home/MyFolder/myapp.ab" -apk packageNam
+adb backup -f "/home/MyFolder/myapps.ab" -all -apk -no-system
+
+# lister les applications installées
+adb shell pm list packages
+
+
+# lister les applications systèmes installées
+adb shell pm list packages -s
+
+
+# lister les applications installées non systèmes (3rd party)
+adb shell pm list packages -3
+
+# list disabled apps
+adb shell pm list packages -d
+
+# list enabled apps
+adb shell pm list packages -e
+

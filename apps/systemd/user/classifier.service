@@ -1,0 +1,5 @@
+[Unit]
+Description=Organize files by classifying them into different folders with accordance with type
+
+[Service]
+ExecStart= /usr/bin/classifier -d $DOWNLOADDIR

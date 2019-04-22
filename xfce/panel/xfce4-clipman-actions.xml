@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 	<action>
-		<name>Cloner ?</name>
-		<regex>sdfskdlf</regex>
+		<name>Bogue</name>
+		<regex>bug\s*#?\s*([0-9]+)</regex>
 		<group>0</group>
 		<commands>
 			<command>
-				<name>Oui</name>
-				<exec>dsdkfjs</exec>
+				<name>Bogue Xfce</name>
+				<exec>exo-open http://bugzilla.xfce.org/show_bug.cgi?id=\1</exec>
+			</command>
+			<command>
+				<name>Bogue GNOME</name>
+				<exec>exo-open http://bugzilla.gnome.org/show_bug.cgi?id=\1</exec>
 			</command>
 		</commands>
 	</action>
 	<action>
-		<name>Télécharger ?</name>
-		<regex>^(http:|https:)?\/\/(www\.)?(youtube.com|youtu.be)\/(watch)?(\?v=)?(\S+)?$</regex>
+		<name>Image</name>
+		<regex>(http|ftp).+\.(jpg|png|gif)</regex>
 		<group>0</group>
 		<commands>
 			<command>
-				<name>Juste une vidéo</name>
-				<exec>youtube</exec>
+				<name>Éditer avec Gimp</name>
+				<exec>gimp-remote &quot;\0&quot;</exec>
 			</command>
 			<command>
-				<name>Toute la playlist</name>
-				<exec>youtube</exec>
+				<name>Ouvrir avec Ristretto</name>
+				<exec>ristretto &quot;\0&quot;</exec>
 			</command>
 		</commands>
 	</action>
@@ -32,7 +36,7 @@
 		<group>0</group>
 		<commands>
 			<command>
-				<name>Raccourcir l&apos;URL</name>
+				<name>Raccourcir l’URL</name>
 				<exec>exo-open http://tinyurl.com/create.php?url=\0</exec>
 			</command>
 		</commands>

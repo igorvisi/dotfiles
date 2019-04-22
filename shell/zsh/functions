@@ -1,0 +1,414 @@
+# Search file from everywhere
+# Need fzf installed
+# Usage: lcf plymouth.conf
+lcf() {/home/visi/.dotfiles/shell/functions
+	locate $*|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Clean the current directory
+# Credit : https://github.com/yyx990803/dotfiles
+clean() {
+    echo -n "remove everything here? (y/N)"
+    read yn
+    if [ $yn = "y" ]; then
+        rm -rf ./.* ./*
+    fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Check processes using a port
+# Need lsof installed
+port() {
+    lsof -iTCP:$1 -sTCP:LISTEN
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Copy file content to clipboard
+# cb ~/TODO.md
+#
+cb() {
+    cat $@ | clipcopy
+}
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Simple calculator
+# usage: calc 17*1024
+calc() {
+		python -c "print ("$*")"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Transform characters from latin to ascii
+# Credit : Christophe Blaess in " Shells Unix et Linux par la pratique"
+# usage: echo "Caractères accentués en français" | lt-ascii
+# result: Caracteres accentues en francais
+lt-ascii() {
+	sed -e 's/[ÀÁÂÃÄÅ]/A/g'|
+	sed -e 's/Æ/AE/g'      |
+	sed -e 's/Ç/C/g'       |
+	sed -e 's/[ÈÉÊË]/E/g'  |
+	sed -e 's/[ÌÍÎÏ]/I/g'  |
+	sed -e 's/Ñ/N/g'       |
+	sed -e 's/[ÒÓÔÕÖØ]/O/g'|
+	sed -e 's/[ÙÚÛÜ]/U/g'  |
+	sed -e 's/ Ý /Y/g'     |
+	sed -e 's/[àáâãä]/a/g' |
+	sed -e 's/æ/ae/g'      |
+	sed -e 's/ç/c/g'       |
+	sed -e 's/[èéêë]/e/g'  |
+	sed -e 's/[ìíîï]/i/g'  |
+	sed -e 's/ñ/n/g'       |
+	sed -e 's/[òóôöø]/o/g' |
+	sed -e 's/[ùúûü]/u/g'  |
+	sed -e 's/ ý /y/g'
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# REMIND ME, ITS IMPORTANT!
+# Needs zenity installed.
+# usage: remindme 10m "omg, the pizza"
+remindme() { sleep $1; zenity --info --title "Rappel" --text $2 & }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Launch php server on public dir if not directory is precised
+# Needs php installed
+phpd(){
+	local directory="public"
+	if [[ $1 ]] ; then
+		directory=$1
+	fi
+	 php -S localhost:8000 -t $directory \
+		-ddisplay_errors=1 \
+		-dzend_extension=xdebug.so \
+		-dxdebug.remote_enable=1 \
+		-dxdebug.remote_autostart=1
+}
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Transform the manual of a command to pdf and open it.
+# usage: man2pdf zsh
+man2pdf(){
+	man -t $1 > /tmp/$1.pdf && xdg-open /tmp/$1.pdf &
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Credit oh-my-zsh
+# Copy from terminal to X clipboard
+# usage: clipcopy .fichier
+clipcopy () {
+	emulate -L zsh
+	local file=$1
+	if [[ $OSTYPE == darwin* ]]
+	then
+		if [[ -z $file ]]
+		then
+			pbcopy
+		else
+			cat $file | pbcopy
+		fi
+	elif [[ $OSTYPE == cygwin* ]]
+	then
+		if [[ -z $file ]]
+		then
+			cat > /dev/clipboard
+		else
+			cat $file > /dev/clipboard
+		fi
+	else
+		if (( $+commands[xclip] ))
+		then
+			if [[ -z $file ]]
+			then
+				xclip -in -selection clipboard
+			else
+				xclip -in -selection clipboard $file
+			fi
+		elif (( $+commands[xsel] ))
+		then
+			if [[ -z $file ]]
+			then
+				xsel --clipboard --input
+			else
+				cat "$file" | xsel --clipboard --input
+			fi
+		else
+			print "clipcopy: Platform $OSTYPE not supported or xclip/xsel not installed" >&2
+			return 1
+		fi
+	fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# tre is a shorthand for tree
+tre() { tree -aC -I '.git|node_modules|vendor|.idea|.vscode' --dirsfirst "$@" | less -FRNX; }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Clone projet from git repo
+# Inspired from https://justin.abrah.ms/dotfiles/zsh.html
+# usage : clone https://github.com/rails/rails
+clone() {
+	local USER=$(echo $@ | tr "/" " " | awk '{print $3}')
+	local REPO=$(echo $@ | tr "/" " " | awk '{print $4}')
+	cd "$OPENSOURCEDIR" && \
+	git clone --depth 1 $@  ${REPO}@${USER} && \
+	cd ${REPO}@${USER}
+	if [[ -e package.json ]]; then
+		npm install
+	fi
+	if [[ -e composer.json ]]; then
+		composer install
+	fi
+	if [[ -e Gemfile ]]; then
+	    bundle install  --path ./vendor/bundle/
+	fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Start an HTTP server from a directory, optionally specifying the port
+devserv() {
+	local port="${1:-3000}"
+	browser-sync start --server --files **/* --port "$port" --no-open --no-ui --no-online --no-notify .
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Install Gulp plugins and add them as `devDependencies` to `package.json`
+# Usage: gp uglify clean cache csso
+gulp-() { npm install --save-dev ${*/#/gulp-} }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Retry until it will work.
+# usage : retry ping -c 5 8.8.8.8
+retry() {
+	echo "Retrying $@"
+	until $@; do
+		sleep 1
+	done
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# `v` with no arguments opens the current directory in nvim, otherwise opens the
+# given location
+v() {
+	if [[ ! -w $@ && -e $@ ]]; then
+		sudo -e "$@"
+	elif [[ $# -eq 0 ]]; then
+		nvim .;
+	else
+		nvim "$@";
+	fi;
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# credit to  github.com/nicknisi/dotfiles
+# Show the most used commands
+
+hist() {
+	history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Colored man pages
+# credit https://github.com/robbyrussel/oh-my-zsh/plugins/colored-man-pages
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;40;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+		PAGER="${commands[less]:-$PAGER}" \
+		_NROFF_U=1 \
+		PATH="$HOME/bin:$PATH" \
+			man "$@"
+}
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# take a repo and copy it to somewhere else minus the .git stuff.
+# credit to  github.com/nicknisi/dotfiles
+gitexport() {
+	mkdir -p "$1"
+	git archive master | tar -x -C "$1"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# `th` with no arguments opens the current directory in thunar, otherwise opens the
+# given location
+th() {
+	if [[ $# -eq 0 ]]; then
+		thunar  .;
+	else
+		thunar "$@";
+	fi;
+}
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# `vs` with no arguments opens the current directory in Visual studio code, otherwise opens the
+# given location
+vs() {
+	if [[ $# -eq 0 ]]; then
+		code  .;
+	else
+		code "$@";
+	fi;
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# `ij` with no arguments opens the current directory in IntelliJ Idea
+# given location
+ij() {
+	if [[ $# -eq 0 ]]; then
+		/opt/idea/bin/idea.sh .;
+	else
+		/opt/idea/bin/idea.sh "$@";
+	fi;
+}
+# Create file.bak when you edit file ! Help when you need to restore old conf
+vb() {
+	if [[ -e $@  &&  -w $@ ]]; then
+		cp -i $@ $@.bak && nvim $@
+	elif [ -e $@ ] && [ ! -w $@ ]; then
+		sudo cp -i $@ $@.bak && sudo -e $@
+	else
+		echo "$@ doesn't exist "
+	fi
+}
+
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Sign and crypt
+# e.g: gcrypt 'Igor Visi' password.txt
+gcrypt() { gpg2 --recipient $1 --sign --encrypt $2 }
+# e.g: bcrypt password.txt
+# variable $GPGKEY defined in ~/.global
+bcrypt() { tar zcv $1|gpg2 --recipient $GPGKEY --sign --encrypt -o $1.tar.gz.gpg }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Human readable file size (binary size)
+# (because `du -h` doesn't cut it for me).
+# see sz function below
+hrfs() {
+	printf "%s" "$1" |
+	awk '{
+			i = 1;
+			split("B KB MB GB TB PB EB ZB YB WTFB", v);
+			value = $1;
+			# confirm that the input is a number
+			if ( value + .0 == value ) {
+				while ( value >= 1024 ) {
+					value/=1024;
+					i++;
+				}
+
+				if ( value == int(value) ) {
+					printf "%d %s", value, v[i]
+				} else {
+					printf "%.1f %s", value, v[i]
+				}
+
+			}
+	}' |
+	sed -e ":l" \
+			-e "s/\([0-9]\)\([0-9]\{3\}\)/\1,\2/; t l"
+		#    └─ add thousands separator
+		#        (changes "1023.2 KB" to "1,023.2 KB")
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Get ratio between file and his compressed version .
+gz() {
+	local gzippedSize=0
+	local originalSize=0
+
+	if [ -d "$1" ]; then
+		local file=${1##*/}
+		tar -cf /tmp/$file.tar $1/*
+		originalSize=$( du -sb $1 | cut -f1 ) && gzippedSize=$( gzip -9 -c "/tmp/$file.tar" | wc -c )
+		rm -f /tmp/$file.tar
+	else
+		originalSize=$( wc -c < $1 ) && gzippedSize=$( gzip -c "$1" | wc -c )
+	fi
+
+	printf "Taille originale  :  %12s\n" "$(hrfs "$originalSize")"
+	printf "Taille compressée :  %12s\n" "$(hrfs "$gzippedSize")"
+	printf " ─────────────────────────────\n"
+	printf " Ratio:       %12s [%s%%]\n\n" \
+	"$( hrfs $((originalSize - gzippedSize)) )" \
+	"$( printf "%s" "$originalSize $gzippedSize" | \
+	awk '{ printf "%.1f", 100 - $2 * 100 / $1 }' | \
+	sed -e "s/0*$//;s/\.$//" )"
+		#            └─ remove tailing zeros
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Get the size of the file
+sz() { printf "%12s\n" "$(hrfs "$( wc -c < "$1" )")" }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Backup somefiles with archives : tar and gzip
+archive() { tar zcvf $1.`date --rfc-3339=date`.bak.tar.gz $1/ }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#Create a directory and enter it
+mc () { mkdir -p "$@" && cd "$@"}
+cdf() { cd *$1*/ }
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+#cp with progress bar
+cp_p () { rsync -WavP --human-readable --recursive -P $1 $2 }
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# ARCHIVE COMPRESS
+compress() {
+	if [[ -n "$1" ]]; then
+		FILE=$1
+		case $FILE in
+			*.tar ) shift && tar cf $FILE $* ;;
+			*.tar.bz2 ) shift && tar cjf $FILE $* ;;
+			*.tar.gz ) shift && tar czf $FILE $* ;;
+			*.tgz ) shift && tar czf $FILE $* ;;
+			*.zip ) shift && zip $FILE $* ;;
+			*.rar ) shift && rar $FILE $* ;;
+			* ) shift && tar zcvf $FILE.tar.gz $* ;;
+		esac
+	else
+	echo "usage: compress <foo.tar.gz> ./foo ./bar"
+	fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Extract archives - use: extract <file>
+# Based on http://dotfiles.org/~pseup/.bashrc
+extract() {
+	if [ -f "$1" ] ; then
+		local filename=$(basename "$1")
+		local foldername="${filename%%.*}"
+		local fullpath=`perl -e 'use Cwd "abs_path";print abs_path(shift)' "$1"`
+		local didfolderexist=false
+		if [ -d "$foldername" ]; then
+			didfolderexist=true
+			read -p "$foldername already exists, do you want to overwrite it? (y/n) " -n 1
+			echo
+			if [[ $REPLY =~ ^[Nn]$ ]]; then
+				return
+			fi
+		fi
+		mkdir -p "$foldername" && cd "$foldername"
+		case $1 in
+			*.tar.bz2) tar xjf "$fullpath" ;;
+			*.tar.gz) tar xzf "$fullpath" ;;
+			*.tar.xz) tar Jxvf "$fullpath" ;;
+			*.tar.Z) tar xzf "$fullpath" ;;
+			*.tar) tar xf "$fullpath" ;;
+			*.taz) tar xzf "$fullpath" ;;
+			*.tb2) tar xjf "$fullpath" ;;
+			*.tbz) tar xjf "$fullpath" ;;
+			*.tbz2) tar xjf "$fullpath" ;;
+			*.tgz) tar xzf "$fullpath" ;;
+			*.txz) tar Jxvf "$fullpath" ;;
+			*.zip) unzip "$fullpath" ;;
+			*) echo "'$1' cannot be extracted via extract()" && cd .. && ! $didfolderexist && rm -r "$foldername" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}

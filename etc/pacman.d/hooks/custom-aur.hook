@@ -1,0 +1,38 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = apache-tools
+Target = aur-talk-git
+Target = autokey-py3
+Target = bitwarden-bin
+Target = cheat-git
+Target = classifier-git
+Target = dragon-drag-and-drop-git
+Target = drawio-desktop-bin
+Target = hostsctl
+Target = insomnia
+Target = javafx-scenebuilder
+Target = keeweb-desktop
+Target = libinput-gestures
+Target = mat2
+Target = onionshare
+Target = onlyoffice-bin
+Target = packettracer
+Target = pamac
+Target = paperkey
+Target = polybar-git
+Target = popcorntime-git
+Target = repoctl
+Target = screenkey
+Target = signal-desktop-bin
+Target = simplenote-electron-bin
+Target = tor-browser
+Target = verdaccio
+Target = yay
+
+[Action]
+Description = Create custom repo for AUR packages built
+When = PostTransaction
+Exec = "pkexec --user visi repoctl add /home/visi/.offline/local-pacman/aur/*.tar.xz"

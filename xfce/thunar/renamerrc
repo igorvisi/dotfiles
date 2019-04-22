@@ -2,21 +2,21 @@
 LastActiveMode=THUNAR_RENAMER_MODE_NAME
 LastActiveRenamer=ThunarSbrRemoveRenamer
 
-[ThunarSbrInsertRenamer]
-Offset=20
-Mode=THUNAR_SBR_INSERT_MODE_INSERT
-OffsetMode=THUNAR_SBR_OFFSET_MODE_RIGHT
-Text=Screenshot
-
 [ThunarSbrReplaceRenamer]
 Regexp=TRUE
 Replacement=-
 CaseSensitive=FALSE
 Pattern=[0-9]_
 
+[ThunarSbrInsertRenamer]
+Offset=27
+Mode=THUNAR_SBR_INSERT_MODE_INSERT
+OffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
+Text=-
+
 [ThunarSbrRemoveRenamer]
 EndOffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
 StartOffset=0
-EndOffset=25
+EndOffset=8
 StartOffsetMode=THUNAR_SBR_OFFSET_MODE_LEFT
 

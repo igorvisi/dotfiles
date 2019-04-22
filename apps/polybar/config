@@ -1,0 +1,257 @@
+[colors]
+active = ${xrdb:active}
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+urgent = ${xrdb:urgent}
+secondary = ${xrdb:secondary}
+underline = ${xrdb:active}
+green = ${xrdb:color2}
+
+[screen]
+; get connected screen: xrandr -q | grep " connected" | cut -d ' ' -f1
+first = eDP1
+second = DP2
+; first = DP-2
+; second = eD1
+
+
+[bar/default]
+width = 100%
+height = 24
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = Roboto:style=Medium:size=11;3
+font-1 = DroidSansMonoForPowerline Nerd Font:style=Regular:size:10;3
+font-2 = FontAwesome:style=Regular:size=10;3
+line-size = 1
+line-color = #f00
+border-bottom-color = #4f5b66
+
+
+[bar/main]
+inherit = bar/default
+monitor = ${screen.first}
+tray-position = right
+modules-left = i3msg i3 xwindow 
+modules-center = 
+modules-right = music rhythmbox eth wifi vpncheck battery dateTime powermenu
+fixed-center = false
+
+[bar/home]
+inherit = bar/default
+monitor = ${screen.second}
+modules-left = i3msg i3 xwindow
+modules-center = 
+modules-right = memory cpu eth-speed wifi-speed battery dateTime
+
+[module/memory]
+type = internal/memory
+interval = 2
+format = " RAM <label>  "
+label = %percentage_used%%
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <ramp-capacity> <label-full>
+label-charging = %percentage:3\%%
+label-discharging = %percentage:3\%%
+format-full-padding = 2
+format-charging-padding = 2
+format-discharging-padding = 2
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+format-full-foreground = ${colors.green}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format =" CPU <label> "
+label =%percentage%%
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+format = <label-mode><label-state>
+label-mode-padding =1
+label-focused = %index%  %icon%
+label-focused-padding = 1
+label-unfocused = %index%  %icon%
+label-unfocused-padding = 1
+label-visible = %index%  %icon%
+label-visible-padding = 1
+label-urgent = %index%  %icon%
+label-urgent-padding = 1
+label-focused-foreground = ${colors.active}
+label-focused-underline  = ${colors.active}
+label-visible-foreground = ${colors.active}
+label-urgent-foreground  = ${colors.urgent}
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3; 
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 0;
+
+[module/xwindow]
+type = internal/xwindow
+label =  %title:0:40:...%
+label-padding-left = 15
+label-padding-right= 1
+label-active-font=3
+label-inactive-font=3
+
+
+[module/i3msg]
+type = internal/i3
+format =<label-state><label-mode>
+label-mode = %mode%
+label-mode-padding = 3
+label-mode-background = ${colors.urgent}
+label-mode-foreground = ${colors.background}
+label-focused =
+label-unfocused =
+label-urgent =
+label-visible =
+
+[module/dateTime]
+type = internal/date
+date =  %a %d, %H:%M
+format = <label>
+date-alt = %d %B %Y
+format-foreground = ${colors.foreground}
+format-padding = 1
+format-margin= 0
+
+; Makeshift System Tray
+[module/wifi]
+type = internal/network
+format-connected-padding = 2
+format-disconnected-padding = 2
+interface = wlo1
+interval = 3.0
+format-connected =<label-connected>
+format-disconnected =<label-disconnected>
+label-connected = %local_ip%
+format-connected-foreground = ${colors.foreground}
+
+[module/wifi-speed]
+type = internal/network
+format-connected-padding = 2
+format-disconnected-padding = 2
+interface = wlo1
+interval = 3.0
+format-connected =<label-connected>
+format-disconnected =<label-disconnected>
+label-connected = %upspeed%-%downspeed%
+format-connected-foreground = ${colors.foreground}
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+format-connected-padding = 1
+label-connected =  %local_ip%
+
+[module/eth-speed]
+type = internal/network
+interface = enp0s25
+interval = 0.1
+format-connected-padding = 1
+label-connected =  %upspeed%-%downspeed%
+
+[module/vpncheck]
+type = custom/script
+exec-if = pgrep openvpn
+interval = 5
+format-prefix = " VPN "
+
+[module/hubic]
+type = custom/script
+exec-if = pgrep nextcloud
+interval = 5
+format-prefix = " "
+
+[module/powermenu]
+type = custom/menu
+format-padding = 1
+label-open = ""
+label-separator = "  "
+menu-0-0 = ""
+menu-0-0-exec = menu-open-1
+menu-0-1 = ""
+menu-0-1-exec = menu-open-2
+menu-0-2 = ""
+menu-0-2-exec = menu-open-3
+menu-0-3 = ""
+menu-0-3-exec = menu-open-4
+menu-0-4 = ""
+menu-0-4-exec = menu-open-5
+
+menu-1-0 = ""
+menu-1-0-exec = systemctl hibernate -i
+
+menu-2-0 = ""
+menu-2-0-exec = systemctl reboot -i
+
+menu-3-0 = ""
+menu-3-0-exec = systemctl poweroff -i
+
+menu-4-0 = ""
+menu-4-0-exec = "~/Bin/lock suspend"
+menu-5-0 = ""
+menu-5-0-exec = i3-msg exit
+
+
+
+
+
+[module/music]
+type = custom/script
+exec-if = ~/.dotfiles/apps/polybar/music.sh --isPlaying
+exec = ~/.dotfiles/apps/polybar/music.sh --title
+click-left = i3-msg workspace 7
+click-right = playerctl play-pause
+interval = 5
+format-prefix = " "
+format= <label> 
+format-foreground= ${colors.active}
+label = %output%
+label-maxlen = 20
+
+[module/rhythmbox]
+type = custom/script
+label-maxlen = 20
+format = <label>
+format-padding = 1
+interval = 3
+exec = rhythmbox-client --print-playing-format "%tt - %ta"
+exec-if = pgrep -x rhythmbox
+tail = true
+click-left = i3-msg workspace "7"
+
+; vim:ft=dosini

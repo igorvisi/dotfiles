@@ -20,47 +20,46 @@ set_from_resource       $active       active
 set_from_resource       $inactive     secondary
 set_from_resource       $background   background
 set_from_resource       $foreground   foreground
-
-# Screen
-
-# Home screen
-set $home DP-2
-# PC Screen
-set $pc eDP1
+set_from_resource       $color15      color15
 
 # Font for window titles.
 font Roboto 14
+font pango: Roboto Display 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
+# Set default workspace layout
+workspace_layout tabbed
 #::::::::::::::::::::::::: Keybindings ::::::::::::::::::::::::::#
 # kill focused window
 bindsym $mod+q kill
 bindsym $alt+F4 kill
+# Kill windows
+bindsym --release Control+Shift+Escape exec xkill
 
 # start a terminal
 bindsym $mod+Return exec termite `xcwd`
 
+# Launcher
+set $menu kupfer
+# set $menu rofi -theme ~/.config/rofi/config -show drun
+# set $menu --no-startup-id qdbus org.kde.krunner /App display
 #Program launcher
-bindsym $mod+d exec rofi -theme ~/.config/rofi/theme.rasi -show drun -show-icons -display-drun "Lancer"
-
-#Show runing programs
-bindsym $mod+n exec rofi -theme ~/.config/rofi/theme.rasi -show window -show-icons -display-window "Aller à"
+bindsym $mod+d exec $menu
 
 # File manager
-bindsym $mod+z exec thunar `xcwd`
+bindsym $mod+z exec nemo `xcwd`
 
 # Color picker
-bindsym $mod+p exec " sleep 1s; gpick -p"
+bindsym $mod+p exec "sleep 1s; gpick -p"
 
-# Clipboard manager
-bindsym $mod+x exec " clipmenu"
+# Password Manager
+bindsym $mod+n exec "passmenu"
+# mod+middle click to kill th current window
+bindsym --whole-window $mod+button2 kill
 
-bindsym $mod+Control+x exec --no-startup-id "xkill"
-
-# Typora a markdow editor
-bindsym $mod+b exec boostnote
+# Simplenote, for taking note and writing article
+bindsym $mod+b exec simplenote
 
 # change focus
 bindsym $mod+j focus down
@@ -132,8 +131,12 @@ bindsym $mod+t scratchpad show
 bindsym $mod+Shift+space focus mode_toggle
 
 # focus the parent/child container
- bindsym $mod+a focus parent
- bindsym $mod+shift+a focus child
+bindsym $mod+a focus parent
+bindsym $mod+shift+a focus child
+
+
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -165,6 +168,9 @@ bindsym $mod+m move workspace to output left
 # toggle between workspaces
 bindsym $mod+Tab workspace back_and_forth
 
+# Lock and suspend
+bindsym $mod+Shift+q exec "~/Bin/lock suspend"
+
 # reload the configuration file
 bindsym $mod+shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -195,6 +201,24 @@ mode "Resize" {
 }
 bindsym $mod+r mode "Resize"
 
+## Manual management of external displays
+# Set the shortcuts and what they do
+# xrandr --query   to determine names of your devices
+set $mode_display (v)VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
+mode "$mode_display" {
+    bindsym v exec --no-startup-id "xrandr --output DP2 --auto --right-of eDP1 && nitrogen --restore && polybar -r home", mode "default"
+    bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1, mode "default"
+    bindsym x exec --no-startup-id "xrandr --output DP2 --auto --off && pkill -f 'polybar -r home' ", mode "default"
+    bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+y mode "$mode_display"
+
+set $mode_system Lock(L), Suspend (S), Hibernate(H), Reboot (R), Poweroff(P)
 mode "$mode_system" {
     bindsym l exec --no-startup-id "~/Bin/lock", mode "default"
     bindsym s exec --no-startup-id "~/Bin/lock suspend", mode "default"
@@ -211,102 +235,110 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 #::::::::::::::::::::::::: Autostart apps ::::::::::::::::::::::::::#
 exec_always --no-startup-id nitrogen --restore # Set wallpaper
+exec_always --no-startup-id "killall polybar ; polybar -r main " # Status Bar
+exec_always --no-startup-id "killall kdeconnect-indicator ; kdeconnect-indicator " # Connect my phone with pc
 exec --no-startup-id compton # compositor for X11
 exec --no-startup-id unclutter -noevents -keystroke -idle 5 # make cursor invisible when you are taping text or after 5s of inactivity
 exec --no-startup-id xedgewarp -b # make easy to switch cursor between screen with different size
 exec --no-startup-id "~/.keymap.sh" # remap keys
+exec --no-startup-id libinput-gestures-setup start # intercept actions libinput gestures from touchpad
 exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
-exec --no-startup-id conky -c ~/.config/conky/agenda_i3wm
-# exec --no-startup-id bitwarden # Password manager
-# exec --no-startup-id evolution # Mail
-exec --no-startup-id owncloud
+exec --no-startup-id nextcloud
+exec --no-startup-id volumeicon
+exec --no-startup-id syncthing-gtk
 exec --no-startup-id redshift-gtk
-exec --no-startup-id clipmenud # Clipboard manager
-# exec --no-startup-id xfce4-panel
-exec --no-startup-id caffeine
+exec --no-startup-id autokey-gtk  # Text expander
+exec --no-startup-id xfce4-clipman # Clipboard manager
+
+# exec --no-startup-id telegram-desktop
+exec --no-startup-id GDK_BACKEND=x11 pamac-tray
 
 # For authentification
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Lock in case of user inactivity under X
 exec --no-startup-id xautolock -time 10 -corners 0-00 -locker "~/Bin/lock" &
 
-exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
-exec_always --no-startup-id "killall kdeconnect-indicator ; kdeconnect-indicator " # Connect my phone with pc
-
 
 #::::::::::::::::::::::::: App assigned in workspace ::::::::::::::::::::::::::#
 # Terminal in Workspace 6
-assign [class="st-256color|Termite"]  $ws6
+assign [class="Termite"]  $ws6
 
 # File manager
-assign [class="Thunar|Caja|Pcmanfm" ]  $ws1
+assign [class="Nemo|Thunar|Caja|Pcmanfm" ]  $ws1
 
 # Browsers in Workspace 2
-assign [class="Chromium|Firefox|Opera" ]  $ws2
+assign [class="Chromium|Firefox" ]  $ws2
 
 # Editors and IDE in Workspace 3
-assign [class="Code|jetbrains-idea|Typora|jetbrains-studio|sun-awt-X11-XFramePeer" ]  $ws3
+assign [class="code|jetbrains-idea|Typora|jetbrains-studio|sun-awt-X11-XFramePeer" ]  $ws3
 
 # Messageries & Mails
-assign [class="Geary|Evolution"]  $ws5
+assign [class="Geary|Mailspring|Evolution|Thunderbird"]  $ws5
 assign [class="Slack"]  $ws8
 
 # Music and videos
-assign [class="Spotify|spotify|Vlc|Rhythmbox|Musixmatch|Parole" ]  $ws7
+assign [class="Spotify|spotify|vlc|Rhythmbox|Musixmatch|Parole|MellowPlayer" ]  $ws7
 
 # Git
 assign [class="GitKraken|Boostnote|Simplenote" ]  $ws4
 # Projet manager tools
 assign [class="freeter"]  $ws4
-# Data Base 
+# Data Base
 assign [class="jetbrains-datagrip|PacketTracer7"] $ws4
+
+# Chat
+assign [class="telegram-desktop|TelegramDesktop|Signal"] $ws4
+
+assign [class="draw.io|Gimp|Inkscape|Darktable|Rawtherapee"] $ws9
 
 # Office
 assign [class="libreoffice|DesktopEditors"]  $ws0
-
-
 # Others
-assign [class="Transmission|KeeWeb|Bitwarden"]  $ws9
-assign [class="org.cryptomator.launcher.MainApplication|VirtualBox|Gnome-chess|Pychess|Zeal|MuPDF|Zathura" ]  $ws0
+assign [class="Transmission|KeeWeb|Bitwarden"]  $ws0
+assign [class="VirtualBox|Gnome-chess|Pychess|Zeal|MuPDF|Zathura|atril|Atril" ]  $ws0
 
 # Force some app to move to their assigned workspace
 for_window [class="Spotify"] move to workspace $ws7
 for_window [class="KeeWeb"] move to workspace $ws9
+for_window [class="atril|Atril"] move to workspace $ws0
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
 # filemanager and visual studio code focus
-for_window [class="Caja|Thunar"] focus
-for_window [class="Code"] focus
+for_window [class="Caja|Thunar|Pcmanfm"] focus
+for_window [class="code"] focus
 
 #::::::::::::::::::::::::: FLOATING or TILED ::::::::::::::::::::::::::#
-for_window [class="Peek|onionshare-gui"] floating enable
+for_window [class="Peek|usbguard-applet-qt"] floating enable
 for_window [class="freeter|Catfish"] floating enable
-for_window [class="^Gpick$"] floating enable
-for_window [class="Pavucontrol"] floating enable
+for_window [class="Pavucontrol|krunner"] floating enable
 for_window [class="Klavaro"] floating enable
 for_window [class="GParted"] floating enable
-for_window [class="albert"] floating enable gaps inner 0
+for_window [instance="gnome-calculator"] floating enable
 for_window [class="Xsane|Onboard"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 for_window [class="(?i)blueman"] floating enable
 for_window [class="sample.Main|dev.Main"] floating enable # Floating for dev GUI
+for_window [class="Termite"] layout default
+for_window [class="Dragon-drag-and-drop"] sticky toggle
+for_window [class="Firefox" window_role="GtkFileChooserDialog"] floating disable
+
 #::::::::::::::::::::::::: APPEARANCE ::::::::::::::::::::::::::#
 for_window [class="^.*"] border pixel 1
 gaps inner 8
 smart_gaps on
 smart_borders on
 workspace 4 gaps inner 0
-workspace 6 gaps inner 0
+workspace 6 gaps inner 0  
 workspace 3 gaps inner 0
-
 # hide_edge_borders both
 
 # window colors
-#                         border                background          text                   indicator
-client.focused            $active              $active             $active                 $active
-client.unfocused          $background          $background         $background
-client.urgent             $urgent              $urgent             $urgent                 $urgent
+#                                    border                background          text
+client.focused                      $background          $active              $background
+client.unfocused                    $background          $background          $color15
+client.urgent                       $urgent              $urgent              $urgent
+#client.unfocused_inactive           $background          $background          $color15
 

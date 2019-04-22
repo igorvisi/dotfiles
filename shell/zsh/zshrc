@@ -1,0 +1,69 @@
+# From https://github.com/igorvisi/dotfiles/
+# Load antigen
+autoload antigen
+source ~/.dotfiles/shell/zsh/antigen/antigen.zsh
+# Load the oh-my-zsh's library
+antigen use oh-my-zsh
+
+antigen bundles <<__EOF__
+aperezdc/zsh-fzy
+command-not-found
+common-aliases
+git
+git-flow
+igorvisi/zsh-up
+last-working-dir
+sudo
+z
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-syntax-highlighting
+__EOF__
+
+# antigen theme igorvisi/fibo-zsh-theme fibo
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+antigen apply
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+
+# Correct typo in commande.
+setopt correct
+# adds history
+setopt APPEND_HISTORY
+
+# adds history incrementally and share it across sessions
+# http://www.refining-linux.org/archives/49/ZSH-Gem-15-Shared-history/
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+# don't record dupes in history
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# dont ask for confirmation in rm globs*
+setopt RM_STAR_SILENT
+# add timestamps to history
+setopt EXTENDED_HISTORY
+setopt PROMPT_SUBST
+setopt CORRECT
+setopt COMPLETE_IN_WORD
+# add timestamps to history
+setopt EXTENDED_HISTORY
+setopt PROMPT_SUBST
+setopt CORRECT
+# Load personal global variables like PATH ...
+source $HOME/.global
+# Useful Shell functions.
+source $HOME/.zsh/functions
+# The file contains my aliases.
+source $HOME/.zsh/aliases
+
+# Load some usefull functions for zsh prompt
+source $HOME/.zsh/keymap.zsh
+source $HOME/.zsh/syntax-highlighting-filetypes.zsh
+source $HOME/.zsh/completions.zsh

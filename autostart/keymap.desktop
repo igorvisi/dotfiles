@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Keymap
+Comment=charger la configuration de mon clavier
+Exec=/home/visi/.keymap.sh
+StartupNotify=false
+Terminal=false
+Hidden=false

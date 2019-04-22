@@ -4,23 +4,20 @@ icon="$HOME/.lock.png"
 tmpbg='/tmp/screen.png'
 
 _lock(){
-i3lock -n -e -i "$tmpbg" -u
+xautolock -disable && i3lock -n -e -i "$tmpbg" -u ; xautolock -enable
 }
 
-# Screen blured as background 
+# Screen blured as background
 scrot "$tmpbg"
 convert "$tmpbg"  -channel RGBA  -blur 0x8  "$tmpbg"
 convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
 
-# Pause for spotify,Vlc, Rhytmbox and paroles
-playerctl pause; if pgrep -x parole ; then parole -p; fi
-
 # Suspend or hibernate
 if [[ $1 = "suspend" ]]; then
- systemctl suspend -i && _lock 
+ systemctl suspend -i && _lock
 elif [[ $1 = "hibernate" ]]; then
   systemctl hibernate
-else 
+else
   _lock
 fi
 

@@ -1,0 +1,33 @@
+[alias]
+	u = pull
+	p = push
+	sclone = clone --depth=1
+	rma = !git ls-files --deleted -z | xargs -0 -r git rm
+	deleted = !git ls-files --deleted -z
+	forget = update-index --assume-unchanged
+	unforget = update-index --no-assume-unchanged
+	forgetten = ! git ls-files -v | grep ^[a-z]
+
+
+[core]
+	excludesfile = ~/.gitignore
+
+[pager]
+	# insanely beautiful diffs ==> npm install -g diff-so-fancy
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[push]
+	default = current
+
+[url "git@github.com:"]
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "https://github.com/"
+
+[include]
+	path = user
+
+[user]
+	email = igorvisi.dev@gmail.com
+	nom = Igor Visi

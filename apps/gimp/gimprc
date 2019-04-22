@@ -1,0 +1,61 @@
+# GIMP gimprc
+# 
+# This is your personal gimprc file.  Any variable defined in this file takes
+# precedence over the value defined in the system-wide gimprc:
+# /etc/gimp/2.0/gimprc
+# Most values can be set within GIMP by changing some options in the
+# Preferences dialog.
+
+(tile-cache-size 4040903k)
+(default-image
+    (width 2480)
+    (height 3508)
+    (unit millimeters)
+    (xresolution 300.000000)
+    (yresolution 300.000000)
+    (resolution-unit inches)
+    (image-type gray)
+    (precision u8-gamma)
+    (color-managed yes)
+    (color-profile NULL)
+    (fill-type transparent)
+    (comment "Created with GIMP"))
+(undo-levels 30)
+(undo-size 1010229k)
+(thumbnail-size large)
+(import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-darktable/file-darktable")
+(transparency-size large-checks)
+(transparency-type light-checks)
+(monitor-xresolution 124.000000)
+(monitor-yresolution 122.000000)
+(navigation-preview-size small)
+(move-tool-changes-active yes)
+(toolbox-wilber no)
+(theme "System")
+(icon-theme "Symbolic-Inverted")
+(image-convert-indexed-palette-type web)
+(layer-new-name "filtre")
+(selection-grow-radius 2.000000)
+(selection-shrink-radius 3.000000)
+(fill-options
+    (style solid)
+    (antialias no)
+    (feather no)
+    (feather-radius 10.000000))
+(stroke-options
+    (style solid)
+    (antialias yes)
+    (feather no)
+    (feather-radius 10.000000)
+    (method line)
+    (width 8.000000)
+    (unit pixels)
+    (cap-style butt)
+    (join-style miter)
+    (miter-limit 10.000000)
+    (dash-offset 0.000000)
+    (dash-info 0)
+    (emulate-brush-dynamics no))
+
+
+# end of gimprc

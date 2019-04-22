@@ -8,19 +8,17 @@ More screenshots or Workflow ? In my instagram [@roigivis](https://instagram.com
 
 ## My setup
 
-- **[Arch Linux](https://archlinux.com/)** 👌🏿 a simple and basic linux distribution ;
-- **[i3wm](https://i3wm.org/)** a lightweight and customizable desktop environnement for linux ;
-- **[Zsh](https://www.zsh.org/)** like shell with **[Antigen](http://antigen.sharats.me/)** a plugin manager for zsh and **[Oh-My-Zsh](http://ohmyz.sh/)** framework ;
-- **[Visual Studio Code](https://code.visualstudio.com/)** ♥ (+ **[vim Keymap](https://github.com/VSCodeVim/Vim)** 💪🏿 ) my favorite editor .
+### Os
 
-## Thanks to…
+I'm on \*\*[Arch Linux](https://archlinux.com/)\*\* 👌🏿
 
-[Unixporn reddit](https://www.reddit.com/r/unixporn/)
+## Inspiration …
 
-[Grafikart](https://github.com/Grafikart/dotfiles)
-
-[Paul Irish](https://github.com/paulirish/dotfiles)
-
+[Unixporn](https://www.reddit.com/r/unixporn/) -
+[Grafikart](https://github.com/Grafikart/dotfiles) -
+[Maximbaz](https://github.com/maximbaz/dotfiles) -
+[Ston3o](https://github.com/ston3o/dotfiles) -
+[Paul Irish](https://github.com/paulirish/dotfiles) -
 [Nick Nisi](https://github.com/nicknisi/dotfiles)
 
-And anyone who share their dotfiles.
+PR if you think I copy your stuffs and I don't mention you

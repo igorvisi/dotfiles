@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=unclutter -noevents -keystroke -idle 5
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[fr_FR]=unclutter
+Comment[fr_FR]=make cursor invisible when you are taping text or after 5s of inactivity
+X-GNOME-Autostart-Delay=0

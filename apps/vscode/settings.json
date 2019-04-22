@@ -1,0 +1,206 @@
+{
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "workbench.startupEditor": "none",
+  "editor.fontFamily": "'Fira Code Medium', 'Roboto Medium'",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.tabSize": 4,
+  "editor.renderWhitespace": "boundary",
+  "editor.tabCompletion": true,
+  "editor.fontWeight": "800",
+  "editor.lineNumbers": "relative",
+  "editor.renderLineHighlight": "all",
+  "editor.minimap.enabled": true,
+  "workbench.sideBar.location": "left",
+  "debug.allowBreakpointsEverywhere": true,
+  "zenMode.hideTabs": false,
+  "zenMode.hideStatusBar": false,
+  "terminal.integrated.fontSize": 16,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": false,
+  "files.trimTrailingWhitespace": true,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "editor.insertSpaces": false,
+  "color-highlight.markerType": "underline",
+  "window.zoomLevel": 0,
+  "vim.searchHighlightColor": "rgb(71, 59 108)",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-d>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-f>": false,
+    "<C-c>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["z", "z"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        },
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<C-y>"],
+      "after": ["4", "<C-y>"]
+    },
+    {
+      "before": ["<C-e>"],
+      "after": ["4", "<C-e>"]
+    },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["<leader>", "o"],
+      "after": ["o", "<Esc>"]
+    },
+    {
+      "before": ["<leader>", "O"],
+      "after": ["O", "<Esc>"]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["z", "z"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.files.save",
+          "args": []
+        },
+        {
+          "command": "workbench.action.closeActiveEditor",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "go.gopath": "~/.offline/golang",
+  "eslint.nodePath": "~/.lib/npm/bin/eslint",
+  "extensions.ignoreRecommendations": true,
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.leader": ",",
+  "editor.detectIndentation": false,
+  "java.home": "/usr/lib/jvm/java-8-openjdk",
+  "gitlens.gitExplorer.files.layout": "auto",
+  "cSpell.language": "en,fr",
+  "vim.disableExtension": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.confirmDelete": false,
+  "git.enableSmartCommit": true,
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "emmet.triggerExpansionOnTab": false,
+  "editor.selectionHighlight": false,
+  "vim.enableNeovim": true,
+  "vim.cmdLineInitialColon": true,
+  "indentRainbow.colors": [
+    "rgba(61,64,16,0.1)",
+    "rgba(32,64,32,0.1)",
+    "rgba(64,32,64,0.1)",
+    "rgba(16,48,48,0.1)"
+  ],
+  "indenticator.width": 1,
+  "editor.wordWrap": "bounded",
+  "editor.mouseWheelZoom": true,
+  "workbench.editor.tabSizing": "shrink",
+  "editor.minimap.renderCharacters": false,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "files.exclude": {
+	"**/.git": true,
+	"nodes_modules": true,
+	"**/.svn": true,
+	"**/.hg": true,
+	"**/CVS": true,
+	"**/.DS_Store": true,
+	"*.class": true,
+	"**/.classpath": true,
+	"**/.project": true,
+	"**/.settings": true,
+	"**/.factorypath": true
+},
+  "explorer.confirmDragAndDrop": false,
+  "scm.alwaysShowProviders": true,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "emmet.includeLanguages": {
+    "mjml": "html"
+  },
+  "window.menuBarVisibility": "visible",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Adapta Nokto",
+  "breadcrumbs.enabled": true,
+  "git.autorefresh": false,
+  "git.alwaysSignOff": true,
+  "git.confirmSync": false,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "css.remoteStyleSheets": [
+    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+  ],
+  "sync.gist": "62c6d02f63a4e835140f9ccae40ad3f6",
+  "sync.autoUpload": true,
+  "sync.quietSync": true,
+"terminal.integrated.rendererType": "dom",
+"peacock.affectStatusBar": true,
+"csscomb.formatOnSave": true,
+"html.format.endWithNewline": true
+}

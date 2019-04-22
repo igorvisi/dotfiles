@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Panel Xfce
-Type=Application
-Icon= plank
-Exec=xfce4-panel
-Comment=launch panel bar
-Terminal=false
-

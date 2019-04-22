@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xedgewarp -b
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[fr_FR]=Xedgewarp
+Comment[fr_FR]=make easy to switch cursor between screen with different size
+X-GNOME-Autostart-Delay=0

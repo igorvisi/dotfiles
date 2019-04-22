@@ -1,63 +1,82 @@
 - defaults:
     link:
-        create: true
-        force: true
-        relative: true
-        relink: true
+      create: true
+      force: true
+      relative: true
+      relink: true
 
 - link:
-    #Directories
-    ~/Bin: bin
-    ~/.config/catfish: catfish
-    ~/.config/conky: conky
-    ~/.config/dunst: dunst
-    ~/.config/Code/User: vscode
-    ~/.config/gpick: gpick
+    # Coding tools
+    ~/.config/Code - OSS/User: apps/vscode
+    ~/.config/JetBrains: apps/jetbrains
+    ~/.config/nvim: apps/neovim
+    ~/.config/verdaccio/config.yaml: apps/verdaccio/config.yaml
+    ~/.gemrc: apps/gem/gemrc
+    ~/.gitattributes: apps/git/gitattributes
+    ~/.gitconfig: apps/git/gitconfig
+    ~/.gitignore: apps/git/gitignore
+    ~/.ideavimrc: apps/jetbrains/ideavimrc
+    ~/.npmrc: apps/npm/npmrc
+    ~/.tigrc: apps/tig/tigrc
+    ~/.yarnrc: apps/yarn/yarnrc
+
+    # Desktop environnement and windows manager
+    ~/.cinnamon: cinnamon
+    ~/.config/compton.conf: apps/compton/compton.conf
     ~/.config/i3: i3
-    ~/.config/inkscape: inkscape
-    ~/.config/JetBrains: jetbrains
-    ~/.config/nvim: neovim
-    ~/.config/polybar: polybar
-    ~/.config/ranger: ranger
-    ~/.config/rofi: rofi
-    ~/.config/termite: termite
+    ~/.config/gtk-3.0: apps/gtk-3.0
+    ~/.config/nemo: apps/nemo
+    ~/.config/polybar: apps/polybar
     ~/.config/Thunar: xfce/thunar
-    ~/.config/tilda: tilda
-    ~/.config/tilda: tilda
-    ~/.local/share/applications: desktop
     ~/.config/xfce4: xfce
-    ~/.zsh: zsh
-    # Files
-    ~/.ackrc:
-    ~/.aliases: zsh/aliases
-    ~/.config/compton.conf:
-    ~/.config/transmission/settings.json: transmission/settings.json
-    ~/.config/umbrellorc:
-    ~/.config/user-dirs.dirs:
-    ~/.classifier-master.conf:
-    ~/.crontab :
-    ~/.dir_colors:
-    ~/.functions: zsh/functions
-    ~/.gemrc:
-    ~/.gitattributes:
-    ~/.gitconfig:
-    ~/.gitignore:
-    ~/.global: zsh/global
-    ~/.ideavimrc: jetbrains/ideavimrc
-    ~/.inputrc:
-    ~/.keymap.sh: keyboard/keymap.sh
     ~/.lock.png: i3/lock.png
-    ~/.npmrc:
-    ~/.psqlrc:
-    ~/.config/screenkey.json: screenkey.json
+
+    # Useful X applications
+    ~/.config/autokey: apps/autokey
+    ~/.config/copyq: apps/copyq/copyq.conf
+    ~/.config/gpick: apps/gpick
+    ~/.config/rofi: apps/rofi
+    ~/.config/redshift.conf: apps/redshift/redshift.conf
+    ~/.config/screenkey.json: apps/screenkey/screenkey.json
+    ~/.config/transmission/settings.json: apps/transmission/settings.json
+    ~/.config/USBGuard: apps/usbguard
+    ~/.config/user-dirs.dirs: apps/user-dirs.dirs
+    ~/.local/share/applications: apps/desktop
+    ~/.xinitrc: apps/xinitrc
+    ~/.Xresources: apps/Xresources
+    # Terminal emulator
+    ~/.config/tilda: apps/tilda
+    ~/.config/termite: apps/termite
+
+    # Design apps
+    ~/.config/GIMP/2.10: apps/gimp
+    ~/.config/darktable: apps/darktable
+    ~/.config/inkscape: apps/inkscape
+
+    # Shell conf
+    ~/.aliases: shell/aliases
+    ~/.dir_colors: shell/dir_colors
+    ~/.global: shell/global
+    ~/.zsh: shell/zsh
+    ~/.zshrc: shell/zsh/zshrc
+
+    # cli apps
+    ~/Bin: bin
+    ~/.classifier-master.conf: apps/classifier/classifier-master.conf
+    ~/.config/htop/htoprc: apps/htop/htoprc
+    ~/.config/urlwatch/urls.yaml: apps/urlwatch/urls.yaml
+    ~/.config/systemd: apps/systemd/
+    # ~/.gnupg/gpg.conf: cli_tools/gnupg/gpg.conf
+    # ~/.gnupg/gpg-agent.conf: cli_tools/gnupg/gpg-agent.conf
+    ~/.ssh/config: apps/ssh/config
+    ~/.tmux.conf: apps/tmux/tmux.conf
+
+    ~/.config/autostart: autostart
+    ~/.config/libinput-gestures.conf: apps/libinput-gesture/libinput-gestures.conf
+    ~/.keymap.sh: apps/keymap/keymap.sh
+
     ~/.screenshot.png: Screenshot.png
-    ~/.tigrc: tigrc
-    ~/.tmux.conf:
-    ~/.xinitrc:
-    ~/.xmodmap.conf: keyboard/xmodmap.conf
-    ~/.Xresources:
-    ~/.yaourtrc:
-    ~/.yarnrc:
-    ~/.zshrc: zsh/zshrc
+
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+#    - [ ./post-install.sh ]

@@ -1,6 +1,10 @@
 #!/bin/bash
-export TORCHROOT=/var/chroot/tor
+export TORCHROOT=/opt/tor
 
+if [[ $EUID -ne 0 ]]; then
+  echo "You must be a root user" 2>&1
+  exit 1
+fi
 mkdir -p $TORCHROOT
 mkdir -p $TORCHROOT/etc/tor
 mkdir -p $TORCHROOT/dev
@@ -36,5 +40,3 @@ if [[ "$(uname -m)" == "x86_64" ]]; then
   ln -sr /usr/lib64 $TORCHROOT/lib64
   ln -s $TORCHROOT/usr/lib ${TORCHROOT}/usr/lib64
 fi
-
-sudo systemctl start tor

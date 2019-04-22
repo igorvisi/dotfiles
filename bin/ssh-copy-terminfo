@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Copy the current terminfo file to a remote host
+ssh-copy-terminfo()
+{
+
+    local termpath="/tmp/terminfo"
+    mkdir -p $termpath
+    local terminfo="$termpath/$TERM" 
+    infocmp > "$terminfo"
+
+    for host in $@
+    do
+        local ssh_sock="~/.ssh/control/ssh-copy-terminfo-$host"
+
+        # Open a master SSH connection
+        ssh -nNf -o ControlMaster=yes -o ControlPath="$ssh_sock" $host
+
+        # Create the terminfo directory and copy the terminfo file
+        ssh -o ControlPath="$ssh_sock" $host mkdir -p "$termpath"
+        scp -o ControlPath="$ssh_sock" "$terminfo" $host:$terminfo
+        ssh -o ControlPath="$ssh_sock" $host tic "$terminfo"
+
+        # Close the connection
+        ssh -O exit -o ControlPath="$ssh_sock" $host 2> /dev/null
+    done
+}
+ssh-copy-terminfo $@
+complete -F _known_hosts ssh-copy-terminfo

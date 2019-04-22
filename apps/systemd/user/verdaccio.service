@@ -1,0 +1,8 @@
+[Unit]
+Description=private npm server
+
+[Service]
+ExecStart=/usr/bin/verdaccio
+
+[Install]
+WantedBy=default.target

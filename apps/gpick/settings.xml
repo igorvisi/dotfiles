@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding='UTF-8'?><root>
+<gpick type="dynv">
+<color_names type="dynv">
+<imprecision_postfix type="bool">true</imprecision_postfix>
+<tool_color_naming type="string">tool_specific</tool_color_naming>
+</color_names>
+<converters type="dynv">
+<color_list type="string">color_web_hex</color_list>
+<copy type="bool" list="true"><li>true</li><li>true</li><li>true</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li></copy>
+<display type="string">color_web_hex</display>
+<names type="string" list="true"><li>color_web_hex</li><li>color_css_rgb</li><li>color_css_hsl</li><li>color_css_block</li><li>color_csv</li><li>color_web_hex_3_digit</li><li>color_web_hex_no_hash</li><li>css_background_color_hex</li><li>css_border_bottom_color_hex</li><li>css_border_color_hex</li><li>css_border_left_hex</li><li>css_border_right_color_hex</li><li>css_border_top_color_hex</li><li>css_color_hex</li></names>
+<paste type="bool" list="true"><li>true</li><li>true</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li><li>false</li></paste>
+<window type="dynv">
+<height type="int32">742</height>
+<width type="int32">453</width>
+</window>
+</converters>
+<generate_scheme type="dynv">
+<hsv_shift type="float" list="true"><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li></hsv_shift>
+<hue type="float">177.797</hue>
+<lightness type="float">-14.5098</lightness>
+<saturation type="float">12.7072</saturation>
+<type type="int32">5</type>
+<wheel_locked type="bool">true</wheel_locked>
+<wheel_type type="int32">0</wheel_type>
+</generate_scheme>
+<layout_preview type="dynv">
+<css_selectors type="dynv">
+<assignments type="dynv">
+<menu_b type="dynv">
+<color type="color">0.7 0.7 0.7 0</color>
+</menu_b>
+<navitem_b type="dynv">
+<color type="color">0.3 0.3 0.3 0</color>
+</navitem_b>
+<navitem_bh type="dynv">
+<color type="color">0.3 0.3 0.3 0</color>
+</navitem_bh>
+<navitem_t type="dynv">
+<color type="color">0.8 0.8 0.8 0</color>
+</navitem_t>
+<navitem_th type="dynv">
+<color type="color">0.8 0.8 0.8 0</color>
+</navitem_th>
+</assignments>
+</css_selectors>
+<layout_name type="string">std_layout_menu_1</layout_name>
+</layout_preview>
+<main type="dynv">
+<close_to_tray type="bool">false</close_to_tray>
+<color_source type="string">color_picker</color_source>
+<minimize_to_tray type="bool">false</minimize_to_tray>
+<paned_position type="int32">793</paned_position>
+<save_restore_palette type="bool">true</save_restore_palette>
+<secondary_color_source type="string">variations</secondary_color_source>
+<single_instance type="bool">true</single_instance>
+<start_in_tray type="bool">false</start_in_tray>
+<vertical_paned_position type="int32">537</vertical_paned_position>
+<window type="dynv">
+<height type="int32">744</height>
+<width type="int32">1366</width>
+<x type="int32">0</x>
+<y type="int32">24</y>
+</window>
+</main>
+<options type="dynv">
+<window type="dynv">
+<height type="int32">533</height>
+<width type="int32">497</width>
+</window>
+</options>
+<picker type="dynv">
+<color_space type="dynv">
+<cmyk type="bool">true</cmyk>
+<hsl type="bool">true</hsl>
+<hsv type="bool">true</hsv>
+<lab type="bool">true</lab>
+<lch type="bool">true</lch>
+<rgb type="bool">true</rgb>
+</color_space>
+<contrast type="dynv">
+<color type="color">1 1 1 4.59163e-41</color>
+</contrast>
+<expander type="dynv">
+<cmyk type="bool">false</cmyk>
+<hsl type="bool">true</hsl>
+<hsv type="bool">true</hsv>
+<info type="bool">true</info>
+<lab type="bool">false</lab>
+<lch type="bool">false</lch>
+<rgb type="bool">true</rgb>
+<settings type="bool">true</settings>
+</expander>
+<lab type="dynv">
+<illuminant type="string">D50</illuminant>
+<observer type="string">2</observer>
+</lab>
+<out_of_gamut_mask type="bool">true</out_of_gamut_mask>
+<refresh_rate type="float">30</refresh_rate>
+<sampler type="dynv">
+<add_on_release type="bool">true</add_on_release>
+<add_to_palette type="bool">true</add_to_palette>
+<copy_on_release type="bool">true</copy_on_release>
+<copy_to_clipboard type="bool">true</copy_to_clipboard>
+<falloff type="int32">1</falloff>
+<oversample type="int32">0</oversample>
+<rotate_swatch_after_sample type="bool">false</rotate_swatch_after_sample>
+</sampler>
+<swatch type="dynv">
+<active_color type="int32">2</active_color>
+<color1 type="color">0.184314 0.203922 0.247059 0</color1>
+<color2 type="color">0.94902 0.313726 0.337255 0</color2>
+<color3 type="color">0.180392 0.2 0.243137 0</color3>
+<color4 type="color">0.571429 0.571429 0.571429 0</color4>
+<color5 type="color">0.714286 0.714286 0.714286 0</color5>
+<color6 type="color">0.857143 0.857143 0.857143 0</color6>
+</swatch>
+<zoom type="float">20</zoom>
+<zoom_size type="int32">150</zoom_size>
+</picker>
+<recent type="dynv">
+</recent>
+<secondary_view type="dynv">
+<blend_colors type="dynv">
+<end_color type="color">0.5 0.5 0.5 4.59149e-41</end_color>
+<middle_color type="color">0.5 0.5 0.5 4.59149e-41</middle_color>
+<start_color type="color">0.5 0.5 0.5 4.59149e-41</start_color>
+<steps1 type="int32">3</steps1>
+<steps2 type="int32">3</steps2>
+<type type="int32">0</type>
+</blend_colors>
+<generate_scheme type="dynv">
+<hsv_shift type="float" list="true"><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li></hsv_shift>
+<hue type="float">180</hue>
+<lightness type="float">0</lightness>
+<saturation type="float">100</saturation>
+<type type="int32">0</type>
+<wheel_locked type="bool">true</wheel_locked>
+<wheel_type type="int32">0</wheel_type>
+</generate_scheme>
+<layout_preview type="dynv">
+<css_selectors type="dynv">
+<assignments type="dynv">
+<content_b type="dynv">
+<color type="color">0.6 0.6 0.6 7.9874e-44</color>
+</content_b>
+<content_t type="dynv">
+<color type="color">0.1 0.1 0.1 6.31986e-43</color>
+</content_t>
+<footer_b type="dynv">
+<color type="color">0.1 0.1 0.1 0</color>
+</footer_b>
+<header_b type="dynv">
+<color type="color">0.2 0.2 0.2 4.58925e-41</color>
+</header_b>
+<header_t type="dynv">
+<color type="color">1 1 1 0</color>
+</header_t>
+<menu_b type="dynv">
+<color type="color">0.7 0.7 0.7 4.58925e-41</color>
+</menu_b>
+<navitem_b type="dynv">
+<color type="color">0.3 0.3 0.3 0</color>
+</navitem_b>
+<navitem_bh type="dynv">
+<color type="color">0.3 0.3 0.3 4.58925e-41</color>
+</navitem_bh>
+<navitem_t type="dynv">
+<color type="color">0.8 0.8 0.8 0</color>
+</navitem_t>
+<navitem_th type="dynv">
+<color type="color">0.8 0.8 0.8 0</color>
+</navitem_th>
+<sidebar_b type="dynv">
+<color type="color">0.7 0.7 0.7 0</color>
+</sidebar_b>
+</assignments>
+</css_selectors>
+<layout_name type="string">std_layout_webpage_1</layout_name>
+</layout_preview>
+<variations type="dynv">
+<all_colors type="color">0.5 0.5 0.5 0</all_colors>
+<color0 type="color">0.5 0.5 0.5 0</color0>
+<color1 type="color">0.5 0.5 0.5 0</color1>
+<color2 type="color">0.5 0.5 0.5 0</color2>
+<strength type="float">30</strength>
+<type0 type="string">lab_lightness</type0>
+<type1 type="string">lab_lightness</type1>
+<type2 type="string">lab_lightness</type2>
+</variations>
+</secondary_view>
+<tools type="dynv">
+<palette_from_image type="dynv">
+<colors type="int32">6</colors>
+<current_folder type="string">/home/visi/Mikanda/user interface</current_folder>
+<filter type="string">all_images</filter>
+<show_preview type="bool">true</show_preview>
+<window type="dynv">
+<height type="int32">439</height>
+<width type="int32">342</width>
+</window>
+</palette_from_image>
+</tools>
+<variations type="dynv">
+<lightness_from type="float">2.928</lightness_from>
+<lightness_to type="float">1</lightness_to>
+<linearization type="bool">false</linearization>
+<multiplication type="bool">true</multiplication>
+<saturation_from type="float">0</saturation_from>
+<saturation_to type="float">1</saturation_to>
+<show_preview type="bool">true</show_preview>
+<steps type="int32">11</steps>
+<window type="dynv">
+<height type="int32">543</height>
+<width type="int32">522</width>
+</window>
+</variations>
+</gpick>
+</root>

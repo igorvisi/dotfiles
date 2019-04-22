@@ -1,0 +1,14 @@
+
+# Load common aliases: zsh, bash & fish
+source ~/.aliases
+
+# Global alias !!! Working in zsh only
+alias -g G='|grep'
+alias -g F='|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c " '
+alias -g C='|cb' # cb (see in .function file) copy to clipboard
+alias -g L='|less -XNFR'
+alias -g N='> /dev/null 2>&1'
+alias -g S='| sort'
+alias -g T='| wc -l'
+alias -g P='$(clippaste)'
+alias -g V='& progress -mp $!'

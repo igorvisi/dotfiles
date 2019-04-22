@@ -1,0 +1,199 @@
+alias bashx='bash -x' # Bash with debug
+alias which='which -aS'
+alias c='clear'
+alias chx='chmod u+x'
+alias b='~/Bin/vocab'
+
+# Usefull when you are strong in google-fu ^^
+alias hg='fc -l 1 |grep'
+alias hf='fc -n -l 1 |fzf --tac --exact --ansi --no-sort --reverse --tiebreak=index \
+--bind "ctrl-m:execute: echo '{}'| xclip -selection c "'
+
+# Copy SSH and GPG public key
+alias cbssh='gpg --export-ssh-key $GPGKEY | clipcopy'
+alias cbgpg='gpg --export --armor $GPGKEY | clipcopy'
+# Copy current working directory
+alias cbwd="pwd | clipcopy"
+
+# Dotfiles with dotbot
+alias dotinstall='~/.dotfiles/install'
+alias dotconf='nvim ~/.dotfiles/install.conf.yaml'
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+# List of projet in workspace dir
+alias work='ls $WORKSPACE | fzf --tac --exact --ansi --no-sort --reverse --tiebreak=index \
+--bind "ctrl-m:execute: code $WORKSPACE/'{}' "'
+alias wk='work'
+
+# ROT13-encode text. Works for decoding, too! ;)
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# neovim
+alias vim='nvim'
+# Vim mode read only
+alias vr='vim -R'
+
+# mimic vim functions
+alias :q='exit'
+
+ # typo
+alias abd='adb'
+alias ipconfig='ifconfig'
+
+# Edit conf file quickly
+alias zshconf='vim ~/.zshrc'
+alias aliasconf='vim ~/.aliases && source ~/.aliases'
+alias funconf='vim ~/.zsh/functions && source ~/.zsh/functions'
+alias txc='vim ~/.tmux.conf'
+alias i3conf='vim ~/.config/i3/config'
+alias polybconf='vim ~/.config/polybar/config'
+alias xresources='vim ~/.Xresources && xrdb ~/.Xresources'
+# Source zsh conf quickly
+alias zshrc='source ~/.zshrc'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+# When you often forget sudo
+alias ctl='\sudo systemctl'
+alias pacman='\sudo pacman'
+alias docker='\sudo docker'
+alias docker-compose='\sudo docker-compose'
+alias mount='sudo mount'
+alias umount='sudo umount'
+alias hibernate='\sudo systemctl start hibernate.target'
+alias wifi-menu='\sudo wifi-menu'
+alias fdisk='\sudo fdisk -l'
+alias sv='sudoedit'
+alias dk='docker'
+alias dkc='docker-compose'
+
+alias arch='docker run -d --name archlinux -it archlinux > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
+alias debian='docker run -d --name debian -it debian > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it debian bash'
+alias ubuntu='docker run -d --name ubuntu -it ubuntu > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it ubuntu bash'
+alias fedora='docker run -d --name fedora -it fedora > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it fedora bash'
+alias hacklab='docker run -d --name hacklab --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --net=host --privileged=true -v ~/Public:/mnt -it visi/docker-hacklab bash > /dev/null 2>&1; docker start hacklab > /dev/null; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it hacklab zsh'
+
+# alias for the most used commands
+alias no='node'
+alias py='python'
+alias y='yay'
+alias pa='pacman'
+alias s='sudo'
+alias wh='which'
+alias mn='man'
+alias ch='cheat'
+
+alias wget="wget -c"
+
+# A `rm` compatible layer for `trash`.
+# https://github.com/PhrozenByte/rmtrash
+# Needs trash-ci installed.
+alias rm='rmtrash'
+alias rmdir='rmdirtrash'
+alias rmf='rmtrash -r'
+
+alias dirs='dirs -v'
+
+alias dmesg.me='dmesg -wHL'
+alias lsusb.me='lsusb.py -c -i -U'
+alias journalctl.me='journalctl  -xf'
+alias lsctl='systemctl -t service --full --all list-units'
+alias wifistat='iw dev wlo1 link'
+
+# Download Youtube Playlist video in mp4 or mp3.
+alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
+alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
+alias y3='youtube-dl -x -o "%(title)s-%(id)s.%(ext)s" --audio-format mp3 --audio-quality 0'
+
+# Browser aliases
+alias chrome='chromium'
+alias incognito='tor-browser'
+
+# Get IP address information.
+alias ipinfo='curl ipinfo.io'
+# Update system, atom extensions, gems, antigen  and nodes packages.
+alias update='
+yay -Suy --noconfirm --needed ; # Update Archlinux
+npm update -g ; # Update node packages from yarn
+antigen update ;
+~/.tmux/plugins/tpm/bin/update_plugins all; # Update tmux plugins
+gpg --keyserver pgp.mit.edu --refresh-keys # Refresh gpg keys
+code; # Open vscode for update plugins
+nvim ; # Open neovim for update plugins
+'
+# Resolve mojibake problems with UTF-8 . e.g: �l�ments -- éléments.
+# conv Directory to test and conv --notest Directory to apply.
+alias conv='convmv -r -f iso-8859-15 -t utf-8'
+
+alias random='mktemp -u | cut -d'.' -f2'
+alias lscreen='xrandr -q | grep " connected" | cut -d " " -f1 '
+
+# Git
+alias master='git checkout master'
+alias checkout='git checkout -'
+alias push='git push'
+alias fetch='git fetch'
+alias pull='git pull'
+alias undopush='git push -f origin HEAD^:master'
+alias n='clone $(clippaste)' # Clone git projet from url in clipboard. See clone in function file
+# Disk Usage
+alias diskspace='df -P -kHl'
+
+# npm 
+alias ni='npm install'
+alias nr='npm run'
+
+# Laravel - php
+alias ci='composer install'
+alias cu='composer update'
+
+# Tmux
+alias tmux='tmux -2' # Force tmux to use 256 colors
+alias tl='tmux list-sessions'
+alias tksv='tmux kill-server'
+alias tkss='tmux kill-session -t'
+alias ta='tmux attach -t'
+alias td='tmux detach'
+alias ts='tmux new-session -s'
+alias tad='tmux attach -d -t'
+alias tsw='tmux split-window -h'
+alias tswd='tmux split-window -h -d'
+alias tnw='tmux new-window'
+alias tnwd='tmux new-window -d'
+
+# Open a file or URL in the user's preferred application
+alias open='xdg-open'
+alias o='open'
+
+alias dragon='dragon-drag-and-drop'
+
+# Process I launch
+alias p='ps -u $USER'
+# Powerfull ls
+alias ls='exa -g --git --group-directories-first' # exa is a modern replacement for ls
+alias l='ls -a'
+alias ll='ls -la -h'
+alias lk='ll -s=size'
+alias lm='ll -s=modified'
+alias lc='ll --created -s=created'
+alias lf='ls -al | fzf ' # fzf needs
+alias lg='ls -al|grep'
+
+# Navigation 
+alias -- +='pushd'
+alias -- ++='pushd .'
+alias -- -='popd'
+
+# Usefull systemd aliases
+# Instead of 'sudo systemctl start service' just enter 'start service'
+# Instead of 'systemctl start --user service' just enter 'ustart service'
+systemd_commands=(start stop reload restart try-restart isolate reset-failed enable status  disable reenable)
+for command in $systemd_commands; do alias $command="sudo systemctl $command"; done
+for command in $systemd_commands; do alias u$command="systemctl $command --user"; done
+
+# Power off, reboot and hibernate in my local language: Lingala
+alias bomama='poweroff'
+alias bandela='reboot'
+alias fanda='~/Bin/lock suspend'
+alias lala='~/Bin/lock hibernate'

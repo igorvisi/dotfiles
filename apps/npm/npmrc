@@ -1,0 +1,8 @@
+init.author.name=Igor Visi
+init.author.email=mail@igorvisi.xyz
+init.author.url=https://igorvisi.xyz
+init.license=MIT
+init.version=0.0.1
+prefix=/home/visi/.offline/npm
+cache=/home/visi/.cache/npm
+registry=https://registry.npmjs.com/

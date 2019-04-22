@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Syncthing-GTK
+Exec=/usr/bin/syncthing-gtk
+Icon=/usr/share/syncthing-gtk/icons/st-logo-128.png
+Comment=GUI for Syncthing
+X-GNOME-Autostart-enabled=true
+Hidden=false
+Type=Application
