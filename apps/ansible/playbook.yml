@@ -4,25 +4,52 @@
   remote_user: root
 
   tasks:
-    - name: Install usefull apps
+    - name: Install useful apps(Apt)
       apt:
         name:
           [
-            "zsh",
-            "tig",
-            "neovim",
-            "wget",
             "curl",
-            "exa",
-            "trash-cli",
-            "tmux",
-            "git",
-            "tig",
-            "wget",
-            "neofetch",
-            "htop",
+            "duplicity",
             "fzy",
+            "git",
+            "git-crypt",
+            "htop",
+            "neofetch",
+            "neovim",
+            "sudo",
+            "tig",
+            "tmux",
+            "trash-cli",
+            "unzip",
+            "wget",
+            "zsh",
           ]
         update_cache: yes
         state: latest
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - name: Install useful apps (Pacman)
+
+      pacman:
+        name:
+          [
+            "curl",
+            "duplicity",
+            "exa",
+            "fzy",
+            "git",
+            "git-crypt",
+            "htop",
+            "neofetch",
+            "nvim",
+            "sudo",
+            "tig",
+            "tmux",
+            "trash-cli",
+            "unzip",
+            "wget",
+            "zsh",
+          ]
+        update_cache: yes
+        state: latest
+        when: ansible_distribution == 'Arch Linux'
