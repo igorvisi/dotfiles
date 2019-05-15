@@ -1,0 +1,9 @@
+[Unit]
+Description=Run duplicity backup timer
+
+[Timer]
+OnCalendar=daily
+Unit=backup.service
+
+[Install]
+WantedBy=default.target
