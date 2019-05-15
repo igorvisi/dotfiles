@@ -20,7 +20,7 @@ clean() {
 # Check processes using a port
 # Need lsof installed
 port() {
-    lsof -iTCP:$1 -sTCP:LISTEN
+   sudo lsof -iTCP:$1 -sTCP:LISTEN
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
