@@ -12,6 +12,7 @@
 # no thx
 node_modules
 vendor
+package-lock.json
 
 # Folder view configuration files
 Desktop.ini

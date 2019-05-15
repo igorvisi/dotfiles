@@ -29,5 +29,11 @@
 	path = user
 
 [user]
-	email = igorvisi.dev@gmail.com
+	email = mail@igorvisi.com
 	nom = Igor Visi
+	signingKey = FCB6F5BF516514AD3EEC8A6A9E000216F11111A5
+	name = igorvisi
+[commit]
+	gpgSign = true
+[tag]
+	forceSignAnnotated = true
