@@ -2,27 +2,35 @@
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": true,
   "workbench.startupEditor": "none",
-  "editor.fontFamily": "'Fira Code Medium', 'Roboto Medium'",
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.colorTheme": "Material Theme Palenight",
+  "workbench.sideBar.location": "left",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.fontFamily": " Dank Mono , Fira Code , Roboto Medium",
   "editor.fontLigatures": true,
   "editor.fontSize": 18,
-  "editor.tabSize": 4,
+  "editor.tabSize": 2,
   "editor.renderWhitespace": "boundary",
   "editor.tabCompletion": true,
   "editor.fontWeight": "800",
+  "editor.letterSpacing": "0.5",
   "editor.lineNumbers": "relative",
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": true,
-  "workbench.sideBar.location": "left",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
   "debug.allowBreakpointsEverywhere": true,
   "zenMode.hideTabs": false,
   "zenMode.hideStatusBar": false,
   "terminal.integrated.fontSize": 16,
   "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": false,
-  "files.trimTrailingWhitespace": true,
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "editor.insertSpaces": false,
+  "editor.insertSpaces": true,
   "color-highlight.markerType": "underline",
   "window.zoomLevel": 0,
   "vim.searchHighlightColor": "rgb(71, 59 108)",
@@ -90,62 +98,78 @@
       ]
     }
   ],
-  "go.gopath": "~/.offline/golang",
-  "eslint.nodePath": "~/.lib/npm/bin/eslint",
-  "extensions.ignoreRecommendations": true,
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": ",",
-  "editor.detectIndentation": false,
+  "vim.enableNeovim": true,
+  "vim.cmdLineInitialColon": true,
+  "go.gopath": "~/.offline/golang",
+  "eslint.nodePath": "~/.lib/npm/bin/eslint",
+  "extensions.ignoreRecommendations": true,
+  "newFile.defaultBaseFileName": "newFile",
+  "newFile.relativeTo": "project", // "root" or "project"
+  "newFile.defaultFileExtension": ".js",
+  "newFile.rootDirectory": "~",
+  "newFile.showPathRelativeTo": "project", // "project" or "none"
+  "newFile.expandBraces": true, // setting to true will allow for creating multiple files such as `new-folder/{file1,file2}.js`
+  "editor.detectIndentation": true,
   "java.home": "/usr/lib/jvm/java-8-openjdk",
   "gitlens.gitExplorer.files.layout": "auto",
   "cSpell.language": "en,fr",
   "vim.disableExtension": false,
   "liveServer.settings.donotShowInfoMsg": true,
-  "explorer.confirmDelete": false,
+
   "git.enableSmartCommit": true,
   "java.errors.incompleteClasspath.severity": "ignore",
-  "emmet.triggerExpansionOnTab": false,
   "editor.selectionHighlight": false,
-  "vim.enableNeovim": true,
-  "vim.cmdLineInitialColon": true,
   "indentRainbow.colors": [
-    "rgba(61,64,16,0.1)",
-    "rgba(32,64,32,0.1)",
-    "rgba(64,32,64,0.1)",
-    "rgba(16,48,48,0.1)"
+    "rgba(61,64,16,0.2)",
+    "rgba(32,64,32,0.2)",
+    "rgba(64,32,64,0.2)",
+    "rgba(16,48,48,0.2)"
   ],
   "indenticator.width": 1,
   "editor.wordWrap": "bounded",
   "editor.mouseWheelZoom": true,
-  "workbench.editor.tabSizing": "shrink",
+
   "editor.minimap.renderCharacters": false,
   "editor.formatOnSave": true,
-  "eslint.autoFixOnSave": true,
+  "html.format.enable": true,
+  "html.format.endWithNewline": true,
+  "html.format.preserveNewLines": true,
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+  "eslint.autoFixOnSave": false,
   "eslint.alwaysShowStatus": true,
   "diffEditor.ignoreTrimWhitespace": true,
   "files.exclude": {
-	"**/.git": true,
-	"nodes_modules": true,
-	"**/.svn": true,
-	"**/.hg": true,
-	"**/CVS": true,
-	"**/.DS_Store": true,
-	"*.class": true,
-	"**/.classpath": true,
-	"**/.project": true,
-	"**/.settings": true,
-	"**/.factorypath": true
-},
-  "explorer.confirmDragAndDrop": false,
+    "**/.git": true,
+    "nodes_modules": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "*.class": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "files.trimTrailingWhitespace": true,
+
   "scm.alwaysShowProviders": true,
   "vim.neovimPath": "/usr/bin/nvim",
+  "emmet.triggerExpansionOnTab": false,
+
   "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
     "mjml": "html"
   },
   "window.menuBarVisibility": "visible",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Adapta Nokto",
+
   "breadcrumbs.enabled": true,
   "git.autorefresh": false,
   "git.alwaysSignOff": true,
@@ -164,8 +188,16 @@
       "value": "#007fff"
     },
     {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
       "name": "Gatsby Purple",
       "value": "#639"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
     },
     {
       "name": "JavaScript Yellow",
@@ -194,13 +226,20 @@
   ],
   "css.remoteStyleSheets": [
     "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    "https://use.fontawesome.com/releases/v5.8.1/css/all.css"
   ],
   "sync.gist": "62c6d02f63a4e835140f9ccae40ad3f6",
   "sync.autoUpload": true,
   "sync.quietSync": true,
-"terminal.integrated.rendererType": "dom",
-"peacock.affectStatusBar": true,
-"csscomb.formatOnSave": true,
-"html.format.endWithNewline": true
+  "terminal.integrated.rendererType": "dom",
+  "peacock.affectStatusBar": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "indentRainbow.errorColor": "rgba(128,32,32,0.8)",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
