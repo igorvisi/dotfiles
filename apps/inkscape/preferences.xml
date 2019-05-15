@@ -133,8 +133,8 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="890.955"
-         height="907.117"
+         width="705.714"
+         height="382.857"
          rx="0"
          ry="0" />
       <eventcontext
@@ -169,12 +169,12 @@
       <eventcontext
          id="arc"
          style="fill:red;"
-         end="179.088"
+         end="0"
          start="0"
          usecurrent="1"
-         rx="292.857"
-         ry="252.857"
-         open="0" />
+         rx="533.809"
+         ry="533.809"
+         open="1" />
       <eventcontext
          id="star"
          magnitude="3"
@@ -411,7 +411,8 @@
        selcue="1"
        gradientdrag="1"
        pick="1"
-       setalpha="1" />
+       setalpha="1"
+       onetimepick="0" />
     <eventcontext
        id="select"
        selcue="1"
@@ -581,7 +582,7 @@
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       page="2"
+       page="0"
        x="0"
        y="0"
        w="1"
@@ -648,17 +649,17 @@
        ignorenumbers="1" />
     <group
        id="documentoptions"
-       state="1"
+       state="3"
        panel_size="1"
        panel_ratio="100"
        panel_mode="1"
        panel_wrap="0"
        panel_border="0"
-       x="683"
-       y="384"
-       w="852"
-       h="760"
-       visible="0"
+       x="0"
+       y="0"
+       w="1"
+       h="1"
+       visible="1"
        placement="1" />
     <group
        id="preferences"
@@ -670,8 +671,9 @@
        panel_border="0"
        x="269"
        y="234"
-       w="828"
-       h="299" />
+       w="1366"
+       h="720"
+       page="43" />
     <group
        id="gradienteditor" />
     <group
@@ -700,8 +702,8 @@
        panel_border="0"
        x="0"
        y="0"
-       w="1"
-       h="1"
+       w="552"
+       h="544"
        visible="1"
        state="3"
        placement="1">
@@ -720,7 +722,7 @@
        default="org.inkscape.output.svg.inkscape"
        append_extension="1"
        enable_preview="1"
-       path="/home/visi/Codes/Clients/Calculus-systems/Usimamizi/assets/icons"
+       path="/home/visi/.extra/docs/Design/- Done"
        use_current_dir="1" />
     <group
        id="save_copy"
@@ -1116,7 +1118,7 @@
      org.inkscape.output.pdf.cairorenderer.resolution="96"
      org.inkscape.output.pdf.cairorenderer.bleed="0"
      org.inkscape.render.empty_page.size="a3"
-     org.inkscape.render.empty_page.orientation="horizontal"
+     org.inkscape.render.empty_page.orientation="vertical"
      org.inkscape.render.empty_page.background="normal"
      org.inkscape.render.empty_video.size="Custom"
      org.inkscape.render.empty_video.width="1920"
@@ -1126,12 +1128,12 @@
      org.inkscape.render.empty_dvd_cover.bleed="3" />
   <group
      id="desktop"
-     style="line-height:1.25;fill:#666666;stroke:none;stroke-width:7.42677165;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;-inkscape-font-specification:Halimun;font-family:Halimun;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:133.33333333px;stroke-opacity:1;fill-opacity:1">
+     style="line-height:1.25;fill:#000000;stroke:#333333;stroke-width:7.42677165;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;-inkscape-font-specification:Steiner;font-family:Steiner;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:40.31476975px;stroke-opacity:1;fill-opacity:1;fill-rule:nonzero">
     <group
        width="1366"
-       height="744"
+       height="682"
        x="0"
-       y="24"
+       y="25"
        fullscreen="0"
        id="geometry"
        maximized="0" />
