@@ -6,6 +6,7 @@ export CODEDIR=$HOME/Codes
 export DOCDIR=$HOME/Docs
 export DOWNLOADDIR=$HOME/Tl
 export OFFLINEDIR=$HOME/.offline
+export DOCKERVOLUME=/var/docker/volume
 export OPENSOURCEDIR=$CODEDIR/Open
 export PACSAVEDIR=$HOME/.extra/packages
 export PICTUREDIR=$HOME/Pics
@@ -64,7 +65,7 @@ export SPACESHIP_PACKAGE_SYMBOL=""
 export SPACESHIP_CHAR_SYMBOL="❯ "
 export SPACESHIP_JOBS_SYMBOL="»"
 export SPACESHIP_TIME_SHOW=true
-export SPACESHIP_DIR_TRUNC_PREFIX=".../"
+export SPACESHIP_DIR_TRUNC_PREFIX="..."
 
 # PATH for global node packages directory
 # PATH=$PATH:`yarn global bin --offline`
