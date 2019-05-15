@@ -53,45 +53,7 @@ echo
 if [[ $REPLY =~ ^[Yy] ]]; then
 	echo "###########################"
 	echo "Install npm global packages"
-	echo "#######################!/usr/bin/env bash
-# Code from passmenu.
-# Reusing to make otpmenu actually work<3
-
-filename="otp.gpg"
-
-shopt -s nullglob globstar
-
-export typeit=0
-if [[ $1 == "--type" ]]; then
-	typeit=1
-	shift
-fi
-
-prefix=${PASSWORD_STORE_DIR-~/.password-store}
-password_files=( "$prefix"/**/$filename )
-password_files=( "${password_files[@]#"$prefix"/}" )
-password_files=( "${password_files[@]%.gpg}" )
-
-password=$(printf '%s\n' "${password_files[@]}" | dmenu "$@")
-
-[[ -n $password ]] || exit
-
-sleep 1 && wmctrl -r "OTP" -b add,above &
-
-exitcode=5
-while [ $exitcode = 5 ]
-do
-	seconds=$(date '+%S')
-	if [ "$seconds" -lt 30 ] ; then
-		timeout=$((30-seconds))
-	elif [ "$seconds" -ge 30 ] ; then
-		timeout=$((60-seconds))
-	fi
-	TOTP=$(pass otp show "$password" 2>/dev/null)
-	zenity --question --title="OTP" --text="OTP Code:\n\n$TOTP" --ok-label="Copy and Close" --timeout=$timeout --cancel-label="Close" && pass otp show -c "$password" 2>/dev/null
-	exitcode=$?
-done
-#####"
+	echo "############################"
 	for package in $( cat ~/.extra/packages/npm.txt ); do npm install -g $package ; done
 fi
 
