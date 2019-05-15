@@ -268,7 +268,7 @@ assign [class="Termite"]  $ws6
 assign [class="Nemo|Thunar|Caja|Pcmanfm" ]  $ws1
 
 # Browsers in Workspace 2
-assign [class="Chromium|Firefox" ]  $ws2
+assign [class="Chromium|Firefox|Brave-browser" ]  $ws2
 
 # Editors and IDE in Workspace 3
 assign [class="code|jetbrains-idea|Typora|jetbrains-studio|sun-awt-X11-XFramePeer" ]  $ws3
