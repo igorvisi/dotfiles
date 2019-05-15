@@ -147,7 +147,7 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub
 
 ## 7. Utilisateur
 
-````shell
+```shell
 # changer mot de passe du root
 passwd root
 
@@ -179,7 +179,7 @@ w /sys/power/image_size - - - - 8589934592
 su nom-de-utilsateur
 # Changer le shell par défaut pour zsh ( déja fait au dessus juste pour vérifier)
 chsh -s /bin/zsh
-````
+```
 
 ## 8. Dotfiles
 
@@ -273,26 +273,8 @@ net-setup eth0
 sudo cp /etc/resolv.conf /mnt/resolv.conf*
 ```
 
-### Renouvellement des clés GPG
+### Afficher les dossiers en premier sur dialogue
 
-```shell
-gpg --decrypt gpg_keys.tar.xz.gpg gpg_keys.tar.xz
-tar Jxvf gpg_keys.tar.xz
-gpg --import D4444496.priv.asc
-gpg --edit-key D4444496
-
-gpg --export --armor D4444496 > D4444496.pub.asc
-gpg --export-secret-keys --armor D4444496 > D4444496.priv.asc
-gpg --export-secret-subkeys --armor D4444496 > D4444496.sub_priv.asc
-gpg --output D4444496.rev.asc --gen-revoke D4444496
-
-gpg --delete-secret-key D4444496
-gpg --import D4444496.sub_priv.asc
-tar Jcvf gpg_keys.tar.xz D4444496.*
-gpg -c gpg_keys.tar.xz
-srm D4444496.* gpg_keys.tar.xz
-```
-### Afficher les dossiers en premier sur dialogue 
 gsettings set org.gtk.Settings.FileChooser sort-directories-first true
 
 ### Prendre en charge mon terminal client
@@ -316,9 +298,15 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 sudo ntfsfix /dev/sdb1
 ```
 
+### Get exa, modern ls
+
+wget -c https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+unzip exa-linux-x86_64-0.8.0.zip
+mv exa-linux-x86_64 /usr/local/bin/exa
+
 ### Génération des clés SSH et GPG
 
 ```bash
-ssh-keygen -o -t rsa -b 4096 -C "mail@mail.com" 
+ssh-keygen -o -t rsa -b 4096 -C "mail@mail.com"
 ssh-keygen -o -t ed25519 -C "mail@mail.com"
 ```
