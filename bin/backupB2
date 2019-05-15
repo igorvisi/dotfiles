@@ -1,5 +1,5 @@
 #! /bin/sh -e
-source ~/.dotfiles/credentials
+source ~/.dotfiles/credentials.secret
 
 echo "#### Backup ... ####"
 duplicity --full-if-older-than 1M --encrypt-sign-key $bb_crypt_key \
