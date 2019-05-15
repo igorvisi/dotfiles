@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=xfce-clipman
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[fr_FR]=Clipman
+Comment[fr_FR]=Pas de description
+X-GNOME-Autostart-Delay=0

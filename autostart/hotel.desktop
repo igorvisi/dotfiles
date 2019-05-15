@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Vestion=1.0
+Name=hotel
+Comment=hotel startup script
+Exec=/usr/bin/node /usr/lib/node_modules/hotel/lib/daemon > /home/visi/.hotel/daemon.log
+StartupNotify=false
+Terminal=false
