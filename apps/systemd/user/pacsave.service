@@ -2,4 +2,5 @@
 Description=Backup list of installed packages
 
 [Service]
-ExecStart=/home/visi/bin/pacsave
+ExecStartPre=/usr/bin/zsh -c "/usr/bin/systemctl set-environment HOME=$HOME"
+ExecStart={$HOME}/Bin/pacsave

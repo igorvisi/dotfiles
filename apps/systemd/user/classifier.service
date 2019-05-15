@@ -2,4 +2,5 @@
 Description=Organize files by classifying them into different folders with accordance with type
 
 [Service]
-ExecStart= /usr/bin/classifier -d $DOWNLOADDIR
+ExecStartPre=/usr/bin/zsh -c "/usr/bin/systemctl set-environment DOWNLOADDIR=$DOWNLOADDIR"
+ExecStart= /usr/bin/classifier -d ${DOWNLOADDIR}
