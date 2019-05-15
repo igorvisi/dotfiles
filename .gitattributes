@@ -1,2 +1,6 @@
 *.secret filter=git-crypt diff=git-crypt
+*.cert filter=git-crypt diff=git-crypt
+*.key filter=git-crypt diff=git-crypt
+*.crt filter=git-crypt diff=git-crypt
+*.gpg filter=git-crypt diff=git-crypt
 
