@@ -1,7 +1,6 @@
 #!/bin/bash
 
-${PACSAVEDIR:=$HOME}
-pacman -Qqme > $HOME/.extra/packages/aur.txt
-pacman -Qqne > $HOME/.extra/packages/pacman.txt
-code --list-extensions > $HOME/.extra/packages/vscode.txt
-npm list -parseable -g --depth=0 | cut -d/ -f7 > $HOME/.extra/packages/npm.txt
+pacman -Qqme > $PACSAVEDIR/aur.txt
+pacman -Qqne > $PACSAVEDIR/pacman.txt
+code --list-extensions > $PACSAVEDIR/vscode.txt
+npm list -parseable -g --depth=0 | cut -d/ -f7 > $PACSAVEDIR/npm.txt
