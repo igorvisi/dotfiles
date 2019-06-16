@@ -52,4 +52,4 @@
           ]
         update_cache: yes
         state: latest
-        when: ansible_distribution == 'Arch Linux'
+      when: ansible_distribution == 'Arch Linux'
