@@ -1,135 +1,135 @@
 # Apps
 
-## Ansible
+### Ansible
 
 software provisioning, configuration management, and application-deployment tool.
 
-## Autokey
+### Autokey
 
 is a desktop automation utility for Linux and X11. It allows the automation of virtually any task by responding to typed abbreviations and hotkeys. It offers a full-featured GUI that makes it highly accessible for novices, as well as a scripting interface offering the full flexibility and power of the Python language.
 
-## Cheat
+### Cheat
 
 to create and view cheatsheets on the command line
 
-## Classifier
+### Classifier
 
 Python script to organize files in your directory instantly,by classifying them into different
 folders
 
-## Compton
+### Compton
 
 a compositor for X11, based on xcompmgr. In addition to shadows, fading and translucency, compton implements window frame opacity control, inactive window transparency, and shadows on argb windows.
 
-## Darktable
+### Darktable
 
 digital photography workflow application
 
-## Eslint
+### Eslint
 
 Javascript linter
 
-## Gimp
+### Gimp
 
 an image manipulation and paint program
 
-## Git
+### Git
 
 the stupid content tracker
 
-## Ppick
+### Gpick
 
 advanced color picker
 
-## Gtk-3.O
+### Gtk-3.0
 
 configuration for gtk
 
-## Htop
+### Htop
 
 interactive process viewer
 
-## Inkscape
+### Inkscape
 
 an SVG (Scalable Vector Graphics) editing program
 
-## Jetbrains
+### Jetbrains
 
 ide
 
-## keymap
+### keymap
 
 remap keyboard
 
-## libinput-gesture
+### libinput-gesture
 
 app that read gestures from libinput touchpad and action shell commands.
 
-## neovim
+### neovim
 
 the new vim :)
 
-## npm
+### npm
 
 javascript package manager
 
-## nvm
+### nvm
 
 Node Version Manager
 
-## polybar
+### polybar
 
 a fast and easy-to-use tool status bar
 
-## redshift
+### redshift
 
 set color temperature of display according to time of day
 
-## rofi
+### rofi
 
 application launcher
 
-## screenkey
+### screenkey
 
 Screencast your keys
 
-## ssh
+### ssh
 
 OpenSSH client
 
-## systemd
+### systemd
 
 a system and service manager for Linux operating systems
 
-## termite
+### termite
 
 terminal emulator
 
-## tig
+### tig
 
 text-mode interface for Git
 
-## tilda
+### tilda
 
 dropdown terminal emulator
 
-## tmux
+### tmux
 
 terminal multiplexer
 
-## transmission
+### transmission
 
 torrent client
 
-## urlwatch
+### urlwatch
 
 monitors webpages for you
 
-## usbguard
+### usbguard
 
 control usb port
 
-## verdaccio
+### verdaccio
 
 local javascript package manager
 

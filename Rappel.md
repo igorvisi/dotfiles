@@ -200,28 +200,13 @@ cd yay && makepkg -si
 ### installation environnement de bureau et nextcloud-desktop
 
 ```bash
-yay -S nextcloud-desktop-git termite cinnamon firefox chromium lightdm lightdm-gtk-greeter
+yay -S nextcloud-client termite cinnamon firefox chromium lightdm lightdm-gtk-greeter
 systemctl enable lightdm
 ```
 
 ### récupération des données sur nextcloud
 
-### importation clés SSH et GPG
-
-gpg --import D4444496.pub.asc
-gpg --import D4444496.priv.asc
-gpg --import D4444496.sub_priv.asc
-
-### récuperer les configuration pacman.conf, crontab, la liste de logiciels et packages
-
-### installation des logiciels avec yay, vscode et npm
-
-```bash
-xargs -a ~/.extra/packages/archlinux.txt yay -S --needed
-for package in $( cat ~/.extra/packages/npm.txt ); do npm i -g $package ; done
-for extension in $( cat ~/.extra/packages/vscode.txt ); do code --install-extension $extension ; done
-cd && ln -s ~/.extra/Media/Bilili $PICTUREDIR
-```
+exec post-install.sh
 
 ### dernières rétouches
 

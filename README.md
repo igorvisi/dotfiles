@@ -8,9 +8,13 @@ More screenshots or Workflow ? In my instagram [@roigivis](https://instagram.com
 
 ## My setup
 
-### Os
+OS: [Arch Linux](https://archlinux.com/) 👌🏿
 
-I'm on \*\*[Arch Linux](https://archlinux.com/)\*\* 👌🏿
+DE/WM: [i3wm](https://i3wm.org/) & [Cinnamon](https://github.com/linuxmint/Cinnamon)
+
+SHELL: [ZSH](https://zsh.org)
+
+APPS: [List](apps/)
 
 ## Inspiration …
 
