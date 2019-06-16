@@ -38,9 +38,9 @@ export GOPATH=$OFFLINEDIR/golang
 export PATH=$PATH:${GOPATH}/bin
 
 # PATH for gems with rbenv
-export PATH=$HOME/.rbenv/bin:$PATH
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export PATH=$PATH:$GEM_HOME/bin
+# export PATH=$HOME/.rbenv/bin:$PATH
+# export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+# export PATH=$PATH:$GEM_HOME/bin
 
 #PATH for python packages installed by pip --user  without sudo
 export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
@@ -74,7 +74,7 @@ NPM_PACKAGES="${HOME}/.offline/npm"
 NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
 PATH=$PATH:${NPM_PACKAGES}/bin
 # nvm
-export NVM_DIR="$HOME/.dotfiles/dev/nvm"
+export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Android tools
