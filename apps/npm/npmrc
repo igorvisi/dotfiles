@@ -1,6 +1,6 @@
 init.author.name=Igor Visi
-init.author.email=mail@igorvisi.xyz
-init.author.url=https://igorvisi.xyz
+init.author.email=mail@igorvisi.com
+init.author.url=https://igorvisi.com
 init.license=MIT
 init.version=0.0.1
 prefix=/home/visi/.offline/npm
