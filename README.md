@@ -4,7 +4,7 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ![Screenshot](Screenshot.png)
 
-More screenshots or Workflow ? In my instagram [@roigivis](https://instagram.com/roigivis).
+Sometimes I share pic of my workspace in instagram [@igorvisi](https://instagram.com/igorvisi).
 
 ## My setup
 
