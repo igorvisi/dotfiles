@@ -278,7 +278,7 @@ assign [class="Geary|Mailspring|Evolution|Thunderbird"]  $ws5
 assign [class="Slack"]  $ws8
 
 # Music and videos
-assign [class="Spotify|spotify|vlc|Rhythmbox|Musixmatch|Parole|MellowPlayer" ]  $ws7
+assign [class="Spotify|spotify|vlc|Rhythmbox|Musixmatch|Parole|Totem|MellowPlayer" ]  $ws7
 
 # Git
 assign [class="GitKraken|Boostnote|Simplenote" ]  $ws4
