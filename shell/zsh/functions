@@ -275,12 +275,16 @@ vb() {
 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Sign and crypt
-# e.g: gcrypt 'Igor Visi' password.txt
-gcrypt() { gpg2 --recipient $1 --sign --encrypt $2 }
-# e.g: bcrypt password.txt
-# variable $GPGKEY defined in ~/.global
-bcrypt() { tar zcv $1|gpg2 --recipient $GPGKEY --sign --encrypt -o $1.tar.gz.gpg }
+# Crypt with gpg
+
+#Asymetric
+# e.g: crypt4me Fichier
+crypt4me(){ gpg  --recipient $GPGKEY --sign --encrypt $1 }
+# e.g: crypt4 'Igor Visi' password.txt
+crypt4() { gpg --recipient $1 --sign --encrypt $2 }
+
+# Symetric : ask for password
+crypt() {gpg -c $1}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Human readable file size (binary size)
