@@ -78,8 +78,10 @@ export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Android tools
-export PATH=$PATH:$HOME/.android/Sdk/platform-tools
+export PATH=$PATH:/opt/android-sdk/platform-tools
 export ANDROID_HOME=$HOME/.android/
+
+export PATH=$PATH:$HOME/.flutterio/bin
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
