@@ -68,7 +68,7 @@ alias sv='sudoedit'
 alias dk='docker'
 alias dkc='docker-compose'
 
-alias arch='docker run -d --name archlinux -it archlinux > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
+alias arch='docker run -d --name archlinux -it archlinux/base > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
 alias debian='docker run -d --name debian -it debian > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it debian bash'
 alias ubuntu='docker run -d --name ubuntu -it ubuntu > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it ubuntu bash'
 alias fedora='docker run -d --name fedora -it fedora > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it fedora bash'
@@ -97,7 +97,7 @@ alias dirs='dirs -v'
 
 alias dmesg.me='dmesg -wHL'
 alias lsusb.me='lsusb.py -c -i -U'
-alias journalctl.me='journalctl  -xf'
+alias journalctl.me='journalctl -xf'
 alias lsctl='systemctl -t service --full --all list-units'
 alias wifistat='iw dev wlo1 link'
 
@@ -107,8 +107,8 @@ alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4'
 alias y3='youtube-dl -x -o "%(title)s-%(id)s.%(ext)s" --audio-format mp3 --audio-quality 0'
 
 # Browser aliases
-alias chrome='chromium'
-alias incognito='tor-browser'
+alias chrome='brave'
+alias incognito='brave --incognito'
 
 # Get IP address information.
 alias ipinfo='curl ipinfo.io'
@@ -118,9 +118,7 @@ yay -Suy --noconfirm --needed ; # Update Archlinux
 npm update -g ; # Update node packages from yarn
 antigen update ;
 ~/.tmux/plugins/tpm/bin/update_plugins all; # Update tmux plugins
-gpg --keyserver pgp.mit.edu --refresh-keys # Refresh gpg keys
-code; # Open vscode for update plugins
-nvim ; # Open neovim for update plugins
+gpg --keyserver keyserver.ubuntu.com --refresh-keys # Refresh gpg keys
 '
 # Resolve mojibake problems with UTF-8 . e.g: �l�ments -- éléments.
 # conv Directory to test and conv --notest Directory to apply.
@@ -136,11 +134,12 @@ alias push='git push'
 alias fetch='git fetch'
 alias pull='git pull'
 alias undopush='git push -f origin HEAD^:master'
-alias n='clone $(clippaste)' # Clone git projet from url in clipboard. See clone in function file
+alias n='clone $(clippaste)' # Clone git projet from url in clipboard. See clone in shell/zsh/functions file
+
 # Disk Usage
 alias diskspace='df -P -kHl'
 
-# npm 
+# npm
 alias ni='npm install'
 alias nr='npm run'
 
@@ -180,7 +179,7 @@ alias lc='ll --created -s=created'
 alias lf='ls -al | fzf ' # fzf needs
 alias lg='ls -al|grep'
 
-# Navigation 
+# Navigation
 alias -- +='pushd'
 alias -- ++='pushd .'
 alias -- -='popd'
