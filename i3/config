@@ -302,6 +302,7 @@ assign [class="VirtualBox|Gnome-chess|Pychess|Zeal|MuPDF|Zathura|atril|Atril" ] 
 for_window [class="Spotify"] move to workspace $ws7
 for_window [class="KeeWeb"] move to workspace $ws9
 for_window [class="atril|Atril"] move to workspace $ws0
+for_window [class="libreoffice|libreoffice-*"] move to workspace $ws0
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
