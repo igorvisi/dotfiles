@@ -26,6 +26,15 @@ set_from_resource       $color15      color15
 font Roboto 14
 font pango: Roboto Display 12
 
+
+# Launcher
+# set $menu kupfer
+set $menu rofi -theme ~/.config/rofi/config -show drun
+# set $menu --no-startup-id qdbus org.kde.krunner /App display
+
+# file mangaer
+set $file-manager dolphin
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 # Set default workspace layout
@@ -40,15 +49,11 @@ bindsym --release Control+Shift+Escape exec xkill
 # start a terminal
 bindsym $mod+Return exec termite `xcwd`
 
-# Launcher
-set $menu kupfer
-# set $menu rofi -theme ~/.config/rofi/config -show drun
-# set $menu --no-startup-id qdbus org.kde.krunner /App display
 #Program launcher
 bindsym $mod+d exec $menu
 
 # File manager
-bindsym $mod+z exec nemo `xcwd`
+bindsym $mod+z exec $file-manager `xcwd`
 
 # Color picker
 bindsym $mod+p exec "sleep 1s; gpick -p"
@@ -93,11 +98,11 @@ bindsym Print exec "~/Bin/capture"
 
 bindsym Control+Print exec "xfce4-screenshooter -r" 
 
-# play | pause | next | previous on Spotify, Rhythmbox, Vlc and Parole.  Need playerctl
-bindsym $mod+Control+Down exec "playerctl play-pause ; if pgrep -x parole ; then parole -p; fi"
-bindsym $mod+Control+Up exec "playerctl play-pause ; if pgrep -x parole ; then parole -p; fi"
-bindsym $mod+Control+Right exec "playerctl next ;  if pgrep -x parole ; then parole -N; fi"
-bindsym $mod+Control+Left exec "playerctl previous ; if pgrep -x parole ; then parole -P; fi"
+# play | pause | next | previous on Spotify, Rhythmbox, Vlc   Need playerctl
+bindsym $mod+Control+Down exec "playerctl play-pause"
+bindsym $mod+Control+Up exec "playerctl play-pause"
+bindsym $mod+Control+Right exec "playerctl next"
+bindsym $mod+Control+Left exec "playerctl previous"
 
 # Raise/Lower and mute volume with volnoti popup ( AUR: volnoti-brightness-git )
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
@@ -246,13 +251,11 @@ exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id nextcloud
 exec --no-startup-id volumeicon
-exec --no-startup-id syncthing-gtk
 exec --no-startup-id redshift-gtk
-exec --no-startup-id autokey-gtk  # Text expander
-exec --no-startup-id xfce4-clipman # Clipboard manager
+# exec --no-startup-id autokey-gtk  # Text expander
+exec --no-startup-id copyq # Clipboard manager
 
 # exec --no-startup-id telegram-desktop
-exec --no-startup-id GDK_BACKEND=x11 pamac-tray
 
 # For authentification
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -265,7 +268,7 @@ exec --no-startup-id xautolock -time 10 -corners 0-00 -locker "~/Bin/lock" &
 assign [class="Termite"]  $ws6
 
 # File manager
-assign [class="Nemo|Thunar|Caja|Pcmanfm" ]  $ws1
+assign [class="Nemo|Thunar|Caja|Pcmanfm|dolphin" ]  $ws1
 
 # Browsers in Workspace 2
 assign [class="Chromium|Firefox|Brave-browser" ]  $ws2
@@ -281,11 +284,11 @@ assign [class="Slack"]  $ws8
 assign [class="Spotify|spotify|vlc|Rhythmbox|Musixmatch|Parole|Totem|MellowPlayer" ]  $ws7
 
 # Git
-assign [class="GitKraken|Boostnote|Simplenote" ]  $ws4
+assign [class="GitKraken|Boostnote|Simplenote|Sublime_merge|Notable" ]  $ws4
 # Projet manager tools
 assign [class="freeter"]  $ws4
 # Data Base
-assign [class="jetbrains-datagrip|PacketTracer7"] $ws4
+assign [class="jetbrains-datagrip|DBeaver|PacketTracer7"] $ws4
 
 # Chat
 assign [class="telegram-desktop|TelegramDesktop|Signal"] $ws4
@@ -308,11 +311,11 @@ for_window [class="libreoffice|libreoffice-*"] move to workspace $ws0
 for_window [urgent=latest] focus
 
 # filemanager and visual studio code focus
-for_window [class="Caja|Thunar|Pcmanfm"] focus
+for_window [class="Caja|Thunar|Pcmanfm|dolphin"] focus
 for_window [class="code"] focus
 
 #::::::::::::::::::::::::: FLOATING or TILED ::::::::::::::::::::::::::#
-for_window [class="Peek|usbguard-applet-qt"] floating enable
+for_window [class="Peek|usbguard-applet-qt|copyq"] floating enable
 for_window [class="freeter|Catfish"] floating enable
 for_window [class="Pavucontrol|krunner"] floating enable
 for_window [class="Klavaro"] floating enable

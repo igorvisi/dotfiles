@@ -2,6 +2,7 @@
     "display_type": {
         "type": "combobox",
         "description": "Type of display",
+        "tooltip": "Note that the visual representation will only work if your panel is large enough to display it properly, otherwise the simple style will be used.",
         "default": "visual",
         "options": {
             "A visual representation of the workspaces": "visual",
@@ -9,5 +10,5 @@
         },
         "value": "buttons"
     },
-    "__md5__": "a31f7b47553cfbf2ecd3b4cd6c987b23"
+    "__md5__": "26180345de73ee47ebcf203d45716f90"
 }

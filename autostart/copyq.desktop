@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=xfce-clipman
+Exec=copyq
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
-Name[fr_FR]=Clipman
+Name[fr_FR]=Copyq
 Comment[fr_FR]=Pas de description
 X-GNOME-Autostart-Delay=0

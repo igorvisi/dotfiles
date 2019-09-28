@@ -3,14 +3,19 @@
 icon="$HOME/.lock.png"
 tmpbg='/tmp/screen.png'
 
+# Screen blured as background
+if [ -f "$tmpbg" ]
+then
+    rm "$tmpbg"
+fi
+scrot "$tmpbg"
+convert "$tmpbg"  -channel RGBA  -blur 0x8  "$tmpbg"
+convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
+
 _lock(){
 xautolock -disable && i3lock -n -e -i "$tmpbg" -u ; xautolock -enable
 }
 
-# Screen blured as background
-scrot "$tmpbg"
-convert "$tmpbg"  -channel RGBA  -blur 0x8  "$tmpbg"
-convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
 
 # Suspend or hibernate
 if [[ $1 = "suspend" ]]; then

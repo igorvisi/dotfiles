@@ -132,5 +132,8 @@
 (GimpToolInfo "gimp-operation-tool"
     (icon-name "gimp-gegl")
     (visible no))
+(GimpToolInfo "gimp-offset-tool"
+    (icon-name "gimp-tool-offset")
+    (visible no))
 
 # end of toolrc

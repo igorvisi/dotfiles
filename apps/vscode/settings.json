@@ -23,9 +23,9 @@
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": true,
   "editor.selectionHighlight": true,
-  "editor.suggestSelection": "recentlyUsed",
+  "editor.suggestSelection": "first",
   "editor.copyWithSyntaxHighlighting": false,
-  "editor.insertSpaces": true,
+  "editor.insertSpaces": false,
 
   // File
   "files.autoSaveDelay": 1000,
@@ -66,7 +66,7 @@
   "breadcrumbs.enabled": true,
 
   // Terminal
-  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontSize": 18,
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.showExitAlert": false,
 
@@ -81,10 +81,11 @@
   "npm.enableScriptExplorer": true,
   "npm.packageManager": "npm",
 
-  // Vim
+  // Vim plugin
 
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      // Save and close tab
       "before": ["z", "z"],
       "after": [],
       "commands": [
@@ -99,16 +100,46 @@
       ]
     },
     {
+      // copy until last of line
       "before": ["Y"],
       "after": ["y", "$"]
     },
     {
+      // add empty line bellow
       "before": ["<leader>", "o"],
       "after": ["o", "<Esc>"]
     },
     {
+      // add empty line before
       "before": ["<leader>", "O"],
       "after": ["O", "<Esc>"]
+    },
+    {
+      // show the command palette
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"]
+    },
+
+    {
+      // Required https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+      // Bind `<leader>m` to add a bookmark
+      "before": ["<leader>", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      // Bind `<leader>b` to open the list of all bookmarks
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.list"]
+    },
+    {
+      // Bind `<leader>w` to save the current file
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    // Alternative moving
+    {
+      "before": [" "],
+      "after": ["leader", "leader", "leader", "b", "d", "w"]
     }
   ],
   "vim.insertModeKeyBindings": [
@@ -131,14 +162,22 @@
       ]
     }
   ],
+  "vim.foldfix": true,
+  "vim.easymotion": true,
   "vim.hlsearch": true,
   "vim.incsearch": true,
   "vim.leader": ",",
   "vim.enableNeovim": true,
-  "vim.cmdLineInitialColon": true,
   "vim.useCtrlKeys": false,
   "vim.useSystemClipboard": true,
   "vim.disableExtension": false,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-d>": false,
+    "<C-f>": false
+  },
+
+  "vim.searchHighlightColor": "#515C6A",
   "vim.neovimPath": "/usr/bin/nvim",
 
   // git
@@ -147,6 +186,7 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
 
+  // zen mode. No distraction
   "zenMode.hideTabs": false,
   "zenMode.hideStatusBar": false,
 
@@ -159,7 +199,6 @@
   "html.format.preserveNewLines": true,
 
   // Linters & formatters
-  "eslint.nodePath": "/usr/bin/eslint",
   "prettier.eslintIntegration": true,
   "prettier.stylelintIntegration": true,
   "eslint.autoFixOnSave": false,
@@ -251,6 +290,10 @@
 
   "indentRainbow.errorColor": "rgba(128,32,32,0.8)",
 
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "remote.SSH.configFile": "/home/visi/.extra/conf/ssh/config"
+  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+  "remote.SSH.configFile": "/home/visi/.extra/conf/ssh/config",
+  "liveServer.settings.donotVerifyTags": true,
+  "cSpell.logLevel": "Information",
+  "cSpell.diagnosticLevel": "Hint",
+  "vsicons.dontShowNewVersionMessage": true
 }

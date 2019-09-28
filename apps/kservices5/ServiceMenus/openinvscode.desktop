@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name = Ouvrir dans VScode
+Type=Service
+ServiceTypes=KonqPopupMenu/Plugin
+MimeType=all/all;
+X-KDE-Priority=TopLevel
+Actions = openvscode
+
+[Desktop Action openvscode]
+Name = Ouvrir dans VSCode
+Exec=/usr/bin/code %f
+Icon=visual-studio-code

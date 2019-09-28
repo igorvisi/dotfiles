@@ -48,19 +48,19 @@
 </layout_preview>
 <main type="dynv">
 <close_to_tray type="bool">false</close_to_tray>
-<color_source type="string">color_picker</color_source>
+<color_source type="string">generate_scheme</color_source>
 <minimize_to_tray type="bool">false</minimize_to_tray>
-<paned_position type="int32">793</paned_position>
+<paned_position type="int32">766</paned_position>
 <save_restore_palette type="bool">true</save_restore_palette>
 <secondary_color_source type="string">variations</secondary_color_source>
 <single_instance type="bool">true</single_instance>
 <start_in_tray type="bool">false</start_in_tray>
-<vertical_paned_position type="int32">537</vertical_paned_position>
+<vertical_paned_position type="int32">402</vertical_paned_position>
 <window type="dynv">
-<height type="int32">744</height>
-<width type="int32">1366</width>
+<height type="int32">0</height>
+<width type="int32">0</width>
 <x type="int32">0</x>
-<y type="int32">24</y>
+<y type="int32">0</y>
 </window>
 </main>
 <options type="dynv">

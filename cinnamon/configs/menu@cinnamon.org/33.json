@@ -44,10 +44,10 @@
             "type": "section",
             "title": "Layout and content",
             "keys": [
-                "favbox-min-height",
                 "show-category-icons",
                 "show-application-icons",
                 "favbox-show",
+                "favbox-min-height",
                 "show-places",
                 "menu-editor-button"
             ]
@@ -99,6 +99,7 @@
         "max": 1000,
         "step": 10,
         "units": "px",
+        "dependency": "favbox-show",
         "description": "Minimum height of the favorites section",
         "tooltip": "The minimum size allocated for the favorites section (this has an impact on the overall height of the menu).",
         "value": 460
@@ -177,5 +178,5 @@
         "callback": "_launch_editor",
         "tooltip": "Press this button to customize your menu entries."
     },
-    "__md5__": "e12917237ad76024f58ecdbf80340e6e"
+    "__md5__": "6cc971c5aa632de42d925009b211e2cf"
 }

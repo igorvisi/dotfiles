@@ -96,5 +96,23 @@
   {
     "key": "ctrl+o",
     "command": "-workbench.action.files.openFile"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.terminal.moveToLineEnd",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+a",
+    "command": "workbench.action.terminal.moveToLineStart",
+    "when": "terminalFocus"
   }
 ]

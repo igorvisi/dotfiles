@@ -11,7 +11,6 @@
     ~/.config/JetBrains: apps/jetbrains
     ~/.config/nvim: apps/neovim
     ~/.config/verdaccio/config.yaml: apps/verdaccio/config.yaml
-    ~/.gemrc: apps/gem/gemrc
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig
     ~/.gitignore: apps/git/gitignore
@@ -25,15 +24,16 @@
     ~/.config/compton.conf: apps/compton/compton.conf
     ~/.config/i3: i3
     ~/.config/gtk-3.0: apps/gtk-3.0
-    ~/.config/nemo: apps/nemo
+    ~/.config/mimeapps.list: apps/mimeapps.list
     ~/.config/polybar: apps/polybar
-    ~/.config/Thunar: xfce/thunar
     ~/.config/xfce4: xfce
+    ~/.local/share/kservices5: apps/kservices5
+    ~/.local/share/kxmlgui5/dolphin: apps/dolphin
     ~/.lock.png: i3/lock.png
 
     # Useful X applications
     ~/.config/autokey: apps/autokey
-    ~/.config/copyq: apps/copyq/copyq.conf
+    ~/.config/copyq: apps/copyq/
     ~/.config/gpick: apps/gpick
     ~/.config/rofi: apps/rofi
     ~/.config/redshift.conf: apps/redshift/redshift.conf

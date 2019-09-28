@@ -11,5 +11,12 @@
         },
         "value": "percentage"
     },
-    "__md5__": "474bbdcab8afb7e0a0aae6e895fe087d"
+    "showmulti": {
+        "type": "switch",
+        "default": false,
+        "description": "Always show all batteries",
+        "tooltip": "Check this to always show multiple batteries in the panel, regardless of whether one of them is marked primary.",
+        "value": false
+    },
+    "__md5__": "db29025b0930e93063f745d0adcc675a"
 }

@@ -2,14 +2,16 @@
     "type": "script",
     "description": "Texte copi\u00e9 en majuscule",
     "store": {},
-    "modes": [],
+    "modes": [
+        1
+    ],
     "usageCount": 0,
     "prompt": false,
     "omitTrigger": false,
     "showInTrayMenu": true,
     "abbreviation": {
         "abbreviations": [
-            "UcX"
+            "lcX"
         ],
         "backspace": true,
         "ignoreCase": false,

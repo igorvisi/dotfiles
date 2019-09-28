@@ -1,5 +1,7 @@
 # Apps
 
+u
+
 ### Ansible
 
 software provisioning, configuration management, and application-deployment tool.
@@ -24,6 +26,10 @@ a compositor for X11, based on xcompmgr. In addition to shadows, fading and tran
 ### Darktable
 
 digital photography workflow application
+
+### Dolphin
+
+File manager
 
 ### Eslint
 
@@ -60,6 +66,10 @@ ide
 ### keymap
 
 remap keyboard
+
+### kservices
+
+KDE conf.
 
 ### libinput-gesture
 
@@ -121,17 +131,9 @@ terminal multiplexer
 
 torrent client
 
-### urlwatch
-
-monitors webpages for you
-
 ### usbguard
 
 control usb port
-
-### verdaccio
-
-local javascript package manager
 
 ## vscode
 

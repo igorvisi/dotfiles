@@ -1,0 +1,124 @@
+<!DOCTYPE kpartgui SYSTEM 'kpartgui.dtd'>
+<kpartgui name="dolphin" version="22">
+ <MenuBar>
+  <Menu name="file">
+   <Action name="new_menu"/>
+   <Action name="file_new"/>
+   <Action name="new_tab"/>
+   <Action name="file_close"/>
+   <Action name="undo_close_tab"/>
+   <Separator/>
+   <Action name="renamefile"/>
+   <Action name="movetotrash"/>
+   <Action name="deletefile"/>
+   <Separator/>
+   <Action name="show_target"/>
+   <Separator/>
+   <Action name="properties"/>
+  </Menu>
+  <Menu name="edit">
+   <Action name="edit_select_all"/>
+   <Action name="invert_selection"/>
+  </Menu>
+  <Menu name="view">
+   <Action name="sort"/>
+   <Action name="view_mode"/>
+   <Action name="additional_info"/>
+   <Action name="show_preview"/>
+   <Action name="show_in_groups"/>
+   <Action name="show_hidden_files"/>
+   <Separator/>
+   <Action name="split_view"/>
+   <Action name="split_stash"/>
+   <Action name="redisplay"/>
+   <Action name="stop"/>
+   <Separator/>
+   <Action name="panels"/>
+   <Menu name="location_bar">
+    <text context="@title:menu">Location Bar</text>
+    <Action name="editable_location"/>
+    <Action name="replace_location"/>
+   </Menu>
+   <Separator/>
+   <Action name="view_properties"/>
+  </Menu>
+  <Menu name="go">
+   <Action name="bookmarks"/>
+   <Action name="closed_tabs"/>
+  </Menu>
+  <Menu name="tools">
+   <Action name="show_filter_bar"/>
+   <Action name="open_terminal"/>
+   <Action name="compare_files"/>
+   <Action name="change_remote_encoding"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar alreadyVisited="1" noMerge="1" name="mainToolBar">
+  <Action name="options_configure"/>
+  <Action name="show_places_panel"/>
+  <Action name="go_home"/>
+  <text translationDomain="dolphin" context="@title:menu">Main Toolbar</text>
+  <Action name="go_back"/>
+  <Action name="go_forward"/>
+  <Separator name="separator_0"/>
+  <Separator name="separator_1"/>
+  <Action name="edit_find"/>
+  <Action name="split_view"/>
+  <Action name="split_stash"/>
+  <Action name="open_terminal"/>
+ </ToolBar>
+ <State name="new_file">
+  <disable>
+   <Action name="edit_undo"/>
+   <Action name="edit_redo"/>
+   <Action name="edit_cut"/>
+   <Action name="edit_copy"/>
+   <Action name="renamefile"/>
+   <Action name="movetotrash"/>
+   <Action name="deletefile"/>
+   <Action name="invert_selection"/>
+   <Separator/>
+   <Action name="go_back"/>
+   <Action name="go_forward"/>
+  </disable>
+ </State>
+ <State name="has_selection">
+  <enable>
+   <Action name="edit_cut"/>
+   <Action name="edit_copy"/>
+   <Action name="renamefile"/>
+   <Action name="movetotrash"/>
+   <Action name="deletefile"/>
+   <Action name="invert_selection"/>
+  </enable>
+ </State>
+ <State name="has_no_selection">
+  <disable>
+   <Action name="edit_cut"/>
+   <Action name="edit_copy"/>
+   <Action name="renamefile"/>
+   <Action name="movetotrash"/>
+   <Action name="deletefile"/>
+   <Action name="delete_shortcut"/>
+   <Action name="invert_selection"/>
+  </disable>
+ </State>
+ <ActionProperties scheme="Default">
+  <Action name="compact" priority="0"/>
+  <Action name="details" priority="0"/>
+  <Action name="edit_copy" priority="0"/>
+  <Action name="edit_cut" priority="0"/>
+  <Action name="edit_paste" priority="0"/>
+  <Action name="go_back" priority="128"/>
+  <Action name="go_forward" priority="128"/>
+  <Action name="go_home" priority="128"/>
+  <Action name="go_up" priority="0"/>
+  <Action name="icons" priority="0"/>
+  <Action iconText="Terminal" name="open_terminal"/>
+  <Action iconText="C" name="options_configure"/>
+  <Action iconText="E" name="show_places_panel"/>
+  <Action name="stop" priority="0"/>
+  <Action name="view_zoom_in" priority="0"/>
+  <Action name="view_zoom_out" priority="0"/>
+ </ActionProperties>
+</kpartgui>

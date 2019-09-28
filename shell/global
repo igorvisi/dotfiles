@@ -8,7 +8,7 @@ export DOWNLOADDIR=$HOME/Tl
 export OFFLINEDIR=$HOME/.offline
 export DOCKERVOLUME=/var/docker/volume
 export OPENSOURCEDIR=$CODEDIR/Open
-export PACSAVEDIR=$HOME/.extra/packages
+export PACSAVEDIR=$HOME/.extra/mega.co.nz/packages
 export PICTUREDIR=$HOME/Pics
 export SCREENSHOTDIR=$PICTUREDIR/Screenshots
 export WORKSPACE=$CODEDIR/Workspace
@@ -80,8 +80,11 @@ export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 # Android tools
 export PATH=$PATH:/opt/android-sdk/platform-tools
 export ANDROID_HOME=$HOME/.android/
-
 export PATH=$PATH:$HOME/.flutterio/bin
+
+
+# PHP
+export PATH=$PATH:$HOME/.config/composer/vendor/bin/
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
