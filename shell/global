@@ -16,8 +16,6 @@ export WORKSPACE=$CODEDIR/Workspace
 
 umask -S "u=rwx,g=,o="
 
-systemctl --user import-environment PATH
-
 # neovim as default cli editor
 export EDITOR=nvim
 
@@ -69,10 +67,10 @@ export SPACESHIP_DIR_TRUNC_PREFIX="..."
 
 # PATH for global node packages directory
 # PATH=$PATH:`yarn global bin --offline`
-NPM_CONFIG_PREFIX=~/.lib/npm
-NPM_PACKAGES="${HOME}/.offline/npm"
-NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
-PATH=$PATH:${NPM_PACKAGES}/bin
+export NPM_CONFIG_PREFIX=~/.lib/npm
+export NPM_PACKAGES="${HOME}/.offline/npm"
+export NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
+export PATH=$PATH:${NPM_PACKAGES}/bin
 # nvm
 export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -120,13 +118,5 @@ export HISTFILESIZE=$HISTSIZE                   # big big history
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ssh:rm:scp:ls:bg:fg:history:which:b:c:clear:cd:z:zz" # for bash
 
-# Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
-if type -p dircolors >/dev/null ; then
-	if [[ -f ~/.dir_colors ]] ; then
-		eval $(dircolors -b ~/.dir_colors)
-	elif [[ -f /etc/DIR_COLORS ]] ; then
-		eval $(dircolors -b /etc/DIR_COLORS)
-	fi
-fi
 
 
