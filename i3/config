@@ -96,7 +96,7 @@ bindsym $mod+$alt+Left workspace prev
 # capture screen
 bindsym Print exec "~/Bin/capture"
 
-bindsym Control+Print exec "xfce4-screenshooter -r" 
+bindsym Control+Print exec "xfce4-screenshooter -r"
 
 # play | pause | next | previous on Spotify, Rhythmbox, Vlc   Need playerctl
 bindsym $mod+Control+Down exec "playerctl play-pause"
@@ -242,6 +242,7 @@ bindsym $mod+Shift+e mode "$mode_system"
 exec_always --no-startup-id nitrogen --restore # Set wallpaper
 exec_always --no-startup-id "killall polybar ; polybar -r main " # Status Bar
 exec_always --no-startup-id "killall kdeconnect-indicator ; kdeconnect-indicator " # Connect my phone with pc
+pgrep -x udiskie || (udiskie --smart-tray &)" # automounter for removable media
 exec --no-startup-id compton # compositor for X11
 exec --no-startup-id unclutter -noevents -keystroke -idle 5 # make cursor invisible when you are taping text or after 5s of inactivity
 exec --no-startup-id xedgewarp -b # make easy to switch cursor between screen with different size
@@ -335,7 +336,7 @@ gaps inner 8
 smart_gaps on
 smart_borders on
 workspace 4 gaps inner 0
-workspace 6 gaps inner 0  
+workspace 6 gaps inner 0
 workspace 3 gaps inner 0
 # hide_edge_borders both
 

@@ -37,9 +37,7 @@
 	gpgSign = true
 [tag]
 	forceSignAnnotated = true
-[includeIf "gitdir:~/visi/Codes/Clients/Calculus-system/"]
-	[user]
-	email = visi.i@Calculus-system.net
-[includeIf "gitdir:~/visi/Codes/Clients/Avenirbank/"]
-	[user]
-	email = igor.visi@avenirbank.com
+[includeIf "gitdir:~/Codes/Clients/Calculus-system/"]
+	path = gitconfig-calculus
+[includeIf "gitdir:~/Codes/Clients/Avenirbank/"]
+	path = gitconfig-avenirbank

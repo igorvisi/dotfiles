@@ -57,10 +57,10 @@
 <start_in_tray type="bool">false</start_in_tray>
 <vertical_paned_position type="int32">402</vertical_paned_position>
 <window type="dynv">
-<height type="int32">0</height>
-<width type="int32">0</width>
-<x type="int32">0</x>
-<y type="int32">0</y>
+<height type="int32">22016</height>
+<width type="int32">-1537551456</width>
+<x type="int32">-1537551744</x>
+<y type="int32">22016</y>
 </window>
 </main>
 <options type="dynv">
