@@ -1,7 +1,0 @@
-[Service]
-Type=oneshot
-ExecStartPre=/usr/bin/zsh -c "/usr/bin/systemctl set-environment HOME=$HOME"
-ExecStart=${HOME}/Bin/backupB2
-
-[Unit]
-Description=Run duplicity backup
