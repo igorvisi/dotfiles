@@ -23,3 +23,8 @@ Host *
 
 	# I'm root by default
 	User root
+
+Host vps.igorvisi.com
+	HostName vps.igorvisi.com
+	User ivisi
+	ForwardAgent yes
