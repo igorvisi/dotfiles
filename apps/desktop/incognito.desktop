@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Incognito Browser
-Icon=tor
-Exec= proxychains firefox --private-window https://check.torproject.org/?lang=fr
-Comment= Browse incognito mode with firefox and tor
-Categories=Browser
-Terminal=false

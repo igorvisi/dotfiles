@@ -25,6 +25,11 @@
 	pushInsteadOf = "git://github.com/"
 	pushInsteadOf = "https://github.com/"
 
+[url "git@gitlab.com:"]
+	pushInsteadOf = "gitlab:"
+	pushInsteadOf = "git://gitlab.com/"
+	pushInsteadOf = "https://gitlab.com/"
+
 [include]
 	path = user
 
@@ -38,6 +43,8 @@
 [tag]
 	forceSignAnnotated = true
 [includeIf "gitdir:~/Codes/Clients/Calculus-system/"]
-	path = gitconfig-calculus
+	path = .gitconfig-calculus
 [includeIf "gitdir:~/Codes/Clients/Avenirbank/"]
-	path = gitconfig-avenirbank
+	path = .gitconfig-avenirtech
+[includeIf "gitdir:~/AvenirTech/"]
+	path = .gitconfig-avenirtech

@@ -146,7 +146,7 @@ alias nr='npm run'
 # Laravel - php
 alias ci='composer install'
 alias cu='composer update'
-alias par='php artisan'
+alias pa='php artisan'
 
 # Tmux
 alias tmux='tmux -2' # Force tmux to use 256 colors

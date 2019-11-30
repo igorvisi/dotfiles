@@ -22,6 +22,7 @@ echo "Restore backups from external disk"
 echo "###################################"
 $HOME/bin/restore \
 && (
+ln -sf ~/.extra/cloud.igorvisi.com/keys/ssh ~/.ssh
 ln -sf ~/.extra/cloud.igorvisi.com/keys/gnupg ~/.gnupg
 ln -sf ~/.extra/mega.co.nz/Media/Pics $PICTUREDIR
 ln -sf ~/.extra/cloud.igorvisi.com/electrum ~/.electrum

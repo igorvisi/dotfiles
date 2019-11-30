@@ -169,6 +169,13 @@ devserv() {
 	browser-sync start --server --files **/* --port "$port" --no-open --no-ui --no-online --no-notify .
 }
 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Launch tinker Laravel
+tinkering(){
+   while true; do php artisan tinker; done
+}
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Install Gulp plugins and add them as `devDependencies` to `package.json`
 # Usage: gp uglify clean cache csso

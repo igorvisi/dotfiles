@@ -101,16 +101,16 @@ mount /dev/mapper/vg-home /mnt/home
 
   nvim /etc/locale.conf
   # Ajouter
-    ## LANG=fr_FR.UTF-8
-    ## LANGUAGE="fr_FR:en_US"
+    ## LANG=en_US.UTF-8
+    ## LANGUAGE="en_US:fr_FR"
     ## LC_COLLATE=C
   nvim /etc/locale-gen
-    ## Décommenter fr_FR.UTF-8
+    ## Décommenter fr_FR.UTF-8 et en_US "
   locale-gen
-  export LANG=fr_FR.UTF-8
+  export LANG=en_US.UTF-8
   nvim /etc/default/locale
   # Ajouter
-    ## LL_ALL=fr_FR.UTF-8
+    ## LL_ALL=en_US.UTF-8
 
 
   # Nom de la machine machine
@@ -294,4 +294,12 @@ mv exa-linux-x86_64 /usr/local/bin/exa
 ```bash
 ssh-keygen -o -t rsa -b 4096 -C "mail@mail.com"
 ssh-keygen -o -t ed25519 -C "mail@mail.com"
+```
+
+
+### Remove cache 
+```bash
+paccache -rk 1  # Laisser seulement a dernière version en cache
+paccache -ruk0  # Enlever tous les logiciels non installés
+
 ```

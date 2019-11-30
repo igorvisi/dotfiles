@@ -28,8 +28,13 @@ export CHEATPATH=$DOCDIR/Cours/Cheat # University course's cheatsheet
 export CHEATCOLORS=true
 
 # Add the current directory in the PATH
-export PATH=$PATH:.
-export PATH=$PATH:./node_modules/.bin
+#export PATH=$PATH:.
+#export PATH=$PATH:./node_modules/.bin
+
+# Vscode 
+export VSCODE_CONFIG_DIR="$HOME/.config/Code - OSS/User"
+export VSCODE_EXTENSIONS_DIR="$HOME/.vscode-oss/extensions"
+
 
 # PATH for golang packages
 export GOPATH=$OFFLINEDIR/golang
@@ -67,8 +72,8 @@ export SPACESHIP_DIR_TRUNC_PREFIX="..."
 
 # PATH for global node packages directory
 # PATH=$PATH:`yarn global bin --offline`
-export NPM_CONFIG_PREFIX=~/.lib/npm
-export NPM_PACKAGES="${HOME}/.offline/npm"
+export NPM_CONFIG_PREFIX=${HOME}/.offline/npm
+export NPM_PACKAGES=${HOME}/.offline/npm
 export NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
 export PATH=$PATH:${NPM_PACKAGES}/bin
 # nvm

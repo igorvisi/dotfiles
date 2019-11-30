@@ -54,7 +54,7 @@
   // Workbench
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "ayu",
-  "workbench.colorTheme": "Adapta Nokto",
+  "workbench.colorTheme": "Ayu Mirage",
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -197,10 +197,6 @@
   "html.format.enable": true,
   "html.format.endWithNewline": true,
   "html.format.preserveNewLines": true,
-
-  // Linters & formatters
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": true,
   "eslint.autoFixOnSave": false,
   "eslint.alwaysShowStatus": true,
   "cSpell.language": "en,fr",
@@ -291,9 +287,24 @@
   "indentRainbow.errorColor": "rgba(128,32,32,0.8)",
 
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
-  "remote.SSH.configFile": "/home/visi/.extra/conf/ssh/config",
+  "remote.SSH.configFile": "/home/visi/.ssh/config",
   "liveServer.settings.donotVerifyTags": true,
   "cSpell.logLevel": "Information",
   "cSpell.diagnosticLevel": "Hint",
-  "vsicons.dontShowNewVersionMessage": true
+  "vsicons.dontShowNewVersionMessage": true,
+  "dart.checkForSdkUpdates": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "sync.gist": "ac221e6bd9d9bc73df3bb08377a74dbd",
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceUpload": true,
+  "sync.quietSync": true,
+  "markdownlint.customRules": [
+    "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
+  ],
+  "markdownlint.config": {
+    "MD025": {
+      "front_matter_title": ""
+    }
+  }
 }

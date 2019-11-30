@@ -1,13 +1,13 @@
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 	" highlight conflicts
 	match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-" Colorscheme and final setup 
+" Colorscheme and final setup
 	" This call must happen after the plug#end() call to ensure
 	" that the colorschemes have been loaded
-	let g:onedark_termcolors=16
-	let g:onedark_terminal_italics=1
-	colorscheme onedark
 	syntax on
+	set termguicolors     " enable true colors support
+	let ayucolor="dark" 
+	colorscheme ayu
 	filetype plugin indent on
 	" make the highlighting of tabs and other non-text less annoying
 	highlight SpecialKey ctermfg=black

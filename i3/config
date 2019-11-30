@@ -251,6 +251,7 @@ exec --no-startup-id libinput-gestures-setup start # intercept actions libinput 
 exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id nextcloud
+exec --no-startup-id megasync
 exec --no-startup-id volumeicon
 exec --no-startup-id redshift-gtk
 # exec --no-startup-id autokey-gtk  # Text expander

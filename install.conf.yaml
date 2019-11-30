@@ -14,7 +14,7 @@
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig
     ~/.gitconfig-calculus: apps/git/gitconfig-calculus
-    ~/.gitconfig-avenirbank: apps/git/gitconfig-avenirbank
+    ~/.gitconfig-avenirtech: apps/git/gitconfig-avenirtech
     ~/.gitignore: apps/git/gitignore
     ~/.ideavimrc: apps/jetbrains/ideavimrc
     ~/.npmrc: apps/npm/npmrc
@@ -70,7 +70,7 @@
     ~/.config/systemd: apps/systemd/
     # ~/.gnupg/gpg.conf: cli_tools/gnupg/gpg.conf
     # ~/.gnupg/gpg-agent.conf: cli_tools/gnupg/gpg-agent.conf
-    ~/.ssh/config: apps/ssh/config
+    # ~/.ssh/config: apps/ssh/config
     ~/.tmux.conf: apps/tmux/tmux.conf
 
     ~/.config/autostart: autostart
@@ -80,6 +80,8 @@
     ~/.screenshot.png: Screenshot.png
 
 - shell:
-    - ["curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"]
+    - [
+        "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
+      ]
     - [git submodule update --init --recursive, Installing submodules]
 #    - [ ./post-install.sh ]
