@@ -29,7 +29,8 @@
             "vlc",
             "rhythmbox",
             "mellowplayer",
-            "google-chrome"
+            "google-chrome",
+            "org.gnome.Music"
         ]
     },
     "section2": {

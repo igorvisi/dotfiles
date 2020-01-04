@@ -1,5 +1,6 @@
 #!/bin/bash
 
-source /home/visi/.dotfiles/shell/global
+source $HOME/.dotfiles/shell/global
 
+# Classifier my Download dir
 classifier -d ${DOWNLOADDIR}

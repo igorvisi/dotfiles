@@ -25,4 +25,4 @@ APPS: [List](apps/)
 [Paul Irish](https://github.com/paulirish/dotfiles) -
 [Nick Nisi](https://github.com/nicknisi/dotfiles)
 
-PR if you think I copy your stuffs and I don't mention you
+PR if you think I copy your stuffs and I don't mention you ;)

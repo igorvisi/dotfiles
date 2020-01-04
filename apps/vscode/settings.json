@@ -15,7 +15,6 @@
   "editor.wordWrap": "bounded",
   "editor.mouseWheelZoom": false,
   "editor.minimap.renderCharacters": false,
-  "editor.formatOnSave": true,
   "editor.detectIndentation": true,
   "editor.renderWhitespace": "boundary",
   "editor.tabCompletion": "on",
@@ -31,30 +30,46 @@
   "files.autoSaveDelay": 1000,
   // "files.autoSave": "afterDelay",
   "files.exclude": {
-    "**/.git": true,
-    "nodes_modules": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "*.class": true,
+    "**/__pycache__/**": true,
     "**/.classpath": true,
+    "**/.DS_Store": true,
+    "**/.factorypath": true,
+    "**/.git": true,
+    "**/.hg": true,
     "**/.project": true,
     "**/.settings": true,
-    "**/.factorypath": true,
+    "**/.svn": true,
+    "**/*.class": true,
+    "**/*.pyc": true,
+    "**/CVS": true,
     "**/env/**": true,
     "**/venv/**": true,
-    "env-*": true
+    "env-*": true,
+    "nodes_modules": true
   },
   "files.associations": {
     "*.js": "javascriptreact"
   },
   "files.trimTrailingWhitespace": true,
+  "files.defaultLanguage": "markdown",
+
+  "advancedNewFile.exclude": {
+    "node_modules": true,
+    "node_modules_electron": true,
+    "vendors": true,
+    "dist": true
+  },
+  "advancedNewFile.showInformationMessages": true,
+  "advancedNewFile.convenienceOptions": [
+    "current"
+  ],
+
+
 
   // Workbench
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "ayu",
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.closeEmptyGroups": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -225,8 +240,28 @@
   "emmet.triggerExpansionOnTab": false,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
-    "mjml": "html"
+    "mjml": "html",
+    "ejs" : "html"
   },
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (Eex)"
+  ],
 
   "peacock.favoriteColors": [
     {
@@ -286,8 +321,7 @@
 
   "indentRainbow.errorColor": "rgba(128,32,32,0.8)",
 
-  "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
-  "remote.SSH.configFile": "/home/visi/.ssh/config",
+
   "liveServer.settings.donotVerifyTags": true,
   "cSpell.logLevel": "Information",
   "cSpell.diagnosticLevel": "Hint",
@@ -299,12 +333,8 @@
   "sync.autoUpload": true,
   "sync.forceUpload": true,
   "sync.quietSync": true,
-  "markdownlint.customRules": [
-    "{docsmsft.docs-markdown}/markdownlint-custom-rules/rules.js"
-  ],
-  "markdownlint.config": {
-    "MD025": {
-      "front_matter_title": ""
-    }
+  "window.menuBarVisibility": "default",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
   }
 }

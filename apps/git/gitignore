@@ -25,6 +25,7 @@ Thumbs.db
 .Trashes
 
 # Compiled Python files
+*/__pycache__
 *.pyc
 
 

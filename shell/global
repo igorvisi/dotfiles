@@ -8,7 +8,7 @@ export DOWNLOADDIR=$HOME/Tl
 export OFFLINEDIR=$HOME/.offline
 export DOCKERVOLUME=/var/docker/volume
 export OPENSOURCEDIR=$CODEDIR/Open
-export PACSAVEDIR=$HOME/.extra/mega.co.nz/packages
+export PACSAVEDIR=$HOME/.extra/cloud.igorvisi.com/packages
 export PICTUREDIR=$HOME/Pics
 export SCREENSHOTDIR=$PICTUREDIR/Screenshots
 export WORKSPACE=$CODEDIR/Workspace
@@ -23,13 +23,9 @@ export EDITOR=nvim
 export GPGKEY=0x9E000216F11111A5
 
 # https://github.com/chrisallenlane/cheat
-export DEFAULT_CHEAT_DIR=$HOME/.dotfiles/cli_tools/cheat # cli command cheatsheet
-export CHEATPATH=$DOCDIR/Cours/Cheat # University course's cheatsheet
+export DEFAULT_CHEAT_DIR=$HOME/.dotfiles/apps/cheat # cli command cheatsheet
+export CHEATPATH=$HOME/.dotfiles/apps/cheat/perso # Perso command
 export CHEATCOLORS=true
-
-# Add the current directory in the PATH
-#export PATH=$PATH:.
-#export PATH=$PATH:./node_modules/.bin
 
 # Vscode 
 export VSCODE_CONFIG_DIR="$HOME/.config/Code - OSS/User"
@@ -40,40 +36,15 @@ export VSCODE_EXTENSIONS_DIR="$HOME/.vscode-oss/extensions"
 export GOPATH=$OFFLINEDIR/golang
 export PATH=$PATH:${GOPATH}/bin
 
-# PATH for gems with rbenv
-# export PATH=$HOME/.rbenv/bin:$PATH
-# export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-# export PATH=$PATH:$GEM_HOME/bin
-
 #PATH for python packages installed by pip --user  without sudo
 export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
 export PATH=$PATH:$PY_BIN
 export PIP_CONFIG_FILE=$HOME/.config/pip.conf
 
-# Prompt
-export SPACESHIP_PROMPT_ORDER=(
-user
-dir
-host
-node
-git_branch
-git_status
-exec_time
-line_sep
-jobs
-char
-)
-
-export SPACESHIP_PACKAGE_SYMBOL=""
-export SPACESHIP_CHAR_SYMBOL="❯ "
-export SPACESHIP_JOBS_SYMBOL="»"
-export SPACESHIP_TIME_SHOW=true
-export SPACESHIP_DIR_TRUNC_PREFIX="..."
-
 # PATH for global node packages directory
 # PATH=$PATH:`yarn global bin --offline`
-export NPM_CONFIG_PREFIX=${HOME}/.offline/npm
-export NPM_PACKAGES=${HOME}/.offline/npm
+export NPM_CONFIG_PREFIX=${OFFLINEDIR}/npm
+export NPM_PACKAGES=${OFFLINEDIR}/npm
 export NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
 export PATH=$PATH:${NPM_PACKAGES}/bin
 # nvm
@@ -103,12 +74,33 @@ export MANPATH=${NPM_PACKAGES}/share/man:$(manpath)
 export PATH=$PATH:$HOME/Bin
 
 
+# Prompt
+export SPACESHIP_PROMPT_ORDER=(
+user
+dir
+host
+node
+git_branch
+git_status
+exec_time
+line_sep
+jobs
+char
+)
+
+export SPACESHIP_PACKAGE_SYMBOL=""
+export SPACESHIP_CHAR_SYMBOL="❯ "
+export SPACESHIP_JOBS_SYMBOL="»"
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_DIR_TRUNC_PREFIX="..."
+
+
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# Prefer French and use UTF-8
-export LC_ALL=fr_FR.UTF-8
-export LANG=fr_FR.UTF-8
+# Prefer EN and use UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 export LC_TIME=en_US
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
@@ -116,12 +108,10 @@ export LC_TIME=en_US
 export HISTTIMEFORMAT='%F %T '
 
 # keep history up to date, across sessions, in realtime
-#  http://unix.stackexchange.com/a/48113
+# http://unix.stackexchange.com/a/48113
 export HISTCONTROL="erasedups:ignoreboth"       # no duplicate entries
-export HISTSIZE=1000000                          # big big history (default is 500)
+export HISTSIZE=100000000                       # big big history (default is 500)
 export HISTFILESIZE=$HISTSIZE                   # big big history
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ssh:rm:scp:ls:bg:fg:history:which:b:c:clear:cd:z:zz" # for bash
-
-
 

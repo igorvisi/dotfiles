@@ -2,5 +2,5 @@
 
 # get screen capture with same name format with my Android phone screen capture and move it to $SCREENSHOTDIR
 #
-scrot 'Screenshot_%Y-%m-%d-%H-%M-%S.png'  -e 'mv $f /home/visi/Pics/Screenshots/'  &&
-notify-send --icon=applets-screenshooter "Capture prise"
+scrot "Screenshot_%Y-%m-%d-%H-%M-%S.png"  -e "mv $f $SCREENSHOTDIR " &&
+notify-send --icon=applets-screenshooter "I got a screenshot !"

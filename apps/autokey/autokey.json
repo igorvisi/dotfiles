@@ -1,5 +1,5 @@
 {
-    "version": "0.95.7",
+    "version": "0.95.9",
     "userCodeDir": null,
     "settings": {
         "isFirstRun": true,
@@ -12,10 +12,10 @@
         "interfaceType": "XRecord",
         "undoUsingBackspace": true,
         "windowDefaultSize": [
-            453,
-            742
+            1364,
+            682
         ],
-        "hPanePosition": 188,
+        "hPanePosition": 393,
         "columnWidths": [
             150,
             50,

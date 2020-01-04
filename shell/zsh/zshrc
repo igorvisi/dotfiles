@@ -11,6 +11,7 @@ command-not-found
 common-aliases
 git
 git-flow
+hlissner/zsh-autopair
 igorvisi/zsh-up
 last-working-dir
 sudo
@@ -56,6 +57,11 @@ setopt COMPLETE_IN_WORD
 setopt EXTENDED_HISTORY
 setopt PROMPT_SUBST
 setopt CORRECT
+
+# Do not override files using `>`, but it's still possible using `>!`
+set -o noclobber
+
+
 # Load personal global variables like PATH ...
 source $HOME/.global
 # Useful Shell functions.

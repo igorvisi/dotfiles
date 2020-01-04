@@ -45,7 +45,7 @@ alias ipconfig='ifconfig'
 alias zshconf='vim ~/.zshrc'
 alias aliasconf='vim ~/.aliases && source ~/.aliases'
 alias funconf='vim ~/.zsh/functions && source ~/.zsh/functions'
-alias txc='vim ~/.tmux.conf'
+alias tmuxc='vim ~/.tmux.conf'
 alias i3conf='vim ~/.config/i3/config'
 alias polybconf='vim ~/.config/polybar/config'
 alias xresources='vim ~/.Xresources && xrdb ~/.Xresources'
@@ -55,15 +55,16 @@ alias zshrc='source ~/.zshrc'
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 # When you often forget sudo
-alias ctl='\sudo systemctl'
-alias pacman='\sudo pacman'
-alias docker='\sudo docker'
-alias docker-compose='\sudo docker-compose'
+alias ctl='sudo systemctl'
+alias pacman='sudo pacman'
+alias apt='sudo apt'
+alias docker='sudo docker'
+alias docker-compose='sudo docker-compose'
 alias mount='sudo mount'
 alias umount='sudo umount'
-alias hibernate='\sudo systemctl start hibernate.target'
-alias wifi-menu='\sudo wifi-menu'
-alias fdisk='\sudo fdisk -l'
+alias hibernate='sudo systemctl start hibernate.target'
+alias wifi-menu='sudo wifi-menu'
+alias fdisk='sudo fdisk -l'
 alias sv='sudoedit'
 alias dk='docker'
 alias dkc='docker-compose'
@@ -85,6 +86,11 @@ alias mn='man'
 alias ch='cheat'
 
 alias wget="wget -c"
+# Download web page with all assets
+# Credit: https://github.com/denysdovhan/dotfiles
+# usage: getpage https://igorvisi.com
+alias getpage='\wget --no-clobber --page-requisites --html-extension --convert-links --no-host-directories'
+
 
 # A `rm` compatible layer for `trash`.
 # https://github.com/PhrozenByte/rmtrash
@@ -102,17 +108,20 @@ alias lsctl='systemctl -t service --full --all list-units'
 alias wifistat='iw dev wlo1 link'
 
 # Download Youtube Playlist video in mp4 or mp3.
-alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
-alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4 '
+alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4 --write-autà-sub'
+alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4 --write-auto-sub '
 alias y3='youtube-dl -x -o "%(title)s-%(id)s.%(ext)s" --audio-format mp3 --audio-quality 0'
 
 # Browser aliases
 alias chrome='brave'
 alias incognito='brave --incognito'
 
-# Get IP address information.
+# Get my public IP address information.
 alias ipinfo='curl ipinfo.io'
-# Update system, atom extensions, gems, antigen  and nodes packages.
+alias myip='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"'
+
+
+# Update system, vscode extensions, gems, antigen and nodes packages.
 alias update='
 yay -Suy --noconfirm --needed ; # Update Archlinux
 npm update -g ; # Update node packages from yarn

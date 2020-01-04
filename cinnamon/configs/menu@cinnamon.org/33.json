@@ -49,6 +49,7 @@
                 "favbox-show",
                 "favbox-min-height",
                 "show-places",
+                "show-recents",
                 "menu-editor-button"
             ]
         },
@@ -79,6 +80,7 @@
         "default": "cinnamon-symbolic",
         "description": "Icon",
         "tooltip": "Select an icon to show in the panel.",
+        "default_icon": "cinnamon-symbolic",
         "dependency": "menu-custom",
         "indent": true,
         "value": "cinnamon-symbolic"
@@ -132,6 +134,13 @@
         "tooltip": "Choose whether or not to show bookmarks and places in the menu.",
         "value": false
     },
+    "show-recents": {
+        "type": "switch",
+        "default": true,
+        "description": "Show recents",
+        "tooltip": "Choose whether or not to show recents in the menu.",
+        "value": true
+    },
     "enable-autoscroll": {
         "type": "switch",
         "default": true,
@@ -178,5 +187,5 @@
         "callback": "_launch_editor",
         "tooltip": "Press this button to customize your menu entries."
     },
-    "__md5__": "6cc971c5aa632de42d925009b211e2cf"
+    "__md5__": "cdf1aadcba32c461f6e1b3b7647f8411"
 }

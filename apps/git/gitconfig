@@ -31,20 +31,6 @@
 	pushInsteadOf = "https://gitlab.com/"
 
 [include]
-	path = user
+	# include my personal conf in ~/.gitlocal.secret 
+	path = ~/.gitlocal.secret
 
-[user]
-	email = mail@igorvisi.com
-	nom = Igor Visi
-	signingKey = FCB6F5BF516514AD3EEC8A6A9E000216F11111A5
-	name = igorvisi
-[commit]
-	gpgSign = true
-[tag]
-	forceSignAnnotated = true
-[includeIf "gitdir:~/Codes/Clients/Calculus-system/"]
-	path = .gitconfig-calculus
-[includeIf "gitdir:~/Codes/Clients/Avenirbank/"]
-	path = .gitconfig-avenirtech
-[includeIf "gitdir:~/AvenirTech/"]
-	path = .gitconfig-avenirtech

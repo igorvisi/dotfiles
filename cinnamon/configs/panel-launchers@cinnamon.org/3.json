@@ -10,9 +10,7 @@
             "org.gnome.Terminal.desktop",
             "nemo.desktop"
         ],
-        "value": [
-            "org.gnome.Terminal.desktop"
-        ]
+        "value": []
     },
     "allow-dragging": {
         "type": "switch",

@@ -1,10 +1,10 @@
 ! ============
 !   Couleurs
 ! ============
-*background: #222D32
+*background: #282A33
 *foreground: #CFD8DC
 *secondary:  #AAB3C0
-*active:     #7BB4BD
+*active:     #6BA4E7
 *urgent:     #C67D6F
 
 

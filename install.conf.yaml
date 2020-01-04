@@ -8,14 +8,12 @@
 - link:
     # Coding tools
     ~/.config/Code - OSS/User: apps/vscode
-    ~/.config/JetBrains: apps/jetbrains
     ~/.config/nvim: apps/neovim
     ~/.config/verdaccio/config.yaml: apps/verdaccio/config.yaml
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig
-    ~/.gitconfig-calculus: apps/git/gitconfig-calculus
-    ~/.gitconfig-avenirtech: apps/git/gitconfig-avenirtech
-    ~/.gitignore: apps/git/gitignore
+    ~/.gitlocal.secret: apps/git/gitlocal.secret
+    ~/.gitignore: apps/gcomptonit/gitignore
     ~/.ideavimrc: apps/jetbrains/ideavimrc
     ~/.npmrc: apps/npm/npmrc
     ~/.tigrc: apps/tig/tigrc
@@ -23,14 +21,12 @@
 
     # Desktop environnement and windows manager
     ~/.cinnamon: cinnamon
-    ~/.config/compton.conf: apps/compton/compton.conf
+    ~/.config/picom.conf: apps/picom/picom.conf
     ~/.config/i3: i3
     ~/.config/gtk-3.0: apps/gtk-3.0
     ~/.config/mimeapps.list: apps/mimeapps.list
     ~/.config/polybar: apps/polybar
     ~/.config/xfce4: xfce
-    ~/.local/share/kservices5: apps/kservices5
-    ~/.local/share/kxmlgui5/dolphin: apps/dolphin
     ~/.lock.png: i3/lock.png
 
     # Useful X applications

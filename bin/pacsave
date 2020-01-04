@@ -1,5 +1,5 @@
 #!/bin/bash
-source /home/visi/.dotfiles/shell/global
+source $HOME/.dotfiles/shell/global
 command -v pacman && pacman -Qqme > $PACSAVEDIR/aur.txt
 command -v pacman && pacman -Qqne > $PACSAVEDIR/pacman.txt
 command -v code && code --list-extensions > $PACSAVEDIR/vscode.txt

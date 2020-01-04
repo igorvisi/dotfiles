@@ -105,7 +105,7 @@ mount /dev/mapper/vg-home /mnt/home
     ## LANGUAGE="en_US:fr_FR"
     ## LC_COLLATE=C
   nvim /etc/locale-gen
-    ## Décommenter fr_FR.UTF-8 et en_US "
+    ## Décommenter fr_FR.UTF-8 et en_US.UTF-8 "
   locale-gen
   export LANG=en_US.UTF-8
   nvim /etc/default/locale
@@ -297,7 +297,7 @@ ssh-keygen -o -t ed25519 -C "mail@mail.com"
 ```
 
 
-### Remove cache 
+### Remove cache
 ```bash
 paccache -rk 1  # Laisser seulement a dernière version en cache
 paccache -ruk0  # Enlever tous les logiciels non installés
