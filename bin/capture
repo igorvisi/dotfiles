@@ -2,5 +2,6 @@
 
 # get screen capture with same name format with my Android phone screen capture and move it to $SCREENSHOTDIR
 #
-scrot "Screenshot_%Y-%m-%d-%H-%M-%S.png"  -e "mv $f $SCREENSHOTDIR " &&
+source .global
+scrot "$SCREENSHOTDIR/Screenshot_%Y-%m-%d-%H-%M-%S.png" &&
 notify-send --icon=applets-screenshooter "I got a screenshot !"

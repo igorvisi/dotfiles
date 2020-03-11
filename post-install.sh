@@ -58,6 +58,35 @@ if [[ $REPLY =~ ^[Yy] ]]; then
 	for package in $( cat ~/.extra/cloud.igorvisi.com/packages/npm.txt ); do npm install -g $package ; done
 fi
 
+
+read -n 1 -p "Do you want to restore previous /org/ dconf? (y/N)" REPLY
+echo
+if [[ $REPLY =~ ^[Yy] ]]; then
+	echo "###########################"
+	echo "Restoring previous /org/dconf"
+	echo "############################"
+	dconf load /org/ < ~/.extra/cloud.igorvisi.com/conf/dconf/config.ini
+fi
+
+read -n 1 -p "Do you want to restore previous cinnamon conf? (y/N)" REPLY
+echo
+if [[ $REPLY =~ ^[Yy] ]]; then
+	echo "###########################"
+	echo "Restoring previous cinnamon conf"
+	echo "############################"
+	dconf load /org/cinnamon/ < ~/.extra/cloud.igorvisi.com/conf/cinnamon/config.ini
+fi
+
+read -n 1 -p "Do you want to restore previous gnome conf? (y/N)" REPLY
+echo
+if [[ $REPLY =~ ^[Yy] ]]; then
+	echo "###########################"
+	echo "Restoring previous gnome conf"
+	echo "############################"
+	dconf load /org/gnome/ < ~/.extra/cloud.igorvisi.com/conf/gnome/config.ini
+fi
+
+
 echo "###################################"
 echo "Configuring GTK file chooser dialog"
 echo "###################################"
@@ -72,4 +101,20 @@ sudo systemctl enable --now usbguard-dbus.service
 sudo systemctl enable --now syncthing@$(whoami).service
 
 systemctl --user enable --now classifier.timer
+systemctl --user enable --now pacsave.timerecho "Configuring GTK file chooser dialog"
+echo "###################################"
+gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+
+echo "###########################"
+echo "Enable and starting service"
+echo "###########################"
+
+sudo systemctl enable --now usbguard.service
+sudo systemctl enable --now usbguard-dbus.service
+#sudo systemctl enable --now syncthing@$(whoami).service
+
+
+systemctl --userb enable --now syncthing.service
+systemctl --user enable --now classifier.timer
+systemctl --user enable --now dconf-save.timer
 systemctl --user enable --now pacsave.timer

@@ -73,3 +73,6 @@ source $HOME/.zsh/aliases
 source $HOME/.zsh/keymap.zsh
 source $HOME/.zsh/syntax-highlighting-filetypes.zsh
 source $HOME/.zsh/completions.zsh
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/symfony symfony

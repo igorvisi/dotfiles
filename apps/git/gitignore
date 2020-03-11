@@ -1,9 +1,9 @@
 
 # Jetbreains
-.idea/*
+#.idea/*
 
 # Visual Studio Code
-.vscode/*
+#.vscode/*
 
 # git credential file
 .gitconfig.local
@@ -27,6 +27,7 @@ Thumbs.db
 # Compiled Python files
 */__pycache__
 *.pyc
+*venv
 
 
 # random

@@ -8,9 +8,10 @@ export DOWNLOADDIR=$HOME/Tl
 export OFFLINEDIR=$HOME/.offline
 export DOCKERVOLUME=/var/docker/volume
 export OPENSOURCEDIR=$CODEDIR/Open
-export PACSAVEDIR=$HOME/.extra/cloud.igorvisi.com/packages
+export EXTRADIR=$HOME/.extra/cloud.igorvisi.com
+export PACSAVEDIR=$EXTRADIR/packages
 export PICTUREDIR=$HOME/Pics
-export SCREENSHOTDIR=$PICTUREDIR/Screenshots
+export SCREENSHOTDIR=$PICTUREDIR/Screenshots/
 export WORKSPACE=$CODEDIR/Workspace
 # export CDPATH="":$HOME:$CODEDIR/Clients:$OPENSOURCEDIR
 
@@ -27,7 +28,7 @@ export DEFAULT_CHEAT_DIR=$HOME/.dotfiles/apps/cheat # cli command cheatsheet
 export CHEATPATH=$HOME/.dotfiles/apps/cheat/perso # Perso command
 export CHEATCOLORS=true
 
-# Vscode 
+# Vscode
 export VSCODE_CONFIG_DIR="$HOME/.config/Code - OSS/User"
 export VSCODE_EXTENSIONS_DIR="$HOME/.vscode-oss/extensions"
 
@@ -35,6 +36,10 @@ export VSCODE_EXTENSIONS_DIR="$HOME/.vscode-oss/extensions"
 # PATH for golang packages
 export GOPATH=$OFFLINEDIR/golang
 export PATH=$PATH:${GOPATH}/bin
+
+# PATH for Ruby
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
 
 #PATH for python packages installed by pip --user  without sudo
 export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
@@ -80,6 +85,8 @@ user
 dir
 host
 node
+pyenv
+venv
 git_branch
 git_status
 exec_time

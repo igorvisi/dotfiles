@@ -108,8 +108,8 @@ alias lsctl='systemctl -t service --full --all list-units'
 alias wifistat='iw dev wlo1 link'
 
 # Download Youtube Playlist video in mp4 or mp3.
-alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4 --write-autà-sub'
-alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4 --write-auto-sub '
+alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
+alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4 '
 alias y3='youtube-dl -x -o "%(title)s-%(id)s.%(ext)s" --audio-format mp3 --audio-quality 0'
 
 # Browser aliases
@@ -152,6 +152,7 @@ alias diskspace='df -P -kHl'
 alias ni='npm install'
 alias nr='npm run'
 
+# PHP 
 # Laravel - php
 alias ci='composer install'
 alias cu='composer update'

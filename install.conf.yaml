@@ -12,22 +12,20 @@
     ~/.config/verdaccio/config.yaml: apps/verdaccio/config.yaml
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig
-    ~/.gitlocal.secret: apps/git/gitlocal.secret
-    ~/.gitignore: apps/gcomptonit/gitignore
-    ~/.ideavimrc: apps/jetbrains/ideavimrc
+    ~/.gitconfig.local: apps/git/.gitconfig.local
+    ~/.gitignore: apps/git/gitignore
     ~/.npmrc: apps/npm/npmrc
     ~/.tigrc: apps/tig/tigrc
     ~/.yarnrc: apps/yarn/yarnrc
 
-    # Desktop environnement and windows manager
-    ~/.cinnamon: cinnamon
+    # Desktop environnement and windows manageryy
     ~/.config/picom.conf: apps/picom/picom.conf
-    ~/.config/i3: i3
+    ~/.config/i3: desktop-env/i3
     ~/.config/gtk-3.0: apps/gtk-3.0
     ~/.config/mimeapps.list: apps/mimeapps.list
     ~/.config/polybar: apps/polybar
-    ~/.config/xfce4: xfce
-    ~/.lock.png: i3/lock.png
+    ~/.config/xfce4: desktop-env/xfce
+    ~/.lock.png: desktop-env/i3/lock.png
 
     # Useful X applications
     ~/.config/autokey: apps/autokey

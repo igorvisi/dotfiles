@@ -2,6 +2,8 @@
 	u = pull
 	p = push
 	sclone = clone --depth=1
+	unstage = reset HEAD --
+	last = log -1 HEAD
 	rma = !git ls-files --deleted -z | xargs -0 -r git rm
 	deleted = !git ls-files --deleted -z
 	forget = update-index --assume-unchanged
@@ -30,7 +32,17 @@
 	pushInsteadOf = "git://gitlab.com/"
 	pushInsteadOf = "https://gitlab.com/"
 
+[url "ssh+git://aur@aur.archlinux.org:"]
+	pushInsteadOf = "aur:"
+
+
 [include]
-	# include my personal conf in ~/.gitlocal.secret 
-	path = ~/.gitlocal.secret
+	# include my personal conf in ~/.gitlocal
+	path = ~/.gitconfig.local
+	# [user]
+	#	email = mail@igorvisi.com
+	#	name = Igor Visi
+	#	user = igorvisi
+	#	signingKey = FCB6F5BF516514AD3EEC8A6A9E000216F11111A5
+
 

@@ -1,0 +1,9 @@
+[Unit]
+Description=Organize files by classifying them into different folders with accordance with type
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

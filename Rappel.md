@@ -303,3 +303,9 @@ paccache -rk 1  # Laisser seulement a dernière version en cache
 paccache -ruk0  # Enlever tous les logiciels non installés
 
 ```
+
+
+###
+
+mkdir /etc/nginx/sites-avaible 
+

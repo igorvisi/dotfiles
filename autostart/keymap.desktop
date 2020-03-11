@@ -8,3 +8,4 @@ Exec=/home/visi/.keymap.sh
 StartupNotify=false
 Terminal=false
 Hidden=false
+X-GNOME-Autostart-Delay=100

@@ -31,21 +31,12 @@
   // "files.autoSave": "afterDelay",
   "files.exclude": {
     "**/__pycache__/**": true,
-    "**/.classpath": true,
-    "**/.DS_Store": true,
-    "**/.factorypath": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.svn": true,
     "**/*.class": true,
     "**/*.pyc": true,
-    "**/CVS": true,
-    "**/env/**": true,
-    "**/venv/**": true,
-    "env-*": true,
-    "nodes_modules": true
+    "**/.git/**": true,
+    "**/.vendors/**": true,
+    "**/.vendor/**": true,
+    "**/node_modules/**": true
   },
   "files.associations": {
     "*.js": "javascriptreact"
@@ -57,6 +48,7 @@
     "node_modules": true,
     "node_modules_electron": true,
     "vendors": true,
+    "build": true,
     "dist": true
   },
   "advancedNewFile.showInformationMessages": true,
@@ -71,8 +63,9 @@
   "workbench.iconTheme": "ayu",
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.editor.closeEmptyGroups": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.limit.enabled":true,
+  "workbench.editor.limit.value": 6,
 
   //Explorer
   "explorer.confirmDelete": false,
@@ -208,12 +201,11 @@
   // Languages
   "go.gopath": "~/.local/golang",
   "java.home": "/usr/lib/jvm/java-8-openjdk",
-  "java.errors.incompleteClasspath.severity": "ignore",
   "html.format.enable": true,
   "html.format.endWithNewline": true,
   "html.format.preserveNewLines": true,
-  "eslint.autoFixOnSave": false,
   "eslint.alwaysShowStatus": true,
+  "phpcs.enable": false,
   "cSpell.language": "en,fr",
 
   // others
@@ -263,64 +255,11 @@
     "HTML (Eex)"
   ],
 
-  "peacock.favoriteColors": [
-    {
-      "name": "Angular Red",
-      "value": "#b52e31"
-    },
-    {
-      "name": "Auth0 Orange",
-      "value": "#eb5424"
-    },
-    {
-      "name": "Azure Blue",
-      "value": "#007fff"
-    },
-    {
-      "name": "C# Purple",
-      "value": "#68217A"
-    },
-    {
-      "name": "Gatsby Purple",
-      "value": "#639"
-    },
-    {
-      "name": "Go Cyan",
-      "value": "#5dc9e2"
-    },
-    {
-      "name": "Java Blue-Gray",
-      "value": "#557c9b"
-    },
-    {
-      "name": "JavaScript Yellow",
-      "value": "#f9e64f"
-    },
-    {
-      "name": "Mandalorian Blue",
-      "value": "#1857a4"
-    },
-    {
-      "name": "Node Green",
-      "value": "#215732"
-    },
-    {
-      "name": "React Blue",
-      "value": "#00b3e6"
-    },
-    {
-      "name": "Something Different",
-      "value": "#832561"
-    },
-    {
-      "name": "Vue Green",
-      "value": "#42b883"
-    }
-  ],
-  "peacock.affectStatusBar": true,
-
   "indentRainbow.errorColor": "rgba(128,32,32,0.8)",
 
+  // Autocompletion for CSS name
+  "html-css-class-completion.includeGlobPattern" : "**/*.{css,scss,html}",
+  "html-css-class-completion.enableEmmetSupport" : true,
 
   "liveServer.settings.donotVerifyTags": true,
   "cSpell.logLevel": "Information",
@@ -336,5 +275,8 @@
   "window.menuBarVisibility": "default",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": false
-  }
+  },
+  "zenMode.fullScreen": false,
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false
 }
