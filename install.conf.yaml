@@ -46,7 +46,6 @@
 
     # Design apps
     ~/.config/GIMP/2.10: apps/gimp
-    ~/.config/darktable: apps/darktable
     ~/.config/inkscape: apps/inkscape
 
     # Shell conf
