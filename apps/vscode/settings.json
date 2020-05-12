@@ -39,7 +39,11 @@
     "**/node_modules/**": true
   },
   "files.associations": {
-    "*.js": "javascriptreact"
+    "*.js": "javascriptreact",
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
   "files.trimTrailingWhitespace": true,
   "files.defaultLanguage": "markdown",
@@ -84,6 +88,7 @@
   // Telemetry
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
+  "vscode-mysql.enableTelemetry": false
 
   // npm
   "npm.enableScriptExplorer": true,
@@ -233,7 +238,8 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "mjml": "html",
-    "ejs" : "html"
+    "ejs" : "html",
+    "django-html": "html"
   },
   "auto-close-tag.activationOnLanguage": [
     "xml",
@@ -278,5 +284,9 @@
   },
   "zenMode.fullScreen": false,
   "zenMode.centerLayout": false,
-  "zenMode.hideLineNumbers": false
+  "zenMode.hideLineNumbers": false,
+  "git.enableCommitSigning": true,
+  "search.useGlobalIgnoreFiles": true,
+  "python.jediEnabled": false
+
 }

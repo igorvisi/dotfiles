@@ -1,3 +1,4 @@
+; Get variable defined in ~/.Xressources
 [colors]
 active = ${xrdb:active}
 background = ${xrdb:background}
@@ -8,13 +9,10 @@ underline = ${xrdb:active}
 green = ${xrdb:color2}
 
 [screen]
-; get connected screen: xrandr -q | grep " connected" | cut -d ' ' -f1
-first = eDP1
-second = DP2
-; first = DP-2
-; second = eD1
+first = ${xrdb:screen1}
+second = ${xrdb:screen2}
 
-
+;default bar
 [bar/default]
 width = 100%
 height = 24

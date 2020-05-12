@@ -22,6 +22,10 @@ set_from_resource       $background   background
 set_from_resource       $foreground   foreground
 set_from_resource       $color15      color15
 
+# Set screens from Xresources
+set_from_resource       $screen1       screen1
+set_from_resource       $screen2       screen2
+
 # Font for window titles.
 font Roboto 14
 font pango: Roboto Display 12
@@ -60,11 +64,9 @@ bindsym $mod+p exec "sleep 1s; gpick -p"
 
 # Password Manager
 bindsym $mod+n exec "passmenu"
-# mod+middle click to kill th current window
+# mod+middle click to kill the current window
 bindsym --whole-window $mod+button2 kill
 
-# Simplenote, for taking note and writing article
-bindsym $mod+b exec simplenote
 
 # change focus
 bindsym $mod+j focus down
@@ -211,9 +213,11 @@ bindsym $mod+r mode "Resize"
 # xrandr --query   to determine names of your devices
 set $mode_display (v)VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
 mode "$mode_display" {
-    bindsym v exec --no-startup-id "xrandr --output DP2 --auto --above eDP1 && nitrogen --restore && polybar -r home", mode "default"
+    bindsym v exec --no-startup-id "xrandr --output $screen2 --auto --above $screen1 && nitrogen --restore && polybar -r home", mode "default"
+    # bindsym v exec --no-startup-id xrandr --output "$screen2" --auto --above "$screen1" , mode "default"
     bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1, mode "default"
-    bindsym x exec --no-startup-id "xrandr --output DP2 --auto --off && pkill -f 'polybar -r home' ", mode "default"
+    bindsym x exec --no-startup-id "xrandr --output $screen2 --auto --off && pkill -f 'polybar -r home' ", mode "default"
+    # bindsym x exec --no-startup-id xrandr --output "$screen2" --auto --off, mode "default"
     bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
 
     # back to normal: Enter or Escape
@@ -240,24 +244,19 @@ bindsym $mod+Shift+e mode "$mode_system"
 
 #::::::::::::::::::::::::: Autostart apps ::::::::::::::::::::::::::#
 exec_always --no-startup-id nitrogen --restore # Set wallpaper
-exec_always --no-startup-id "killall polybar ; polybar -r main " # Status Bar
+exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
 exec_always --no-startup-id "killall kdeconnect-indicator ; kdeconnect-indicator " # Connect my phone with pc
 exec_always --no-startup-id "pgrep -x udiskie || (udiskie --smart-tray &)" # automounter for removable media
 exec --no-startup-id picom # compositor for X11
 exec --no-startup-id unclutter -noevents -keystroke -idle 5 # make cursor invisible when you are taping text or after 5s of inactivity
 exec --no-startup-id xedgewarp -b # make easy to switch cursor between screen with different size
 exec --no-startup-id "~/.keymap.sh" # remap keys
-exec --no-startup-id libinput-gestures-setup start # intercept actions libinput gestures from touchpad
 exec --no-startup-id volnoti #"A lightweight volume notification daemon
 exec --no-startup-id nm-applet --sm-disable # Network manager
 exec --no-startup-id nextcloud
-exec --no-startup-id megasync
-exec --no-startup-id volumeicon
 exec --no-startup-id redshift-gtk
-# exec --no-startup-id autokey-gtk  # Text expander
 exec --no-startup-id copyq # Clipboard manager
 
-# exec --no-startup-id telegram-desktop
 
 # For authentification
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -305,7 +304,6 @@ assign [class="VirtualBox|Gnome-chess|Pychess|Zeal|MuPDF|Zathura|atril|Atril" ] 
 
 # Force some app to move to their assigned workspace
 for_window [class="Spotify"] move to workspace $ws7
-for_window [class="KeeWeb"] move to workspace $ws9
 for_window [class="atril|Atril"] move to workspace $ws0
 for_window [class="libreoffice|libreoffice-*"] move to workspace $ws0
 

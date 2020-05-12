@@ -96,25 +96,18 @@ echo "###########################"
 echo "Enable and starting service"
 echo "###########################"
 
-sudo systemctl enable --now usbguard.service
-sudo systemctl enable --now usbguard-dbus.service
-sudo systemctl enable --now syncthing@$(whoami).service
 
-systemctl --user enable --now classifier.timer
-systemctl --user enable --now pacsave.timerecho "Configuring GTK file chooser dialog"
-echo "###################################"
-gsettings set org.gtk.Settings.FileChooser sort-directories-first true
-
-echo "###########################"
-echo "Enable and starting service"
-echo "###########################"
-
-sudo systemctl enable --now usbguard.service
-sudo systemctl enable --now usbguard-dbus.service
-#sudo systemctl enable --now syncthing@$(whoami).service
-
-
-systemctl --userb enable --now syncthing.service
+systemctl --user enable --now syncthing.service
 systemctl --user enable --now classifier.timer
 systemctl --user enable --now dconf-save.timer
 systemctl --user enable --now pacsave.timer
+
+
+echo "###################################"
+echo "Configuring GTK file chooser dialog"
+echo "###################################"
+gsettings set org.gtk.Settings.FileChooser sort-directories-first true
+
+
+
+

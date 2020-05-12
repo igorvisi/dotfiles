@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/false
+X-GNOME-Autostart-enabled=false

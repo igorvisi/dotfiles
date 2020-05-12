@@ -15,7 +15,8 @@ hlissner/zsh-autopair
 igorvisi/zsh-up
 last-working-dir
 sudo
-z
+rupa/z
+changyuheng/fz
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
@@ -75,4 +76,3 @@ source $HOME/.zsh/syntax-highlighting-filetypes.zsh
 source $HOME/.zsh/completions.zsh
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/symfony symfony

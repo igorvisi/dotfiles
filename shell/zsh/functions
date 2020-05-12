@@ -38,13 +38,18 @@ calc() {
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Credit https://github.com/garybernhardt/dotfiles
+# Credit from https://github.com/garybernhardt/dotfiles
 # Activate the closest virtualenv by looking in parent directories.
 activate_virtualenv() {
-	if [ -f env/bin/activate ]; then . env/bin/activate;
-	elif [ -f ../env/bin/activate ]; then . ../env/bin/activate;
-	elif [ -f ../../env/bin/activate ]; then . ../../env/bin/activate;
-	elif [ -f ../../../env/bin/activate ]; then . ../../../env/bin/activate;
+	if [ -f venv/bin/activate ]; then . venv/bin/activate;
+	elif [ -f ../venv/bin/activate ]; then . ../venv/bin/activate;
+	elif [ -f ../../venv/bin/activate ]; then . ../../venv/bin/activate;
+	elif [ -f ../../../venv/bin/activate ]; then . ../../../venv/bin/activate;
+
+	elif [ -f odoo-venv/bin/activate ]; then . odoo-venv/bin/activate;
+	elif [ -f ../odoo-venv/bin/activate ]; then . ../odoo-venv/bin/activate;
+	elif [ -f ../../odoo-venv/bin/activate ]; then . ../../odoo-venv/bin/activate;
+	elif [ -f ../../../odoo-venv/bin/activate ]; then . ../../../odoo-venv/bin/activate;
 	fi
 }
 
@@ -76,12 +81,6 @@ lt-ascii() {
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# REMIND ME, ITS IMPORTANT!
-# Needs zenity installed.
-# usage: remindme 10m "omg, the pizza"
-remindme() { sleep $1; zenity --info --title "Rappel" --text $2 & }
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Launch php server on public dir if not directory is precised
 # Needs php installed
 phpd(){
@@ -89,12 +88,13 @@ phpd(){
 	if [[ $1 ]] ; then
 		directory=$1
 	fi
-	 php -S localhost:8000 -t $directory \
+	 php -S localhost:5500 -t $directory \
 		-ddisplay_errors=1 \
 		-dzend_extension=xdebug.so \
 		-dxdebug.remote_enable=1 \
 		-dxdebug.remote_autostart=1
 }
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Transform the manual of a command to pdf and open it.
 # usage: man2pdf zsh
@@ -151,7 +151,7 @@ clipcopy () {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # tre is a shorthand for tree
-tre() { tree -aC -I '.git|node_modules|vendor|.idea|.vscode' --dirsfirst "$@" | less -FRNX; }
+tre() { tree -aC -I '.git|node_modules|vendor|.idea|.vscode|*venv' --dirsfirst "$@" | less -FRNX; }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Clone projet from git repo
@@ -181,15 +181,8 @@ lemp() { sudo systemctl $* mariadb.service php-fpm.service nginx.service }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Start an HTTP server from a directory, optionally specifying the port
 devserv() {
-	local port="${1:-3000}"
-	browser-sync start --server --files **/* --port "$port" --no-open --no-ui --no-online --no-notify ${2:.}
-}
-
-
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Launch tinker Laravel
-tinkering(){
-	while true; do php artisan tinker; done
+	local port="${2:-3000}"
+	browser-sync start --server --files **/* --port "$port" --no-open --no-ui --no-online --no-notify ${1:-.}
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -279,6 +272,7 @@ vb() {
 #Asymetric
 # e.g: crypt4me Fichier
 crypt4me(){ gpg --recipient $GPGKEY --sign --encrypt $1 }
+
 # e.g: crypt4 'Igor Visi' password.txt
 crypt4() { gpg --recipient $1 --sign --encrypt $2 }
 

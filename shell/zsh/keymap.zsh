@@ -19,7 +19,7 @@ bindkey -v
 bindkey "jk" vi-cmd-mode
 bindkey '^a'    vi-beginning-of-line
 bindkey '^e'    vi-end-of-line
-bindkey '^[[3~' vi-delete-char 
+bindkey '^[[3~' vi-delete-char
 bindkey '^l' vi-forward-word
 bindkey '^[[1;3C' vi-forward-word
 # allow v to edit the command line (standard behaviour)
@@ -34,10 +34,8 @@ bindkey "$terminfo[kcud1]" history-beginning-search-forward
 bindkey '^k' history-substring-search-down
 bindkey '^j' history-substring-search-up
 
-# Defined shortcut keys: [Esc] [Esc]
+# [Esc] [Esc] for to add sudo
 bindkey "\e\e" sudo-command-line
-bindkey '^t' fzy-cd-widget
 bindkey '^r' fzy-history-widget
 bindkey '^f' fzy-file-widget
 zstyle :fzy:file command rg --files --hidden --smart-case 2>/dev/null
-zstyle :fzy:cd command rg --files --hidden --smart-case 2>/dev/null

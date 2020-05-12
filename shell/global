@@ -23,10 +23,6 @@ export EDITOR=nvim
 # GPG default key
 export GPGKEY=0x9E000216F11111A5
 
-# https://github.com/chrisallenlane/cheat
-export DEFAULT_CHEAT_DIR=$HOME/.dotfiles/apps/cheat # cli command cheatsheet
-export CHEATPATH=$HOME/.dotfiles/apps/cheat/perso # Perso command
-export CHEATCOLORS=true
 
 # Vscode
 export VSCODE_CONFIG_DIR="$HOME/.config/Code - OSS/User"
@@ -78,7 +74,6 @@ export MANPATH=${NPM_PACKAGES}/share/man:$(manpath)
 # Personal Apps
 export PATH=$PATH:$HOME/Bin
 
-
 # Prompt
 export SPACESHIP_PROMPT_ORDER=(
 user
@@ -89,7 +84,6 @@ pyenv
 venv
 git_branch
 git_status
-exec_time
 line_sep
 jobs
 char
