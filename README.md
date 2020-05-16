@@ -8,18 +8,15 @@ OS: [Arch Linux](https://archlinux.com/) 👌🏿
 
 DE/WM: [i3wm](https://i3wm.org/) & [Cinnamon](https://github.com/linuxmint/Cinnamon)
 
-SHELL: [ZSH](https://zsh.org)
+SHELL: [Zsh](https://zsh.org)
 
-Softwares: [list](apps/)
+Apps I often use: [list](apps/)
 
-## Screenshot
+## Screenshots
+Sometimes I share pic of my workspace on instagram [@roigivis](https://instagram.com/roigivis).
 
-> i3wm + Adapta theme
-![Screenshot](Screenshot1.png)
+> i3wm on left & Cinnamon on right
+<p align="center"><a name="top" href="https://github.com/owl4ce/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" align="left" width="47%"></a></p>
+<p align="center"><a name="top" href="https://github.com/owl4ce/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot2.png" alt="Preview" align="left" width="47%"></a></p>
 
-
-> Cinnamon + Qogir-manjaro theme
-![Screenshot](Screenshot2.png)
-
-Sometimes I share pic of my workspace in instagram [@roigivis](https://instagram.com/roigivis).
 
