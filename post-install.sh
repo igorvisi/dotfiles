@@ -37,12 +37,12 @@ echo "############################"
 echo "Install packages from Pacman"
 echo "############################"
 
-for packageOff in $(cat ~/.extra/cloud.igorvisi.com/packages/pacman.txt); do sudo pacman -S $packageOff --needed --noconfirm ; done
+for packageOff in $(cat $EXTRADIR/packages/pacman.txt); do sudo pacman -S $packageOff --needed --noconfirm ; done
 
 echo "################################"
 echo "Install packages from AUR perso"
 echo "###############################"
-for packageAUR in $(cat ~/.extra/cloud.igorvisi.com/packages/aur.txt); do pacman -S $packageAUR --needed ; done
+for packageAUR in $(cat $EXTRADIR/packages/aur.txt); do pacman -S $packageAUR --needed ; done
 
 read -n 1 -p "Do you want to install vscode extensions? (y/N)" REPLY
 echo
@@ -50,7 +50,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 	echo "###################################"
 	echo "Install visual studio code packages"
 	echo "###################################"
-	for extension in $( cat ~/.extra/cloud.igorvisi.com/packages/vscode.txt ); do code --install-extension $extension ; done
+	for extension in $( cat $EXTRADIR/packages/vscode.txt ); do code --install-extension $extension ; done
 fi
 
 read -n 1 -p "Do you want to install npm packages? (y/N)" REPLY
@@ -59,7 +59,7 @@ if [[ $REPLY =~ ^[Yy] ]]; then
 	echo "###########################"
 	echo "Install npm global packages"
 	echo "############################"
-	for package in $( cat ~/.extra/cloud.igorvisi.com/packages/npm.txt ); do npm install -g $package ; done
+	for package in $( cat $EXTRADIR/packages/npm.txt ); do npm install -g $package ; done
 fi
 
 

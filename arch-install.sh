@@ -222,7 +222,7 @@ echo -e "\n### Cloning dotfiles"
 arch-chroot /mnt sudo -u $user bash -c 'git clone --recursive https://github.com/igorvisi/dotfiles.git ~/.dotfiles'
 
 echo -e "\n### Running initial setup"
-arch-chroot /mnt /home/$user/.dotfiles/dotfiles-install
+arch-chroot /mnt /home/$user/.dotfiles/dotfiles-install /home/$user/.dotfiles/install.conf.yaml
 
 echo -e "\n### DONE - reboot and re-run both ~/.dotfiles/dotfiles-install scripts"
 umount -R /mnt
