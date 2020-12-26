@@ -1,0 +1,54 @@
+- defaults:
+    link:
+      create: true
+      force: true
+      relative: true
+      relink: true
+
+- link:
+    # Coding tools
+    ~/.config/Code - OSS/User: apps/vscode
+    ~/.config/nvim: apps/neovim
+    ~/.gitattributes: apps/git/gitattributes
+    ~/.gitconfig: apps/git/gitconfig
+    ~/.gitconfig.local: apps/git/.gitconfig.local
+    ~/.gitignore: apps/git/gitignore
+    ~/.npmrc: apps/npm/npmrc
+    ~/.tigrc: apps/tig/tigrc
+    ~/.yarnrc: apps/yarn/yarnrc
+
+    # Useful X applications
+    ~/.config/copyq: apps/copyq/
+    ~/.config/gpick: apps/gpick
+    ~/.config/redshift.conf: apps/redshift/redshift.conf
+    ~/.xinitrc: apps/xinitrc
+
+    # Terminal emulator
+    ~/.config/termite: apps/termite
+    ~/.config/tilda/config_0: apps/tilda/config_0
+
+    # Design apps
+    ~/.config/GIMP/2.10: apps/gimp
+    ~/.config/inkscape: apps/inkscape
+
+    # Shell conf
+    ~/.aliases: shell/aliases
+    ~/.dir_colors: shell/dir_colors
+    ~/.functions: shell/functions
+    ~/.global: shell/global
+    ~/.zsh: shell/zsh
+    ~/.zshrc: shell/zsh/zshrc
+
+    # cli apps
+    ~/Bin: bin
+    ~/.classifier-master.conf: apps/classifier/classifier-master.conf
+    ~/.config/htop/htoprc: apps/htop/htoprc
+    ~/.config/systemd: apps/systemd/
+    ~/.tmux.conf: apps/tmux/tmux.conf
+    ~/.config/autostart: autostart
+
+- shell:
+    - [
+        "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
+      ]
+    - [git submodule update --init --recursive]
