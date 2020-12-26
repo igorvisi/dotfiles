@@ -12,10 +12,13 @@ SHELL: [Zsh](https://zsh.org)
 
 Apps I often use: [list](apps/)
 
+I use [github.com/anishathalye/dotbot] to manage my dotfiles.
+
+
 ## Screenshots
 
-> i3wm on left & Cinnamon on right
-<p align="center"><a name="top" href="https://github.com/owl4ce/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" align="left" width="47%"></a></p>
-<p align="center"><a name="top" href="https://github.com/owl4ce/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot2.png" alt="Preview" align="left" width="47%"></a></p>
+> i3wm & Cinnamon
+<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" width="100%"></a></p>
+<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot2.png" alt="Preview" align="left" width="100%"></a></p>
 
 
