@@ -13,7 +13,6 @@ SHELL: [Zsh](https://zsh.org)
 Apps I often use: [list](apps/)
 
 ## Screenshots
-Sometimes I share pic of my workspace on instagram [@roigivis](https://instagram.com/roigivis).
 
 > i3wm on left & Cinnamon on right
 <p align="center"><a name="top" href="https://github.com/owl4ce/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" align="left" width="47%"></a></p>

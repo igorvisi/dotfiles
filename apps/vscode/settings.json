@@ -22,8 +22,6 @@
   "editor.renderLineHighlight": "all",
   "editor.minimap.enabled": true,
   "editor.selectionHighlight": true,
-  "editor.suggestSelection": "first",
-  "editor.copyWithSyntaxHighlighting": false,
   "editor.insertSpaces": false,
 
   // File
@@ -62,14 +60,7 @@
 
 
 
-  // Workbench
-  "workbench.startupEditor": "none",
-  "workbench.iconTheme": "ayu",
-  "workbench.colorTheme": "One Dark Pro",
-  "workbench.editor.tabSizing": "shrink",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.limit.enabled":true,
-  "workbench.editor.limit.value": 6,
+
 
   //Explorer
   "explorer.confirmDelete": false,
@@ -88,7 +79,6 @@
   // Telemetry
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "vscode-mysql.enableTelemetry": false
 
   // npm
   "npm.enableScriptExplorer": true,
@@ -287,6 +277,27 @@
   "zenMode.hideLineNumbers": false,
   "git.enableCommitSigning": true,
   "search.useGlobalIgnoreFiles": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggestFontSize": 14,
+  "debug.console.fontFamily": "",
+  "debug.console.fontSize": 16,
+  "debug.inlineValues": true,
+  "scm.alwaysShowActions": true,
+  "scm.alwaysShowProviders": true,
+  "vscode-postgres.defaultConnection": "localhost",
+  "vsintellicode.features.python.deepLearning": "enabled",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "vs-kubernetes": {
+    "vs-kubernetes.kubectl-path.linux": "/home/visi/.vs-kubernetes/tools/kubectl/kubectl",
+    "vs-kubernetes.minikube-path.linux": "/home/visi/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vs-kubernetes.helm-path.linux": "/home/visi/.vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vs-kubernetes.draft-path.linux": "/home/visi/.vs-kubernetes/tools/draft/linux-amd64/draft"
+  },
+  "workbench.statusBar.visible": true,
+  "python.languageServer": "Microsoft",
+  "workbench.enableExperiments": false
 
 }

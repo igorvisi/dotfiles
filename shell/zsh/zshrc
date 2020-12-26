@@ -27,52 +27,34 @@ __EOF__
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 antigen apply
 
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 
-# Correct typo in commande.
-setopt correct
-# adds history
-setopt APPEND_HISTORY
-
-# adds history incrementally and share it across sessions
-# http://www.refining-linux.org/archives/49/ZSH-Gem-15-Shared-history/
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-# don't record dupes in history
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_REDUCE_BLANKS
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-setopt HIST_VERIFY
-setopt HIST_EXPIRE_DUPS_FIRST
-
-# dont ask for confirmation in rm globs*
-setopt RM_STAR_SILENT
-# add timestamps to history
-setopt EXTENDED_HISTORY
-setopt PROMPT_SUBST
-setopt CORRECT
-setopt COMPLETE_IN_WORD
-# add timestamps to history
-setopt EXTENDED_HISTORY
-setopt PROMPT_SUBST
-setopt CORRECT
-
-# Do not override files using `>`, but it's still possible using `>!`
-set -o noclobber
-
+setopt correct                      # Auto correct typo in commande.
+setopt globdots                     # completion to show hidden files
+setopt extendedglob                 # Extended globbing. Allows using regular expressions with *
+setopt histignorealldups            # Ignore duplicate command in history
+setopt histignorespace              # Don't record command prefixe with space
+setopt hist_reduce_blanks           # trim blanks
+setopt inc_append_history           # Appends every command to the history file once it is executed
+setopt share_history                # Reloads the history whenever you use it
+setopt prompt_subst                 # enable substitution for prompt
+setopt extended_history             # add timestamps to history
+setopt prompt_subst                 # enable substitution for prompt
+setopt bang_hist                    # !keyword
+set -o noclobber                    # Do not override files using `>`, but it's still possible using `>!`
 
 # Load personal global variables like PATH ...
 source $HOME/.global
+# Load aliases
+source $HOME/.aliases
 # Useful Shell functions.
-source $HOME/.zsh/functions
-# The file contains my aliases.
-source $HOME/.zsh/aliases
+source $HOME/.functions
+
 
 # Load some usefull functions for zsh prompt
 source $HOME/.zsh/keymap.zsh
 source $HOME/.zsh/syntax-highlighting-filetypes.zsh
 source $HOME/.zsh/completions.zsh
 
+# Add bash completion
 autoload -U +X bashcompinit && bashcompinit

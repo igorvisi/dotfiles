@@ -32,3 +32,8 @@ Thumbs.db
 
 # random
 shilocation
+
+# Avoid Avoid polluting my Odoo installation via Git
+odoo-venv
+odoo-custom-addons/*
+odoo*.conf

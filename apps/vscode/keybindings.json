@@ -113,10 +113,11 @@
   },
   {
     "key": "ctrl+n",
-    "command": "extension.advancedNewFile"
+    "command": "-extension.vim_ctrl+n",
+    "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
   },
   {
-    "key": "ctrl+alt+n",
-    "command": "-extension.advancedNewFile"
+    "key": "ctrl+n",
+    "command": "explorer.newFile"
   }
 ]

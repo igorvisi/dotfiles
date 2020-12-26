@@ -10,6 +10,19 @@ TRAPWINCH() {
   zle &&  zle -R
 }
 
+# Make Ctrl+Z toggle Ctrl+Z and fg
+# credit: github.com/maximbaz/dotfiles/
+my-ctrl-z() {
+    if [[ $#BUFFER -eq 0 ]]; then
+        BUFFER="fg"
+        zle accept-line -w
+    else
+        zle push-input -w
+        zle clear-screen -w
+    fi
+}
+zle -N my-ctrl-z
+
 zle -N zle-keymap-select
 zle -N edit-command-line
 
@@ -22,6 +35,7 @@ bindkey '^e'    vi-end-of-line
 bindkey '^[[3~' vi-delete-char
 bindkey '^l' vi-forward-word
 bindkey '^[[1;3C' vi-forward-word
+bindkey '^Z' my-ctrl-z
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
@@ -38,4 +52,3 @@ bindkey '^j' history-substring-search-up
 bindkey "\e\e" sudo-command-line
 bindkey '^r' fzy-history-widget
 bindkey '^f' fzy-file-widget
-zstyle :fzy:file command rg --files --hidden --smart-case 2>/dev/null

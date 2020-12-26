@@ -1,9 +1,13 @@
-alias which='which -aS'
+alias -s {cpp,cxx,cc,c,hh,h,inl,asc,md,txt,TXT,tex,conf,config}=$EDITOR
+alias -s pdf=$PDFREADER
+alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
+
+alias which='which -a'
 alias c='clear'
 alias chx='chmod u+x'
 alias b='~/Bin/vocab'
 
-# Usefull when you are strong in google-fu ^^
+# Search in history command
 alias hg='fc -l 1 |grep'
 alias hf='fc -n -l 1 |fzf --tac --exact --ansi --no-sort --reverse --tiebreak=index \
 --bind "ctrl-m:execute: echo '{}'| xclip -selection c "'
@@ -14,24 +18,14 @@ alias cbgpg='gpg --export --armor $GPGKEY | clipcopy'
 # Copy current working directory
 alias cbwd="pwd | clipcopy"
 
-# Dotfiles with dotbot
-alias dotinstall='~/.dotfiles/install'
-alias dotconf='nvim ~/.dotfiles/install.conf.yaml'
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
-# List of projet in workspace dir
-alias work='ls $WORKSPACE | fzf --tac --exact --ansi --no-sort --reverse --tiebreak=index \
---bind "ctrl-m:execute: code $WORKSPACE/'{}' "'
-alias wk='work'
 
 # ROT13-encode text. Works for decoding, too! ;)
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 
 # neovim
 alias vim='nvim'
-# Vim mode read only
-alias vr='vim -R'
 
 # mimic vim functions
 alias :q='exit'
@@ -41,38 +35,39 @@ alias abd='adb'
 alias ipconfig='ifconfig'
 
 # Edit conf file quickly
-alias zshconf='vim ~/.zshrc'
-alias aliasconf='vim ~/.aliases && source ~/.aliases'
+alias zshconf='vim ~/.zshrc && source ~/.zshrc'
+alias aliasconf='vim ~/.zsh/aliases && source ~/.zsh/aliases'
 alias funconf='vim ~/.zsh/functions && source ~/.zsh/functions'
 alias tmuxc='vim ~/.tmux.conf'
-alias i3conf='vim ~/.config/i3/config'
-alias polybconf='vim ~/.config/polybar/config'
+alias swayconf='vim ~/.config/sway/config'
 alias xresources='vim ~/.Xresources && xrdb ~/.Xresources'
 # Source zsh conf quickly
-alias zshrc='source ~/.zshrc'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
 # When you often forget sudo
-alias ctl='sudo systemctl'
+alias systemctl='sudo systemctl'
+alias ctl='systemctl'
 alias pacman='sudo pacman'
 alias apt='sudo apt'
 alias docker='sudo docker'
 alias docker-compose='sudo docker-compose'
 alias mount='sudo mount'
 alias umount='sudo umount'
-alias hibernate='sudo systemctl start hibernate.target'
+alias hibernate='systemctl start hibernate.target'
 alias wifi-menu='sudo wifi-menu'
 alias fdisk='sudo fdisk -l'
-alias sv='sudoedit'
 alias dk='docker'
 alias dkc='docker-compose'
+alias showkube='export SPACESHIP_KUBECTL_SHOW=true'
+alias k='kubectl'
+alias kg='kubectl get'
 
 alias arch='docker run -d --name archlinux -it archlinux/base > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
 alias debian='docker run -d --name debian -it debian > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it debian bash'
 alias ubuntu='docker run -d --name ubuntu -it ubuntu > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it ubuntu bash'
 alias fedora='docker run -d --name fedora -it fedora > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it fedora bash'
-alias hacklab='docker run -d --name hacklab --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --net=host --privileged=true -v ~/Public:/mnt -it visi/docker-hacklab bash > /dev/null 2>&1; docker start hacklab > /dev/null; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it hacklab zsh'
+alias hacklab='docker run -d --name hacklab --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --net=host --privileged=true -v ~/Public:/mnt -it igorvisi/docker-hacklab bash > /dev/null 2>&1; docker start hacklab > /dev/null; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it hacklab zsh'
 
 # alias for the most used commands
 alias no='node'
@@ -81,9 +76,8 @@ alias y='yay'
 alias pa='pacman'
 alias s='sudo'
 alias wh='which'
-alias mn='man'
-
 alias wget="wget -c"
+
 # Download web page with all assets
 # Credit: https://github.com/denysdovhan/dotfiles
 # usage: getpage https://igorvisi.com
@@ -94,7 +88,7 @@ alias getpage='\wget --no-clobber --page-requisites --html-extension --convert-l
 # https://github.com/PhrozenByte/rmtrash
 # Needs trash-ci installed.
 alias rm='rmtrash -rf'
-alias rm!⁼'\rm -rf'
+alias rm!='\rm -rf'
 alias dirs='dirs -v'
 
 alias dmesg.me='dmesg -wHL'
@@ -114,7 +108,8 @@ alias incognito='brave --incognito'
 
 # Get my public IP address information.
 alias ipinfo='curl ipinfo.io'
-alias myip='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"'
+alias ipnet='dig +short myip.opendns.com @resolver1.opendns.com'
+alias iplocal='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"'
 
 
 # Update system, flutter antigen and nodes packages.
@@ -122,8 +117,7 @@ alias update='
 yay -Suy --noconfirm --needed ;
 npm update -g ;
 antigen update ;
-flutter update ;
-gpg --keyserver keyserver.ubuntu.com --refresh-keys;
+gpg --keyserver pgp.mit.edu --refresh-keys;
 '
 # Resolve mojibake problems with UTF-8 . e.g: �l�ments -- éléments.
 # conv Directory to test and conv --notest Directory to apply.
@@ -138,11 +132,13 @@ alias checkout='git checkout -'
 alias push='git push'
 alias fetch='git fetch'
 alias pull='git pull'
-alias undopush='git push -f origin HEAD^:master'
 alias n='clone $(clippaste)' # Clone git projet from url in clipboard. See clone in shell/zsh/functions file
 
 # Disk Usage
 alias diskspace='df -P -kHl'
+
+# Pip
+alias pi='pip install'
 
 # npm
 alias ni='npm install'
@@ -182,6 +178,8 @@ alias lc='ll --created -s=created'
 alias lf='ls -al | fzf ' # fzf needs
 alias lg='ls -al|grep'
 
+alias cat='bat -p' # bat > cat
+
 # Navigation
 alias -- +='pushd'
 alias -- ++='pushd .'
@@ -203,11 +201,22 @@ fi
 # Instead of 'sudo systemctl start service' just enter 'start service'
 # Instead of 'systemctl start --user service' just enter 'ustart service'
 systemd_commands=(start stop reload restart try-restart isolate reset-failed enable status  disable reenable)
-for command in $systemd_commands; do alias $command="sudo systemctl $command"; done
+for command in $systemd_commands; do alias $command="systemctl $command"; done
 for command in $systemd_commands; do alias u$command="systemctl $command --user"; done
 
 # Power off, reboot and hibernate in my local language: Lingala
 alias bomama='poweroff'
 alias bandela='reboot'
-alias fanda='~/Bin/lock suspend'
-alias lala='~/Bin/lock hibernate'
+alias fanda='systemctl -i suspend'
+alias lala='systemctl hibernate'
+
+# Global alias !!! Working in zsh only
+alias -g G='|grep'
+alias -g F='|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c " '
+alias -g C='|cb' # cb (see in .function file) copy to clipboard
+alias -g L='|less -XNFR'
+alias -g N='> /dev/null 2>&1'
+alias -g S='| sort'
+alias -g T='| wc -l'
+alias -g P='$(clippaste)'
+alias -g V='& progress -mp $!'

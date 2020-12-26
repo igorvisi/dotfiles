@@ -83,11 +83,11 @@ Comment[sv]=Praktiskt kommandoprogram för åtkomst av program och dokument
 Comment[tr]=Uygulamalar ve belgeler için uygun komut ve erişim aracı
 Comment[zh_CN]=方便的命令和操作程序或文档的工具
 Icon=kupfer
-Exec=kupfer  --no-splash
+Exec=kupfer --no-splash
 Type=Application
 Categories=Utility;
 StartupNotify=true
 X-UserData=$CONFIG/kupfer;$DATA/kupfer;$CACHE/kupfer
 X-GNOME-Autostart-enabled=true
 Hidden=false
-
+Name[en_US]=kupfer

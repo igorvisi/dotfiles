@@ -1,5 +1,0 @@
-[Unit]
-Description=Organize files by classifying them into different folders with accordance with type
-
-[Service]
-ExecStart= /home/visi/Bin/classTl

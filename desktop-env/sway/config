@@ -1,0 +1,348 @@
+# Set variables
+
+# Windows key is mod and mod1 is alt
+set $mod Mod4
+set $alt Mod1
+# Defining workspace functions
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
+set $ws6  "6"
+set $ws7  "7"
+set $ws8  "8"
+set $ws9  "9"
+set $ws0 "10"
+
+# Set colors from Xresources
+set_from_resource       $active       active
+set_from_resource       $inactive     secondary
+set_from_resource       $background   background
+set_from_resource       $foreground   foreground
+set_from_resource       $color15      color15
+
+# Set screens from Xresources
+set_from_resource       $screen1       screen1
+set_from_resource       $screen2       screen2
+
+# Font for window titles.
+font Roboto 14
+font pango: Roboto Display 12
+
+
+# Launcher
+set $menu kupfer
+# set $menu rofi -theme ~/.config/rofi/config -show drun
+# set $menu --no-startup-id qdbus org.kde.krunner /App display
+
+# file mangaer
+set $file-manager nemo
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+# Set default workspace layout
+workspace_layout tabbed
+#::::::::::::::::::::::::: Keybindings ::::::::::::::::::::::::::#
+# kill focused window
+bindsym $mod+q kill
+bindsym $alt+F4 kill
+# Kill windows
+bindsym --release Control+Shift+Escape exec xkill
+
+# start a terminal
+bindsym $mod+Return exec termite `xcwd`
+
+#Program launcher
+bindsym $mod+d exec $menu
+
+# File manager
+bindsym $mod+z exec $file-manager `xcwd`
+
+# Color picker
+bindsym $mod+p exec "sleep 1s; gpick -p"
+
+# Password Manager
+bindsym $mod+n exec "passmenu"
+# mod+middle click to kill the current window
+bindsym --whole-window $mod+button2 kill
+
+
+# change focus
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+h focus left
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus Right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+$alt+Right workspace next
+bindsym $mod+$alt+Left workspace prev
+
+# capture screen
+bindsym Print exec "~/Bin/capture"
+
+bindsym Control+Print exec "xfce4-screenshooter -r"
+
+# play | pause | next | previous on Spotify, Rhythmbox, Vlc   Need playerctl
+bindsym $mod+Control+Down exec "playerctl play-pause"
+bindsym $mod+Control+Up exec "playerctl play-pause"
+bindsym $mod+Control+Right exec "playerctl next"
+bindsym $mod+Control+Left exec "playerctl previous"
+
+# Raise/Lower and mute volume with volnoti popup ( AUR: volnoti-brightness-git )
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer set Master 2%+ && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set Master 2%- && volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1)"
+bindsym XF86AudioMute exec --no-startup-id "amixer set Master toggle && if amixer get Master | grep -Fq '[off]'; then volnoti-show -m; else volnoti-show $(amixer get Master | grep -Po '[0-9]+(?=%)' | head -1); fi"
+
+# Sreen brightness controls with a like vilnoti popup ( AUR: volnoti-brightness-git )
+bindsym XF86MonBrightnessUp exec --no-startup-id "xbacklight -inc 2 && volnoti-show -s /usr/share/pixmaps/volnoti/display-brightness-symbolic.svg $(xbacklight -get)"
+bindsym XF86MonBrightnessDown exec --no-startup-id "xbacklight -dec 2 && volnoti-show -s /usr/share/pixmaps/volnoti/display-brightness-symbolic.svg $(xbacklight -get)"
+
+# split in horizontal orientation
+bindsym $mod+c split h
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating / stacking /tabbed
+bindsym $mod+s layout stacking
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+e layout default
+bindsym $mod+w layout tabbed
+bindsym $mod+shift+t move scratchpad
+bindsym $mod+space floating toggle
+
+# show window from scratchpad mode
+bindsym $mod+t scratchpad show
+
+# change focus between tiling / floating windows
+bindsym $mod+Shift+space focus mode_toggle
+
+# focus the parent/child container
+bindsym $mod+a focus parent
+bindsym $mod+shift+a focus child
+
+
+floating_minimum_size -1 x -1
+floating_maximum_size -1 x -1
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# move workspace to the home screen
+bindsym $mod+m move workspace to output up
+
+# toggle between workspaces
+bindsym $mod+Tab workspace back_and_forth
+
+# Lock and suspend
+bindsym $mod+Shift+q exec "~/Bin/lock suspend"
+
+# reload the configuration file
+bindsym $mod+shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+shift+r restart
+
+# resize window (you can also use the mouse for that)
+mode "Resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "Resize"
+
+## Manual management of external displays
+# Set the shortcuts and what they do
+# xrandr --query   to determine names of your devices
+set $mode_display (v)VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
+mode "$mode_display" {
+    bindsym v exec --no-startup-id "xrandr --output $screen2 --auto --above $screen1 && nitrogen --restore && polybar -r home", mode "default"
+    # bindsym v exec --no-startup-id xrandr --output "$screen2" --auto --above "$screen1" , mode "default"
+    bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of eDP1, mode "default"
+    bindsym x exec --no-startup-id "xrandr --output $screen2 --auto --off && pkill -f 'polybar -r home' ", mode "default"
+    # bindsym x exec --no-startup-id xrandr --output "$screen2" --auto --off, mode "default"
+    bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+y mode "$mode_display"
+
+set $mode_system Lock(L), Suspend (S), Hibernate(H), Reboot (R), Poweroff(P)
+mode "$mode_system" {
+    bindsym l exec --no-startup-id "~/Bin/lock", mode "default"
+    bindsym s exec --no-startup-id "~/Bin/lock suspend", mode "default"
+    bindsym h exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$mode_system"
+
+
+#::::::::::::::::::::::::: Autostart apps ::::::::::::::::::::::::::#
+# exec_always --no-startup-id nitrogen --restore # Set wallpaper
+# exec_always --no-startup-id "killall polybar ; polybar -r main ; polybar -r home " # Status Bar
+exec_always --no-startup-id "killall kdeconnect-indicator ; kdeconnect-indicator " # Connect my phone with pc
+exec_always --no-startup-id "pgrep -x udiskie || (udiskie --smart-tray &)" # automounter for removable media
+exec --no-startup-id picom # compositor for X11
+# exec --no-startup-id unclutter -noevents -keystroke -idle 5 # make cursor invisible when you are taping text or after 5s of inactivity
+# exec --no-startup-id xedgewarp -b # make easy to switch cursor between screen with different size
+exec --no-startup-id "~/.keymap.sh" # remap keys
+# exec --no-startup-id volnoti #"A lightweight volume notification daemon
+exec --no-startup-id nm-applet --sm-disable # Network manager
+exec --no-startup-id nextcloud
+exec --no-startup-id redshift-gtk
+exec --no-startup-id copyq # Clipboard manager
+
+
+# For authentification
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Lock in case of user inactivity under X
+exec --no-startup-id xautolock -time 10 -corners 0-00 -locker "~/Bin/lock" &
+
+
+#::::::::::::::::::::::::: App assigned in workspace ::::::::::::::::::::::::::#
+# Terminal in Workspace 6
+assign [class="Termite"]  $ws6
+
+# File manager
+assign [class="Nemo|Thunar|Caja|Pcmanfm|dolphin" ]  $ws1
+
+# Browsers in Workspace 2
+assign [class="Chromium|Firefox|Brave-browser" ]  $ws2
+
+# Editors and IDE in Workspace 3
+assign [class="code|jetbrains-idea|Typora|jetbrains-studio|sun-awt-X11-XFramePeer" ]  $ws3
+
+# Messageries & Mails
+assign [class="Geary|Mailspring|Evolution|Thunderbird"]  $ws5
+assign [class="Slack"]  $ws8
+
+# Music and videos
+assign [class="Spotify|spotify|vlc|Rhythmbox|Musixmatch|Parole|Totem|MellowPlayer" ]  $ws7
+
+# Git
+assign [class="GitKraken|Boostnote|Simplenote|Sublime_merge|Notable" ]  $ws4
+# Projet manager tools
+assign [class="freeter"]  $ws4
+# Data Base
+assign [class="jetbrains-datagrip|DBeaver|PacketTracer7|TablePlus"] $ws4
+
+# Chat
+assign [class="telegram-desktop|TelegramDesktop|Signal"] $ws4
+
+assign [class="draw.io|Gimp|Inkscape|Darktable|Rawtherapee"] $ws9
+
+# Office
+assign [class="libreoffice|DesktopEditors"]  $ws0
+# Others
+assign [class="Transmission|KeeWeb|Bitwarden"]  $ws0
+assign [class="VirtualBox|Gnome-chess|Pychess|Zeal|MuPDF|Zathura|atril|Atril" ]  $ws0
+
+# Force some app to move to their assigned workspace
+for_window [class="Spotify"] move to workspace $ws7
+for_window [class="atril|Atril"] move to workspace $ws0
+for_window [class="libreoffice|libreoffice-*"] move to workspace $ws0
+
+# switch to workspace with urgent window automatically
+for_window [urgent=latest] focus
+
+# filemanager and visual studio code focus
+for_window [class="Caja|Thunar|Pcmanfm|dolphin"] focus
+for_window [class="code"] focus
+
+#::::::::::::::::::::::::: FLOATING or TILED ::::::::::::::::::::::::::#
+for_window [class="Peek|usbguard-applet-qt|copyq"] floating enable
+for_window [class="freeter|Catfish"] floating enable
+for_window [class="Pavucontrol|krunner"] floating enable
+for_window [class="Klavaro"] floating enable
+for_window [class="GParted"] floating enable
+for_window [instance="gnome-calculator"] floating enable
+for_window [class="Xsane|Onboard"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [class="(?i)blueman"] floating enable
+for_window [class="sample.Main|dev.Main"] floating enable # Floating for dev GUI
+for_window [class="Termite"] layout default
+for_window [class="Dragon-drag-and-drop"] sticky toggle
+for_window [class="Firefox" window_role="GtkFileChooserDialog"] floating disable
+
+#::::::::::::::::::::::::: APPEARANCE ::::::::::::::::::::::::::#
+for_window [class="^.*"] border pixel 1
+gaps inner 8
+smart_gaps on
+smart_borders on
+workspace 4 gaps inner 0
+workspace 6 gaps inner 0
+workspace 3 gaps inner 0
+# hide_edge_borders both
+
+# window colors
+#                                    border                background          text
+client.focused                      $background          $active              $background
+client.unfocused                    $background          $background          $color15
+client.urgent                       $urgent              $urgent              $urgent
+#client.unfocused_inactive           $background          $background          $color15
+

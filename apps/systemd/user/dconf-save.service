@@ -1,5 +1,0 @@
-[Unit]
-Description=Save Gnome, Cinnamon et other GTK apps configuration
-
-[Service]
-ExecStart= /home/visi/Bin/dconf-save

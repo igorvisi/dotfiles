@@ -1,13 +1,3 @@
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# title      Nord Termite                                    +
-# project    nord-termite                                    +
-# version    0.2.0                                           +
-# repository https://github.com/arcticicestudio/nord-termite +
-# author     Arctic Ice Studio                               +
-# email      development@arcticicestudio.com                 +
-# copyright  Copyright (C) 2016                              +
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 [options]
 font = DejaVu Sans Mono for Powerline 14
 mouse_autohide = true

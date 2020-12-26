@@ -1,4 +1,4 @@
-# Étapes de l'installation d'Arch Linux
+# (Old) Étapes de l'installation d'Arch Linux
 
 Ce n'est pas un script ! Ceci me permet de me rappeler certaines étapes !
 
@@ -247,7 +247,7 @@ systemctl enable tlp.service
 systemctl enable tlp-sleep.service
 ```
 
-## Rappel
+# Rappel
 
 ### Récupérer un système endommagé avec chroot
 
@@ -307,5 +307,5 @@ paccache -ruk0  # Enlever tous les logiciels non installés
 
 ###
 
-mkdir /etc/nginx/sites-avaible 
+mkdir /etc/nginx/sites-avaible
 

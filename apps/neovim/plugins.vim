@@ -14,7 +14,6 @@ Plug 'benizi/vim-automkdir' "Automatically create missing folders on save
 Plug 'benmills/vimux'
 Plug 'bling/vim-airline'
 Plug 'chr4/nginx.vim'
-Plug 'chrisbra/SudoEdit.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'farmergreg/vim-lastplace' "Restore cursor position
 Plug 'ayu-theme/ayu-vim'

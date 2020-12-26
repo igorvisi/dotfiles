@@ -9,7 +9,6 @@
     # Coding tools
     ~/.config/Code - OSS/User: apps/vscode
     ~/.config/nvim: apps/neovim
-    ~/.config/verdaccio/config.yaml: apps/verdaccio/config.yaml
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig
     ~/.gitconfig.local: apps/git/.gitconfig.local
@@ -18,31 +17,26 @@
     ~/.tigrc: apps/tig/tigrc
     ~/.yarnrc: apps/yarn/yarnrc
 
-    # Desktop environnement and windows manageryy
+    # Desktop environnement and windows manager
     ~/.config/picom.conf: apps/picom/picom.conf
-    ~/.config/i3: desktop-env/i3
-    ~/.config/gtk-3.0: apps/gtk-3.0
+    ~/.config/sway: desktop-env/sway
     ~/.config/mimeapps.list: apps/mimeapps.list
     ~/.config/polybar: apps/polybar
-    ~/.config/xfce4: desktop-env/xfce
-    ~/.lock.png: desktop-env/i3/lock.png
 
     # Useful X applications
-    ~/.config/autokey: apps/autokey
     ~/.config/copyq: apps/copyq/
     ~/.config/gpick: apps/gpick
-    ~/.config/rofi: apps/rofi
     ~/.config/redshift.conf: apps/redshift/redshift.conf
-    ~/.config/screenkey.json: apps/screenkey/screenkey.json
     ~/.config/transmission/settings.json: apps/transmission/settings.json
     ~/.config/USBGuard: apps/usbguard
     ~/.config/user-dirs.dirs: apps/user-dirs.dirs
     ~/.local/share/applications: apps/desktop
     ~/.xinitrc: apps/xinitrc
     ~/.Xresources: apps/Xresources
+
     # Terminal emulator
-    ~/.config/tilda: apps/tilda
     ~/.config/termite: apps/termite
+    ~/.config/tilda/config_0: apps/tilda/config_0
 
     # Design apps
     ~/.config/GIMP/2.10: apps/gimp
@@ -51,6 +45,7 @@
     # Shell conf
     ~/.aliases: shell/aliases
     ~/.dir_colors: shell/dir_colors
+    ~/.functions: shell/functions
     ~/.global: shell/global
     ~/.zsh: shell/zsh
     ~/.zshrc: shell/zsh/zshrc
@@ -59,22 +54,13 @@
     ~/Bin: bin
     ~/.classifier-master.conf: apps/classifier/classifier-master.conf
     ~/.config/htop/htoprc: apps/htop/htoprc
-    ~/.config/urlwatch/urls.yaml: apps/urlwatch/urls.yaml
     ~/.config/systemd: apps/systemd/
-    # ~/.gnupg/gpg.conf: cli_tools/gnupg/gpg.conf
-    # ~/.gnupg/gpg-agent.conf: cli_tools/gnupg/gpg-agent.conf
-    # ~/.ssh/config: apps/ssh/config
     ~/.tmux.conf: apps/tmux/tmux.conf
-
     ~/.config/autostart: autostart
-    ~/.config/libinput-gestures.conf: apps/libinput-gesture/libinput-gestures.conf
     ~/.keymap.sh: apps/keymap/keymap.sh
-
-    ~/.screenshot.png: Screenshot.png
 
 - shell:
     - [
         "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
       ]
-    - [git submodule update --init --recursive, Installing submodules]
-#    - [ ./post-install.sh ]
+    - [git submodule update --init --recursive]

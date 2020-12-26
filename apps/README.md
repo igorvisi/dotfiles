@@ -19,7 +19,7 @@
 |Neovim|the new vim :)|
 |Npm|javascript package manager.|
 |Nvm|Node Version Manager.|
-|Platum|Component that allows to quickly write uml diagrams.|
+|Plantuml|Component that allows to quickly write uml diagrams.|
 |Picom|a compositor for X11, based on xcompmgr. In addition to shadows, fading and translucency, compton implements window frame opacity control, inactive window transparency, and shadows on argb windows.|
 |Polybar|a fast and easy-to-use tool status bar.|
 |Redshift|set color temperature of display according to time of day.|

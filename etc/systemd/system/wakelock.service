@@ -1,9 +1,0 @@
-[Unit]
-Description= Lock the screen on resume after suspend
-[Service]
-User=visi
-Type=forking
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/sh -c "/home/visi/Bin/lock"
-[Install]
-WantedBy=suspend.target
