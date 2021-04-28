@@ -1,5 +1,0 @@
-[Service]
-User=root
-ExecStart=
-ExecStart=/usr/bin/sh -c "chroot --userspec=tor:tor /opt/tor /usr/bin/tor -f /etc/tor/torrc"
-KillSignal=SIGINT
