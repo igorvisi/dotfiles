@@ -19,7 +19,8 @@ export BROWSER=brave
 export PDFREADER=xreader
 
 
-umask -S "u=rwx,g=,o="       # My file is my file :)
+#umask -S "u=rwx,g=rw,o=r"       # My file is my file :)
+umask 022
 
 # GPG default key
 export GPGKEY=0x9E000216F11111A5
@@ -39,6 +40,9 @@ export PATH=$PATH:${GOPATH}/bin
 export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
 export PATH=$PATH:$PY_BIN
 
+# Anaconda3
+#export PATH="/usr/local/anaconda/bin:$PATH"
+
 # PATH for ruby gem
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
@@ -56,6 +60,7 @@ export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 # Android tools
 export PATH=$PATH:/opt/android-sdk/platform-tools
 export ANDROID_HOME=$HOME/.android/
+export ANDROID_SDK_ROOT=/opt/android-sdk/
 export PATH=$PATH:$HOME/.flutterio/bin
 
 # PHP
@@ -69,7 +74,7 @@ export SPACESHIP_KUBECTL_SHOW=false
 export SPACESHIP_KUBECTL_VERSION_SHOW=false
 export SPACESHIP_KUBECONTEXT_SHOW=true
 export SPACESHIP_KUBECTL_PREFIX=''
-export SPACESHIP_KUBECTL_SYMBOL='☸ ' 
+export SPACESHIP_KUBECTL_SYMBOL='☸ '
 
 # Prompt
 export SPACESHIP_PROMPT_ORDER=(
