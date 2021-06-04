@@ -6,7 +6,7 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 OS: [Arch Linux](https://archlinux.com/) 👌🏿
 
-DE/WM: [sway](https://swaywm.org/) & [Cinnamon](https://github.com/linuxmint/Cinnamon)
+DE/WM: [Cinnamon](https://github.com/linuxmint/Cinnamon)
 
 SHELL: [Zsh](https://zsh.org)
 
@@ -18,7 +18,5 @@ I use [github.com/anishathalye/dotbot] to manage my dotfiles.
 ## Screenshots
 
 > i3wm & Cinnamon
-<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" width="100%"></a></p>
-<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot2.png" alt="Preview" align="left" width="100%"></a></p>
-
+<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshotpng" alt="Preview" width="100%"></a></p>
 
