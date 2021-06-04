@@ -18,5 +18,5 @@ I use [github.com/anishathalye/dotbot] to manage my dotfiles.
 ## Screenshots
 
 > i3wm & Cinnamon
-<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshotpng" alt="Preview" width="100%"></a></p>
+<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot.png" alt="Preview" width="100%"></a></p>
 
