@@ -1,2 +1,12 @@
 
+# Kubernetes binary
 bin/minikube
+bin/k3s
+bin/k3d
+
+# Nomad
+bin/nomad
+
+
+# Personal binary
+bin/*.exe

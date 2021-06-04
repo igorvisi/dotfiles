@@ -41,7 +41,6 @@ alias funconf='vim ~/.zsh/functions && source ~/.zsh/functions'
 alias tmuxc='vim ~/.tmux.conf'
 alias swayconf='vim ~/.config/sway/config'
 alias xresources='vim ~/.Xresources && xrdb ~/.Xresources'
-# Source zsh conf quickly
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -63,6 +62,7 @@ alias showkube='export SPACESHIP_KUBECTL_SHOW=true'
 alias k='kubectl'
 alias kg='kubectl get'
 
+# Quickly run OS via docker
 alias arch='docker run -d --name archlinux -it archlinux/base > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
 alias debian='docker run -d --name debian -it debian > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it debian bash'
 alias ubuntu='docker run -d --name ubuntu -it ubuntu > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it ubuntu bash'
@@ -91,11 +91,6 @@ alias rm='rmtrash -rf'
 alias rm!='\rm -rf'
 alias dirs='dirs -v'
 
-alias dmesg.me='dmesg -wHL'
-alias lsusb.me='lsusb.py -c -i -U'
-alias journalctl.me='journalctl -xf'
-alias lsctl='systemctl -t service --full --all list-units'
-alias wifistat='iw dev wlo1 link'
 
 # Download Youtube Playlist video in mp4 or mp3.
 alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
@@ -116,6 +111,7 @@ alias iplocal='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}
 alias update='
 yay -Suy --noconfirm --needed ;
 npm update -g ;
+pipx upgrade-all;
 antigen update ;
 gpg --keyserver pgp.mit.edu --refresh-keys;
 '

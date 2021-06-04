@@ -15,11 +15,9 @@
     ~/.gitignore: apps/git/gitignore
     ~/.npmrc: apps/npm/npmrc
     ~/.tigrc: apps/tig/tigrc
-    ~/.yarnrc: apps/yarn/yarnrc
 
     # Desktop environnement and windows manager
     ~/.config/picom.conf: apps/picom/picom.conf
-    ~/.config/sway: desktop-env/sway
     ~/.config/mimeapps.list: apps/mimeapps.list
     ~/.config/polybar: apps/polybar
 

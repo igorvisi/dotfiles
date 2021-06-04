@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Exec=unclutter -noevents -keystroke -idle 5
-X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-enabled=false
 NoDisplay=false
 Hidden=false
 Name[fr_FR]=unclutter

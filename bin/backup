@@ -2,7 +2,7 @@
 # Backups directories to disk/server/...
 # $BACKUPDIR in ~/.global
 
-directories=(Codes Docs Podcast Templates Tl Videos .android .cache .dict .extra .flutterio .fonts .gnupg .go .local .vscode-oss .vm /opt/android-sdk/ /snapshots /var/docker/volumes )
+directories=( Codes Docs Podcast Ndule Templates Tl Videos .android .dict .extra .flutterio .fonts .gnupg .go .local .ssh .vscode-oss .vm /opt/android-sdk/ /snapshots /var/docker/volumes )
 
 if [ -z $1 ]; then
 	echo "Backup to $BACKUPDIR"

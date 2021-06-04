@@ -6,7 +6,7 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 	" that the colorschemes have been loaded
 	syntax on
 	set termguicolors     " enable true colors support
-	let ayucolor="dark" 
+	let ayucolor="mirage" 
 	colorscheme ayu
 	filetype plugin indent on
 	" make the highlighting of tabs and other non-text less annoying
@@ -26,7 +26,7 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 		let g:airline_powerline_fonts=1
 		let g:airline_left_sep=''
 		let g:airline_right_sep=''
-		let g:airline_theme='base16'
+		let g:airline_theme='bubblegum'
 		let g:airline#extensions#tabline#show_splits = 0
 		let g:airline#extensions#whitespace#enabled = 0
 		" enable airline tabline

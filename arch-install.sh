@@ -26,7 +26,7 @@ trap 's=$?; echo "$0: Error on line "$LINENO": $BASH_COMMAND"; exit $s' ERR
 exec 1> >(tee "stdout.log")
 exec 2> >(tee "stderr.log")
 
-REPO_URL="https://vps.igorvisi.com/~igorvisi/repo/"
+#REPO_URL="https://vps.igorvisi.com/~igorvisi/repo/"
 export SNAP_PAC_SKIP=y
 
 # Dialog
@@ -151,7 +151,7 @@ echo -n ${password} | cryptsetup luksAddKey ${part_root} /mnt/crypto_keyfile.bin
 
 
 echo -e "\n### Installing packages"
-pacstrap /mnt base linux linux-firmware xorg cinnamon lightdm lightdm-pantheon-greeter neovim sudo nextcloud-client
+pacstrap /mnt base linux linux-firmware xorg cinnamon lightdm lightdm-gtk-greeter neovim sudo
 
 echo -e "\n### Generating base config files"
 ln -sfT dash /mnt/usr/bin/sh
@@ -210,8 +210,8 @@ arch-chroot /mnt chsh -s /usr/bin/zsh
 echo "$user:$password" | chpasswd --root /mnt
 arch-chroot /mnt passwd -dl root
 
-echo -e "\n### Setting permissions on the custom repo"
-arch-chroot /mnt chown -R "$user:$user" /var/cache/pacman/igorvisi/
+#echo -e "\n### Setting permissions on the custom repo"
+#arch-chroot /mnt chown -R "$user:$user" /var/cache/pacman/igorvisi/
 
 echo -e "\n### Setting up Secure Boot for GRUB with custom keys"
 echo MB | arch-chroot /mnt cryptboot-efikeys create
@@ -222,7 +222,7 @@ echo -e "\n### Cloning dotfiles"
 arch-chroot /mnt sudo -u $user bash -c 'git clone --recursive https://github.com/igorvisi/dotfiles.git ~/.dotfiles'
 
 echo -e "\n### Running initial setup"
-arch-chroot /mnt /home/$user/.dotfiles/dotfiles-install /home/$user/.dotfiles/install.conf.yaml
+arch-chroot /mnt /home/$user/.dotfiles/install
 
-echo -e "\n### DONE - reboot and re-run both ~/.dotfiles/dotfiles-install scripts"
+echo -e "\n### DONE - reboot, install softwares and re-run both ~/.dotfiles/install scripts"
 umount -R /mnt

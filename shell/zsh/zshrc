@@ -59,4 +59,7 @@ source $HOME/.zsh/completions.zsh
 # Add bash completion
 autoload -U +X bashcompinit && bashcompinit
 
+DISABLE_AUTO_UPDATE=true
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+complete -o nospace -C $HOME/Bin/nomad nomad

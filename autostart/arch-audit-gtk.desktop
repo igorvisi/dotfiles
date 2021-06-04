@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=arch-audit-gtk
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_US]=Arch Linux Audit applet
+Comment[en_US]=No description
+X-GNOME-Autostart-Delay=30

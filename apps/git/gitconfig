@@ -1,14 +1,17 @@
 [alias]
+	a = add --all
 	u = pull
 	p = push
+	co = checkout
+	s = status -s
+	pf = push -f
 	sclone = clone --depth=1
 	unstage = reset HEAD --
+	undopush = push -f origin HEAD^:main
 	last = log -1 HEAD
-	rma = !git ls-files --deleted -z | xargs -0 -r git rm
-	deleted = !git ls-files --deleted -z
-	forget = update-index --assume-unchanged
-	unforget = update-index --no-assume-unchanged
-	forgetten = ! git ls-files -v | grep ^[a-z]
+	deleted = !git ls-files --deleted
+	copy-diff = !git diff | xclip -selection c
+	paste-diff = !xclip -selection c -o | git apply -3
 
 
 [core]
@@ -26,27 +29,21 @@
 [url "git@github.com:"]
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
-	pushInsteadOf = "https://github.com/"
 	insteadOf = https://github.com/
 
 [url "git@gitlab.com:"]
 	pushInsteadOf = "gitlab:"
 	pushInsteadOf = "git://gitlab.com/"
 	pushInsteadOf = "https://gitlab.com/"
+	insteadOf = https://gitlab.com/
 
 [url "ssh+git://aur@aur.archlinux.org:"]
 	pushInsteadOf = "aur:"
 
 
 [include]
-	# include my personal conf in ~/.gitlocal
+	# include my personal and business conf from ~/.gitconfig.local
 	path = ~/.gitconfig.local
-	# [user]
-	#	email = mail@igorvisi.com
-	#	name = Igor Visi
-	#	user = igorvisi
-	#	signingKey = FCB6F5BF516514AD3EEC8A6A9E000216F11111A5
 
-
-[cola]
-	spellcheck = false
+[status]
+	submoduleSummary = true

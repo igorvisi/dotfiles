@@ -304,8 +304,3 @@ paccache -ruk0  # Enlever tous les logiciels non installés
 
 ```
 
-
-###
-
-mkdir /etc/nginx/sites-avaible
-
