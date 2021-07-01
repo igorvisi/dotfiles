@@ -1,4 +1,4 @@
-alias -s {cpp,cxx,cc,c,hh,h,inl,asc,md,txt,TXT,tex,conf,config}=$EDITOR
+alias -s {go,js,py,md,txt,TXT,tex,conf,config}=$EDITOR
 alias -s pdf=$PDFREADER
 alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
 
@@ -8,7 +8,6 @@ alias chx='chmod u+x'
 alias b='~/Bin/vocab'
 
 # Search in history command
-alias hg='fc -l 1 |grep'
 alias hf='fc -n -l 1 |fzf --tac --exact --ansi --no-sort --reverse --tiebreak=index \
 --bind "ctrl-m:execute: echo '{}'| xclip -selection c "'
 
@@ -16,7 +15,10 @@ alias hf='fc -n -l 1 |fzf --tac --exact --ansi --no-sort --reverse --tiebreak=in
 alias cbssh='gpg --export-ssh-key $GPGKEY | clipcopy'
 alias cbgpg='gpg --export --armor $GPGKEY | clipcopy'
 # Copy current working directory
-alias cbwd="pwd | clipcopy"
+alias cbwd='pwd | clipcopy'
+
+# Make locally-trusted development certificates.
+alias mkcert-local='mkcert -cert-file /etc/ssl/mkcert/local.crt -key-file /etc/ssl/mkcert/local-key.pem'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
@@ -39,8 +41,8 @@ alias zshconf='vim ~/.zshrc && source ~/.zshrc'
 alias aliasconf='vim ~/.zsh/aliases && source ~/.zsh/aliases'
 alias funconf='vim ~/.zsh/functions && source ~/.zsh/functions'
 alias tmuxc='vim ~/.tmux.conf'
-alias swayconf='vim ~/.config/sway/config'
 alias xresources='vim ~/.Xresources && xrdb ~/.Xresources'
+# Source zsh conf quickly
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -49,32 +51,25 @@ alias systemctl='sudo systemctl'
 alias ctl='systemctl'
 alias pacman='sudo pacman'
 alias apt='sudo apt'
-alias docker='sudo docker'
-alias docker-compose='sudo docker-compose'
 alias mount='sudo mount'
 alias umount='sudo umount'
 alias hibernate='systemctl start hibernate.target'
 alias wifi-menu='sudo wifi-menu'
 alias fdisk='sudo fdisk -l'
-alias dk='docker'
-alias dkc='docker-compose'
-alias showkube='export SPACESHIP_KUBECTL_SHOW=true'
+alias d='docker'
+alias dc='docker-compose'
 alias k='kubectl'
-alias kg='kubectl get'
+alias showkube='export SPACESHIP_KUBECTL_SHOW=true'
 
-# Quickly run OS via docker
 alias arch='docker run -d --name archlinux -it archlinux/base > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
 alias debian='docker run -d --name debian -it debian > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it debian bash'
 alias ubuntu='docker run -d --name ubuntu -it ubuntu > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it ubuntu bash'
 alias fedora='docker run -d --name fedora -it fedora > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it fedora bash'
-alias hacklab='docker run -d --name hacklab --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --net=host --privileged=true -v ~/Public:/mnt -it igorvisi/docker-hacklab bash > /dev/null 2>&1; docker start hacklab > /dev/null; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it hacklab zsh'
 
 # alias for the most used commands
 alias no='node'
 alias py='python'
 alias y='yay'
-alias pa='pacman'
-alias s='sudo'
 alias wh='which'
 alias wget="wget -c"
 
@@ -91,6 +86,11 @@ alias rm='rmtrash -rf'
 alias rm!='\rm -rf'
 alias dirs='dirs -v'
 
+alias dmesg.me='dmesg -wHL'
+alias lsusb.me='lsusb.py -c -i -U'
+alias journalctl.me='journalctl -xf'
+alias lsctl='systemctl -t service --full --all list-units'
+alias wifistat='iw dev wlp3s0 link'
 
 # Download Youtube Playlist video in mp4 or mp3.
 alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
@@ -106,12 +106,10 @@ alias ipinfo='curl ipinfo.io'
 alias ipnet='dig +short myip.opendns.com @resolver1.opendns.com'
 alias iplocal='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"'
 
-
-# Update system, flutter antigen and nodes packages.
+# Update system, antigen and nodes packages.
 alias update='
 yay -Suy --noconfirm --needed ;
 npm update -g ;
-pipx upgrade-all;
 antigen update ;
 gpg --keyserver pgp.mit.edu --refresh-keys;
 '
@@ -123,22 +121,19 @@ alias random='mktemp -u | cut -d'.' -f2'
 alias lscreen='xrandr -q | grep " connected" | cut -d " " -f1 '
 
 # Git
-alias master='git checkout master'
-alias checkout='git checkout -'
-alias push='git push'
-alias fetch='git fetch'
-alias pull='git pull'
+alias main='git checkout main'
+alias undopush='git push -f origin HEAD^:main'
 alias n='clone $(clippaste)' # Clone git projet from url in clipboard. See clone in shell/zsh/functions file
 
 # Disk Usage
 alias diskspace='df -P -kHl'
 
-# Pip
-alias pi='pip install'
-
 # npm
 alias ni='npm install'
 alias nr='npm run'
+
+# Python
+alias rmpycache='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 
 # PHP
 alias ci='composer install'
@@ -216,3 +211,4 @@ alias -g S='| sort'
 alias -g T='| wc -l'
 alias -g P='$(clippaste)'
 alias -g V='& progress -mp $!'
+
