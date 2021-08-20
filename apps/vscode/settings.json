@@ -4,9 +4,9 @@
   "window.zoomLevel": 0,
 
   // Editor
-  "editor.fontFamily": " Dank Mono , Fira Code",
+  "editor.fontFamily": "JetBrains Mono, Roboto",
   "editor.fontLigatures": true,
-  "editor.fontSize": 18,
+  "editor.fontSize": 17,
   "editor.tabSize": 2,
   "editor.fontWeight": "800",
   "editor.letterSpacing": 0.8,
@@ -263,7 +263,7 @@
   "vsicons.dontShowNewVersionMessage": true,
   "dart.checkForSdkUpdates": false,
   "javascript.updateImportsOnFileMove.enabled": "never",
-  "sync.gist": "ac221e6bd9d9bc73df3bb08377a74dbd",
+  "sync.gist": "0895c47d60029b73dc05da461429d4e5",
   "sync.autoDownload": true,
   "sync.autoUpload": true,
   "sync.forceUpload": true,
@@ -298,6 +298,14 @@
   },
   "workbench.statusBar.visible": true,
   "python.languageServer": "Microsoft",
-  "workbench.enableExperiments": false
+  "workbench.enableExperiments": false,
+  "workbench.colorTheme": "One Dark Pro Flat",
+  "workbench.startupEditor": "newUntitledFile",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "material-icon-theme.showWelcomeMessage": false,
+  "workbench.iconTheme": "gruvbox-material-icon-theme",
+  "docker.showStartPage": false
 
 }
