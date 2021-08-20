@@ -47,3 +47,7 @@
 
 [status]
 	submoduleSummary = true
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
