@@ -154,7 +154,7 @@ clipcopy () {
 tre() { tree -aC -I '.git|node_modules|vendor|.idea|.vscode|*venv' --dirsfirst "$@" | less -FRNX; }
 
 # check validation of SSL
-# 
+# usage: checkssl igorvisi.com:443
 checkssl() {
 echo | openssl s_client -connect $1 2>/dev/null | openssl x509 -noout -dates
 }
