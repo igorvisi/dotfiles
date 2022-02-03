@@ -8,5 +8,8 @@ bin/k3d
 bin/nomad
 
 
-# Personal binary
+# Personal exe
 bin/*.exe
+
+
+.DS_Store

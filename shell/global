@@ -48,10 +48,10 @@ export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
 # PATH for global node packages directory
-export NPM_CONFIG_PREFIX=${HOME}/.npm
-export NPM_PACKAGES=${HOME}/.npm
-export NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
-export PATH=$PATH:${NPM_PACKAGES}/bin
+# export NPM_CONFIG_PREFIX=${HOME}/.npm
+# export NPM_PACKAGES=${HOME}/.npm
+# export NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
+# export PATH=$PATH:${NPM_PACKAGES}/bin
 # nvm
 export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

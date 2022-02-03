@@ -4,19 +4,43 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ## My setup
 
-OS: [Arch Linux](https://archlinux.com/) 👌🏿
+### OS:
+* MacOS for most of things
+* Ubuntu and ArchLinux for servers/tinkering
 
-DE/WM: [Cinnamon](https://github.com/linuxmint/Cinnamon)
+### Editors:
+* vscode
+* neovim
 
-SHELL: [Zsh](https://zsh.org)
+### Shell:
+* ZSH
 
-Apps I often use: [list](apps/)
+Link to [my /uses page](https://igorvisi.com/uses)
 
-I use [github.com/anishathalye/dotbot] to manage my dotfiles.
 
+## Installation
+Good to know beforehand, I use :
+* [dotbot](github.com/anishathalye/dotbot) to manage my dotfiles.
+* [exa](https://github.com/ogham/exa) as a ls remplacement.
+* [bat](https://github.com/sharkdp/bat) as a cat remplacement.
+
+As well as many other tools...
+
+### Clone and configure env variables
+```bash
+git clone https://github.com/igorvisi/dotfiles ~/.dotfiles
+```
+Configure according to you
+~/.dotfiles/shell/global
+~/.gitconfig.local
+
+### Install conf.
+```bash
+cd ~/.dotfiles
+chmod +x install
+./install
+```
 
 ## Screenshots
 
-> Cinnamon
-<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot.png" alt="Preview" width="100%"></a></p>
-
+<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot2.png" alt="Preview" width="50%"></a><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" width="50%"></a></p>
