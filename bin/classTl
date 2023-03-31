@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source $HOME/.dotfiles/shell/global
-
-# Classifier my Download dir
-classifier -d ${DOWNLOADDIR}

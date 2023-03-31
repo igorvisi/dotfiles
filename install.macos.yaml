@@ -7,6 +7,7 @@
 
 - link:
     # Coding tools
+    # ~/Library/Application\ Support/Code/User: apps/vscode # I use vscode sync now
     ~/.config/nvim: apps/neovim
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig

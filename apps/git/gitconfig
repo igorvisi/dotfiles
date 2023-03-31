@@ -10,17 +10,17 @@
 	undopush = push -f origin HEAD^:main
 	last = log -1 HEAD
 	deleted = !git ls-files --deleted
-	copy-diff = !git diff | xclip -selection c
-	paste-diff = !xclip -selection c -o | git apply -3
-
 
 [core]
 	excludesfile = ~/.gitignore
 	fileMode = false
+	pager = delta
+
+[delta]
+	light = false
 
 [pager]
-	# insanely beautiful diffs ==> npm install -g diff-so-fancy
-	diff = diff-so-fancy | less --tabs=4 -RFX
+	diff = delta
 	show = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
@@ -40,7 +40,6 @@
 [url "ssh+git://aur@aur.archlinux.org:"]
 	pushInsteadOf = "aur:"
 
-
 [include]
 	# include my personal and business conf from ~/.gitconfig.local
 	path = ~/.gitconfig.local
@@ -51,9 +50,3 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree 2.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true

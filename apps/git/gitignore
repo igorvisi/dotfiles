@@ -28,12 +28,3 @@ Thumbs.db
 */__pycache__
 *.pyc
 *venv
-
-
-# random
-shilocation
-
-# Avoid Avoid polluting my Odoo installation via Git
-odoo-venv
-odoo-custom-addons/*
-odoo*.conf

@@ -6,7 +6,7 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ### OS:
 * MacOS for most of things
-* Ubuntu and ArchLinux for servers/tinkering
+* Ubuntu/Arch Linux/Fedora/Kali Linux for servers/tinkering
 
 ### Editors:
 * vscode
@@ -14,6 +14,9 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ### Shell:
 * ZSH
+
+### Backup tools
+* Mackup for tools
 
 Link to [my /uses page](https://igorvisi.com/uses)
 

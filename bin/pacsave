@@ -1,6 +1,0 @@
-#!/bin/bash
-source $HOME/.dotfiles/shell/global
-command -v pacman && pacman -Qqme > $PACSAVEDIR/aur.txt
-#command -v pacman && pacman -Qqne > $PACSAVEDIR/pacman.txt
-command -v code && code --list-extensions > $PACSAVEDIR/vscode.txt
-command -v npm && npm list -parseable -g --depth=0 | cut -d/ -f7 > $PACSAVEDIR/npm.txt

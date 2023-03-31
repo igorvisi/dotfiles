@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# get screen capture with same name format with my Android phone screen capture and move it to $SCREENSHOTDIR
-#
-source $HOME/.global
-scrot "$SCREENSHOTDIR/Screenshot_%Y-%m-%d-%H-%M-%S.png" &&
-notify-send --icon=applets-screenshooter "I got a screenshot !"

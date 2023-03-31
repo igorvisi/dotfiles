@@ -1,80 +1,36 @@
-source ~/.xinitrc
-
-# Personal Directories
-export BACKUPDIR=/run/media/backup
-export CODEDIR=$HOME/Codes
-export DOCDIR=$HOME/Docs
-export DOWNLOADDIR=$HOME/Tl
-export OPENSOURCEDIR=$CODEDIR/Open
-export EXTRADIR=$HOME/.extra/cloud.igorvisi.com
-export PACSAVEDIR=$EXTRADIR/packages
-export PICTUREDIR=$HOME/Pics
-export SCREENSHOTDIR=$PICTUREDIR/Screenshots/
-export WORKSPACE=$CODEDIR/Workspace
-
-# Prefered apps
-
-export EDITOR=nvim           # neovim > vim
-export BROWSER=brave
-export PDFREADER=xreader
-
-
 #umask -S "u=rwx,g=rw,o=r"       # My file is my file :)
 umask 022
 
+# neovim > vim
+export EDITOR=nvim
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
 # GPG default key
 export GPGKEY=0x9E000216F11111A5
-
-
-# Vscode
-export VSCODE_CONFIG_DIR="$HOME/.config/Code - OSS/User"  # Default dir for Archlinux VScode package
-export VSCODE_EXTENSIONS_DIR="$HOME/.vscode-oss/extensions"
-
 
 # PATH for golang packages
 export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH}/bin
 
+# PATH for PHP packgages
+export PATH=$PATH:$HOME/./composer/vendor/bin/
 
 #PATH for python packages installed by pip --user  without sudo
 export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
 export PATH=$PATH:$PY_BIN
 
-# Anaconda3
-#export PATH="/usr/local/anaconda/bin:$PATH"
-
 # PATH for ruby gem
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
-# PATH for global node packages directory
-# export NPM_CONFIG_PREFIX=${HOME}/.npm
-# export NPM_PACKAGES=${HOME}/.npm
-# export NODE_PATH=${NODE_PATH}:${NPM_PACKAGES}/lib/node_modules
-# export PATH=$PATH:${NPM_PACKAGES}/bin
 # nvm
 export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-
-# Android tools
-export PATH=$PATH:/opt/android-sdk/platform-tools
-export ANDROID_HOME=$HOME/.android/
-export ANDROID_SDK_ROOT=/opt/android-sdk/
-export PATH=$PATH:$HOME/.flutterio/bin
-
-# PHP
-export PATH=$PATH:$HOME/.config/composer/vendor/bin/
-
 # Personal Apps
 export PATH=$PATH:$HOME/Bin
-
-# Kubernetes
-export SPACESHIP_KUBECTL_SHOW=false
-export SPACESHIP_KUBECTL_VERSION_SHOW=false
-export SPACESHIP_KUBECONTEXT_SHOW=true
-export SPACESHIP_KUBECTL_PREFIX=''
-export SPACESHIP_KUBECTL_SYMBOL='☸ '
 
 # Prompt
 export SPACESHIP_PROMPT_ORDER=(
@@ -97,12 +53,8 @@ export SPACESHIP_CHAR_SYMBOL="❯ "
 export SPACESHIP_JOBS_SYMBOL="»"
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_DIR_TRUNC_PREFIX="..."
-
-
-# Don’t clear the screen after quitting a manual page
-export MANPAGER="less -X"
-
-# Prefer EN and use UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TIME=en_US
+export SPACESHIP_KUBECTL_SHOW=false
+export SPACESHIP_KUBECTL_VERSION_SHOW=false
+export SPACESHIP_KUBECONTEXT_SHOW=true
+export SPACESHIP_KUBECTL_PREFIX=''
+export SPACESHIP_KUBECTL_SYMBOL='☸ '

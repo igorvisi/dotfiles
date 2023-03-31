@@ -1,24 +1,18 @@
-alias -s {go,js,py,md,txt,TXT,tex,conf,config}=$EDITOR
-alias -s pdf=$PDFREADER
-alias -s {ape,avi,flv,m4a,mkv,mov,mp3,mp4,mpeg,mpg,ogg,ogm,wav,webm}=mpv
-
 alias which='which -a'
 alias c='clear'
 alias chx='chmod u+x'
 alias b='~/Bin/vocab'
 
 # Search in history command
-alias hf='fc -n -l 1 |fzf --tac --exact --ansi --no-sort --reverse --tiebreak=index \
---bind "ctrl-m:execute: echo '{}'| xclip -selection c "'
+alias hf='fc -n -l 1 |fzy --tac --exact --ansi --no-sort --reverse --tiebreak=index \
+--bind "ctrl-m:execute: echo '{}'| clipcopy "'
 
 # Copy SSH and GPG public key
 alias cbssh='gpg --export-ssh-key $GPGKEY | clipcopy'
 alias cbgpg='gpg --export --armor $GPGKEY | clipcopy'
+
 # Copy current working directory
 alias cbwd='pwd | clipcopy'
-
-# Make locally-trusted development certificates.
-alias mkcert-local='mkcert -cert-file /etc/ssl/mkcert/local.crt -key-file /etc/ssl/mkcert/local-key.pem'
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
@@ -41,8 +35,6 @@ alias zshconf='vim ~/.zshrc && source ~/.zshrc'
 alias aliasconf='vim ~/.zsh/aliases && source ~/.zsh/aliases'
 alias funconf='vim ~/.zsh/functions && source ~/.zsh/functions'
 alias tmuxc='vim ~/.tmux.conf'
-alias xresources='vim ~/.Xresources && xrdb ~/.Xresources'
-# Source zsh conf quickly
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
@@ -53,9 +45,6 @@ alias pacman='sudo pacman'
 alias apt='sudo apt'
 alias mount='sudo mount'
 alias umount='sudo umount'
-alias hibernate='systemctl start hibernate.target'
-alias wifi-menu='sudo wifi-menu'
-alias fdisk='sudo fdisk -l'
 alias d='docker'
 alias dc='docker-compose'
 alias k='kubectl'
@@ -68,10 +57,7 @@ alias fedora='docker run -d --name fedora -it fedora > /dev/null 2>&1; docker ex
 
 # alias for the most used commands
 alias no='node'
-alias py='python'
-alias y='yay'
-alias wh='which'
-alias wget="wget -c"
+alias py='python3'
 
 # Download web page with all assets
 # Credit: https://github.com/denysdovhan/dotfiles
@@ -86,11 +72,8 @@ alias rm='rmtrash -rf'
 alias rm!='\rm -rf'
 alias dirs='dirs -v'
 
-alias dmesg.me='dmesg -wHL'
-alias lsusb.me='lsusb.py -c -i -U'
 alias journalctl.me='journalctl -xf'
 alias lsctl='systemctl -t service --full --all list-units'
-alias wifistat='iw dev wlp3s0 link'
 
 # Download Youtube Playlist video in mp4 or mp3.
 alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
@@ -108,36 +91,22 @@ alias iplocal='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}
 
 # Update system, antigen and nodes packages.
 alias update='
-yay -Suy --noconfirm --needed ;
+command -v brew &> /dev/null && brew upgrade;
+command -v mas &> /dev/null && mas upgrade ;
+command -v mas &> /dev/null && yay -Suy --noconfirm --needed ;
+command -v mas &> /dev/null && sudo apt update && sudo apt upgrade ;
 npm update -g ;
 antigen update ;
 gpg --keyserver pgp.mit.edu --refresh-keys;
 '
-# Resolve mojibake problems with UTF-8 . e.g: �l�ments -- éléments.
-# conv Directory to test and conv --notest Directory to apply.
-alias conv='convmv -r -f iso-8859-15 -t utf-8'
-
+# Get random
 alias random='mktemp -u | cut -d'.' -f2'
-alias lscreen='xrandr -q | grep " connected" | cut -d " " -f1 '
-
-# Git
-alias main='git checkout main'
-alias undopush='git push -f origin HEAD^:main'
-alias n='clone $(clippaste)' # Clone git projet from url in clipboard. See clone in shell/zsh/functions file
 
 # Disk Usage
 alias diskspace='df -P -kHl'
 
-# npm
-alias ni='npm install'
-alias nr='npm run'
-
-# Python
+# Remove python cache file
 alias rmpycache='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
-
-# PHP
-alias ci='composer install'
-alias cu='composer update'
 
 # Tmux
 alias tmux='tmux -2' # Force tmux to use 256 colors
@@ -169,7 +138,8 @@ alias lc='ll --created -s=created'
 alias lf='ls -al | fzf ' # fzf needs
 alias lg='ls -al|grep'
 
-alias cat='bat -p' # bat > cat
+# bat > cat
+alias cat='bat -p'
 
 # Navigation
 alias -- +='pushd'
@@ -185,30 +155,3 @@ if type -p dircolors >/dev/null ; then
 		eval $(dircolors -b /etc/DIR_COLORS)
 	fi
 fi
-
-
-
-# Usefull systemd aliases
-# Instead of 'sudo systemctl start service' just enter 'start service'
-# Instead of 'systemctl start --user service' just enter 'ustart service'
-systemd_commands=(start stop reload restart try-restart isolate reset-failed enable status  disable reenable)
-for command in $systemd_commands; do alias $command="systemctl $command"; done
-for command in $systemd_commands; do alias u$command="systemctl $command --user"; done
-
-# Power off, reboot and hibernate in my local language: Lingala
-alias bomama='poweroff'
-alias bandela='reboot'
-alias fanda='systemctl -i suspend'
-alias lala='systemctl hibernate'
-
-# Global alias !!! Working in zsh only
-alias -g G='|grep'
-alias -g F='|fzf --ansi --exact --no-sort --reverse --tiebreak=index --bind "ctrl-m:execute: echo '{}'| xclip -selection c " '
-alias -g C='|cb' # cb (see in .function file) copy to clipboard
-alias -g L='|less -XNFR'
-alias -g N='> /dev/null 2>&1'
-alias -g S='| sort'
-alias -g T='| wc -l'
-alias -g P='$(clippaste)'
-alias -g V='& progress -mp $!'
-

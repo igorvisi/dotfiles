@@ -1,7 +1,0 @@
-#!/bin/bash
-source $HOME/.dotfiles/shell/global
-
-command -v dconf && \
-dconf dump /org/gnome/ > $EXTRADIR/Conf/gnome-conf.ini ;
-dconf dump /org/cinnamon/ > $EXTRADIR/Conf/cinnamon-conf.ini ;
-dconf dump /org/ > $EXTRADIR/Conf/dconf-conf.ini
