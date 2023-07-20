@@ -4,7 +4,7 @@
   "window.zoomLevel": 0,
 
   // Editor
-  "editor.fontFamily": "JetBrains Mono, Roboto",
+  "editor.fontFamily": "JetBrains Mono, Fira code, Roboto",
   "editor.fontLigatures": true,
   "editor.fontSize": 17,
   "editor.tabSize": 2,
