@@ -7,24 +7,11 @@
 
 - link:
     # Coding tools
-    # ~/Library/Application\ Support/Code/User: apps/vscode # I use vscode sync now
-    ~/.config/nvim: apps/neovim
-    ~/.gitattributes: apps/git/gitattributes
-    ~/.gitconfig: apps/git/gitconfig
-    ~/.gitconfig.local: apps/git/.gitconfig.local
-    ~/.gitignore: apps/git/gitignore
-    ~/.npmrc: apps/npm/npmrc
-    ~/.tigrc: apps/tig/tigrc
+    ~/Library/Application\ Support/Code/User: apps/vscode
 
-    # Shell conf
-    ~/.aliases: shell/aliases
-    ~/.dir_colors: shell/dir_colors
-    ~/.functions: shell/functions
-    ~/.global: shell/global
-    ~/.zsh: shell/zsh
-    ~/.zshrc: shell/zsh/zshrc
+- shell:
+    # Install Homebrew
+    - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ]
 
-    # cli apps
-    ~/Bin: bin
-    ~/.config/htop/htoprc: apps/htop/htoprc
-    ~/.tmux.conf: apps/tmux/tmux.conf
+    - [git submodule update --init --recursive]
+

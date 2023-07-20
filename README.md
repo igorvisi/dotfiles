@@ -6,28 +6,25 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ### OS:
 * MacOS for most of things
-* Ubuntu/Arch Linux/Fedora/Kali Linux for servers/tinkering
+* Linux for servers/tinkering
 
-### Editors:
-* vscode
-* neovim
-
-### Shell:
-* ZSH
-
-### Backup tools
-* Mackup for tools
-
+### Tools:
 Link to [my /uses page](https://igorvisi.com/uses)
 
 
 ## Installation
 Good to know beforehand, I use :
 * [dotbot](github.com/anishathalye/dotbot) to manage my dotfiles.
+* [sheldon](https://github.com/rossmacarthur/sheldon) to manage shell plugin.
+* [mackup](https://github.com/lra/mackup) to backup most of conf.
 * [exa](https://github.com/ogham/exa) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
+* [neovim](https://github.com/neovim/neovim) instead of vim
 
-As well as many other tools...
+
+## Aliases and function
+* dotfiles/shell/aliases
+* dotfiles/shell/functions
 
 ### Clone and configure env variables
 ```bash
@@ -40,10 +37,7 @@ Configure according to you
 ### Install conf.
 ```bash
 cd ~/.dotfiles
+vim shell/global apps/git/.gitconfig.local
 chmod +x install
 ./install
 ```
-
-## Screenshots
-
-<p align="center"><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot2.png" alt="Preview" width="50%"></a><a name="top" href="https://github.com/igorvisi/dotfiles"><img src="https://github.com/igorvisi/dotfiles/raw/master/Screenshot1.png" alt="Preview" width="50%"></a></p>

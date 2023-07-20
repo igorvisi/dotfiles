@@ -1,13 +1,3 @@
-
-# Kubernetes binary
-bin/minikube
-bin/k3s
-bin/k3d
-
-# Nomad
-bin/nomad
-
-
 # Personal exe
 bin/*.exe
 

@@ -1,22 +1,22 @@
 
 " Automatic installation
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Plugin
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin()
+
+Plug 'nordtheme/Vim' "Theme
+Plug 'itchyny/lightline.vim'
 
 Plug 'ap/vim-css-color'
 Plug 'benizi/vim-automkdir' "Automatically create missing folders on save
-Plug 'benmills/vimux'
-Plug 'bling/vim-airline'
 Plug 'chr4/nginx.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'farmergreg/vim-lastplace' "Restore cursor position
-Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -27,13 +27,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-markdown',     { 'for': 'markdown' }
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Raimondi/delimitMate'
-Plug 'rking/ag.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/fish.vim',   { 'for': 'fish' }
 Plug 'xolox/vim-misc'
 Plug 'Yggdroot/indentLine'
 

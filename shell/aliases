@@ -1,7 +1,7 @@
 alias which='which -a'
 alias c='clear'
 alias chx='chmod u+x'
-alias b='~/Bin/vocab'
+alias b='~/Bin/vocab' # Personal script to learn new thing
 
 # Search in history command
 alias hf='fc -n -l 1 |fzy --tac --exact --ansi --no-sort --reverse --tiebreak=index \
@@ -45,8 +45,8 @@ alias pacman='sudo pacman'
 alias apt='sudo apt'
 alias mount='sudo mount'
 alias umount='sudo umount'
-alias d='docker'
-alias dc='docker-compose'
+alias dk='docker'
+alias dkc='docker-compose'
 alias k='kubectl'
 alias showkube='export SPACESHIP_KUBECTL_SHOW=true'
 
@@ -68,9 +68,8 @@ alias getpage='\wget --no-clobber --page-requisites --html-extension --convert-l
 # A `rm` compatible layer for `trash`.
 # https://github.com/PhrozenByte/rmtrash
 # Needs trash-ci installed.
-alias rm='rmtrash -rf'
+#alias rm='rmtrash -rf'
 alias rm!='\rm -rf'
-alias dirs='dirs -v'
 
 alias journalctl.me='journalctl -xf'
 alias lsctl='systemctl -t service --full --all list-units'

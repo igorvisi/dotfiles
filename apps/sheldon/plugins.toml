@@ -1,0 +1,30 @@
+shell = "zsh"
+[plugins]
+
+[plugins.zsh-fzy]
+github = "aperezdc/zsh-fzy"
+
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-users]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.z]
+github = "rupa/z"
+
+[plugins.ohmyzsh-lib]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+use = ["{clipboard,completion,directories}.zsh"]
+
+[plugins.ohmyzsh-plugins]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins"
+use = ["{sudo}/*.plugin.zsh"]

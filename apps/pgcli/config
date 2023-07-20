@@ -1,0 +1,57 @@
+[main]
+smart_completion = True
+multi_line = True
+destructive_warning = True
+
+# log_file location.
+log_file = '~/.pgcli.log'
+log_level = INFO
+timing = True
+table_format = ascii
+
+key_bindings = vi
+
+# Enabling this option will show the suggestions in a wider menu. Thus more items are suggested.
+wider_completion_menu = False
+
+# Postgres prompt
+# \t - Product type (Percona, MySQL, Mariadb)
+# \u - Username
+# \h - Hostname of the server
+# \d - Database name
+# \n - Newline
+prompt = '[\t] \u@\h:\d> '
+
+less_chatty = True
+keyword_casing = auto
+
+# Enable the pager on startup.
+enable_pager = True
+
+# Custom colors for the completion menu, toolbar, etc.
+[colors]
+# Completion menus.
+Token.Menu.Completions.Completion.Current = 'bg:#dff7ff #000000'
+Token.Menu.Completions.Completion = 'bg:#92e4ff #ffffff'
+Token.Menu.Completions.MultiColumnMeta = 'bg:#aaffff #000000'
+Token.Menu.Completions.ProgressButton = 'bg:#003333'
+Token.Menu.Completions.ProgressBar = 'bg:#00aaaa'
+
+# Selected text.
+Token.SelectedText = '#ffffff bg:#91ffc8'
+
+# Search matches. (reverse-i-search)
+Token.SearchMatch = '#ffffff bg:#91ffc8'
+Token.SearchMatch.Current = '#ffffff bg:#91ffc8'
+
+# The bottom toolbar.
+Token.Toolbar = 'bg:#222222 #aaaaaa'
+Token.Toolbar.Off = 'bg:#222222 #888888'
+Token.Toolbar.On = 'bg:#222222 #ffffff'
+
+# Search/arg/system toolbars.
+Token.Toolbar.Search = 'noinherit bold'
+Token.Toolbar.Search.Text = 'nobold'
+Token.Toolbar.System = 'noinherit bold'
+Token.Toolbar.Arg = 'noinherit bold'
+Token.Toolbar.Arg.Text = 'nobold'

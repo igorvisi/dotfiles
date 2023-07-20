@@ -1,33 +1,16 @@
-# From https://github.com/igorvisi/dotfiles/
-# Load antigen
-autoload antigen
-source ~/.dotfiles/shell/zsh/antigen/antigen.zsh
-# Load the oh-my-zsh's library
-antigen use oh-my-zsh
+# Load personal global variables like PATH ...
+source $HOME/.global
+# Load aliases
+source $HOME/.aliases
+# Useful Shell functions.
+source $HOME/.functions
 
-antigen bundles <<__EOF__
-aperezdc/zsh-fzy
-command-not-found
-common-aliases
-git
-git-flow
-hlissner/zsh-autopair
-igorvisi/zsh-up
-last-working-dir
-sudo
-rupa/z
-changyuheng/fz
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-completions
-zsh-users/zsh-history-substring-search
-zsh-users/zsh-syntax-highlighting
-__EOF__
+autoload -Uz compinit
+compinit
 
-# antigen theme igorvisi/fibo-zsh-theme fibo
-antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
-antigen apply
-
-
+# Load sheldon, zsh plugin manager
+# https://github.com/rossmacarthur/sheldon
+eval "$(sheldon source)"
 
 setopt correct                      # Auto correct typo in commande.
 setopt globdots                     # completion to show hidden files
@@ -43,12 +26,6 @@ setopt prompt_subst                 # enable substitution for prompt
 setopt bang_hist                    # !keyword
 set -o noclobber                    # Do not override files using `>`, but it's still possible using `>!`
 
-# Load personal global variables like PATH ...
-source $HOME/.global
-# Load aliases
-source $HOME/.aliases
-# Useful Shell functions.
-source $HOME/.functions
 
 
 # Load some usefull functions for zsh prompt
@@ -56,10 +33,5 @@ source $HOME/.zsh/keymap.zsh
 source $HOME/.zsh/syntax-highlighting-filetypes.zsh
 source $HOME/.zsh/completions.zsh
 
-# Add bash completion
-autoload -U +X bashcompinit && bashcompinit
-
 DISABLE_AUTO_UPDATE=true
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-complete -o nospace -C $HOME/Bin/nomad nomad

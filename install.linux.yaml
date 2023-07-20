@@ -8,18 +8,6 @@
 - link:
     # Coding tools
     ~/.config/Code - OSS/User: apps/vscode
-    ~/.config/nvim: apps/neovim
-    ~/.gitattributes: apps/git/gitattributes
-    ~/.gitconfig: apps/git/gitconfig
-    ~/.gitconfig.local: apps/git/.gitconfig.local
-    ~/.gitignore: apps/git/gitignore
-    ~/.npmrc: apps/npm/npmrc
-    ~/.tigrc: apps/tig/tigrc
-
-    # Desktop environnement and windows manager
-    ~/.config/picom.conf: apps/picom/picom.conf
-    ~/.config/mimeapps.list: apps/mimeapps.list
-    ~/.config/polybar: apps/polybar
 
     # Useful X applications
     ~/.config/copyq: apps/copyq/
@@ -39,23 +27,6 @@
     # Design apps
     ~/.config/GIMP/2.10: apps/gimp
     ~/.config/inkscape: apps/inkscape
-
-    # Shell conf
-    ~/.aliases: shell/aliases
-    ~/.dir_colors: shell/dir_colors
-    ~/.functions: shell/functions
-    ~/.global: shell/global
-    ~/.zsh: shell/zsh
-    ~/.zshrc: shell/zsh/zshrc
-
-    # cli apps
-    ~/Bin: bin
-    ~/.classifier-master.conf: apps/classifier/classifier-master.conf
-    ~/.config/htop/htoprc: apps/htop/htoprc
-    ~/.config/systemd: apps/systemd/
-    ~/.tmux.conf: apps/tmux/tmux.conf
-    ~/.config/autostart: autostart
-    ~/.keymap.sh: apps/keymap/keymap.sh
 
 - shell:
     - [

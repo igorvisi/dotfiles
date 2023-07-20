@@ -10,20 +10,26 @@
     ~/.config/nvim: apps/neovim
     ~/.gitattributes: apps/git/gitattributes
     ~/.gitconfig: apps/git/gitconfig
-    ~/.gitconfig.local: apps/git/.gitconfig.local
     ~/.gitignore: apps/git/gitignore
     ~/.npmrc: apps/npm/npmrc
     ~/.tigrc: apps/tig/tigrc
+    ~/.myclirc: apps/mycli/myclirc
+    ~/.config/pgcli/config: apps/pgcli/config
+
 
     # Shell conf
+    ~/.config/sheldon/plugins.toml: apps/sheldon/plugins.toml
     ~/.aliases: shell/aliases
     ~/.dir_colors: shell/dir_colors
     ~/.functions: shell/functions
     ~/.global: shell/global
     ~/.zsh: shell/zsh
     ~/.zshrc: shell/zsh/zshrc
+    ~/.hushlogin: shell/hushlogin
 
     # cli apps
     ~/Bin: bin
     ~/.config/htop/htoprc: apps/htop/htoprc
     ~/.tmux.conf: apps/tmux/tmux.conf
+    ~/.gnupg/gpg.conf: apps/gnupg/gpg.conf
+    ~/.gnupg/gpg-agent.conf: apps/gnupg/gpg-agent.conf

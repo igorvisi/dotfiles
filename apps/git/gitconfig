@@ -21,7 +21,6 @@
 
 [pager]
 	diff = delta
-	show = diff-so-fancy | less --tabs=4 -RFX
 
 [push]
 	default = current
@@ -34,7 +33,6 @@
 [url "git@gitlab.com:"]
 	pushInsteadOf = "gitlab:"
 	pushInsteadOf = "git://gitlab.com/"
-	pushInsteadOf = "https://gitlab.com/"
 	insteadOf = https://gitlab.com/
 
 [url "ssh+git://aur@aur.archlinux.org:"]

@@ -1,3 +1,14 @@
+# Variables
+export DOTFILES_DIR=$HOME/Documents/Codes/dotfiles@igorvisi
+
+# Setup the gpg-agent for SSH authentication
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 #umask -S "u=rwx,g=rw,o=r"       # My file is my file :)
 umask 022
 
@@ -18,7 +29,7 @@ export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/./composer/vendor/bin/
 
 #PATH for python packages installed by pip --user  without sudo
-export PY_BIN=$(python -c 'import site; print(site.USER_BASE + "/bin")')
+export PY_BIN=$(python3 -c 'import site; print(site.USER_BASE + "/bin")')
 export PATH=$PATH:$PY_BIN
 
 # PATH for ruby gem
@@ -33,6 +44,8 @@ export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 export PATH=$PATH:$HOME/Bin
 
 # Prompt
+# https://starship.rs/ must be installed
+eval "$(starship init zsh)"
 export SPACESHIP_PROMPT_ORDER=(
 user
 dir
