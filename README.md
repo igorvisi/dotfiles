@@ -11,6 +11,9 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 ### Tools:
 Link to [my /uses page](https://igorvisi.com/uses)
 
+### Aliases and function
+* dotfiles/shell/aliases
+* dotfiles/shell/functions
 
 ## Installation
 Good to know beforehand, I use :
@@ -20,11 +23,7 @@ Good to know beforehand, I use :
 * [exa](https://github.com/ogham/exa) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
 * [neovim](https://github.com/neovim/neovim) instead of vim
-
-
-## Aliases and function
-* dotfiles/shell/aliases
-* dotfiles/shell/functions
+* [starship](https://starship.rs/) a minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
 ### Clone and configure env variables
 ```bash
