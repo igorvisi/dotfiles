@@ -40,6 +40,9 @@ export PATH="$PATH:$GEM_HOME/bin"
 export NVM_DIR="$HOME/.dotfiles/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+# Local PATH
+export PATH="$PATH:$HOME/.local/bin"
+
 # Personal Apps
 export PATH=$PATH:$HOME/Bin
 
