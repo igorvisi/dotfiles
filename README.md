@@ -6,7 +6,7 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 
 ### OS:
 * MacOS for most of things
-* Linux for servers/tinkering
+* Linux (Ubuntu) for servers/tinkering
 
 ### Tools:
 Link to [my /uses page](https://igorvisi.com/uses)
@@ -22,7 +22,8 @@ Good to know beforehand, I use :
 * [mackup](https://github.com/lra/mackup) to backup most of conf.
 * [exa](https://github.com/ogham/exa) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
-* [neovim](https://github.com/neovim/neovim) instead of vim
+* [neovim](https://github.com/neovim/neovim) instead of vim.
+* [jetbrains-mono](https://www.jetbrains.com/lp/mono/) a open source font for developers.
 * [starship](https://starship.rs/) a minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
 ### Clone and configure env variables
@@ -38,5 +39,13 @@ Configure according to you
 cd ~/.dotfiles
 vim shell/global apps/git/.gitconfig.local
 chmod +x install
+
+# CLI
 ./install
+
+# LINUX desktop
+./install install.linux.yaml
+
+# MacOS
+./install install.macos.yaml
 ```
