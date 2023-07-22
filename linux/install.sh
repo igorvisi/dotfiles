@@ -17,12 +17,10 @@ fzy
 fzf
 fonts-firacode
 python3-pip
+ruby
 )
 
-for app in $APPS
-do
-	echo $app
-done
+sudo apt install ${APPS[@]}
 
 # Install sheldon, a shell plugin manager
 curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \

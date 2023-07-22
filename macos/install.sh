@@ -28,7 +28,4 @@ fzf
 git-delta
 )
 
-for app in $APPS
-do
-	brew install $app
-done
+brew install ${APPS[@]}
