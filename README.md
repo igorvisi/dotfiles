@@ -37,15 +37,23 @@ Configure according to you
 ### Install conf.
 ```bash
 cd ~/.dotfiles
+
+# Change conf
 vim shell/global apps/git/.gitconfig.local
 chmod +x install
 
-# CLI
+# First install for the CLI
 ./install
 
-# LINUX desktop
+## Desktop
+# You can install for Linux Desktop
 ./install install.linux.yaml
-
-# MacOS
+# Or You can install for MacOS
 ./install install.macos.yaml
+
+## Install my minimal setups apps
+# For linux
+./linux/install.sh
+# For macOS
+./macos/install.sh
 ```
