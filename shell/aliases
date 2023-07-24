@@ -90,10 +90,10 @@ alias iplocal='ifconfig | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}
 
 # Update system, antigen and nodes packages.
 alias update='
-command -v brew &> /dev/null && brew upgrade;
+command -v brew &> /dev/null && brew upgrade && brew cleanup;
 command -v mas &> /dev/null && mas upgrade ;
-command -v mas &> /dev/null && yay -Suy --noconfirm --needed ;
-command -v mas &> /dev/null && sudo apt update && sudo apt upgrade ;
+command -v yay &> /dev/null && yay -Suy --noconfirm --needed ;
+command -v apt &> /dev/null && sudo apt update && sudo apt upgrade ;
 npm update -g ;
 antigen update ;
 gpg --keyserver pgp.mit.edu --refresh-keys;
