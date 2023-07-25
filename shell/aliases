@@ -95,7 +95,7 @@ command -v mas &> /dev/null && mas upgrade ;
 command -v yay &> /dev/null && yay -Suy --noconfirm --needed ;
 command -v apt &> /dev/null && sudo apt update && sudo apt upgrade ;
 npm update -g ;
-antigen update ;
+sheldon lock --update ;
 gpg --keyserver pgp.mit.edu --refresh-keys;
 '
 # Get random
