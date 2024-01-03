@@ -26,7 +26,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH}/bin
 
 # PATH for PHP packgages
-export PATH=$PATH:$HOME/./composer/vendor/bin/
+export PATH=$PATH:$HOME/.composer/vendor/bin/
 
 #PATH for python packages installed by pip --user  without sudo
 export PY_BIN=$(python3 -c 'import site; print(site.USER_BASE + "/bin")')
@@ -36,8 +36,10 @@ export PATH=$PATH:$PY_BIN
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+# Zoxide is a fast and smart alternative to the cd command.
+eval "$(zoxide init zsh)"
 # nvm
-export NVM_DIR="$HOME/.dotfiles/apps/nvm"
+export NVM_DIR="$DOTFILES_DIR/apps/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Local PATH

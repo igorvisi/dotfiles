@@ -16,9 +16,6 @@ github = "zsh-users/zsh-completions"
 [plugins.zsh-users]
 github = "zsh-users/zsh-syntax-highlighting"
 
-[plugins.z]
-github = "rupa/z"
-
 [plugins.ohmyzsh-lib]
 github = "ohmyzsh/ohmyzsh"
 dir = "lib"
