@@ -122,8 +122,7 @@ alias tnw='tmux new-window'
 alias tnwd='tmux new-window -d'
 
 # Open a file or URL in the user's preferred application
-alias open='xdg-open'
-alias o='open'
+alias o='open .'
 
 # Process I launch
 alias p='ps -u $USER'
