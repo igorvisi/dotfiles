@@ -24,6 +24,7 @@ Thumbs.db
 # Files that might appear on external disks
 .Trashes
 
+.DS_Store
 # Compiled Python files
 */__pycache__
 *.pyc
