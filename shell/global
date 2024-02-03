@@ -38,9 +38,10 @@ export PATH="$PATH:$GEM_HOME/bin"
 
 # Zoxide is a fast and smart alternative to the cd command.
 eval "$(zoxide init zsh)"
-# nvm
-export NVM_DIR="$DOTFILES_DIR/apps/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# fnm
+export PATH="$PATH:$HOME.fnm"
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
 
 # Local PATH
 export PATH="$PATH:$HOME/.local/bin"

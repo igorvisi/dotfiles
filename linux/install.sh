@@ -6,6 +6,7 @@ zsh
 bat
 exa
 git
+gh
 tmux
 neovim
 trash-cli
@@ -15,6 +16,7 @@ gpg
 tree
 fzy
 fzf
+zoxide
 fonts-firacode
 python3-pip
 ruby

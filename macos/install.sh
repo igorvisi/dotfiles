@@ -14,6 +14,8 @@ tmux
 bat
 exa
 git
+gh
+dig
 mackup
 mas
 neovim
@@ -26,6 +28,7 @@ prompt-ship
 fzy
 fzf
 git-delta
+zoxide
 )
 
 brew install ${APPS[@]}
