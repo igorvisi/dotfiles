@@ -5,6 +5,7 @@ APPS=(
 zsh
 bat
 exa
+dig
 git
 gh
 tmux
