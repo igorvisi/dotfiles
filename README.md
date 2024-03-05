@@ -20,7 +20,7 @@ Good to know beforehand, I use :
 * [dotbot](github.com/anishathalye/dotbot) to manage my dotfiles.
 * [sheldon](https://github.com/rossmacarthur/sheldon) to manage shell plugin.
 * [mackup](https://github.com/lra/mackup) to backup most of conf.
-* [exa](https://github.com/ogham/exa) as a ls remplacement.
+* [eza](https://github.com/eza-community/eza) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
 * [neovim](https://github.com/neovim/neovim) instead of vim.
 * [jetbrains-mono](https://www.jetbrains.com/lp/mono/) a open source font for developers.

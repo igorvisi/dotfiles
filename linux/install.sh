@@ -4,7 +4,7 @@
 APPS=(
 zsh
 bat
-exa
+eza
 dnsutils
 git
 gh

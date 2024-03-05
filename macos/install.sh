@@ -12,7 +12,7 @@ APPS=(
 zsh
 tmux
 bat
-exa
+eza
 git
 gh
 dig
