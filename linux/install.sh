@@ -5,7 +5,7 @@ APPS=(
 zsh
 bat
 exa
-dig
+dnsutils
 git
 gh
 tmux
