@@ -74,11 +74,6 @@ alias rm!='\rm -rf'
 alias journalctl.me='journalctl -xf'
 alias lsctl='systemctl -t service --full --all list-units'
 
-# Download Youtube Playlist video in mp4 or mp3.
-alias y4pl='youtube-dl -cik -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -f mp4'
-alias y4='youtube-dl -cik -o "%(title)s-%(id)s.%(ext)s" -f mp4 '
-alias y3='youtube-dl -x -o "%(title)s-%(id)s.%(ext)s" --audio-format mp3 --audio-quality 0'
-
 # Browser aliases
 alias chrome='brave'
 alias incognito='brave --incognito'
