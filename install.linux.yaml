@@ -32,4 +32,6 @@
     - [
         "curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
       ]
+    - [ echo " Install starship if not here \n curl -sS https://starship.rs/install.sh | zsh \n"]
+    - [ echo " Install starship if need here \n curl -fsSL https://fnm.vercel.app/install | zsh \n"]
     - [git submodule update --init --recursive]
