@@ -31,3 +31,6 @@ curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
 
 # Install mackup for backup/restore conf
 pip install --upgrade mackup
+
+# Install Jetbrains font
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"

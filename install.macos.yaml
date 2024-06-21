@@ -7,7 +7,7 @@
 
 - link:
     # Coding tools
-    ~/Library/Application\ Support/Code/User: apps/vscode
+    ~/.ssh/config: apps/ssh/mac.config
 
 - shell:
     # Install Homebrew

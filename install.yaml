@@ -31,5 +31,3 @@
     ~/Bin: bin
     ~/.config/htop/htoprc: apps/htop/htoprc
     ~/.tmux.conf: apps/tmux/tmux.conf
-    ~/.gnupg/gpg.conf: apps/gnupg/gpg.conf
-    ~/.gnupg/gpg-agent.conf: apps/gnupg/gpg-agent.conf

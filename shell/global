@@ -2,12 +2,29 @@
 export DOTFILES_DIR=$HOME/Documents/Codes/dotfiles@igorvisi
 
 # Setup the gpg-agent for SSH authentication
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+#unset SSH_AGENT_PID
+#if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+#  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+#fi
+#export GPG_TTY=$(tty)
+#gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# Setup the 1password agent for SSH authentification
+# Specific export for Linux
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export SSH_AUTH_SOCK=~/.1password/agent.sock
 fi
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# Specific export for macOS
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+fi
+
+# Specific export for WSL (example with Ubuntu)
+if [[ "$WSL_DISTRO_NAME" == "Ubuntu" ]]; then
+    export SSH_AUTH_SOCK=~/.1password/agent.sock
+fi
+
 
 #umask -S "u=rwx,g=rw,o=r"       # My file is my file :)
 umask 022
