@@ -12,11 +12,3 @@
 - shell:
     # Install Homebrew
     - [/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" ]
-
-    - [git submodule update --init --recursive]
-
-    # To disable storing OpenPGP passwords in macOS keychain
-    - [defaults write org.gpgtools.common DisableKeychain -bool yes]
-
-    # To re-enable storing OpenPGP passwords in macOS keychain
-    # - [defaults delete org.gpgtools.common DisableKeychain]
