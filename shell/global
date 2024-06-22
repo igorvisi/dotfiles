@@ -1,5 +1,5 @@
 # Variables
-export DOTFILES_DIR=$HOME/Documents/Codes/dotfiles@igorvisi
+export DOTFILES_DIR="$HOME/Documents/03 Ressources/dotfiles"
 
 # Setup the gpg-agent for SSH authentication
 #unset SSH_AGENT_PID
@@ -43,7 +43,7 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH}/bin
 
 # PATH for PHP packgages
-export PATH=$PATH:$HOME/.composer/vendor/bin/
+export PATH=$PATH:$HOME/.composer/vendor/bin/:$HOME/.config/composer/vendor/bin/
 
 #PATH for python packages installed by pip --user  without sudo
 export PY_BIN=$(python3 -c 'import site; print(site.USER_BASE + "/bin")')
