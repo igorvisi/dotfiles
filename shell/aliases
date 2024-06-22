@@ -92,6 +92,8 @@ command -v apt &> /dev/null && sudo apt update && sudo apt upgrade ;
 npm update -g ;
 sheldon lock --update ;
 gpg --keyserver pgp.mit.edu --refresh-keys;
+command -v rkhunter &> sudo rkhunter --update;
+command -v freshclam &> sudo freshclam;
 '
 # Get random
 alias random='mktemp -u | cut -d'.' -f2'

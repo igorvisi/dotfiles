@@ -29,6 +29,10 @@ git-delta
 zoxide
 docker
 btop
+rkhunter
+clamav
+lynis
+ansible
 )
 
 brew install ${APPS[@]}
@@ -49,5 +53,8 @@ tableplus
 brave-browser
 firefox
 microsoft-edge
+klavaro
+onedrive
+google-drive
 )
 brew install --cask ${APPS_DESK[@]}

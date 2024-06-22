@@ -21,7 +21,11 @@ zoxide
 fonts-firacode
 python3-pip
 ruby
-
+rkhunter
+clamav
+lynis
+ansible
+vlc
 )
 
 sudo apt install ${APPS[@]}
