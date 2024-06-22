@@ -56,9 +56,8 @@ export PATH="$PATH:$GEM_HOME/bin"
 # Zoxide is a fast and smart alternative to the cd command.
 eval "$(zoxide init zsh)"
 
-# fnm
-export PATH="$PATH:$HOME.fnm"
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive)"
+# mise
+eval "$(~/.local/bin/mise activate zsh)"
 
 # Local PATH
 export PATH="$PATH:$HOME/.local/bin"
