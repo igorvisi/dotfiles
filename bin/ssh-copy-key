@@ -3,5 +3,5 @@
 # Copy my keys from github
 ssh-copy-key()
 {
-	curl -s https://github.com/"$username".keys | ssh-copy-id -i /dev/stdin user@$1
+	curl -s https://github.com/"$USERGITHUB".keys | ssh-copy-id -i /dev/stdin user@$1
 }
