@@ -8,8 +8,9 @@ alias hf='fc -n -l 1 |fzy --tac --exact --ansi --no-sort --reverse --tiebreak=in
 --bind "ctrl-m:execute: echo '{}'| clipcopy "'
 
 # Copy SSH and GPG public key
-alias cbssh='gpg --export-ssh-key $GPGKEY | clipcopy'
+# alias cbssh='gpg --export-ssh-key $GPGKEY | clipcopy'
 alias cbgpg='gpg --export --armor $GPGKEY | clipcopy'
+alias cbssh='curl -s https://github.com/$USERGITHUB.keys | clipcopy'
 
 # Copy current working directory
 alias cbwd='pwd | clipcopy'
@@ -124,7 +125,7 @@ alias o='open .'
 # Process I launch
 alias p='ps -u $USER'
 # Powerfull ls
-alias ls='eza -g --git --group-directories-first' # eza is a modern replacement for ls
+command -v exa &> /dev/null && alias ls='eza -g --git --group-directories-first' ; # eza is a modern replacement for ls
 alias l='ls -a'
 alias ll='ls -la -h'
 alias lk='ll -s=size'
@@ -134,7 +135,9 @@ alias lf='ls -al | fzf ' # fzf needs
 alias lg='ls -al|grep'
 
 # bat > cat
-alias cat='bat -p'
+command -v batcat &> /dev/null && alias cat='batcat -p';
+command -v bat &> /dev/null && alias cat='bat -p';
+
 
 # Navigation
 alias -- +='pushd'

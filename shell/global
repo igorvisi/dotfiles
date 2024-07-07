@@ -38,6 +38,9 @@ export MANPAGER="less -X"
 # GPG default key
 export GPGKEY=0x9E000216F11111A5
 
+# GITHUB USER
+export USERGITHUB=igorvisi
+
 # PATH for golang packages
 export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH}/bin
