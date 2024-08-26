@@ -4,6 +4,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew tap homebrew/cask-fonts
+brew tap localsend/localsend
 
 # Install my very minimal must tools for MacOS !
 APPS=(
@@ -44,7 +45,7 @@ APP_DESK=(
 obsidian
 todoist
 beeper
-readdle-spark
+thunderbird
 vlc
 raycast
 iterm2
@@ -56,6 +57,9 @@ microsoft-edge
 klavaro
 onedrive
 google-drive
+visual-studio-code
+zed
+localsend
 )
 brew install --cask ${APPS_DESK[@]}
 

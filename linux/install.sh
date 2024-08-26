@@ -26,6 +26,7 @@ clamav
 lynis
 ansible
 vlc
+thunderbird
 )
 
 sudo apt install ${APPS[@]}
