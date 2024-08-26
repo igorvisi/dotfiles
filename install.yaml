@@ -31,11 +31,3 @@
     ~/Bin: bin
     ~/.config/htop/htoprc: apps/htop/htoprc
     ~/.tmux.conf: apps/tmux/tmux.conf
-
-- shell:
-
-      # Install mise
-    - [curl https://mise.run | sh]
-
-      # Install Lazydocker
-    - [curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash]

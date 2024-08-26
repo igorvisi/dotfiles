@@ -19,7 +19,6 @@ Link to [my /uses page](https://igorvisi.com/uses)
 Good to know beforehand, I use :
 * [dotbot](github.com/anishathalye/dotbot) to manage my dotfiles.
 * [sheldon](https://github.com/rossmacarthur/sheldon) to manage shell plugin.
-* [mackup](https://github.com/lra/mackup) to backup most of conf.
 * [eza](https://github.com/eza-community/eza) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
 * [neovim](https://github.com/neovim/neovim) instead of vim.
@@ -40,20 +39,21 @@ cd ~/.dotfiles
 
 # Change conf
 vim shell/global apps/git/.gitconfig.local
+cp app/git/.gitconfig.local ~/.gitconfig.local
 chmod +x install
 
-# First install for the CLI
+# First install for both
 ./install
 
 ## Desktop
-# You can install for Linux Desktop
+# You can install for Linux
 ./install install.linux.yaml
 # Or You can install for MacOS
 ./install install.macos.yaml
 
-## Install my minimal setups apps
+## Install apps
 # For linux
-./linux/install.sh
+./script/install.macos.sh
 # For macOS
-./macos/install.sh
+./script/install.ubuntu.sh
 ```

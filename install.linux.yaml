@@ -6,12 +6,5 @@
       relink: true
 
 - link:
-
     # SSH
     ~/.ssh/conf: apps/ssh/linux.config
-
-
-- shell:
-    - [
-        "sudo apt install zsh bat eza dnsutils git neovim curl btop"
-      ]
