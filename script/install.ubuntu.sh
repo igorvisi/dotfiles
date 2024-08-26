@@ -61,13 +61,7 @@ install_if_approved "Mise (a CLI tool to manage local .env files)" "curl https:/
 install_if_approved "Lazydocker (a simple terminal UI for Docker)" "curl -sS https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash"
 
 # Install lazygit
-install_if_approved "Lazygit (a simple terminal UI for Git)" "
-LAZYGIT_VERSION=\$(curl -s 'https://api.github.com/repos/jesseduffield/lazygit/releases/latest' | grep -Po '\"tag_name\": \"v\K[^\"]*')
-curl -Lo lazygit.tar.gz 'https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_\${LAZYGIT_VERSION}_Linux_x86_64.tar.gz'
-tar xf lazygit.tar.gz lazygit
-sudo install lazygit /usr/local/bin
-rm lazygit.tar.gz
-"
+install_if_approved " terminal-based user interface for Git" "sudo snap install lazygit-gm"
 
 # Install Nerd Fonts (JetBrains Mono)
 install_if_approved "JetBrains Mono Nerd Fonts (programming fonts with extra symbols)" "
