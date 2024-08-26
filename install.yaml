@@ -33,8 +33,6 @@
     ~/.tmux.conf: apps/tmux/tmux.conf
 
 - shell:
-      # Install starship prompt
-    - [curl -sS https://starship.rs/install.sh | zsh]
 
       # Install mise
     - [curl https://mise.run | sh]
