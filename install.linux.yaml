@@ -6,17 +6,6 @@
       relink: true
 
 - link:
-    # Useful X applications
-    ~/.config/copyq: apps/copyq/
-    ~/.config/gpick: apps/gpick
-    ~/.config/user-dirs.dirs: apps/user-dirs.dirs
-    ~/.local/share/applications: apps/desktop
-    ~/.xinitrc: apps/xinitrc
-    ~/.Xresources: apps/Xresources
-
-    # Design apps
-    ~/.config/GIMP/2.10: apps/gimp
-    ~/.config/inkscape: apps/inkscape
 
     # SSH
     ~/.ssh/conf: apps/ssh/linux.config

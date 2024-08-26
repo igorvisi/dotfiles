@@ -9,11 +9,19 @@
 [gpg]
 	format = ssh
 [gpg "ssh"]
+	# Choose one
 	program = /opt/1Password/op-ssh-sign
-	# program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	# macOS
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	# WSL
+	program = "C:/Users/Igor VISI.DIRSIGLT001/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+[core]
+	# WSL
+	sshCommand = ssh.exe
 [commit]
 	gpgsign = true
 [user]
+	# Key from 1password
 	signingkey = ssh-ed25519 AAAAC.......
 	email = your@mail.com
 	user = Your Name
