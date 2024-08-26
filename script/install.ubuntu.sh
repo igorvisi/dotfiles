@@ -38,7 +38,6 @@ install_if_approved "dnsutils (tools for DNS querying)" "sudo apt install -y dns
 install_if_approved "GitHub CLI (gh)" "sudo apt install -y gh"
 install_if_approved "tmux (a terminal multiplexer)" "sudo apt install -y tmux"
 install_if_approved "Neovim (an improved version of Vim)" "sudo apt install -y neovim"
-install_if_approved "Klavaro (typing tutor)" "sudo apt install -y klavaro"
 
 install_if_approved "trash-cli (a CLI trash manager)" "sudo apt install -y trash-cli"
 install_if_approved "git-extras (Git utilities)" "sudo apt install -y git-extras"
@@ -96,6 +95,7 @@ if systemctl list-units --type=service | grep -q display-manager; then
     install_if_approved "FBReader (ebook reader)" "sudo apt install -y fbreader"
     install_if_approved "LibreOffice (office suite)" "sudo apt install -y libreoffice"
     install_if_approved "KeePassXC (password manager)" "sudo apt install -y keepassxc"
+    install_if_approved "Klavaro (typing tutor)" "sudo apt install -y klavaro"
     install_if_approved "Postman (API testing tool)" "sudo snap install postman"
     install_if_approved "Telegram (messaging app)" "sudo snap install telegram-desktop"
     install_if_approved "Spotify (music streaming app)" "sudo snap install spotify"
