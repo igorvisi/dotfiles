@@ -58,3 +58,12 @@ chmod +x install
 # For macOS
 ./script/install.ubuntu.sh
 ```
+
+## Screenshot
+
+### Ubuntu 24.04 LTS
+![Linux](screenshot-linux.png)
+
+
+### Windows 11 with WSL
+![Windows ](screenshot-windows.png)
