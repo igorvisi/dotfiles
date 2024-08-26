@@ -5,8 +5,9 @@ This repo contains my personal dotfiles. I copy stuffs from several people and I
 ## My setup
 
 ### OS:
-* MacOS for most of things
-* Linux (Ubuntu) for servers/tinkering
+* MacOS
+* Linux (Ubuntu 24.04)
+* Windows 11 with WSL
 
 ### Tools:
 Link to [my /uses page](https://igorvisi.com/uses)
