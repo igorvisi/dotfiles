@@ -59,7 +59,10 @@ chmod +x install
 ./script/install.ubuntu.sh
 ```
 
-## Screenshot
+## Screenshots
+
+### MacOS
+![Macos](screenshot-macos.png)
 
 ### Ubuntu 24.04 LTS
 ![Linux](screenshot-linux.png)
