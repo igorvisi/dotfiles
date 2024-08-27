@@ -14,14 +14,15 @@
 	# macOS
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 	# WSL
-	program = "C:/Users/Igor VISI.DIRSIGLT001/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+	program = "/mnt/c/Users/Igor VISI.DIRSIGLT001/AppData/Local/1Password/app/8/op-ssh-sign.exe"
 [core]
 	# WSL
-	sshCommand = ssh.exe
+	sshCommand = "/mnt/c/Windows/System32/OpenSSH/ssh.exe"
 [commit]
 	gpgsign = true
 [user]
+	email = your@mail.com
+	name = Your Name
 	# Key from 1password
 	signingkey = ssh-ed25519 AAAAC.......
-	email = your@mail.com
-	user = Your Name
+
