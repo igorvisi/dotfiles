@@ -30,6 +30,7 @@ Good to know beforehand, I use :
 * [obsidian](https://obsidian.md/) flexible note‑taking app
 * [vscode](https://code.visualstudio.com/) you know
 * [TablePlus](https://tableplus.com/)  intuitive GUI tools to manage SQL database.
+
 More, see [my /uses page](https://igorvisi.com/uses)
 
 ### Clone and configure env variables
