@@ -63,6 +63,7 @@ install_if_approved "rkhunter (rootkit hunter)" "brew install rkhunter"
 install_if_approved "ClamAV (antivirus)" "brew install clamav"
 install_if_approved "Lynis (security auditing tool)" "brew install lynis"
 install_if_approved "Ansible (IT automation)" "brew install ansible"
+install_if_approved "Valet (dev env for PHP)" "composer global require laravel/valet"
 
 # Optional GUI applications
 APP_DESK=(
