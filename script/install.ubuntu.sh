@@ -102,6 +102,14 @@ if systemctl list-units --type=service | grep -q display-manager; then
     sudo apt update && sudo apt install -y 1password
     "
 
+    # PHP composer
+    install_if_approved "PHP Compose" "wget https://raw.githubusercontent.com/composer/getcomposer.org/1a26c0dcb361332cb504e4861ed0f758281575aa/web/installer -O - -q | php -- --quiet"
+
+
+    # Valet Plus, a dev env for PHP
+    install_if_approved "valet Plus for linux ! COMPOSER MUST BE INSTALLED" "sudo add-apt-repository ppa:ondrej/php && sudo apt install php8.3-fpm php8.3-gd php8.3-mbstring php8.3-mysql php8.3-opcache php8.3-sqlite3 php8.3-xml php8.3-zip && sudo apt install curl libnss3-tools jq xsel openssl ca-certificates && sudo apt install php8.3-cli php8.3-curl php8.3-mbstring php8.3-xml php8.3-zip php8.3-posix && composer global require genesisweb/valet-linux-plus && valet install"
+
+
     # Install TablePlus
     install_if_approved "TablePlus (database management tool)" "
     wget -qO - https://deb.tableplus.com/apt.tableplus.com.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/tableplus-archive.gpg > /dev/null
