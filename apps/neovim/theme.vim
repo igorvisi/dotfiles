@@ -6,7 +6,7 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 	" that the colorschemes have been loaded
 	syntax on
 	set termguicolors     " enable true colors support
-	colorscheme nord
+	colorscheme onedark
 	filetype plugin indent on
 	" make the highlighting of tabs and other non-text less annoying
 	highlight SpecialKey ctermfg=black
@@ -23,5 +23,5 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 
 	" Lightline
 	let g:lightline = {
-		\ 'colorscheme': 'nord',
+		\ 'colorscheme': 'one',
 		\ }

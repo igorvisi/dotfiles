@@ -9,7 +9,7 @@ endif
 " Plugin
 call plug#begin()
 
-Plug 'nordtheme/Vim' "Theme
+Plug 'navarasu/onedark.nvim'
 Plug 'itchyny/lightline.vim'
 
 Plug 'ap/vim-css-color'
