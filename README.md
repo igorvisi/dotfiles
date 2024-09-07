@@ -25,6 +25,13 @@ Good to know beforehand, I use :
 * [neovim](https://github.com/neovim/neovim) instead of vim.
 * [jetbrains-mono](https://www.jetbrains.com/lp/mono/) a open source font for developers.
 * [starship](https://starship.rs/) a minimal, blazing-fast, and infinitely customizable prompt for any shell!
+* [Mozilla thunderbird](https://www.thunderbird.net/) email client
+* [localsend](https://localsend.org/) alternative to Airdrop, cross-plateform.
+* [obsidian](https://obsidian.md/) flexible note‑taking app
+* [vscode](https://code.visualstudio.com/) you know
+* [TablePlus](https://tableplus.com/)  intuitive GUI tools to manage SQL database.
+
+More, see [my /uses page](https://igorvisi.com/uses)
 
 ### Clone and configure env variables
 ```bash
@@ -59,7 +66,10 @@ chmod +x install
 ./script/install.ubuntu.sh
 ```
 
-## Screenshot
+## Screenshots
+
+### MacOS
+![Macos](screenshot-macos.png)
 
 ### Ubuntu 24.04 LTS
 ![Linux](screenshot-linux.png)
