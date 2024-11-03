@@ -6,10 +6,13 @@
 	" that the colorschemes have been loaded
 	syntax on
 	set termguicolors     " enable true colors support
+<<<<<<< HEAD
 	let g:onedark_config = {
 		\ 'style': 'cool',
 	\}
 	set background=dark
+=======
+>>>>>>> 1f56ea151e206f179907eff6b4c57fcee2a1de00
 	colorscheme onedark
 	filetype plugin indent on
 	" make the highlighting of tabs and other non-text less annoying
@@ -28,4 +31,4 @@
 	" Lightline
 	let g:lightline = {
 		\ 'colorscheme': 'onedark',
-		\ }
+	\ }

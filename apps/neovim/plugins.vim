@@ -9,9 +9,8 @@ endif
 " Plugin
 call plug#begin()
 
-Plug 'nordtheme/Vim' "Theme
 Plug 'https://github.com/joshdick/onedark.vim.git'
-Plug 'itchyny/lightline.vim'
+Plug 'navarasu/onedark.nvim'
 
 Plug 'ap/vim-css-color'
 Plug 'benizi/vim-automkdir' "Automatically create missing folders on save
