@@ -15,6 +15,7 @@
     ~/.tigrc: apps/tig/tigrc
     ~/.myclirc: apps/mycli/myclirc
     ~/.config/pgcli/config: apps/pgcli/config
+    ~/.config/wezterm: apps/wezterm
 
 
     # Shell conf
