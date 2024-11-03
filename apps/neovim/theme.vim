@@ -1,12 +1,16 @@
-set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+	set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 	" highlight conflicts
 	match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-" Colorscheme and final setup
+	" Colorscheme and final setup
 	" This call must happen after the plug#end() call to ensure
 	" that the colorschemes have been loaded
 	syntax on
 	set termguicolors     " enable true colors support
-	colorscheme nord
+	let g:onedark_config = {
+		\ 'style': 'cool',
+	\}
+	set background=dark
+	colorscheme onedark
 	filetype plugin indent on
 	" make the highlighting of tabs and other non-text less annoying
 	highlight SpecialKey ctermfg=black
@@ -23,5 +27,5 @@ set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 
 	" Lightline
 	let g:lightline = {
-		\ 'colorscheme': 'nord',
+		\ 'colorscheme': 'onedark',
 		\ }

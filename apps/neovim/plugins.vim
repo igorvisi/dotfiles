@@ -10,6 +10,7 @@ endif
 call plug#begin()
 
 Plug 'nordtheme/Vim' "Theme
+Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'itchyny/lightline.vim'
 
 Plug 'ap/vim-css-color'
