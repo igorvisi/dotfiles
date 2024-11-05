@@ -14,7 +14,7 @@ end
 config.color_scheme = "OneDark (base16)"
 config.font =
     wezterm.font("JetBrains Mono NL")
-config.font_size = 16
+config.font_size = 14
 
 config.window_decorations = "RESIZE"
 
