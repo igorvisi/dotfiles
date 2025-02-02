@@ -189,3 +189,31 @@ extract() {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+
+add_github_keys_to_server() {
+    # Vérifier que les arguments sont fournis
+    if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
+        echo "Usage: add_github_keys_to_server <github_username> <server_username> <server_ip>"
+        return 1
+    fi
+
+    github_username="$1"
+    server_username="$2"
+    server_ip="$3"
+
+    # Télécharger les clés SSH depuis GitHub et les ajouter au serveur
+    curl -s "https://github.com/$github_username.keys" | ssh "$server_username@$server_ip" "
+        mkdir -p ~/.ssh && chmod 700 ~/.ssh &&
+        cat >> ~/.ssh/authorized_keys &&
+        chmod 600 ~/.ssh/authorized_keys
+    "
+
+    # Vérifier si la commande a réussi
+    if [ $? -eq 0 ]; then
+        echo "Les clés SSH de $github_username ont été ajoutées avec succès à $server_username@$server_ip."
+    else
+        echo "Erreur : Impossible d'ajouter les clés SSH."
+        return 1
+    fi
+}
