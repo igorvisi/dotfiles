@@ -12,6 +12,12 @@ alias hf='fc -n -l 1 |fzy --tac --exact --ansi --no-sort --reverse --tiebreak=in
 alias cbgpg='gpg --export --armor $GPGKEY | clipcopy'
 alias cbssh='curl -s https://github.com/$USERGITHUB.keys | clipcopy'
 
+# alias si WSL
+if grep -qi microsoft /proc/version 2>/dev/null; then
+    # Définir l'alias ssh=ssh.exe uniquement sous WSL
+    alias ssh='ssh.exe'
+fi
+
 # Copy current working directory
 alias cbwd='pwd | clipcopy'
 
