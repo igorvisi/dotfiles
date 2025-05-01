@@ -191,29 +191,41 @@ extract() {
 }
 
 
-add_github_keys_to_server() {
-    # Vérifier que les arguments sont fournis
-    if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
-        echo "Usage: add_github_keys_to_server <github_username> <server_username> <server_ip>"
-        return 1
-    fi
+add-ssh() {
+		# Check if all required arguments are provided
+		if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]; then
+				echo "Usage: add-ssh <github_username> <server_username> <server_ip>"
+				return 1
+		fi
 
-    github_username="$1"
-    server_username="$2"
-    server_ip="$3"
+		github_username="$1"
+		server_username="$2"
+		server_ip="$3"
 
-    # Télécharger les clés SSH depuis GitHub et les ajouter au serveur
-    curl -s "https://github.com/$github_username.keys" | ssh "$server_username@$server_ip" "
-        mkdir -p ~/.ssh && chmod 700 ~/.ssh &&
-        cat >> ~/.ssh/authorized_keys &&
-        chmod 600 ~/.ssh/authorized_keys
-    "
+		# Define a temporary file to store the GitHub SSH key
+		temp_key_file="/tmp/$github_username.pub"
 
-    # Vérifier si la commande a réussi
-    if [ $? -eq 0 ]; then
-        echo "Les clés SSH de $github_username ont été ajoutées avec succès à $server_username@$server_ip."
-    else
-        echo "Erreur : Impossible d'ajouter les clés SSH."
-        return 1
-    fi
+		# Download the public SSH key from GitHub
+		curl -s "https://github.com/$github_username.keys" -o "$temp_key_file"
+
+		# Check if the file is not empty (i.e., key retrieval was successful)
+		if [ ! -s "$temp_key_file" ]; then
+				echo "Error: Unable to retrieve SSH keys from GitHub for user $github_username."
+				return 1
+		fi
+
+		# Copy the downloaded key to the remote server using ssh-copy-id
+		ssh-copy-id -f -i "$temp_key_file" "$server_username@$server_ip"
+
+		# Check if the ssh-copy-id command was successful
+		if [ $? -eq 0 ]; then
+				echo "SSH keys for $github_username have been successfully added to $server_username@$server_ip."
+		else
+				echo "Error: Failed to add SSH keys."
+				return 1
+		fi
+
+		# Clean up by removing the temporary key file
+		rm -f "$temp_key_file"
 }
+
