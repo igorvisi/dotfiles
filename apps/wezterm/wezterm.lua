@@ -36,7 +36,7 @@ end)
 -- Couleurs, police, etc.
 config.color_scheme = 'tokyonight_night'
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 19
+config.font_size = 16
 config.window_decorations = "RESIZE"
 config.window_frame = {
   font_size = 14.0,
