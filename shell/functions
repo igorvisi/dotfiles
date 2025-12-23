@@ -107,7 +107,7 @@ man() {
 # credit to github.com/nicknisi/dotfiles
 gitexport() {
 	mkdir -p "$1"
-	git archive master | tar -x -C "$1"
+	git archive main | tar -x -C "$1"
 }
 
 
