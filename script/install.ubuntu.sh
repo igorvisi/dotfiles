@@ -37,7 +37,11 @@ install_if_approved "eza (an improved ls command)" "sudo apt install -y eza"
 install_if_approved "dnsutils (tools for DNS querying)" "sudo apt install -y dnsutils"
 install_if_approved "GitHub CLI (gh)" "sudo apt install -y gh"
 install_if_approved "tmux (a terminal multiplexer)" "sudo apt install -y tmux"
+install_if_approved "tmux Plugin Manager (tpm)" "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+"
+install_if_approved "starship (a cross-shell prompt)" "curl -sS https://starship.rs/install.sh | sh"
 install_if_approved "Neovim (an improved version of Vim)" "sudo apt install -y neovim"
+install_if_approved "vim-plug (a plugin manager for Vim/Neovim)" "sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
 
 install_if_approved "trash-cli (a CLI trash manager)" "sudo apt install -y trash-cli"
 install_if_approved "git-extras (Git utilities)" "sudo apt install -y git-extras"

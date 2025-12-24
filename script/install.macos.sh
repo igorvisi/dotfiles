@@ -42,6 +42,8 @@ brew install ${MANDATORY_APPS[@]}
 
 # Optional CLI tools
 install_if_approved "tmux (a terminal multiplexer)" "brew install tmux"
+install_if_approved "tmux Plugin Manager (tpm)" "git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+"
 install_if_approved "bat (a cat clone with syntax highlighting)" "brew install bat"
 install_if_approved "eza (an improved ls command)" "brew install eza"
 install_if_approved "GitHub CLI (gh)" "brew install gh"
