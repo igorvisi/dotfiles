@@ -42,6 +42,5 @@ SAVEHIST=10000
 DISABLE_AUTO_UPDATE=true
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-
 # opencode
 export PATH=/home/igorvisi/.opencode/bin:$PATH

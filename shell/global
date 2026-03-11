@@ -59,6 +59,10 @@ export PATH="$PATH:$GEM_HOME/bin"
 # Zoxide is a fast and smart alternative to the cd command.
 eval "$(zoxide init zsh)"
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # mise
 eval "$(~/.local/bin/mise activate zsh)"
 
