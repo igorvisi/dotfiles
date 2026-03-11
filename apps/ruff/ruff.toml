@@ -1,0 +1,63 @@
+# Configuration Globale (Django, FastAPI, Odoo)
+target-version = "py310"
+line-length = 88
+
+[lint]
+# 1. Sélection des règles
+select = [
+    "E",     # pycodestyle (PEP8)
+    "F",     # Pyflakes
+    "I",     # isort (Tri des imports)
+    "UP",    # pyupgrade (Modernisation Python 3.10+)
+    "B",     # flake8-bugbear (Bugs probables)
+    "C90",   # McCabe (Complexité du code)
+    "S",     # Bandit (Sécurité)
+    "DJ",    # flake8-django
+    "ASYNC", # flake8-async
+    "T20",   # flake8-print
+]
+
+# 2. Exceptions globales
+ignore = [
+    "E501",   # Ligne trop longue (géré par le formateur)
+    "B008",   # Appels de fonction dans les arguments (Indispensable FastAPI/Odoo)
+    "D100",   # Manque de docstring au niveau module
+    "ANN101", # Type 'self' (obsolète dans les versions récentes)
+]
+
+[lint.mccabe]
+max-complexity = 12
+
+[lint.isort]
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "django",
+    "odoo",
+    "fastapi",
+    "first-party",
+    "local-folder"
+]
+
+[lint.isort.sections]
+"django" = ["django"]
+"odoo" = ["odoo"]
+"fastapi" = ["fastapi", "pydantic"]
+
+[lint.per-file-ignores]
+# ODOO
+"**/models/**/*.py" = ["C901"]
+"**/__init__.py" = ["F401"]
+# DJANGO
+"**/migrations/*.py" = ["E501", "I"]
+"**/settings.py" = ["E501", "F401", "S101"]
+# FASTAPI
+"**/routes/*.py" = ["ANN201"]
+"**/tests/**/*.py" = ["S101"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

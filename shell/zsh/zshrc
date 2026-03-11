@@ -1,3 +1,7 @@
+# Load sheldon, zsh plugin manager
+# https://github.com/rossmacarthur/sheldon
+eval "$(sheldon source)"
+
 # Load personal global variables like PATH ...
 source $HOME/.global
 # Load aliases
@@ -7,10 +11,6 @@ source $HOME/.functions
 
 autoload -Uz compinit
 compinit
-
-# Load sheldon, zsh plugin manager
-# https://github.com/rossmacarthur/sheldon
-eval "$(sheldon source)"
 
 setopt correct                      # Auto correct typo in commande.
 setopt globdots                     # completion to show hidden files
@@ -42,3 +42,6 @@ SAVEHIST=10000
 DISABLE_AUTO_UPDATE=true
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+
+# opencode
+export PATH=/home/igorvisi/.opencode/bin:$PATH

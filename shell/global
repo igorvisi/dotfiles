@@ -65,6 +65,11 @@ eval "$(~/.local/bin/mise activate zsh)"
 # Local PATH
 export PATH="$PATH:$HOME/.local/bin"
 
+# Flutter PATH
+export ANDROID_HOME="$HOME/.android-sdk"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$HOME/.flutter/bin:$PATH"
+
 # Personal Apps
 export PATH=$PATH:$HOME/Bin
 

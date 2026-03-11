@@ -27,10 +27,10 @@ port() {
 # Credit from https://github.com/garybernhardt/dotfiles
 # Activate the closest virtualenv by looking in parent directories.
 activate_virtualenv() {
-	if [ -f venv/bin/activate ]; then . venv/bin/activate;
-	elif [ -f ../venv/bin/activate ]; then . ../venv/bin/activate;
-	elif [ -f ../../venv/bin/activate ]; then . ../../venv/bin/activate;
-	elif [ -f ../../../venv/bin/activate ]; then . ../../../venv/bin/activate;
+	if [ -f .venv/bin/activate ]; then . .venv/bin/activate;
+	elif [ -f ../.venv/bin/activate ]; then . ../.venv/bin/activate;
+	elif [ -f ../../.venv/bin/activate ]; then . ../../.venv/bin/activate;
+	elif [ -f ../../../.venv/bin/activate ]; then . ../../../.venv/bin/activate;
 	fi
 }
 

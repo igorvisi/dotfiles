@@ -133,7 +133,7 @@ alias p='ps -u $USER'
 # Powerfull ls
 command -v exa &> /dev/null && alias ls='eza -g --git --group-directories-first' ; # eza is a modern replacement for ls
 alias l='ls -a'
-alias ll='ls -la -h'
+alias ll='ls -la'
 alias lk='ll -s=size'
 alias lm='ll -s=modified'
 alias lc='ll --created -s=created'
