@@ -1,13 +1,15 @@
+# Load personal global variables like PATH ...
+source $HOME/.global
+
+# Useful Shell functions.
+source $HOME/.functions
+
 # Load sheldon, zsh plugin manager
 # https://github.com/rossmacarthur/sheldon
 eval "$(sheldon source)"
 
-# Load personal global variables like PATH ...
-source $HOME/.global
 # Load aliases
 source $HOME/.aliases
-# Useful Shell functions.
-source $HOME/.functions
 
 autoload -Uz compinit
 compinit

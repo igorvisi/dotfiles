@@ -52,6 +52,9 @@ export PATH=$PATH:$HOME/.composer/vendor/bin/:$HOME/.config/composer/vendor/bin/
 export PY_BIN=$(python3 -c 'import site; print(site.USER_BASE + "/bin")')
 export PATH=$PATH:$PY_BIN
 
+# Ansible with WSL2
+eval $(keychain --quiet --eval --agents ssh id_ed25519)
+
 # PATH for ruby gem
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
