@@ -5,9 +5,9 @@ This repository contains my personal dotfiles, managed with Dotbot.
 ## My setup
 
 ### OS:
-* MacOS
-* Linux (Ubuntu 24.04)
+* Linux (Arch Linux and Ubuntu)
 * Windows 11 with WSL
+* MacOS
 
 ### Tools:
 Link to [my /uses page](https://igorvisi.com/uses)
@@ -23,12 +23,12 @@ Good to know beforehand, I use:
 * [eza](https://github.com/eza-community/eza) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
 * [neovim](https://github.com/neovim/neovim) instead of vim.
-* [jetbrains-mono](https://www.jetbrains.com/lp/mono/) a open source font for developers.
+* [Maple Mono](https://github.com/subframe7536/maple-font) a open source font for developers.
 * [starship](https://starship.rs/) a minimal, blazing-fast, and infinitely customizable prompt for any shell!
 * [Mozilla thunderbird](https://www.thunderbird.net/) email client
 * [localsend](https://localsend.org/) alternative to Airdrop, cross-plateform.
 * [obsidian](https://obsidian.md/) flexible note‑taking app
-* [vscode](https://code.visualstudio.com/) you know
+* [Zed](https://zed.dev/) you know
 * [TablePlus](https://tableplus.com/)  intuitive GUI tools to manage SQL database.
 
 More, see [my /uses page](https://igorvisi.com/uses)
@@ -73,12 +73,4 @@ Machine-specific or sensitive application settings are intentionally kept outsid
 
 ## Screenshots
 
-### MacOS
-![Macos](screenshot-macos.png)
-
-### Ubuntu 24.04 LTS
-![Linux](screenshot-linux.png)
-
-
-### Windows 11 with WSL
-![Windows ](screenshot-windows.png)
+![Editor](screenshot-editor.png)
