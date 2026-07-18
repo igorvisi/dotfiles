@@ -1,0 +1,24 @@
+onboarding = false
+
+# Custom Theme
+[theme]
+name = "one-dark"
+[theme.custom]
+panel_bg = "#282c34"
+accent = "#98c379"
+
+# Custom Keybindings (uses standard prefix ctrl+b by default)
+[keys]
+prefix = "ctrl+n"
+help = "prefix+?"
+settings = "prefix+s"
+detach = "prefix+q"
+reload_config = "prefix+shift+r"
+
+# Workspaces
+goto = "prefix+g"
+new_workspace = "prefix+w"
+
+# Tabs
+new_tab = "prefix+t"
+close_tab = "prefix+ctrl+t"

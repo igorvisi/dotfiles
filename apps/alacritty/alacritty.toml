@@ -1,0 +1,57 @@
+[window]
+startup_mode = "Maximized"
+decorations = "None"
+
+[scrolling]
+history = 100000
+
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "Maple Mono"
+style = "Regular"
+
+[font.bold]
+family = "Maple Mono"
+style = "Bold"
+
+
+[colors.primary]
+background = "#23272E"
+foreground = "#abb2bf"
+bright_foreground = "#e6efff"
+
+[colors.normal]
+black   = "#1e2127"
+red     = "#e06c75"
+green   = "#98c379"
+yellow  = "#d19a66"
+blue    = "#61afef"
+magenta = "#c678dd"
+cyan    = "#56b6c2"
+white   = "#828791"
+
+[colors.bright]
+black   = "#5c6370"
+red     = "#e06c75"
+green   = "#98c379"
+yellow  = "#d19a66"
+blue    = "#61afef"
+magenta = "#c678dd"
+cyan    = "#56b6c2"
+white   = "#e6efff"
+
+[colors.dim]
+black   = "#1e2127"
+red     = "#e06c75"
+green   = "#98c379"
+yellow  = "#d19a66"
+blue    = "#61afef"
+magenta = "#c678dd"
+cyan    = "#56b6c2"
+white   = "#828791"

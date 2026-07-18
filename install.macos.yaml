@@ -7,4 +7,12 @@
 
 - link:
     # Coding tools
+    ~/.config/alacritty/alacritty.toml: apps/alacritty/alacritty.toml
+    ~/Library/Application Support/Code/User/settings.json: apps/vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json: apps/vscode/keybindings.json
+    ~/Library/Application Support/Code/User/snippets/json.json: apps/vscode/snippets/json.json
+    ~/.config/zed/settings.json: apps/zed/settings.json
+    ~/.config/zed/keymap.json: apps/zed/keymap.json
+
+    # SSH
     ~/.ssh/config: apps/ssh/mac.config

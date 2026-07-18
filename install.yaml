@@ -15,8 +15,8 @@
     ~/.tigrc: apps/tig/tigrc
     ~/.myclirc: apps/mycli/myclirc
     ~/.config/pgcli/config: apps/pgcli/config
+    ~/.config/ruff/ruff.toml: apps/ruff/ruff.toml
     ~/.config/wezterm: apps/wezterm
-
 
     # Shell conf
     ~/.config/sheldon/plugins.toml: apps/sheldon/plugins.toml
@@ -30,5 +30,6 @@
 
     # cli apps
     ~/Bin: bin
+    ~/.config/herdr/config.toml: apps/herdr/config.toml
     ~/.config/htop/htoprc: apps/htop/htoprc
     ~/.tmux.conf: apps/tmux/tmux.conf

@@ -6,5 +6,13 @@
       relink: true
 
 - link:
+    # Coding tools
+    ~/.config/alacritty/alacritty.toml: apps/alacritty/alacritty.toml
+    ~/.config/Code/User/settings.json: apps/vscode/settings.json
+    ~/.config/Code/User/keybindings.json: apps/vscode/keybindings.json
+    ~/.config/Code/User/snippets/json.json: apps/vscode/snippets/json.json
+    ~/.config/zed/settings.json: apps/zed/settings.json
+    ~/.config/zed/keymap.json: apps/zed/keymap.json
+
     # SSH
-    ~/.ssh/conf: apps/ssh/linux.config
+    ~/.ssh/config: apps/ssh/linux.config

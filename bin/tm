@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Adapted from https://github.com/nicknisi/dotfiles
 # abort if we're already inside a TMUX session
-[ "$TMUX" == "" ] || exit 0
+[[ -z "$TMUX" ]] || exit 0
 # startup a "default" session if non currently exists
 # tmux has-session -t _default || tmux new-session -s _default -d
 
@@ -15,7 +15,7 @@ select opt in "${options[@]}"
 do
 	case $opt in
 		"New Session")
-			read -p "Enter new session name: " SESSION_NAME
+			read -r -p "Enter new session name: " SESSION_NAME
 			tmux new -s "$SESSION_NAME"
 			break
 			;;
@@ -23,7 +23,7 @@ do
 			zsh --login
 			break;;
 		*)
-			tmux attach-session -d -t $opt
+			tmux attach-session -d -t "$opt"
 			break
 			;;
 	esac

@@ -1,6 +1,6 @@
 # ~/.dotfiles
 
-This repo contains my personal dotfiles. I copy stuffs from several people and I personalize those to go better with my workflow. I remain open to any improvement ! And you are free to clone and to adapte to your sauce.
+This repository contains my personal dotfiles, managed with Dotbot.
 
 ## My setup
 
@@ -17,8 +17,8 @@ Link to [my /uses page](https://igorvisi.com/uses)
 * dotfiles/shell/functions
 
 ## Installation
-Good to know beforehand, I use :
-* [dotbot](github.com/anishathalye/dotbot) to manage my dotfiles.
+Good to know beforehand, I use:
+* [dotbot](https://github.com/anishathalye/dotbot) to manage my dotfiles.
 * [sheldon](https://github.com/rossmacarthur/sheldon) to manage shell plugin.
 * [eza](https://github.com/eza-community/eza) as a ls remplacement.
 * [bat](https://github.com/sharkdp/bat) as a cat remplacement.
@@ -35,36 +35,41 @@ More, see [my /uses page](https://igorvisi.com/uses)
 
 ### Clone and configure env variables
 ```bash
-git clone https://github.com/igorvisi/dotfiles ~/.dotfiles
+git clone https://github.com/igorvisi/dotfiles ~/dotfiles
 ```
 Configure according to you
-~/.dotfiles/shell/global
+~/dotfiles/shell/global
 ~/.gitconfig.local
 
 ### Install conf.
 ```bash
-cd ~/.dotfiles
+cd ~/dotfiles
 
 # Change conf
-vim shell/global apps/git/.gitconfig.local
-cp app/git/.gitconfig.local ~/.gitconfig.local
+vim shell/global apps/git/gitconfig.local
+cp apps/git/gitconfig.local ~/.gitconfig.local
 chmod +x install
 
-# First install for both
+# Install common configuration
 ./install
 
-## Desktop
-# You can install for Linux
+# Linux
 ./install install.linux.yaml
-# Or You can install for MacOS
+
+# macOS
 ./install install.macos.yaml
 
-## Install apps
-# For linux
-./script/install.macos.sh
-# For macOS
+# WSL
+./install install.wsl.yaml
+
+# Install applications on Linux
 ./script/install.ubuntu.sh
+
+# Install applications on macOS
+./script/install.macos.sh
 ```
+
+Machine-specific or sensitive application settings are intentionally kept outside Dotbot.
 
 ## Screenshots
 

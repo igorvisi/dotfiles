@@ -1,0 +1,108 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
+      "ctrl-x": "editor::Cut",
+      "ctrl-s": "workspace::Save",
+      "ctrl-z": "editor::Undo",
+      "ctrl-y": "editor::Redo",
+      "ctrl-shift-z": "editor::Redo",
+      "ctrl-a": "editor::SelectAll",
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-h": "buffer_search::DeployReplace",
+      "ctrl-l": "editor::SelectLine",
+      "ctrl-d": "editor::SelectNext",
+      "ctrl-/": "editor::ToggleComments"
+    }
+  },
+
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    }
+  },
+
+  {
+    "bindings": {
+      "ctrl-shift-o": "workspace::OpenFiles"
+    }
+  },
+
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-shift-o": "menu::SelectPrevious"
+    }
+  },
+
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "ctrl-p": "menu::SelectPrevious"
+    }
+  },
+
+  {
+    "context": "FileFinder || FileFinder > Picker > Editor",
+    "bindings": {
+      "ctrl-o": "file_finder::Toggle"
+    }
+  },
+
+  {
+    "context": "FileFinder || FileFinder > Picker > Editor",
+    "unbind": {
+      "ctrl-p": "file_finder::Toggle"
+    }
+  },
+
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "ctrl-o": "pane::GoBack"
+    }
+  },
+
+  {
+    "unbind": {
+      "ctrl-o": "workspace::OpenFiles"
+    }
+  },
+
+  {
+    "context": "vim_mode == literal",
+    "unbind": {
+      "ctrl-o": [
+        "vim::Literal",
+        [
+          "ctrl-o",
+          "\u000f"
+        ]
+      ]
+    }
+  },
+
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "z z": "workspace::Save"
+    }
+
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "z z": "workspace::Save"
+    }
+  },
+
+  {
+    "context": "vim_mode == insert",
+    "unbind": {
+      "ctrl-o": "vim::TemporaryNormal"
+    }
+  }
+]

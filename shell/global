@@ -1,5 +1,5 @@
 # Variables
-export DOTFILES_DIR="$HOME/Documents/03 Ressources/dotfiles"
+export DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 
 # Setup the gpg-agent for SSH authentication
 #unset SSH_AGENT_PID
@@ -49,25 +49,35 @@ export PATH=$PATH:${GOPATH}/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin/:$HOME/.config/composer/vendor/bin/
 
 #PATH for python packages installed by pip --user  without sudo
-export PY_BIN=$(python3 -c 'import site; print(site.USER_BASE + "/bin")')
-export PATH=$PATH:$PY_BIN
+if command -v python3 >/dev/null 2>&1; then
+    export PY_BIN="$(python3 -c 'import site; print(site.USER_BASE + "/bin")')"
+    export PATH="$PATH:$PY_BIN"
+fi
 
 # Ansible with WSL2
-eval $(keychain --quiet --eval --agents ssh id_ed25519)
+if [[ -n "${WSL_DISTRO_NAME:-}" ]] && command -v keychain >/dev/null 2>&1; then
+    eval "$(keychain --quiet --eval --agents ssh id_ed25519)"
+fi
 
 # PATH for ruby gem
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
+if command -v ruby >/dev/null 2>&1; then
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export PATH="$PATH:$GEM_HOME/bin"
+fi
 
 # Zoxide is a fast and smart alternative to the cd command.
-eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+    eval "$(zoxide init zsh)"
+fi
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # mise
-eval "$(~/.local/bin/mise activate zsh)"
+if [[ -x "$HOME/.local/bin/mise" ]]; then
+    eval "$("$HOME/.local/bin/mise" activate zsh)"
+fi
 
 # Local PATH
 export PATH="$PATH:$HOME/.local/bin"
@@ -77,34 +87,18 @@ export ANDROID_HOME="$HOME/.android-sdk"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$HOME/.flutter/bin:$PATH"
 
+# Support truecolor
+export COLORTERM=truecolor
+
 # Personal Apps
 export PATH=$PATH:$HOME/Bin
 
-# Prompt
-# https://starship.rs/ must be installed
-eval "$(starship init zsh)"
-export SPACESHIP_PROMPT_ORDER=(
-user
-dir
-host
-node
-pyenv
-venv
-kubectl
-git_branch
-git_status
-line_sep
-jobs
-char
-)
+# Load some secret env
+if [[ -f "$HOME/.env.sec" ]]; then
+    source "$HOME/.env.sec"
+fi
 
-export SPACESHIP_PACKAGE_SYMBOL=""
-export SPACESHIP_CHAR_SYMBOL="❯ "
-export SPACESHIP_JOBS_SYMBOL="»"
-export SPACESHIP_TIME_SHOW=true
-export SPACESHIP_DIR_TRUNC_PREFIX="..."
-export SPACESHIP_KUBECTL_SHOW=false
-export SPACESHIP_KUBECTL_VERSION_SHOW=false
-export SPACESHIP_KUBECONTEXT_SHOW=true
-export SPACESHIP_KUBECTL_PREFIX=''
-export SPACESHIP_KUBECTL_SYMBOL='☸ '
+# Prompt
+if command -v starship >/dev/null 2>&1; then
+    eval "$(starship init zsh)"
+fi

@@ -6,9 +6,13 @@ set nocompatible
 let mapleader=","
 
 " Local directories
-set backupdir=~/.config/nvim/backups
-set directory=~/.config/nvim/swaps
-set undodir=~/.config/nvim/undo
+let s:nvim_state_dir = expand('~/.local/state/nvim')
+for s:subdir in ['backups', 'swaps', 'undo']
+    call mkdir(s:nvim_state_dir . '/' . s:subdir, 'p', 0700)
+endfor
+execute 'set backupdir=' . fnameescape(s:nvim_state_dir . '/backups//')
+execute 'set directory=' . fnameescape(s:nvim_state_dir . '/swaps//')
+execute 'set undodir=' . fnameescape(s:nvim_state_dir . '/undo//')
 set autoindent " Copy indent from last line when starting new line
 set backspace=indent,eol,start
 set autoread " Detect if the file changes
@@ -40,7 +44,7 @@ set lispwords+=defpartial,defpage " Noir core
 set lispwords+=defaction,deffilter,defview,defsection " Ciste core
 set list
 set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-set showbreak=↪et lispwords+=describe,it " Speclj TDD/BDD
+set lispwords+=describe,it " Speclj TDD/BDD
 set magic " Enable extended regexes
 set mouse=a " Enable mouse in all in all modes
 set noerrorbells " Disable error bells
@@ -74,7 +78,8 @@ set switchbuf=""
 set title " Show the filename in the window titlebar
 set ttyfast " Send more characters at a given time
 set undofile " Persistent Undo
-set viminfo=%,'9999,s512,n~/.config/nvim/viminfo " Restore buffer list, marks are remembered for 9999 files, registers up to 512Kb are remembered
+" Restore buffer list, marks for 9999 files, and registers up to 512Kb.
+execute "set viminfo=%,'9999,s512,n" . fnameescape(s:nvim_state_dir . '/viminfo')
 set visualbell " Use visual bell instead of audible bell (annnnnoying)
 set wildchar=<TAB> " Character for CLI expansion (TAB-completion)
 set wildignore+=.DS_Store

@@ -1,0 +1,145 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+ "vim": {
+  "toggle_relative_line_numbers": true
+ },
+ "icon_theme": {
+  "mode": "dark",
+  "light": "Warm Charmed Icons",
+  "dark": "Warm Charmed Icons"
+ },
+ "disable_ai": true,
+ "agent_servers": {
+  "opencode": {
+   "default_config_options": {
+    "model": "opencode-go/kimi-k2.7-code"
+   },
+   "type": "registry"
+  },
+  "kimi": {
+   "type": "registry"
+  },
+  "codex-acp": {
+   "type": "registry"
+  }
+ },
+  "cli_default_open_behavior": "existing_window",
+ "project_panel": {
+		"dock": "left"
+	},
+	"outline_panel": {
+		"dock": "left"
+	},
+	"collaboration_panel": {
+		"dock": "left"
+	},
+	"git_panel": {
+		"dock": "left"
+	},
+	"cursor_shape": "bar",
+	"agent": {
+		"dock": "right",
+		"default_model": {
+			"effort": "medium",
+   "enable_thinking": true,
+   "provider": "zed.dev",
+			"model": "gpt-5.5"
+		},
+		"model_parameters": []
+	},
+	"vim_mode": true,
+	"terminal": {
+		"font_size": 15.0,
+		"font_family": "Maple Mono"
+	},
+	"node": {
+		"npm_path": "npm"
+	},
+	"base_keymap": "VSCode",
+	"preview_tabs": {
+		"enabled": false
+	},
+	"status_bar": {
+		"experimental.show": true
+	},
+	"multi_cursor_modifier": "cmd_or_ctrl",
+	"relative_line_numbers": "enabled",
+	"gutter": {
+		"line_numbers": true
+	},
+	"minimap": {
+		"show": "never"
+	},
+	"selection_highlight": true,
+	"current_line_highlight": "all",
+	"buffer_font_fallbacks": ["Roboto"],
+	"buffer_font_features": {
+    "calt": true
+  },
+	"buffer_font_family": "Maple Mono",
+	"file_types": {
+		"javascriptreact": ["*.js"],
+		"django-txt": ["**/templates/**/*"],
+		"html": ["**/*.html"],
+		"django-html": ["**/templates/**/*.html"],
+		"pip-requirements": ["**/requirements{/**,*}.{txt,in}"],
+		"twig": ["*.twig"]
+	},
+	"auto_indent_on_paste": true,
+	"show_whitespaces": "boundary",
+	"soft_wrap": "bounded",
+	"hard_tabs": true,
+	"tab_size": 2,
+	"buffer_font_size": 16.0,
+	"buffer_font_weight": 500.0,
+  "theme": {
+  "mode": "dark",
+  "light": "One Light",
+  "dark": "One Dark Pro"
+ },
+ "active_pane_modifiers": {
+     "inactive_opacity": 1.0
+   },
+  "theme_overrides": {
+    "One Dark Pro": {
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "border.variant": "#23272E",
+      "border": "#23272E",
+      "title_bar.background": "#23272E",
+      "panel.background": "#23272E",
+      "panel.focused_border": "#23272E",
+      "tab_bar.background": "#23272E",
+      "tab.inactive_background": "#23272E",
+      "tab.active_background": "#2C313A",
+      "status_bar.background": "#23272E",
+      "players": [
+        {
+          "cursor": "#BD9DFF",
+        },
+      ],
+      "syntax": {
+              "keyword": {
+                  "font_style": "italic"
+              },
+              "comment": {
+                  "font_style": "italic"
+              },
+              "type": {
+                  "font_style": "italic"
+              },
+              // Optionnel : les booléens (True/False) ou none
+              "boolean": {
+                  "font_style": "italic"
+              }
+          },
+    },
+  }
+}

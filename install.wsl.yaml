@@ -1,0 +1,10 @@
+- defaults:
+    link:
+      create: true
+      force: true
+      relative: true
+      relink: true
+
+- link:
+    # Windows applications keep their settings outside the WSL filesystem.
+    ~/.config/alacritty/alacritty.toml: apps/alacritty/alacritty.wsl.toml

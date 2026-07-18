@@ -1,5 +1,7 @@
 # Personal exe
 bin/*.exe
 
+# Tool caches
+.ruff_cache/
 
 .DS_Store

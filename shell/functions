@@ -85,6 +85,40 @@ retry() {
 	done
 }
 
+if grep -qi microsoft /proc/version 2>/dev/null; then
+	zed() {
+		local windows_local_app_data local_app_data
+
+		if ! command -v cmd.exe >/dev/null 2>&1 || ! command -v wslpath >/dev/null 2>&1; then
+			print -u2 'zed: unable to resolve Windows local application data'
+			return 1
+		fi
+
+		windows_local_app_data=$(cmd.exe /d /c 'echo %LOCALAPPDATA%' 2>/dev/null) || {
+			print -u2 'zed: unable to resolve Windows local application data'
+			return 1
+		}
+		windows_local_app_data=${windows_local_app_data//$'\r'/}
+
+		if [[ -z "$windows_local_app_data" || "$windows_local_app_data" == '%LOCALAPPDATA%' ]]; then
+			print -u2 'zed: unable to resolve Windows local application data'
+			return 1
+		fi
+
+		local_app_data=$(wslpath -u "$windows_local_app_data" 2>/dev/null) || {
+			print -u2 'zed: unable to resolve Windows local application data'
+			return 1
+		}
+
+		if [[ -z "$local_app_data" ]]; then
+			print -u2 'zed: unable to resolve Windows local application data'
+			return 1
+		fi
+
+		"$local_app_data/Programs/Zed/bin/zed" "$@"
+	}
+fi
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Colored man pages
 # credit https://github.com/robbyrussel/oh-my-zsh/plugins/colored-man-pages
@@ -110,6 +144,21 @@ gitexport() {
 	git archive main | tar -x -C "$1"
 }
 
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# to share sessions between cli and web
+#
+
+oc() {
+    local USER PASS
+
+    USER=$(pass show opencode/username)
+    PASS=$(pass show opencode/password)
+
+    opencode attach http://localhost:4095 \
+        -u "$USER" \
+        -p "$PASS" "$@"
+}
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Crypt with gpg
@@ -228,4 +277,3 @@ add-ssh() {
 		# Clean up by removing the temporary key file
 		rm -f "$temp_key_file"
 }
-
