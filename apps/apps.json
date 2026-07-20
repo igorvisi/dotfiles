@@ -1,0 +1,77 @@
+{
+  "cli": {
+    "arch": {
+      "git": "git",
+      "neovim": "neovim",
+      "tmux": "tmux",
+      "starship": "starship",
+      "zsh": "zsh",
+      "curl": "curl",
+      "wget": "wget",
+      "fzf": "fzf",
+      "zoxide": "zoxide",
+      "eza": "eza",
+      "bat": "bat",
+      "ripgrep": "ripgrep",
+      "jq": "jq",
+      "tree": "tree",
+      "htop": "htop"
+    },
+    "ubuntu": {
+      "git": "git",
+      "neovim": "neovim",
+      "tmux": "tmux",
+      "zsh": "zsh",
+      "curl": "curl",
+      "wget": "wget",
+      "fzf": "fzf",
+      "tree": "tree",
+      "htop": "htop",
+      "python3-pip": "python3-pip"
+    },
+    "macos": {
+      "git": "git",
+      "neovim": "neovim",
+      "tmux": "tmux",
+      "starship": "starship",
+      "zsh": "zsh",
+      "fzf": "fzf",
+      "zoxide": "zoxide",
+      "eza": "eza",
+      "bat": "bat",
+      "ripgrep": "ripgrep",
+      "jq": "jq",
+      "tree": "tree"
+    }
+  },
+  "gui": {
+    "arch": {
+      "alacritty": "alacritty",
+      "niri": "niri",
+      "fuzzel": "fuzzel",
+      "waybar": "waybar",
+      "wlr-randr": "wlr-randr",
+      "swaylock": "swaylock",
+      "grim": "grim",
+      "slurp": "slurp",
+      "nautilus": "nautilus"
+    },
+    "ubuntu": {
+      "firefox": "firefox",
+      "alacritty": "alacritty",
+      "vlc": "vlc",
+      "thunderbird": "thunderbird"
+    },
+    "macos": {
+      "firefox": "firefox",
+      "alacritty": "alacritty",
+      "obsidian": "obsidian",
+      "localsend": "localsend"
+    }
+  },
+  "aur": {
+    "arch": {
+      "1password": "1password-cli"
+    }
+  }
+}

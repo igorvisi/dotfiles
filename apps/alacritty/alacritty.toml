@@ -1,3 +1,7 @@
+[terminal.shell]
+program = "zsh"
+args = ["-c", "tmux new-session -A -s main || tmux attach -t main"]
+
 [window]
 startup_mode = "Maximized"
 decorations = "None"
