@@ -51,10 +51,9 @@ alias apt='sudo apt'
 alias mount='sudo mount'
 alias umount='sudo umount'
 alias dk='docker'
-alias dkc='docker-compose'
+alias dkc='docker compose'
 alias k='kubectl'
 alias ctl='systemctl'
-alias bunx='npx'
 
 alias arch='docker run -d --name archlinux -it archlinux/base > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it archlinux bash'
 alias debian='docker run -d --name debian -it debian > /dev/null 2>&1; docker exec -e COLUMNS=$COLUMNS -e LINES=$LINES -e TERM=$TERM -it debian bash'
@@ -63,7 +62,7 @@ alias fedora='docker run -d --name fedora -it fedora > /dev/null 2>&1; docker ex
 
 # alias for the most used commands
 alias no='node'
-alias py='python3'
+alias py='python'
 
 # Download web page with all assets
 # Credit: https://github.com/denysdovhan/dotfiles
