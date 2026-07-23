@@ -17,5 +17,8 @@
     # Window manager
     ~/.config/niri: apps/niri
 
+    # App launcher
+    ~/.config/walker: apps/walker
+
     # SSH
     ~/.ssh/config: apps/ssh/linux.config

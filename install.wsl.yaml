@@ -8,3 +8,6 @@
 - link:
     # Windows applications keep their settings outside the WSL filesystem.
     ~/.config/alacritty/alacritty.toml: apps/alacritty/alacritty.wsl.toml
+
+    # App launcher
+    ~/.config/walker: apps/walker

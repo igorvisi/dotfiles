@@ -1,0 +1,58 @@
+* {
+  font-family: "Maple Mono", sans-serif;
+  font-size: 16px;
+}
+
+window {
+  background-color: #21252b;
+  border: 2px solid #eac786;
+  border-radius: 12px;
+  padding: 0;
+}
+
+#input {
+  margin: 8px;
+  padding: 12px;
+  background-color: #282c34;
+  color: #c9ccd3;
+  border: 1px solid #393e47;
+  border-radius: 8px;
+}
+
+#input:focus {
+  border-color: #62bac6;
+}
+
+#result {
+  margin: 0 8px 8px 8px;
+  padding: 0;
+}
+
+#entry {
+  padding: 10px 12px;
+  color: #c9ccd3;
+  border-radius: 6px;
+}
+
+#entry:selected {
+  background-color: #393e47;
+  color: #eac786;
+}
+
+#text {
+  color: inherit;
+}
+
+#text:selected {
+  color: inherit;
+}
+
+#subtitle {
+  color: #78c4ce;
+  font-size: 12px;
+}
+
+#text-placeholder {
+  color: #5c6370;
+  font-style: italic;
+}
