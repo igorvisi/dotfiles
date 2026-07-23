@@ -77,6 +77,7 @@ if systemctl list-units --type=service 2>/dev/null | grep -q display-manager || 
     # Wayland/Arch specific
     install_if_approved "Alacritty (GPU-accelerated terminal emulator)" "sudo pacman -S --needed --noconfirm alacritty"
     install_if_approved "Niri (scrollable tiling Wayland compositor)" "sudo pacman -S --needed --noconfirm niri"
+    install_if_approved "xwayland-satellite (XWayland support for Niri)" "yay -S --needed --noconfirm xwayland-satellite"
     install_if_approved "Fuzzel (Wayland app launcher)" "sudo pacman -S --needed --noconfirm fuzzel"
     install_if_approved "Wlr-randr (Wayland display configuration)" "sudo pacman -S --needed --noconfirm wlr-randr"
     install_if_approved "Swaylock (screen locker)" "sudo pacman -S --needed --noconfirm swaylock"
