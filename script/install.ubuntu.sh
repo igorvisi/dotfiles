@@ -67,7 +67,7 @@ install_if_approved "Lazydocker (a simple terminal UI for Docker)" "curl -sS htt
 # Install lazygit
 install_if_approved " terminal-based user interface for Git" "sudo snap install lazygit-gm"
 
-# Install Nerd Fonts (JetBrains Mono)
+# Install Nerd Fonts
 install_if_approved "JetBrains Mono Nerd Fonts (programming fonts with extra symbols)" "
 mkdir -p ~/.local/share/fonts
 cd /tmp
@@ -75,6 +75,17 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/latest/JetBrainsM
 unzip JetBrainsMono.zip -d JetBrainsMono
 cp JetBrainsMono/*.ttf ~/.local/share/fonts
 rm -rf JetBrainsMono.zip JetBrainsMono
+fc-cache -f -v
+cd -
+"
+
+install_if_approved "Maple Mono NF (programming font)" "
+mkdir -p ~/.local/share/fonts
+cd /tmp
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/latest/MapleMono.zip
+unzip MapleMono.zip -d MapleMono
+cp MapleMono/*.ttf ~/.local/share/fonts
+rm -rf MapleMono.zip MapleMono
 fc-cache -f -v
 cd -
 "

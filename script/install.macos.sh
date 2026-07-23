@@ -114,7 +114,7 @@ install_if_approved "Mise (a CLI tool to manage local .env files)" "curl https:/
 # Install Lazydocker, a simple terminal UI for Docker
 install_if_approved "Lazydocker (a simple terminal UI for Docker)" "curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash"
 
-# Install JetBrains Mono Nerd Fonts (programming fonts with extra symbols)
+# Install Nerd Fonts
 install_if_approved "JetBrains Mono Nerd Fonts (programming fonts with extra symbols)" "
 mkdir -p ~/Library/Fonts
 cd /tmp
@@ -122,6 +122,16 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/download/latest/JetBrainsM
 unzip JetBrainsMono.zip -d JetBrainsMono
 cp JetBrainsMono/*.ttf ~/Library/Fonts
 rm -rf JetBrainsMono.zip JetBrainsMono
+cd -
+"
+
+install_if_approved "Maple Mono NF (programming font)" "
+mkdir -p ~/Library/Fonts
+cd /tmp
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/latest/MapleMono.zip
+unzip MapleMono.zip -d MapleMono
+cp MapleMono/*.ttf ~/Library/Fonts
+rm -rf MapleMono.zip MapleMono
 cd -
 "
 
