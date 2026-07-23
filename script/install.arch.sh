@@ -34,7 +34,7 @@ fi
 
 # Mandatory packages
 echo -e "${GREEN}Installing mandatory packages...${NC}"
-sudo pacman -S --needed --noconfirm neovim tmux starship zsh curl wget fzf zoxide eza bat ripgrep jq tree htop gpg pipewire pipewire-pulse wireplumber
+sudo pacman -S --needed --noconfirm neovim tmux starship zsh curl wget fzf zoxide eza bat ripgrep jq tree htop gpg pipewire pipewire-pulse wireplumber polkit-kde-agent
 
 # Dev tools
 echo -e "${GREEN}Installing dev tools...${NC}"
