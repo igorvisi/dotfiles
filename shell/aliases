@@ -118,6 +118,9 @@ alias ta='tmux attach -t'
 alias td='tmux detach'
 alias ts='tmux new-session -s'
 alias tad='tmux attach -d -t'
+
+# Herdr
+alias hrr='herdr --remote'
 alias tsw='tmux split-window -h'
 alias tswd='tmux split-window -h -d'
 alias tnw='tmux new-window'
