@@ -207,6 +207,9 @@ layout {
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-at-startup "walker" "--gapplication-service"
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,pkcs11,ssh"
+spawn-at-startup "sh" "-c" "dbus-update-activation-environment --all"
+spawn-at-startup "/usr/lib/gnome-online-accounts/goa-daemon" "--replace"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 hotkey-overlay {
@@ -216,7 +219,7 @@ hotkey-overlay {
 
 // Switch events (laptop lid, tablet mode, etc.)
 switch-events {
-    lid-close { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    lid-close { spawn "/home/igorvisi/dotfiles/script/lock.sh"; }
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
