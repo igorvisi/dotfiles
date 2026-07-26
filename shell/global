@@ -1,6 +1,11 @@
 # Variables
 export DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 
+# Let subprocesses such as Herdr resolve Windows OpenSSH before /usr/bin/ssh.
+if [[ -n "${WSL_DISTRO_NAME:-}" || -n "${WSL_INTEROP:-}" ]]; then
+    export PATH="$HOME/Bin/wsl:$PATH"
+fi
+
 # Setup the gpg-agent for SSH authentication
 #unset SSH_AGENT_PID
 #if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then

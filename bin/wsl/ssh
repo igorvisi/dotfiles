@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ -z "${WSL_DISTRO_NAME:-}" && -z "${WSL_INTEROP:-}" ]]; then
+    echo "ssh: this wrapper is only available under WSL" >&2
+    exit 126
+fi
+
+ssh_exe="$(command -v ssh.exe || true)"
+if [[ -z "$ssh_exe" ]]; then
+    echo "ssh: Windows OpenSSH client (ssh.exe) not found in PATH" >&2
+    exit 127
+fi
+
+# Herdr's managed config and control socket use Unix paths. Windows OpenSSH
+# reads the equivalent keepalive settings from %USERPROFILE%/.ssh/config.
+if [[ $# -ge 8 \
+    && "$1" == "-F" \
+    && "$2" == */herdr-ssh-*/config \
+    && "$3" == "-S" \
+    && "$5" == "-o" \
+    && "$6" == "ControlMaster=auto" \
+    && "$7" == "-o" \
+    && "$8" == "ControlPersist=yes" ]]; then
+    shift 8
+fi
+
+exec "$ssh_exe" "$@"
