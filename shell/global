@@ -41,9 +41,17 @@ export GPGKEY=0x9E000216F11111A5
 # GITHUB USER
 export USERGITHUB=igorvisi
 
+# Reuse the GitHub CLI credential without storing the token in this file.
+if [[ -z "${GITHUB_PERSONAL_ACCESS_TOKEN:-}" ]] && command -v gh >/dev/null 2>&1; then
+    export GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token 2>/dev/null)"
+fi
+
 # PATH for golang packages
 export GOPATH=$HOME/.go
 export PATH=$PATH:${GOPATH}/bin
+
+# PATH for cargo packages
+export PATH=$PATH:$HOME/.cargo/bin
 
 # PATH for PHP packgages
 export PATH=$PATH:$HOME/.composer/vendor/bin/:$HOME/.config/composer/vendor/bin/
@@ -69,6 +77,9 @@ fi
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init zsh)"
 fi
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
