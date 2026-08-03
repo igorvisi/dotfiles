@@ -32,4 +32,5 @@
     ~/Bin: bin
     ~/.config/herdr/config.toml: apps/herdr/config.toml
     ~/.config/htop/htoprc: apps/htop/htoprc
+    ~/.config/voxtype/config.toml: apps/voxtype/config.toml
     ~/.tmux.conf: apps/tmux/tmux.conf

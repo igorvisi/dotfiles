@@ -1,6 +1,6 @@
 [terminal.shell]
 program = "C:\\Windows\\System32\\wsl.exe"
-args = ["--cd", "~", "-e", "zsh", "-c", "tmux new-session -A -s main || tmux attach -t main"]
+args = ["--cd", "~", "-e", "zsh"]
 
 [window]
 startup_mode = "Maximized"

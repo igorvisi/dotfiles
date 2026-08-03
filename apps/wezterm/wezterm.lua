@@ -7,14 +7,7 @@ local wsl_domains = wezterm.default_wsl_domains()
 
 -- Fonction exécutée au lancement de l'interface graphique
 wezterm.on("gui-startup", function(cmd)
-  -- Utiliser zsh comme shell par défaut (ou fallback vers /bin/sh)
-  local shell = os.getenv("SHELL") or "zsh"
-
-  local tmux_cmd = shell .. ' -c "tmux attach -t main || tmux new -s main"'
-
-  -- Créer une seule fenêtre avec la commande tmux
-  local tab, pane, window = mux.spawn_window {
-    args = { shell, "-c", "tmux attach -t main || tmux new -s main" },
+  local _, _, window = mux.spawn_window {
     domain = cmd and cmd.domain or nil,
   }
 

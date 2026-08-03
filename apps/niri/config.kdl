@@ -590,8 +590,8 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
+    Mod+Shift+S { screenshot; }
+    Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
@@ -606,5 +606,10 @@ binds {
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Ctrl+Alt+Delete { quit; }
+
+// --- CONFIGURATION HANDY PUSH-TO-TALK ---
+
+    // Appuyer une fois pour démarrer, puis une seconde fois pour transcrire.
+    Ctrl+Alt+Space { spawn "voxtype" "record" "toggle"; }
 
 }

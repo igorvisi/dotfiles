@@ -1,0 +1,24 @@
+state_file = "auto"
+
+[hotkey]
+enabled = false
+
+[audio]
+device = "pipewire"
+sample_rate = 16000
+max_duration_secs = 60
+
+[whisper]
+model = "small"
+language = "fr"
+translate = false
+
+[output]
+mode = "type"
+fallback_to_clipboard = true
+
+[vad]
+enabled = true
+backend = "energy"
+threshold = 0.3
+min_speech_duration_ms = 250
