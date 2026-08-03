@@ -5,7 +5,11 @@ install:
 
 link:
 	@./install install.yaml
-	@./install install.linux.yaml 2>/dev/null || true
+	@overlay=linux; \
+	if [ "$$(uname -s)" = "Darwin" ]; then overlay=macos; \
+	elif grep -qi microsoft /proc/version 2>/dev/null; then overlay=wsl; \
+	fi; \
+	./install "install.$$overlay.yaml"
 
 update:
 	@git pull

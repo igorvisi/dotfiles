@@ -211,6 +211,8 @@ spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,pkcs11,s
 spawn-at-startup "sh" "-c" "dbus-update-activation-environment --all"
 spawn-at-startup "/usr/lib/gnome-online-accounts/goa-daemon" "--replace"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "systemctl" "--user" "start" "voxtype.service"
+spawn-sh-at-startup "config=\"${XDG_CONFIG_HOME:-$HOME/.config}/wayvibes/input_device\"; [ -f \"$config\" ] && exec wayvibes \"$HOME/.wayvibes/soundpacks/cherrymx-black-pbt\" -v 0.5"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -219,7 +221,7 @@ hotkey-overlay {
 
 // Switch events (laptop lid, tablet mode, etc.)
 switch-events {
-    lid-close { spawn "/home/igorvisi/dotfiles/script/lock.sh"; }
+    lid-close { spawn "sh" "-c" "exec \"$HOME/dotfiles/script/lock.sh\""; }
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -251,6 +253,12 @@ animations {
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+// Focus newly opened windows and dialogs, including windows assigned to a
+// dedicated workspace by the rules below.
+window-rule {
+    open-focused true
+}
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.

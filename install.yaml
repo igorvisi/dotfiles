@@ -16,8 +16,6 @@
     ~/.myclirc: apps/mycli/myclirc
     ~/.config/pgcli/config: apps/pgcli/config
     ~/.config/ruff/ruff.toml: apps/ruff/ruff.toml
-    ~/.config/wezterm: apps/wezterm
-
     # Shell conf
     ~/.config/sheldon/plugins.toml: apps/sheldon/plugins.toml
     ~/.aliases: shell/aliases

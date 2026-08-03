@@ -41,7 +41,7 @@ Configure according to you
 ~/dotfiles/shell/global
 ~/.gitconfig.local
 
-### Install conf.
+### Install applications and configuration
 ```bash
 cd ~/dotfiles
 
@@ -50,23 +50,23 @@ vim shell/global apps/git/gitconfig.local
 cp apps/git/gitconfig.local ~/.gitconfig.local
 chmod +x install
 
-# Install common configuration
-./install
+# Detect the platform, install applications, then apply common and platform links.
+./script/install.sh
+```
 
-# Linux
-./install install.linux.yaml
+Application packages are declared in `apps/apps.json`. Required packages are
+installed automatically; optional packages remain interactive.
 
-# macOS
-./install install.macos.yaml
+Ubuntu 26.04 is the supported Ubuntu release. On WSL, the installer detects
+Ubuntu (`apt-get`) or Arch Linux (`pacman`) and installs CLI applications only.
+It does not install or configure Linux desktop applications.
 
-# WSL
-./install install.wsl.yaml
+The Arch desktop setup also downloads the configured Voxtype model and prepares
+WayVibes soundpacks. If the `input` group is added during installation, log out
+and back in, then select the keyboard once:
 
-# Install applications on Linux
-./script/install.ubuntu.sh
-
-# Install applications on macOS
-./script/install.macos.sh
+```bash
+wayvibes --device "$HOME/.wayvibes/soundpacks/cherrymx-black-pbt"
 ```
 
 Machine-specific or sensitive application settings are intentionally kept outside Dotbot.

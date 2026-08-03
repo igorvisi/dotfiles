@@ -24,13 +24,19 @@ else
     echo "No install script found for $OS"
 fi
 
-# Link files with dotbot
+# Link common files, then the platform overlay.
 echo "Linking files..."
 cd "$BASE_DIR"
-if [[ -f "install.${OS}.yaml" ]]; then
-    ./install "install.${OS}.yaml"
-else
-    ./install install.yaml
+./install install.yaml
+
+case "$OS" in
+    arch|ubuntu) OVERLAY="linux" ;;
+    macos|wsl) OVERLAY="$OS" ;;
+    *) OVERLAY="" ;;
+esac
+
+if [[ -n "$OVERLAY" && -f "install.${OVERLAY}.yaml" ]]; then
+    ./install "install.${OVERLAY}.yaml"
 fi
 
 echo "Done."
