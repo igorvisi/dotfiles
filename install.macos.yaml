@@ -13,6 +13,7 @@
     ~/Library/Application Support/Code/User/snippets/json.json: apps/vscode/snippets/json.json
     ~/.config/zed/settings.json: apps/zed/settings.json
     ~/.config/zed/keymap.json: apps/zed/keymap.json
+    ~/.config/wezterm: apps/wezterm
 
     # SSH
     ~/.ssh/config: apps/ssh/mac.config

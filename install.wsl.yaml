@@ -5,9 +5,5 @@
       relative: true
       relink: true
 
-- link:
-    # Windows applications keep their settings outside the WSL filesystem.
-    ~/.config/alacritty/alacritty.toml: apps/alacritty/alacritty.wsl.toml
-
-    # App launcher
-    ~/.config/walker: apps/walker
+# WSL remains CLI-only. Common links come from install.yaml, while Windows
+# application settings remain on Windows.

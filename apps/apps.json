@@ -1,77 +1,205 @@
 {
-  "cli": {
-    "arch": {
-      "git": "git",
-      "neovim": "neovim",
-      "tmux": "tmux",
-      "starship": "starship",
-      "zsh": "zsh",
-      "curl": "curl",
-      "wget": "wget",
-      "fzf": "fzf",
-      "zoxide": "zoxide",
-      "eza": "eza",
-      "bat": "bat",
-      "ripgrep": "ripgrep",
-      "jq": "jq",
-      "tree": "tree",
-      "htop": "htop"
-    },
-    "ubuntu": {
-      "git": "git",
-      "neovim": "neovim",
-      "tmux": "tmux",
-      "zsh": "zsh",
-      "curl": "curl",
-      "wget": "wget",
-      "fzf": "fzf",
-      "tree": "tree",
-      "htop": "htop",
-      "python3-pip": "python3-pip"
-    },
-    "macos": {
-      "git": "git",
-      "neovim": "neovim",
-      "tmux": "tmux",
-      "starship": "starship",
-      "zsh": "zsh",
-      "fzf": "fzf",
-      "zoxide": "zoxide",
-      "eza": "eza",
-      "bat": "bat",
-      "ripgrep": "ripgrep",
-      "jq": "jq",
-      "tree": "tree"
-    }
+  "arch": {
+    "required_cli": [
+      "bat",
+      "curl",
+      "eza",
+      "fontconfig",
+      "fzf",
+      "git",
+      "git-delta",
+      "gnupg",
+      "htop",
+      "jq",
+      "neovim",
+      "nodejs",
+      "npm",
+      "python",
+      "ripgrep",
+      "sheldon",
+      "starship",
+      "tmux",
+      "tree",
+      "unzip",
+      "wget",
+      "zoxide",
+      "zsh"
+    ],
+    "optional_cli": [
+      "ansible",
+      "clamav",
+      "docker",
+      "fzy",
+      "github-cli",
+      "lazygit",
+      "lynis",
+      "pgcli",
+      "rkhunter",
+      "ruff",
+      "tig",
+      "trash-cli"
+    ],
+    "optional_aur_cli": [
+      "git-extras",
+      "mycli"
+    ],
+    "required_desktop": [
+      "alacritty",
+      "brightnessctl",
+      "gnome-keyring",
+      "gnome-online-accounts",
+      "niri",
+      "pipewire",
+      "pipewire-pulse",
+      "playerctl",
+      "polkit-gnome",
+      "ttf-jetbrains-mono-nerd",
+      "wireplumber",
+      "wtype",
+      "xdg-desktop-portal-gnome",
+      "xwayland-satellite"
+    ],
+    "required_aur_desktop": [
+      "maplemono-nf-unhinted",
+      "noctalia-shell",
+      "voxtype-bin",
+      "walker",
+      "wayvibes-git"
+    ],
+    "optional_desktop": [
+      "code",
+      "fbreader",
+      "gimp",
+      "inkscape",
+      "keepassxc",
+      "nautilus",
+      "obsidian",
+      "telegram-desktop",
+      "thunderbird",
+      "vlc",
+      "wezterm",
+      "zed"
+    ],
+    "optional_aur_desktop": [
+      "1password",
+      "anydesk-bin",
+      "brave-bin",
+      "localsend-bin",
+      "spotify",
+      "tableplus"
+    ]
   },
-  "gui": {
-    "arch": {
-      "alacritty": "alacritty",
-      "niri": "niri",
-      "fuzzel": "fuzzel",
-      "waybar": "waybar",
-      "wlr-randr": "wlr-randr",
-      "swaylock": "swaylock",
-      "grim": "grim",
-      "slurp": "slurp",
-      "nautilus": "nautilus"
-    },
-    "ubuntu": {
-      "firefox": "firefox",
-      "alacritty": "alacritty",
-      "vlc": "vlc",
-      "thunderbird": "thunderbird"
-    },
-    "macos": {
-      "firefox": "firefox",
-      "alacritty": "alacritty",
-      "obsidian": "obsidian",
-      "localsend": "localsend"
-    }
+  "ubuntu": {
+    "required_cli": [
+      "curl",
+      "fontconfig",
+      "fzf",
+      "git",
+      "git-delta",
+      "gnupg",
+      "htop",
+      "jq",
+      "neovim",
+      "nodejs",
+      "npm",
+      "python3",
+      "python3-pip",
+      "ripgrep",
+      "tmux",
+      "tree",
+      "unzip",
+      "wget",
+      "zsh"
+    ],
+    "optional_cli": [
+      "ansible",
+      "bat",
+      "clamav",
+      "dnsutils",
+      "docker.io",
+      "fzy",
+      "gh",
+      "git-extras",
+      "lynis",
+      "mycli",
+      "pgcli",
+      "rkhunter",
+      "ruby",
+      "tig",
+      "trash-cli",
+      "zoxide"
+    ],
+    "optional_desktop": [
+      "alacritty",
+      "fbreader",
+      "gimp",
+      "inkscape",
+      "keepassxc",
+      "libreoffice",
+      "thunderbird",
+      "vlc"
+    ]
   },
-  "aur": {
-    "arch": {
-      "1password": "1password-cli"
-    }
+  "macos": {
+    "required_cli": [
+      "bat",
+      "curl",
+      "eza",
+      "fzf",
+      "git",
+      "git-delta",
+      "htop",
+      "jq",
+      "neovim",
+      "node",
+      "python",
+      "ripgrep",
+      "sheldon",
+      "starship",
+      "tmux",
+      "tree",
+      "wget",
+      "zoxide",
+      "zsh"
+    ],
+    "optional_cli": [
+      "ansible",
+      "bind",
+      "clamav",
+      "docker",
+      "fzy",
+      "gh",
+      "git-extras",
+      "lazygit",
+      "lynis",
+      "mas",
+      "mycli",
+      "pgcli",
+      "ruff",
+      "tig",
+      "trash-cli"
+    ],
+    "optional_casks": [
+      "1password",
+      "alacritty",
+      "anydesk",
+      "brave-browser",
+      "fbreader",
+      "firefox",
+      "iterm2",
+      "font-jetbrains-mono",
+      "keepassxc",
+      "localsend",
+      "obsidian",
+      "spotify",
+      "tableplus",
+      "telegram",
+      "thunderbird",
+      "todoist",
+      "visual-studio-code",
+      "vlc",
+      "wezterm",
+      "zed"
+    ]
   }
 }
