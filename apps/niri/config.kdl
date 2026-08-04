@@ -212,7 +212,7 @@ spawn-at-startup "sh" "-c" "dbus-update-activation-environment --all"
 spawn-at-startup "/usr/lib/gnome-online-accounts/goa-daemon" "--replace"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "systemctl" "--user" "start" "voxtype.service"
-spawn-sh-at-startup "config=\"${XDG_CONFIG_HOME:-$HOME/.config}/wayvibes/input_device\"; [ -f \"$config\" ] && exec wayvibes \"$HOME/.wayvibes/soundpacks/cherrymx-black-pbt\" -v 0.5"
+spawn-sh-at-startup "$HOME/dotfiles/script/wayvibes-multi.sh"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
