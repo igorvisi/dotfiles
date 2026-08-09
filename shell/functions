@@ -119,6 +119,38 @@ if grep -qi microsoft /proc/version 2>/dev/null; then
 	}
 fi
 
+# Forward ports through an SSH host. Use local:remote when ports differ.
+# Usage: ssh-tunnel <host> <port|local:remote> [...]
+ssh-tunnel() {
+	if [[ "$#" -lt 2 ]]; then
+		printf '%s\n' 'Usage: ssh-tunnel <host> <port|local:remote> [...]' >&2
+		return 1
+	fi
+
+	local host="$1"
+	local ssh_command="ssh"
+	local port local_port remote_port
+	local -a forwards
+	shift
+
+	if [[ -n "${WSL_DISTRO_NAME:-}" ]] || grep -qi microsoft /proc/sys/kernel/osrelease 2>/dev/null; then
+		ssh_command="ssh.exe"
+	fi
+
+	if ! command -v "$ssh_command" >/dev/null 2>&1; then
+		printf '%s\n' "odoo-tunnel: $ssh_command not found" >&2
+		return 1
+	fi
+
+	for port in "$@"; do
+		local_port="${port%%:*}"
+		remote_port="${port#*:}"
+		forwards+=(-L "127.0.0.1:${local_port}:127.0.0.1:${remote_port}")
+	done
+
+	command "$ssh_command" -N -o ExitOnForwardFailure=yes "${forwards[@]}" "$host"
+}
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Colored man pages
 # credit https://github.com/robbyrussel/oh-my-zsh/plugins/colored-man-pages
