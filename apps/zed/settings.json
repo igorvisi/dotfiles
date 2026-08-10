@@ -7,6 +7,30 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "mbanza-netbird",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/igorvisi/Codes/odoo-17-smg"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "mbanza",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/igorvisi/Codes/odoo-17-smg"
+          ]
+        }
+      ]
+    }
+  ],
   "vim": {
     "toggle_relative_line_numbers": true,
   },
