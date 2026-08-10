@@ -69,6 +69,9 @@ and back in, then select the keyboard once:
 wayvibes --device "$HOME/.wayvibes/soundpacks/cherrymx-black-pbt"
 ```
 
+The Niri session runs `script/wayvibes-multi.sh`, which detects keyboard
+hot-plug changes and restarts its WayVibes instances automatically.
+
 Machine-specific or sensitive application settings are intentionally kept outside Dotbot.
 
 ## Screenshots
