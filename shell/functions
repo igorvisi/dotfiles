@@ -138,7 +138,7 @@ ssh-tunnel() {
 	fi
 
 	if ! command -v "$ssh_command" >/dev/null 2>&1; then
-		printf '%s\n' "odoo-tunnel: $ssh_command not found" >&2
+		printf '%s\n' "ssh-tunnel: $ssh_command not found" >&2
 		return 1
 	fi
 
