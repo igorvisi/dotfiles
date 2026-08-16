@@ -350,7 +350,7 @@ window-rule {
 binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal:" { spawn "alacritty"; }
-    Mod+Return hotkey-overlay-title="Open a Terminal:" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open Herdr:" { spawn-sh "alacritty -e $HOME/.local/bin/herdr"; }
     Mod+E hotkey-overlay-title="Open the File Explorer:" { spawn "nautilus"; }
     Super+Space hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Super+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
