@@ -188,9 +188,6 @@
   "git.alwaysSignOff": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-
-  // zen mode. No distraction
-  "zenMode.hideTabs": false,
   "zenMode.hideStatusBar": false,
 
   // Languages
@@ -270,7 +267,7 @@
   "sync.quietSync": true,
   "window.menuBarVisibility": "default",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false
+    "source.fixAll.eslint": "never"
   },
   "zenMode.fullScreen": false,
   "zenMode.centerLayout": false,
@@ -297,7 +294,7 @@
     "vs-kubernetes.draft-path.linux": "/home/visi/.vs-kubernetes/tools/draft/linux-amd64/draft"
   },
   "workbench.statusBar.visible": true,
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Default",
   "workbench.enableExperiments": false,
   "workbench.colorTheme": "One Dark Pro Flat",
   "workbench.startupEditor": "newUntitledFile",
@@ -306,6 +303,26 @@
   },
   "material-icon-theme.showWelcomeMessage": false,
   "workbench.iconTheme": "gruvbox-material-icon-theme",
-  "docker.showStartPage": false
+  "docker.showStartPage": false,
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://biomejs.dev": true
+  },
+  "yaml.disableSchemaDetection": [
+    "**/docker-compose.yml",
+    "**/docker-compose.yaml",
+    "**/docker-compose.*.yml",
+    "**/docker-compose.*.yaml",
+    "**/compose.yml",
+    "**/compose.yaml",
+    "**/compose.*.yml",
+    "**/compose.*.yaml"
+  ]
 
 }
