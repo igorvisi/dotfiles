@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Hyprland Quattro
-Name[fr]=Hyprland Quattro
-Comment=Isolated Hyprland session with Quattro geometry and Igor's existing colors
-Comment[fr]=Session Hyprland isolée avec la géométrie Quattro et les couleurs existantes d'Igor
-Exec=/usr/local/bin/hyprland-quattro-session
-TryExec=/usr/local/bin/hyprland-quattro-session
-Type=Application
