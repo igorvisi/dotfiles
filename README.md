@@ -72,22 +72,6 @@ wayvibes --device "$HOME/.wayvibes/soundpacks/cherrymx-black-pbt"
 The Niri session runs `script/wayvibes-multi.sh`, which detects keyboard
 hot-plug changes and restarts its WayVibes instances automatically.
 
-### Hyprland Quattro profile
-
-Arch installations also include a separate Hyprland profile inspired by the
-geometry and motion of Omarchy Quattro. Select **Hyprland Quattro** from GDM to
-use it. Niri and the stock Hyprland profile remain separate sessions; Niri
-continues to use Noctalia.
-
-The Hyprland profile uses dedicated Quickshell, Dunst, Swaylock and Swayidle
-configuration under `apps/hyprland/`, linked to `~/.config/hyprland-quattro`.
-The complete Quickshell bar, widgets, hover behavior and native panels are
-vendored from the official Omarchy v4.0.0 source; `UPSTREAM.md` records the
-pinned commit and local isolation changes. Its colors use the community
-Omarchy One Dark Pro theme, while its wallpaper wrapper reads Noctalia's current
-wallpaper state without modifying it. The Arch installer adds the dedicated GDM
-session entry under `/usr/share/wayland-sessions`.
-
 Machine-specific or sensitive application settings are intentionally kept outside Dotbot.
 
 ## Screenshots

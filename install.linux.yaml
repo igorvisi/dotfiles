@@ -17,8 +17,6 @@
 
     # Window manager
     ~/.config/niri: apps/niri
-    ~/.config/hyprland-quattro: apps/hyprland
-    ~/.local/share/fonts/omarchy/omarchy.ttf: apps/hyprland/quattro/omarchy/default/fonts/omarchy/omarchy.ttf
 
     # App launcher
     ~/.config/walker: apps/walker

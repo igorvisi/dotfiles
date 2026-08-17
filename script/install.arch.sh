@@ -111,12 +111,7 @@ setup_wayvibes() {
     fi
 }
 
-setup_hyprland_quattro_session() {
-    sudo install -Dm755 "$SCRIPT_DIR/hyprland-quattro-session" \
-        /usr/local/bin/hyprland-quattro-session
-    sudo install -Dm644 "$DOTFILES_ROOT/apps/hyprland/session/hyprland-quattro.desktop" \
-        /usr/share/wayland-sessions/hyprland-quattro.desktop
-}
+
 
 sudo pacman -S --needed --noconfirm git jq
 
@@ -136,7 +131,6 @@ if [[ "$CLI_ONLY" != "1" ]]; then
     install_pacman_category required_desktop
     ensure_yay
     install_yay_category required_aur_desktop
-    setup_hyprland_quattro_session
     setup_voxtype
     setup_wayvibes
     prompt_pacman_category optional_desktop
