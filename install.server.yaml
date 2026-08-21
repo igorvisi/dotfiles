@@ -1,0 +1,24 @@
+# "Server" overlay: safe links for a server (mbanza, etc.).
+# gitconfig is intentionally excluded (identity/professional credentials are
+# kept out), as are desktop configs (alacritty, niri, zed, vscode, ssh...).
+- defaults:
+    link:
+      create: true
+      force: true
+      relative: true
+      relink: true
+
+- link:
+    # Neovim (LazyVim) — versioned config
+    ~/.config/nvim: apps/neovim
+
+    # Shell zsh
+    ~/.zsh: shell/zsh
+    ~/.zshrc: shell/zsh/zshrc
+    ~/.aliases: shell/aliases
+    ~/.functions: shell/functions
+    ~/.global: shell/global
+    ~/.hushlogin: shell/hushlogin
+
+    # zsh plugins (sheldon)
+    ~/.config/sheldon/plugins.toml: apps/sheldon/plugins.toml

@@ -41,13 +41,13 @@ output "DP-1" {
 workspace "terminal" {
     open-on-output "eDP-1"
 }
-workspace "notes" {
-    open-on-output "eDP-1"
-}
-workspace "web" {
+workspace "code" {
     open-on-output "DP-1"
 }
-workspace "code" {
+workspace "ai" {
+    open-on-output "DP-1"
+}
+workspace "browse" {
     open-on-output "DP-1"
 }
 workspace "music" {
@@ -58,15 +58,16 @@ workspace "chat" {
 }
 
 layout {
-    gaps 16
+    gaps 0
 
     center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
+        proportion 0.33333
         proportion 0.5
         proportion 0.66667
-
+        proportion 1.0
     }
 
     // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
@@ -298,17 +299,27 @@ window-rule {
 
 window-rule {
     match app-id=r#"^com\.brave\.Browser$"#
-    open-on-workspace "web"
+    open-on-workspace "browse"
+}
+
+window-rule {
+    match app-id=r#"^(chatgpt|ChatGPT)$"#
+    open-on-workspace "ai"
+}
+
+window-rule {
+    match app-id=r#"^com\.nousresearch\.hermes$"#
+    open-on-workspace "ai"
 }
 
 window-rule {
     match app-id=r#"^com\.openai\.ChatGPT$"#
-    open-on-workspace "web"
+    open-on-workspace "ai"
 }
 
 window-rule {
     match app-id=r#"^com\.hermes\.desktop$"#
-    open-on-workspace "web"
+    open-on-workspace "ai"
 }
 
 window-rule {
@@ -333,7 +344,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^md\.obsidian$"#
-    open-on-workspace "notes"
+    open-on-workspace "browse"
     open-floating false
 }
 
@@ -364,7 +375,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^com\.fbreader$"#
-    open-on-workspace "web"
+    open-on-workspace "browse"
 }
 
 binds {
@@ -639,7 +650,7 @@ binds {
 
 // --- CONFIGURATION HANDY PUSH-TO-TALK ---
 
-    // Appuyer une fois pour démarrer, puis une seconde fois pour transcrire.
+    // Press once to start recording, then once more to transcribe.
     Ctrl+Alt+Space { spawn "voxtype" "record" "toggle"; }
 
 }

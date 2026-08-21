@@ -33,6 +33,8 @@ Good to know beforehand, I use:
 
 More, see [my /uses page](https://igorvisi.com/uses)
 
+## Install
+
 ### Clone and configure env variables
 ```bash
 git clone https://github.com/igorvisi/dotfiles ~/dotfiles
@@ -41,38 +43,9 @@ Configure according to you
 ~/dotfiles/shell/global
 ~/.gitconfig.local
 
-### Install applications and configuration
 ```bash
-cd ~/dotfiles
-
-# Change conf
-vim shell/global apps/git/gitconfig.local
-cp apps/git/gitconfig.local ~/.gitconfig.local
-chmod +x install
-
-# Detect the platform, install applications, then apply common and platform links.
-./script/install.sh
+make install
 ```
-
-Application packages are declared in `apps/apps.json`. Required packages are
-installed automatically; optional packages remain interactive.
-
-Ubuntu 26.04 is the supported Ubuntu release. On WSL, the installer detects
-Ubuntu (`apt-get`) or Arch Linux (`pacman`) and installs CLI applications only.
-It does not install or configure Linux desktop applications.
-
-The Arch desktop setup also downloads the configured Voxtype model and prepares
-WayVibes soundpacks. If the `input` group is added during installation, log out
-and back in, then select the keyboard once:
-
-```bash
-wayvibes --device "$HOME/.wayvibes/soundpacks/cherrymx-black-pbt"
-```
-
-The Niri session runs `script/wayvibes-multi.sh`, which detects keyboard
-hot-plug changes and restarts its WayVibes instances automatically.
-
-Machine-specific or sensitive application settings are intentionally kept outside Dotbot.
 
 ## Screenshots
 

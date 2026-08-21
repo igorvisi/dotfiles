@@ -15,8 +15,13 @@ update:
 	@git pull
 	@make install
 
+# Update LazyVim and all plugins; the config in apps/neovim is never touched
+# and exact versions stay pinned in apps/neovim/lazy-lock.json.
+nvim-update:
+	@nvim --headless "+Lazy! update" +qa
+
 clean:
 	@echo "Cleaning..."
 	@rm -rf ~/.tmux/plugins/tpm
-	@rm -f ~/.local/share/nvim/site/autoload/plug.vim
+	@rm -rf ~/.local/share/nvim/lazy ~/.local/share/nvim/plugged
 	@echo "Done."
