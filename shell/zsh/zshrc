@@ -1,9 +1,6 @@
 # Load personal global variables like PATH ...
 source "$HOME/.global"
 
-# Load local user environment (e.g. ~/.local/bin/env on servers) if present
-[[ -f "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env"
-
 # Useful Shell functions.
 source "$HOME/.functions"
 
@@ -47,8 +44,3 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Load aliases
 source "$HOME/.aliases"
-
-# zoxide — navigation intelligente (si présent)
-if command -v zoxide >/dev/null 2>&1; then
-    eval "$(zoxide init zsh)"
-fi
