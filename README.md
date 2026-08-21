@@ -33,21 +33,6 @@ Good to know beforehand, I use:
 
 More, see [my /uses page](https://igorvisi.com/uses)
 
-### Neovim (LazyVim)
-
-Neovim est configuré avec [LazyVim](https://www.lazyvim.org) :
-
-- thème **onedark** (navarasu/onedark.nvim), aligné sur le thème **One Dark Pro** de Zed (`apps/zed/settings.json`) : tabs 2 hard, numéros relatifs, wrap, Maple Mono 16, italiques keyword/comment/type/boolean.
-- la source de LazyVim et des plugins vit dans `~/.local/share/nvim/lazy` (gérée par lazy.nvim) ; la config perso reste dans `apps/neovim` (never touchée par les updates).
-- versions épinglées dans `apps/neovim/lazy-lock.json` (commité).
-
-Mises à jour :
-
-```bash
-make nvim-update   # :Lazy update — LazyVim + plugins, sans toucher la config
-# ou dans nvim :  :Lazy update  /  :Lazy restore (retour au lazy-lock.json)
-```
-
 ### Clone and configure env variables
 ```bash
 git clone https://github.com/igorvisi/dotfiles ~/dotfiles
@@ -55,39 +40,6 @@ git clone https://github.com/igorvisi/dotfiles ~/dotfiles
 Configure according to you
 ~/dotfiles/shell/global
 ~/.gitconfig.local
-
-### Install applications and configuration
-```bash
-cd ~/dotfiles
-
-# Change conf
-vim shell/global apps/git/gitconfig.local
-cp apps/git/gitconfig.local ~/.gitconfig.local
-chmod +x install
-
-# Detect the platform, install applications, then apply common and platform links.
-./script/install.sh
-```
-
-Application packages are declared in `apps/apps.json`. Required packages are
-installed automatically; optional packages remain interactive.
-
-Ubuntu 26.04 is the supported Ubuntu release. On WSL, the installer detects
-Ubuntu (`apt-get`) or Arch Linux (`pacman`) and installs CLI applications only.
-It does not install or configure Linux desktop applications.
-
-The Arch desktop setup also downloads the configured Voxtype model and prepares
-WayVibes soundpacks. If the `input` group is added during installation, log out
-and back in, then select the keyboard once:
-
-```bash
-wayvibes --device "$HOME/.wayvibes/soundpacks/cherrymx-black-pbt"
-```
-
-The Niri session runs `script/wayvibes-multi.sh`, which detects keyboard
-hot-plug changes and restarts its WayVibes instances automatically.
-
-Machine-specific or sensitive application settings are intentionally kept outside Dotbot.
 
 ## Screenshots
 
