@@ -1,6 +1,9 @@
 # Personal exe
 bin/*.exe
 
+# Walker backups
+apps/walker/*.bak
+
 # Tool caches
 .ruff_cache/
 

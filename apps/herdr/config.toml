@@ -7,18 +7,44 @@ name = "one-dark"
 panel_bg = "#282c34"
 accent = "#98c379"
 
-# Custom Keybindings (uses standard prefix ctrl+b by default)
+# Custom Keybindings (matches tmux prefix ctrl+b)
 [keys]
-prefix = "ctrl+n"
+prefix = "ctrl+b"
 help = "prefix+?"
 settings = "prefix+s"
 detach = "prefix+q"
 reload_config = "prefix+shift+r"
 
+# Pane navigation (vim-style, like tmux)
+focus_left = "prefix+h"
+focus_down = "prefix+j"
+focus_up = "prefix+k"
+focus_right = "prefix+l"
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+
+# Splits (like tmux)
+split_vertical = "prefix+v"
+split_horizontal = "prefix+minus"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+resize_mode = "prefix+r"
+
+# Tabs (like tmux windows)
+new_tab = "prefix+c"
+close_tab = "prefix+shift+x"
+rename_tab = "prefix+shift+t"
+next_tab = "prefix+n"
+previous_tab = "prefix+p"
+switch_tab = ["prefix+1", "prefix+2", "prefix+3", "prefix+4", "prefix+5", "prefix+6", "prefix+7", "prefix+8", "prefix+9"]
+rename_pane = "prefix+shift+p"
+edit_scrollback = "prefix+e"
+
 # Workspaces
 goto = "prefix+g"
 new_workspace = "prefix+w"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
 
-# Tabs
-new_tab = "prefix+t"
-close_tab = "prefix+ctrl+t"
+# Sidebar
+toggle_sidebar = "prefix+b"

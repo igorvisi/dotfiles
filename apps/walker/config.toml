@@ -1,0 +1,22 @@
+[providers]
+default = ["desktopapplications", "clipboard"]
+empty = ["desktopapplications"]
+
+[[providers.prefixes]]
+prefix = ":"
+provider = "clipboard"
+
+[providers.max_results_provider]
+desktopapplications = 50
+clipboard = 50
+
+[builtins.clipboard]
+name = "clipboard"
+icon = "user-bookmarks"
+placeholder = "Clipboard"
+switcher_only = true
+always_put_new_on_top = true
+avoid_line_breaks = true
+image_height = 300
+max_entries = 10
+exec = "wl-copy"
