@@ -1,0 +1,3 @@
+-- Autocmds chargées automatiquement sur l'événement VeryLazy.
+-- Rien d'extra pour l'instant ; les comportements utiles (répertoire,
+-- session, etc.) sont déjà fournis par LazyVim.

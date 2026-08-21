@@ -33,6 +33,21 @@ Good to know beforehand, I use:
 
 More, see [my /uses page](https://igorvisi.com/uses)
 
+### Neovim (LazyVim)
+
+Neovim est configuré avec [LazyVim](https://www.lazyvim.org) :
+
+- thème **onedark** (navarasu/onedark.nvim), aligné sur le thème **One Dark Pro** de Zed (`apps/zed/settings.json`) : tabs 2 hard, numéros relatifs, wrap, Maple Mono 16, italiques keyword/comment/type/boolean.
+- la source de LazyVim et des plugins vit dans `~/.local/share/nvim/lazy` (gérée par lazy.nvim) ; la config perso reste dans `apps/neovim` (never touchée par les updates).
+- versions épinglées dans `apps/neovim/lazy-lock.json` (commité).
+
+Mises à jour :
+
+```bash
+make nvim-update   # :Lazy update — LazyVim + plugins, sans toucher la config
+# ou dans nvim :  :Lazy update  /  :Lazy restore (retour au lazy-lock.json)
+```
+
 ### Clone and configure env variables
 ```bash
 git clone https://github.com/igorvisi/dotfiles ~/dotfiles
