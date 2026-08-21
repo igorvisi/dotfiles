@@ -1,0 +1,24 @@
+# Overlay "serveur" : liens sûrs sur un serveur (mbanza, etc.).
+# N'inclut PAS le gitconfig (identité/credentials pro conservés),
+# ni les configs de bureau (alacritty, niri, zed, vscode, ssh...).
+- defaults:
+    link:
+      create: true
+      force: true
+      relative: true
+      relink: true
+
+- link:
+    # Neovim (LazyVim) — config versionnée
+    ~/.config/nvim: apps/neovim
+
+    # Shell zsh
+    ~/.zsh: shell/zsh
+    ~/.zshrc: shell/zsh/zshrc
+    ~/.aliases: shell/aliases
+    ~/.functions: shell/functions
+    ~/.global: shell/global
+    ~/.hushlogin: shell/hushlogin
+
+    # Plugins zsh (sheldon)
+    ~/.config/sheldon/plugins.toml: apps/sheldon/plugins.toml
