@@ -18,7 +18,7 @@ function Install-IfApproved {
     }
 }
 
-# Installer Chocolatey si non présent
+# Install Chocolatey if missing
 if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Chocolatey..."
     [System.Net.ServicePointManager]::SecurityProtocol = 3072

@@ -1,28 +1,27 @@
-# Configuration Globale (Django, FastAPI, Odoo)
+# Global config (Django, FastAPI, Odoo)
 target-version = "py310"
 line-length = 88
 
 [lint]
-# 1. Sélection des règles
 select = [
     "E",     # pycodestyle (PEP8)
     "F",     # Pyflakes
-    "I",     # isort (Tri des imports)
-    "UP",    # pyupgrade (Modernisation Python 3.10+)
-    "B",     # flake8-bugbear (Bugs probables)
-    "C90",   # McCabe (Complexité du code)
-    "S",     # Bandit (Sécurité)
+    "I",     # isort (import sorting)
+    "UP",    # pyupgrade (Python 3.10+ modernization)
+    "B",     # flake8-bugbear (probable bugs)
+    "C90",   # McCabe (code complexity)
+    "S",     # Bandit (security)
     "DJ",    # flake8-django
     "ASYNC", # flake8-async
     "T20",   # flake8-print
 ]
 
-# 2. Exceptions globales
+# Global ignores
 ignore = [
-    "E501",   # Ligne trop longue (géré par le formateur)
-    "B008",   # Appels de fonction dans les arguments (Indispensable FastAPI/Odoo)
-    "D100",   # Manque de docstring au niveau module
-    "ANN101", # Type 'self' (obsolète dans les versions récentes)
+    "E501",   # Line too long (handled by the formatter)
+    "B008",   # Function calls in arguments (required by FastAPI/Odoo)
+    "D100",   # Missing module-level docstring
+    "ANN101", # Type 'self' (deprecated in recent versions)
 ]
 
 [lint.mccabe]

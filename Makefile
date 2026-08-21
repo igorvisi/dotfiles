@@ -15,9 +15,8 @@ update:
 	@git pull
 	@make install
 
-# Met à jour LazyVim et tous les plugins (source git gérée par lazy.nvim).
-# La config dans apps/neovim n'est jamais touchée ; les versions exactes
-# restent épinglées dans apps/neovim/lazy-lock.json.
+# Update LazyVim and all plugins; the config in apps/neovim is never touched
+# and exact versions stay pinned in apps/neovim/lazy-lock.json.
 nvim-update:
 	@nvim --headless "+Lazy! update" +qa
 

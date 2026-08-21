@@ -1,7 +1,6 @@
 -- [[ Bootstrap lazy.nvim ]]
--- La source de LazyVim et des plugins vit dans ~/.local/share/nvim/lazy,
--- gérée par git via lazy.nvim : les updates (:Lazy update / make nvim-update)
--- ne touchent jamais à ce dossier de config.
+-- LazyVim and plugin sources live in ~/.local/share/nvim/lazy, managed by
+-- lazy.nvim; updates (:Lazy update / make nvim-update) never touch this dir.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -18,32 +17,30 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Le leader doit être défini avant lazy.nvim pour que les mappings soient corrects
+-- The leader must be set before lazy.nvim so mappings resolve correctly.
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- [[ Configure and install plugins ]]
 require("lazy").setup({
   spec = {
-    -- import LazyVim et ses plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import des extras optionnels (à activer selon les besoins)
     -- { import = "lazyvim.plugins.extras.lang.python" },
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.go" },
-    -- import de tes plugins / overrides (lazy.nvim n'écrit jamais ici)
+    -- your plugins/overrides (lazy.nvim never writes here)
     { import = "plugins" },
   },
   defaults = {
-    -- lazy-load les plugins LazyVim, tes plugins seront lazy par défaut aussi
+    -- lazy-load LazyVim plugins; your plugins stay lazy by default too
     lazy = true,
-    -- toujours suivre le dernier commit git (les versions exactes sont
-    -- épinglées dans lazy-lock.json, commité dans les dotfiles)
+    -- always track the latest git commit; exact versions are pinned in
+    -- lazy-lock.json (committed in the dotfiles)
     version = false,
   },
-  -- couleurs à installer avant le premier chargement (onedark)
+  -- colorscheme installed before first startup to avoid the default flash
   install = { colorscheme = { "onedark" } },
-  -- détection des mises à jour : :Lazy update est volontaire et contrôlé
+  -- update check only; :Lazy update stays intentional and controlled
   checker = { enabled = true, notify = false },
   performance = {
     rtp = {

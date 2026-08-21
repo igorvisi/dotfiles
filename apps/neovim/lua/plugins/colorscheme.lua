@@ -1,18 +1,14 @@
--- Thème onedark, aligné sur le thème "One Dark Pro" de Zed
--- (apps/zed/settings.json : fonds panneaux #23272E / #2C313A,
--- italiques sur keyword / comment / type / boolean).
---
--- onedark.nvim : code_style (comment|keyword|... au pluriel) et highlights
--- (overrides de groupes) — pas de clés "type"/"boolean" dans code_style,
--- donc les types et booléens sont mis en italique via highlights.
+-- onedark aligned with Zed's "One Dark Pro" (apps/zed/settings.json:
+-- panel backgrounds #23272E / #2C313A, italics on keyword/comment/type/boolean).
+-- code_style has no "type"/"boolean" keys, so those are italicized via highlights.
 return {
   {
     "navarasu/onedark.nvim",
     lazy = false,
-    priority = 1000, -- chargé avant les autres plugins pour éviter le flash
+    priority = 1000, -- loaded before other plugins to avoid a colorscheme flash
     config = function()
       require("onedark").setup({
-        -- "dark" correspond au fond #282C34 de One Dark Pro
+        -- "dark" matches the #282C34 background of One Dark Pro
         style = "dark",
         code_style = {
           comments = "italic",
@@ -21,17 +17,17 @@ return {
           strings = "none",
           variables = "none",
         },
-        -- aligné sur les theme_overrides de Zed
+        -- mirrors Zed's theme_overrides
         highlights = {
-          -- types / booléens en italique (Zed: syntax.type, syntax.boolean)
+          -- types/booleans italic (Zed: syntax.type, syntax.boolean)
           Type = { fmt = "italic" },
           Structure = { fmt = "italic" },
           Boolean = { fmt = "italic" },
           TSBoolean = { fmt = "italic" },
           TSConstant = { fmt = "italic" },
           TSType = { fmt = "italic" },
-          -- fonds panneaux/border (Zed: border/panel/status_bar #23272E,
-          -- onglet actif #2C313A)
+          -- panel/border backgrounds (Zed: border/panel/status_bar #23272E,
+          -- active tab #2C313A)
           FloatBorder = { bg = "#23272E", fg = "#23272E" },
           NormalFloat = { bg = "#23272E" },
           StatusLine = { bg = "#23272E" },

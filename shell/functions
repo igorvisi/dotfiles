@@ -36,9 +36,9 @@ activate_virtualenv() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Transform characters from latin to ascii
-# Credit : Christophe Blaess in " Shells Unix et Linux par la pratique"
-# usage: echo "Caractères accentués en français" | lt-ascii
-# result: Caracteres accentues en francais
+# Based on Christophe Blaess, "Shells Unix et Linux par la pratique"
+# example: echo "Déjà vu" | lt-ascii
+# result: Deja vu
 lt-ascii() {
 	sed -e 's/[ÀÁÂÃÄÅ]/A/g'|
 	sed -e 's/Æ/AE/g'      |
@@ -65,7 +65,7 @@ lt-ascii() {
 tre() { tree -aC -I '.git|node_modules|vendor|.idea|.vscode|*venv' --dirsfirst "$@" | less -FRNX; }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# Clone projet from git repo
+# Clone a project from a git repo
 # Inspired from https://justin.abrah.ms/dotfiles/zsh.html
 # usage : clone https://github.com/rails/rails
 clone() {

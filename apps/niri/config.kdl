@@ -630,7 +630,7 @@ binds {
 
 // --- CONFIGURATION HANDY PUSH-TO-TALK ---
 
-    // Appuyer une fois pour démarrer, puis une seconde fois pour transcrire.
+    // Press once to start recording, then once more to transcribe.
     Ctrl+Alt+Space { spawn "voxtype" "record" "toggle"; }
 
 }

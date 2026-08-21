@@ -14,7 +14,7 @@ alias cbssh='curl -s https://github.com/$USERGITHUB.keys | clipcopy'
 
 # alias si WSL
 if grep -qi microsoft /proc/version 2>/dev/null; then
-    # Définir l'alias ssh=ssh.exe uniquement sous WSL
+    # WSL: use the Windows OpenSSH client
     alias ssh='ssh.exe'
 fi
 
