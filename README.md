@@ -33,6 +33,8 @@ Good to know beforehand, I use:
 
 More, see [my /uses page](https://igorvisi.com/uses)
 
+## Install
+
 ### Clone and configure env variables
 ```bash
 git clone https://github.com/igorvisi/dotfiles ~/dotfiles
@@ -40,6 +42,10 @@ git clone https://github.com/igorvisi/dotfiles ~/dotfiles
 Configure according to you
 ~/dotfiles/shell/global
 ~/.gitconfig.local
+
+```bash
+make install
+```
 
 ## Screenshots
 
