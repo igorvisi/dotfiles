@@ -58,7 +58,7 @@ workspace "chat" {
 }
 
 layout {
-    gaps 0
+    gaps 16
 
     center-focused-column "never"
 
@@ -74,7 +74,7 @@ layout {
     // preset-window-heights { }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.98; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -95,7 +95,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 1.5
+        width 1.0
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -132,7 +132,7 @@ layout {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
 
-        width 1.5
+        width 1.0
         active-color "#ffc87f"
         inactive-color "#505050"
 
