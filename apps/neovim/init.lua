@@ -25,10 +25,13 @@ vim.g.maplocalleader = " "
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- { import = "lazyvim.plugins.extras.lang.python" },
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
     -- your plugins/overrides (lazy.nvim never writes here)
+    -- snacks explorer sidebar width (default: 40)
+    { "folke/snacks.nvim", opts = { picker = { sources = { explorer = { layout = { preset = "sidebar", layout = { width = 20 } } } } } } },
     { import = "plugins" },
   },
   defaults = {
