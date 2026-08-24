@@ -19,7 +19,25 @@ SOUNDPACK="$HOME/.wayvibes/soundpacks/cherrymx-black-pbt"
 AUDIO_TIMEOUT=50
 DEVICE_TIMEOUT=30
 DEVICE_POLL_INTERVAL=1
+LOCKFILE="/tmp/wayvibes-multi.lock"
 wayvibes_pids=""
+
+# Single-instance guard: niri's spawn-sh-at-startup orphans the previous
+# manager to systemd --user on niri restart, so two managers can run
+# concurrently and each launch a wayvibes for the same keyboard -> double
+# sound discordante. Kill any stale manager, clean orphaned wayvibes, then
+# take an exclusive flock so a second concurrent start exits immediately.
+for _pid in $(pgrep -f "wayvibes-multi\.sh" 2>/dev/null); do
+    [ "$_pid" != "$$" ] && kill "$_pid" 2>/dev/null || true
+done
+sleep 0.3
+pkill -x wayvibes 2>/dev/null || true
+
+exec 9>"$LOCKFILE"
+if ! flock -n 9 2>/dev/null; then
+    echo "wayvibes-multi: another instance holds $LOCKFILE, exiting" >&2
+    exit 0
+fi
 
 wait_audio() {
     attempts=0
@@ -114,7 +132,7 @@ start_wayvibes() {
 wait_audio || exit 1
 wait_sink || exit 1
 
-trap 'stop_wayvibes; exit 0' HUP INT TERM
+trap 'stop_wayvibes; exit 0' HUP INT TERM EXIT
 
 active_devices=""
 while :; do
