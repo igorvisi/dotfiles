@@ -1,3 +1,6 @@
+[general]
+import = ["~/.config/alacritty/themes/noctalia.toml"]
+
 [window]
 startup_mode = "Maximized"
 decorations = "None"

@@ -61,7 +61,7 @@
     ],
     "required_aur_desktop": [
       "maplemono-nf-unhinted",
-      "noctalia-shell",
+      "noctalia",
       "voxtype-bin",
       "walker",
       "wayvibes-git"

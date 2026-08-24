@@ -7,9 +7,9 @@ name = "one-dark"
 panel_bg = "#282c34"
 accent = "#98c379"
 
-# Custom Keybindings (matches tmux prefix ctrl+b)
+# Custom Keybindings (prefix ² - touche AZERTY en haut à gauche)
 [keys]
-prefix = "ctrl+b"
+prefix = "²"
 help = "prefix+?"
 settings = "prefix+s"
 detach = "prefix+q"
@@ -36,6 +36,7 @@ close_tab = "prefix+shift+x"
 rename_tab = "prefix+shift+t"
 next_tab = "prefix+n"
 previous_tab = "prefix+p"
+# AZERTY: chiffres nécessitent Shift (&=1), herdr exige 1..9 -> laisser tomber direct, utiliser ²+n/p
 switch_tab = ["prefix+1", "prefix+2", "prefix+3", "prefix+4", "prefix+5", "prefix+6", "prefix+7", "prefix+8", "prefix+9"]
 rename_pane = "prefix+shift+p"
 edit_scrollback = "prefix+e"
@@ -45,6 +46,44 @@ goto = "prefix+g"
 new_workspace = "prefix+w"
 rename_workspace = "prefix+shift+w"
 close_workspace = "prefix+shift+d"
+previous_workspace = "prefix+shift+h"
+next_workspace = "prefix+shift+l"
+open_notification_target = "prefix+o"
 
 # Sidebar
 toggle_sidebar = "prefix+b"
+
+# Popups custom (1) - sans alt (alt peu fiable selon terminal, cf. docs herdr)
+[[keys.command]]
+key = "prefix+shift+g"
+type = "popup"
+command = "lazygit"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+y"
+type = "popup"
+command = "yazi"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+shift+b"
+type = "popup"
+command = "btop"
+width = "80%"
+height = "80%"
+
+# UI optimisations (3)
+[ui]
+hide_tab_bar_when_single_tab = true
+pane_gaps = false
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "system"
+
+[experimental]
+pane_history = true
+allow_nested = true

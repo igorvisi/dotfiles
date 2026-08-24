@@ -205,13 +205,12 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 //spawn-at-startup "waybar"
 
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-spawn-sh-at-startup "qs -c noctalia-shell"
+spawn-at-startup "noctalia"
 spawn-at-startup "walker" "--gapplication-service"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,pkcs11,ssh"
 spawn-at-startup "sh" "-c" "dbus-update-activation-environment --all"
 spawn-at-startup "/usr/lib/gnome-online-accounts/goa-daemon" "--replace"
-spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "systemctl" "--user" "start" "voxtype.service"
 spawn-sh-at-startup "$HOME/dotfiles/script/wayvibes-multi.sh"
 
@@ -230,7 +229,7 @@ switch-events {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -343,9 +342,11 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^md\.obsidian$"#
+    match app-id=r#"(?i)obsidian"#
     open-on-workspace "browse"
     open-floating false
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
 window-rule {
@@ -384,7 +385,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open Herdr:" { spawn-sh "alacritty -e $HOME/.local/bin/herdr"; }
     Mod+E hotkey-overlay-title="Open the File Explorer:" { spawn "nautilus"; }
     Super+Space hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
-    Super+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn-sh "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Super+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn "noctalia" "msg" "session" "lock"; }
     Mod+V       { spawn "walker" "-m" "clipboard"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -654,3 +655,5 @@ binds {
     Ctrl+Alt+Space { spawn "voxtype" "record" "toggle"; }
 
 }
+
+include "noctalia.kdl"

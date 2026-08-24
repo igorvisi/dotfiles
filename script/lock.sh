@@ -2,7 +2,7 @@
 
 # Lock screen wrapper that works in both GNOME and Niri/Noctalia-shell
 
-if command -v qs &>/dev/null && qs -c noctalia-shell ipc call lockScreen lock; then
+if command -v noctalia &>/dev/null && noctalia msg session lock 2>/dev/null; then
     exit 0
 fi
 

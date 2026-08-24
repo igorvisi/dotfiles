@@ -14,7 +14,7 @@ end)
 
 local config = {}
 
-config.color_scheme = 'tokyonight_night'
+config.color_scheme = "Noctalia"
 
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 14

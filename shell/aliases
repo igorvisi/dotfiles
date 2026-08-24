@@ -109,22 +109,9 @@ alias diskspace='df -P -kHl'
 # Remove python cache file
 alias rmpycache='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 
-# Tmux
-alias tmux='tmux -2' # Force tmux to use 256 colors
-alias tl='tmux list-sessions'
-alias tksv='tmux kill-server'
-alias tkss='tmux kill-session -t'
-alias ta='tmux attach -t'
-alias td='tmux detach'
-alias ts='tmux new-session -s'
-alias tad='tmux attach -d -t'
-
 # Herdr
 alias hrr='herdr --remote'
-alias tsw='tmux split-window -h'
-alias tswd='tmux split-window -h -d'
-alias tnw='tmux new-window'
-alias tnwd='tmux new-window -d'
+
 
 # Open a file or URL in the user's preferred application
 alias o='open .'
