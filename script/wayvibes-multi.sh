@@ -25,19 +25,34 @@ wayvibes_pids=""
 # Single-instance guard: niri's spawn-sh-at-startup orphans the previous
 # manager to systemd --user on niri restart, so two managers can run
 # concurrently and each launch a wayvibes for the same keyboard -> double
-# sound discordante. Kill any stale manager, clean orphaned wayvibes, then
-# take an exclusive flock so a second concurrent start exits immediately.
+# sound discordante.
+# Migration: old managers (pre-lock) n'ont pas de flock; le nouveau doit
+# les tuer avant de prendre le verrou. Après migration, flock seul suffit.
+# On ne tue que les PIDs plus anciens (_pid < $$) pour éviter que deux
+# nouveaux lancés simultanément ne s'entretuent (race both-die).
 for _pid in $(pgrep -f "wayvibes-multi\.sh" 2>/dev/null); do
-    [ "$_pid" != "$$" ] && kill "$_pid" 2>/dev/null || true
+    if [ "$_pid" != "$$" ] && [ "$_pid" -lt "$$" ] 2>/dev/null; then
+        kill "$_pid" 2>/dev/null || true
+    fi
 done
-sleep 0.3
-pkill -x wayvibes 2>/dev/null || true
+sleep 0.5
 
 exec 9>"$LOCKFILE"
-if ! flock -n 9 2>/dev/null; then
-    echo "wayvibes-multi: another instance holds $LOCKFILE, exiting" >&2
-    exit 0
-fi
+# L'ancien manager tué met un peu de temps à libérer le flock (trap stop_wayvibes).
+# On retry 10x 0.5s pour éviter le race both-die où deux nouveaux s'entretuent
+# et aucun ne récupère le verrou.
+_flock_tries=0
+while ! flock -n 9 2>/dev/null; do
+    _flock_tries=$((_flock_tries + 1))
+    if [ "$_flock_tries" -ge 10 ]; then
+        echo "wayvibes-multi: another instance holds $LOCKFILE, exiting" >&2
+        exit 0
+    fi
+    sleep 0.5
+done
+
+# On détient le verrou: purger les wayvibes orphelins laissés par l'ancien manager
+pkill -x wayvibes 2>/dev/null || true
 
 wait_audio() {
     attempts=0
