@@ -19,17 +19,88 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.opt.clipboard = "unnamedplus"
 
--- Force OSC 52 in herdr.
+-- Clipboard: OSC 52 copy without blocking paste.
+-- Original forced OSC 52 paste did vim.wait(1000)+vim.wait(9000) waiting for
+-- TermResponse. That freezes nvim for up to 10s when the terminal/herdr
+-- --remote chain doesn't answer (common over SSH/herdr). Copy via OSC 52 is
+-- still needed (herdr forwards \027]52; to the outer terminal), but paste must
+-- not wait. Strategy:
+--   copy: OSC 52 (always works through herdr to outer terminal)
+--   paste: try native tools first (wl-paste/xclip/pbpaste, instant locally),
+--          then OSC 52 query with 100ms timeout only, then return empty.
+--          No 10s block; fallback to terminal paste (Ctrl-Shift-V) always works.
+local function osc52_copy(reg)
+	return require("vim.ui.clipboard.osc52").copy(reg)
+end
+
+local function fast_paste(reg)
+	return function()
+		-- 1) Native tools when available (local Wayland/X11/macOS): no OSC 52 wait.
+		if vim.env.WAYLAND_DISPLAY and vim.fn.executable("wl-paste") == 1 then
+			local out = vim.fn.systemlist("wl-paste --no-newline 2>/dev/null")
+			if vim.v.shell_error == 0 then
+				return out
+			end
+		end
+		if vim.env.DISPLAY then
+			if vim.fn.executable("xclip") == 1 then
+				local out = vim.fn.systemlist("xclip -o -selection clipboard 2>/dev/null")
+				if vim.v.shell_error == 0 then
+					return out
+				end
+			end
+			if vim.fn.executable("xsel") == 1 then
+				local out = vim.fn.systemlist("xsel -o -b 2>/dev/null")
+				if vim.v.shell_error == 0 then
+					return out
+				end
+			end
+		end
+		if vim.fn.executable("pbpaste") == 1 then
+			local out = vim.fn.systemlist("pbpaste 2>/dev/null")
+			if vim.v.shell_error == 0 then
+				return out
+			end
+		end
+
+		-- 2) Fallback OSC 52 query with short timeout (100ms vs 10s default).
+		-- Herdr local answers quickly; herdr --remote/SSH often doesn't - don't block.
+		local contents = nil
+		local id = vim.api.nvim_create_autocmd("TermResponse", {
+			callback = function(ev)
+				local seq = ev.data.sequence --[[@type string]]
+				local encoded = seq:match("\027%]52;%w?;([A-Za-z0-9+/=]*)")
+				if encoded ~= nil then
+					contents = vim.base64.decode(encoded)
+					return true
+				end
+			end,
+		})
+		local clip = reg == "+" and "c" or "p"
+		vim.api.nvim_ui_send(string.format("\027]52;%s;?\027\\", clip))
+		vim.wait(100, function()
+			return contents ~= nil
+		end)
+		pcall(vim.api.nvim_del_autocmd, id)
+		if contents ~= nil then
+			return vim.split(contents, "\n")
+		end
+		-- 3) No response fast: don't wait 10s, return empty. Terminal paste still works.
+		return { "" }
+	end
+end
+
 vim.g.clipboard = {
-	name = "OSC 52",
+	name = "OSC 52 (copy, fast paste - no 10s wait)",
 	copy = {
-		["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-		["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+		["+"] = osc52_copy("+"),
+		["*"] = osc52_copy("*"),
 	},
 	paste = {
-		["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-		["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+		["+"] = fast_paste("+"),
+		["*"] = fast_paste("*"),
 	},
+	cache_enabled = 0,
 }
 
 -- The leader must be set before lazy.nvim so mappings resolve correctly.
