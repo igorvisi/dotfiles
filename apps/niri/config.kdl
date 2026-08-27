@@ -39,21 +39,22 @@ output "DP-1" {
 }
 
 workspace "terminal" {
-    open-on-output "eDP-1"
-}
-workspace "code" {
-    open-on-output "DP-1"
-}
-workspace "ai" {
+    // Primary on big screen (DP-1) — Niri auto-migrates to eDP-1/HDMI when DP-1 is disconnected and restores on reconnect.
     open-on-output "DP-1"
 }
 workspace "browse" {
     open-on-output "DP-1"
 }
-workspace "music" {
-    open-on-output "HDMI-A-1"
+workspace "ai" {
+    open-on-output "DP-1"
 }
 workspace "chat" {
+    open-on-output "HDMI-A-1"
+}
+workspace "code" {
+    open-on-output "DP-1"
+}
+workspace "music" {
     open-on-output "HDMI-A-1"
 }
 
@@ -296,31 +297,26 @@ window-rule {
     open-floating true
 }
 
+// === 2:browse — all browsers ====================================
+window-rule {
+    // Brave, Firefox, Chrome, Chromium, Helium (case-insensitive, X11/Wayland variants)
+    match app-id=r#"(?i)^(brave-browser|brave|firefox|org\.mozilla\.firefox|google-chrome|com\.google\.Chrome|chromium|chromium-browser|helium|helium-browser)$"#
+    open-on-workspace "browse"
+}
+
+// Fallback for Brave Wayland variant (com.brave.Browser)
 window-rule {
     match app-id=r#"^com\.brave\.Browser$"#
     open-on-workspace "browse"
 }
 
+// === 3:ai — ChatGPT / Hermes / OpenCode ================================
 window-rule {
-    match app-id=r#"^(chatgpt|ChatGPT)$"#
+    match app-id=r#"(?i)^(chatgpt|com\.openai\.chatgpt|ai\.opencode\.desktop|hermes|com\.hermes\.desktop|com\.nousresearch\.hermes)$"#
     open-on-workspace "ai"
 }
 
-window-rule {
-    match app-id=r#"^com\.nousresearch\.hermes$"#
-    open-on-workspace "ai"
-}
-
-window-rule {
-    match app-id=r#"^com\.openai\.ChatGPT$"#
-    open-on-workspace "ai"
-}
-
-window-rule {
-    match app-id=r#"^com\.hermes\.desktop$"#
-    open-on-workspace "ai"
-}
-
+// === 1:terminal — Alacritty (big screen priority) ===================
 window-rule {
     match app-id=r#"^Alacritty$"#
     open-on-workspace "terminal"
@@ -342,6 +338,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"(?i)^mpv$"#
+    open-on-workspace "music"
+}
+
+window-rule {
     match app-id=r#"(?i)obsidian"#
     open-on-workspace "browse"
     open-floating false
@@ -349,28 +350,9 @@ window-rule {
     clip-to-geometry true
 }
 
+// === 4:chat — messaging + mail =====================================
 window-rule {
-    match app-id=r#"^discord$"#
-    open-on-workspace "chat"
-}
-
-window-rule {
-    match app-id=r#"^Slack$"#
-    open-on-workspace "chat"
-}
-
-window-rule {
-    match app-id=r#"^io\.element\.element$"#
-    open-on-workspace "chat"
-}
-
-window-rule {
-    match app-id=r#"^org\.telegram\.desktop$"#
-    open-on-workspace "chat"
-}
-
-window-rule {
-    match app-id=r#"^org\.gnome\.thunderbird$"#
+    match app-id=r#"(?i)^(discord|slack|io\.element\.element|org\.telegram\.desktop|telegramdesktop|signal|org\.gnome\.thunderbird|org\.mozilla\.thunderbird|thunderbird)$"#
     open-on-workspace "chat"
 }
 
@@ -523,37 +505,32 @@ binds {
     // Mod+TouchpadScrollDown { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+"; }
     // Mod+TouchpadScrollUp   { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
 
-    // You can refer to workspaces by index. However, keep in mind that
-    // niri is a dynamic workspace system, so these commands are kind of
-    // "best effort". Trying to refer to a workspace index bigger than
-    // the current workspace count will instead refer to the bottommost
-    // (empty) workspace.
-    //
-    // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
-    // will all refer to the 3rd workspace.
-    Mod+1 { focus-workspace 1; }
-    Mod+2 { focus-workspace 2; }
-    Mod+3 { focus-workspace 3; }
-    Mod+4 { focus-workspace 4; }
-    Mod+5 { focus-workspace 5; }
-    Mod+6 { focus-workspace 6; }
+    // Named workspaces 1-6: terminal(1) / browse(2) / ai(3) / chat(4) / code(5) / music(6)
+    // Using names makes Mod+1 always focus terminal, Mod+2 always browse, etc.,
+    // regardless of which output is focused. Indices 7-9 remain index-based as empty spares.
+    Mod+1 { focus-workspace "terminal"; }
+    Mod+2 { focus-workspace "browse"; }
+    Mod+3 { focus-workspace "ai"; }
+    Mod+4 { focus-workspace "chat"; }
+    Mod+5 { focus-workspace "code"; }
+    Mod+6 { focus-workspace "music"; }
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+1 { move-column-to-workspace "terminal"; }
+    Mod+Ctrl+2 { move-column-to-workspace "browse"; }
+    Mod+Ctrl+3 { move-column-to-workspace "ai"; }
+    Mod+Ctrl+4 { move-column-to-workspace "chat"; }
+    Mod+Ctrl+5 { move-column-to-workspace "code"; }
+    Mod+Ctrl+6 { move-column-to-workspace "music"; }
     Mod+Ctrl+7 { move-column-to-workspace 7; }
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
-    Mod+Alt+U { move-column-to-workspace 1; }
-    Mod+Alt+I { move-column-to-workspace 2; }
-    Mod+Alt+O { move-column-to-workspace 3; }
-    Mod+Alt+P { move-column-to-workspace 4; }
+    Mod+Alt+U { move-column-to-workspace "terminal"; }
+    Mod+Alt+I { move-column-to-workspace "browse"; }
+    Mod+Alt+O { move-column-to-workspace "ai"; }
+    Mod+Alt+P { move-column-to-workspace "chat"; }
 
     Mod+Alt+Left  { move-window-to-workspace-up; }
     Mod+Alt+Right { move-window-to-workspace-down; }
