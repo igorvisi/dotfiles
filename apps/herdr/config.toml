@@ -16,10 +16,10 @@ detach = "prefix+q"
 reload_config = "prefix+shift+r"
 
 # Pane navigation (vim-style, like tmux)
-focus_left = "prefix+h"
-focus_down = "prefix+j"
-focus_up = "prefix+k"
-focus_right = "prefix+l"
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
 cycle_pane_next = "prefix+tab"
 cycle_pane_previous = "prefix+shift+tab"
 
