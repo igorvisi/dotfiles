@@ -9,9 +9,6 @@ This repository contains my personal dotfiles, managed with Dotbot.
 * Windows 11 with WSL
 * MacOS
 
-### Tools:
-Link to [my /uses page](https://igorvisi.com/uses)
-
 ### Aliases and function
 * dotfiles/shell/aliases
 * dotfiles/shell/functions
