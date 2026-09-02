@@ -98,9 +98,9 @@ fi
 # Local PATH
 export PATH="$PATH:$HOME/.local/bin"
 
-# Flutter PATH
-export ANDROID_HOME="$HOME/.android-sdk"
-export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 export PATH="$HOME/.flutter/bin:$PATH"
 
 # Support truecolor

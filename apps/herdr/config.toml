@@ -77,7 +77,13 @@ height = "80%"
 
 # UI optimisations (3)
 [ui]
-hide_tab_bar_when_single_tab = true
+hide_tab_bar_when_single_tab = false
+tab_bar_right = [
+  { type = "hostname" },
+  { type = "datetime", format = "%H:%M" },
+  { type = "zoom" },
+]
+tab_bar_right_separator = " | "
 pane_gaps = false
 show_agent_labels_on_pane_borders = true
 
