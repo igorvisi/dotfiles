@@ -1,28 +1,62 @@
-# Sample
+# Example local configuration loaded by ~/.gitconfig.
+# Adapt these values to the machine. Never store a private key here.
 
+# Identity used for commits and tags.
+[user]
+	name = Your Name
+	email = your@example.com
+	# SSH public key provided by 1Password, never the private key.
+	signingkey = ssh-ed25519 AAAA...
+
+# Git authentication method A: SSH (enabled by default in this example).
+# Sign in to each CLI and select SSH as its Git protocol:
+#   gh auth login --git-protocol ssh
+#   glab auth login --git-protocol ssh
+# The CLI login authenticates gh/glab API requests. Git operations are
+# authenticated separately with the SSH key available to your SSH agent.
+# "insteadOf" rewrites fetch and push URLs; "pushInsteadOf" only rewrites push.
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+	pushInsteadOf = github:
+	pushInsteadOf = git://github.com/
+
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+	pushInsteadOf = gitlab:
+	pushInsteadOf = git://gitlab.com/
+
+[url "ssh+git://aur@aur.archlinux.org:"]
+	pushInsteadOf = aur:
+
+# Git authentication method B: HTTPS through gh/glab (alternative).
+# To use it, remove the matching [url] rewrite above, then run:
+#   gh auth login --git-protocol https
+#   gh auth setup-git
+#   glab auth login --git-protocol https
+# These helpers let Git request HTTPS credentials from the authenticated CLI.
+# The empty helper entry clears inherited helpers before adding the service CLI.
 [credential "https://github.com"]
 	helper =
 	helper = !/usr/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/usr/bin/gh auth git-credential
-[gpg]
-	format = ssh
+
+[credential "https://gitlab.com"]
+	helper =
+	helper = !/usr/bin/glab auth git-credential
+
+# 1Password SSH signing program.
+# Keep exactly one "program" line enabled for the current platform.
 [gpg "ssh"]
-	# Choose one
+	# Linux
 	program = /opt/1Password/op-ssh-sign
 	# macOS
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-	# WSL
-	program = "/mnt/c/Users/Igor VISI.DIRSIGLT001/AppData/Local/1Password/app/8/op-ssh-sign.exe"
-[core]
-	# WSL
-	sshCommand = "/mnt/c/Windows/System32/OpenSSH/ssh.exe"
-[commit]
-	gpgsign = true
-[user]
-	email = your@mail.com
-	name = Your Name
-	# Key from 1password
-	signingkey = ssh-ed25519 AAAAC.......
+	# program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	# WSL (replace <WindowsUser>)
+	# program = C:/Users/<WindowsUser>/AppData/Local/1Password/app/8/op-ssh-sign.exe
 
+# WSL only: use the Windows OpenSSH client with 1Password.
+# [core]
+# 	sshCommand = C:/Windows/System32/OpenSSH/ssh.exe

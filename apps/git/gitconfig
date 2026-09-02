@@ -25,29 +25,16 @@
 [push]
 	default = current
 
-[url "git@github.com:"]
-	pushInsteadOf = "github:"
-	pushInsteadOf = "git://github.com/"
-	insteadOf = https://github.com/
-
-[url "git@gitlab.com:"]
-	pushInsteadOf = "gitlab:"
-	pushInsteadOf = "git://gitlab.com/"
-	insteadOf = https://gitlab.com/
-
-[url "ssh+git://aur@aur.archlinux.org:"]
-	pushInsteadOf = "aur:"
-
-[include]
-	# include my personal and business conf from ~/.gitconfig.local
-	path = ~/.gitconfig.local
-
 [status]
 	submoduleSummary = true
 [init]
 	defaultBranch = main
 [commit]
 	gpgsign = true
-[credential "https://gitlab.com"]
-	helper =
-	helper = !/usr/bin/glab auth git-credential
+
+[gpg]
+	format = ssh
+
+[include]
+	# include my personal and business conf from ~/.gitconfig.local
+	path = ~/.gitconfig.local
