@@ -17,6 +17,7 @@
 
     # Window manager
     ~/.config/niri: apps/niri
+    ~/.config/hypr: apps/hypr
 
     # App launcher
     ~/.config/walker: apps/walker
