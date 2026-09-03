@@ -48,6 +48,7 @@
       "brightnessctl",
       "gnome-keyring",
       "gnome-online-accounts",
+      "hyprland",
       "niri",
       "pipewire",
       "pipewire-pulse",
@@ -57,6 +58,7 @@
       "wireplumber",
       "wtype",
       "xdg-desktop-portal-gnome",
+      "xdg-desktop-portal-hyprland",
       "xwayland-satellite"
     ],
     "required_aur_desktop": [
