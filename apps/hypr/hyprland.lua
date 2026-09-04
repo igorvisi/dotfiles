@@ -413,6 +413,7 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("noctalia")
   hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
   hl.exec_cmd("walker --gapplication-service")
+  hl.exec_cmd("$HOME/dotfiles/script/cliphist-watch.sh")
 end)
 -- AZERTY: Q -> A same key
 hl.bind("SUPER + A", hl.dsp.exec_cmd("alacritty"))
