@@ -265,12 +265,8 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("alacritty"))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 1"))
-hl.bind("SUPER + code:47", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 1"))
-hl.bind("SUPER + code:58", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 1"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- Niri-style stepping: slot by slot (empties included), clamped 1..10, no wrap.
 -- (Hyprland's e±1 cycles existing workspaces only: 4→10→1.)
