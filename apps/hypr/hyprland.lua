@@ -415,6 +415,15 @@ hl.on("hyprland.start", function()
   hl.exec_cmd("walker --gapplication-service")
   hl.exec_cmd("$HOME/dotfiles/script/cliphist-watch.sh")
 end)
+
+-- Niri parity (open-focused): follow newly opened windows to their workspace,
+-- so apps assigned elsewhere by the rules above don't open invisibly.
+hl.on("window.open", function(win)
+  local ws = win.workspace
+  if ws then
+    hl.dispatch(hl.dsp.focus({ workspace = ws.id }))
+  end
+end)
 -- AZERTY: Q -> A same key
 hl.bind("SUPER + A", hl.dsp.exec_cmd("alacritty"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
