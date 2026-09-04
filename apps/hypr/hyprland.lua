@@ -273,9 +273,26 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
--- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
+-- Niri-style stepping: slot by slot (empties included), clamped 1..10, no wrap.
+-- (Hyprland's e±1 cycles existing workspaces only: 4→10→1.)
+local function stepWorkspace(delta, move)
+    local cur = hl.get_active_workspace()
+    local id = cur and cur.id or 1
+    if id < 1 then id = 1 end -- leaving a special workspace lands on 1
+    id = math.min(10, math.max(1, id + delta))
+    if move then
+        hl.dispatch(hl.dsp.window.move({ workspace = id }))
+    else
+        hl.dispatch(hl.dsp.focus({ workspace = id }))
+    end
+end
+
+-- Niri-feel arrows: left/right step workspaces, up/down moves between windows.
+-- (HJKL keeps full directional focus below.)
+hl.bind(mainMod .. " + left",  function() stepWorkspace(-1, false) end)
+hl.bind(mainMod .. " + right", function() stepWorkspace(1, false) end)
+hl.bind(mainMod .. " + CTRL + left",  function() stepWorkspace(-1, true) end)
+hl.bind(mainMod .. " + CTRL + right", function() stepWorkspace(1, true) end)
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
@@ -342,25 +359,6 @@ hl.bind("SUPER + H", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + J", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "up" }))
 -- keep SUPER+L for lock
-hl.bind("SUPER + RIGHT", hl.dsp.focus({ direction = "right" }))
--- Niri-style stepping: slot by slot (empties included), clamped 1..10, no wrap.
--- (Hyprland's e±1 cycles existing workspaces only: 4→10→1.)
-local function stepWorkspace(delta, move)
-    local cur = hl.get_active_workspace()
-    local id = cur and cur.id or 1
-    if id < 1 then id = 1 end -- leaving a special workspace lands on 1
-    id = math.min(10, math.max(1, id + delta))
-    if move then
-        hl.dispatch(hl.dsp.window.move({ workspace = id }))
-    else
-        hl.dispatch(hl.dsp.focus({ workspace = id }))
-    end
-end
-
-hl.bind("SUPER + U", function() stepWorkspace(-1, false) end)
-hl.bind("SUPER + I", function() stepWorkspace(1, false) end)
-hl.bind("SUPER + CTRL + U", function() stepWorkspace(-1, true) end)
-hl.bind("SUPER + CTRL + I", function() stepWorkspace(1, true) end)
 hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
