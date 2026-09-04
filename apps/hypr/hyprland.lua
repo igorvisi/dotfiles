@@ -343,10 +343,24 @@ hl.bind("SUPER + J", hl.dsp.focus({ direction = "down" }))
 hl.bind("SUPER + K", hl.dsp.focus({ direction = "up" }))
 -- keep SUPER+L for lock
 hl.bind("SUPER + RIGHT", hl.dsp.focus({ direction = "right" }))
-hl.bind("SUPER + U", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("SUPER + I", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind("SUPER + CTRL + U", hl.dsp.window.move({ workspace = "e-1" }))
-hl.bind("SUPER + CTRL + I", hl.dsp.window.move({ workspace = "e+1" }))
+-- Niri-style stepping: slot by slot (empties included), clamped 1..10, no wrap.
+-- (Hyprland's e±1 cycles existing workspaces only: 4→10→1.)
+local function stepWorkspace(delta, move)
+    local cur = hl.get_active_workspace()
+    local id = cur and cur.id or 1
+    if id < 1 then id = 1 end -- leaving a special workspace lands on 1
+    id = math.min(10, math.max(1, id + delta))
+    if move then
+        hl.dispatch(hl.dsp.window.move({ workspace = id }))
+    else
+        hl.dispatch(hl.dsp.focus({ workspace = id }))
+    end
+end
+
+hl.bind("SUPER + U", function() stepWorkspace(-1, false) end)
+hl.bind("SUPER + I", function() stepWorkspace(1, false) end)
+hl.bind("SUPER + CTRL + U", function() stepWorkspace(-1, true) end)
+hl.bind("SUPER + CTRL + I", function() stepWorkspace(1, true) end)
 hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 hl.bind("SUPER + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind("SUPER + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
