@@ -264,7 +264,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("alacritty"))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprctl dispatch fullscreen 1"))
+hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 
@@ -416,7 +416,7 @@ hl.on("hyprland.start", function()
 end)
 -- AZERTY: Q -> A same key
 hl.bind("SUPER + A", hl.dsp.exec_cmd("alacritty"))
-hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("hyprctl dispatch exit"))
+hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
