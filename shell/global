@@ -90,11 +90,6 @@ export PATH="$HOME/.opencode/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# mise
-if [[ -x "$HOME/.local/bin/mise" ]]; then
-    eval "$("$HOME/.local/bin/mise" activate zsh)"
-fi
-
 # Local PATH
 export PATH="$PATH:$HOME/.local/bin"
 
@@ -112,6 +107,11 @@ export PATH=$PATH:$HOME/Bin
 # Load some secret env
 if [[ -f "$HOME/.env.sec" ]]; then
     source "$HOME/.env.sec"
+fi
+
+# mise - must be after all PATH modifications so shims take precedence
+if command -v mise >/dev/null 2>&1; then
+    eval "$(mise activate zsh)"
 fi
 
 # Prompt
