@@ -28,6 +28,7 @@
 
     # cli apps
     ~/Bin: bin
+    ~/.config/hunk/config.toml: apps/hunk/config.toml
     ~/.config/herdr/config.toml: apps/herdr/config.toml
     ~/.config/htop/htoprc: apps/htop/htoprc
     ~/.config/voxtype/config.toml: apps/voxtype/config.toml
