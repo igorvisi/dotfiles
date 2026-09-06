@@ -1,0 +1,3 @@
+#!/bin/bash
+mkdir -p ~/Images/Screenshots
+grim ~/Images/Screenshots/"Screenshot from $(date '+%Y-%m-%d %H-%M-%S').png"
