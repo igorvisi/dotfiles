@@ -7,7 +7,7 @@ name = "one-dark"
 panel_bg = "#282c34"
 accent = "#98c379"
 
-# Custom Keybindings (prefix ² - touche AZERTY en haut à gauche)
+# Keybindings (prefix ² - top-left AZERTY)
 [keys]
 prefix = "²"
 help = "prefix+?"
@@ -36,7 +36,7 @@ close_tab = "prefix+shift+x"
 rename_tab = "prefix+shift+t"
 next_tab = "prefix+n"
 previous_tab = "prefix+p"
-# AZERTY: chiffres nécessitent Shift (&=1), herdr exige 1..9 -> laisser tomber direct, utiliser ²+n/p
+# AZERTY: use ²+n/p for tabs (numbers need Shift)
 switch_tab = ["prefix+1", "prefix+2", "prefix+3", "prefix+4", "prefix+5", "prefix+6", "prefix+7", "prefix+8", "prefix+9"]
 rename_pane = "prefix+shift+p"
 edit_scrollback = "prefix+e"
