@@ -15,54 +15,61 @@ end)
 local config = {}
 if wezterm.config_builder then config = wezterm.config_builder() end
 
--- Noctalia scheme inline pour compat wezterm 20240203 (qui ignore colors/*.toml)
--- Généré depuis colors/Noctalia.toml ; gardé en Lua + TOML pour les versions récentes
+-- One Dark palette shared with Alacritty and Kitty.
 config.color_schemes = {
-  ["Noctalia"] = {
-    ansi = { "#21252b", "#e27881", "#98c379", "#eac786", "#71b9f4", "#c88bda", "#62bac6", "#c9ccd3" },
-    brights = { "#282c34", "#e68991", "#a8cc8e", "#edcf97", "#8dc7f6", "#d3a2e2", "#78c4ce", "#e6e6e6" },
-    background = "#21252b",
-    foreground = "#e6e6e6",
-    cursor_bg = "#78c4ce",
-    cursor_fg = "#21252b",
-    cursor_border = "#78c4ce",
-    selection_bg = "#393e47",
-    selection_fg = "#e6e6e6",
-    scrollbar_thumb = "#393e47",
-    split = "#282c34",
-    compose_cursor = "#78c4ce",
-    visual_bell = "#21252b",
-    indexed = { [16] = "#eac786", [17] = "#78c4ce" },
-    tab_bar = {
-      background = "#21252b",
-      inactive_tab_edge = "#393e47",
-      active_tab = { bg_color = "#62bac6", fg_color = "#21252b", intensity = "Normal", italic = false, strikethrough = false, underline = "None" },
-      inactive_tab = { bg_color = "#21252b", fg_color = "#e6e6e6", intensity = "Normal", italic = false, strikethrough = false, underline = "None" },
-      inactive_tab_hover = { bg_color = "#21252b", fg_color = "#e6e6e6", intensity = "Normal", italic = false, strikethrough = false, underline = "None" },
-      new_tab = { bg_color = "#393e47", fg_color = "#e6e6e6", intensity = "Normal", italic = false, strikethrough = false, underline = "None" },
-      new_tab_hover = { bg_color = "#282c34", fg_color = "#e6e6e6", intensity = "Normal", italic = false, strikethrough = false, underline = "None" },
-    },
+  ["One Dark"] = {
+    ansi = { "#1e2127", "#e06c75", "#98c379", "#d19a66", "#61afef", "#c678dd", "#56b6c2", "#828791" },
+    brights = { "#5c6370", "#e06c75", "#98c379", "#d19a66", "#61afef", "#c678dd", "#56b6c2", "#e6efff" },
+    background = "#23272E",
+    foreground = "#abb2bf",
+    cursor_bg = "#abb2bf",
+    cursor_fg = "#23272E",
+    cursor_border = "#abb2bf",
+    selection_bg = "#3e4451",
+    selection_fg = "#e6efff",
+    scrollbar_thumb = "#3e4451",
+    split = "#5c6370",
   },
 }
 
-config.color_scheme = "Noctalia"
+config.color_scheme = "One Dark"
 
 -- Fallback GPU: WebGpu (Vulkan) est incompatible wayland sur ce système (cf. obsidian vulkan error)
 -- OpenGL est plus stable sous niri 26.04 + mesa. Gardé explicite pour wezterm 20240203.
 config.front_end = "OpenGL"
 config.enable_wayland = true
 
-config.font = wezterm.font("JetBrains Mono")
-config.font_size = 14
+config.font = wezterm.font("Maple Mono")
+config.font_size = 13
+config.scrollback_lines = 100000
+config.term = "xterm-256color"
 
-config.window_decorations = "RESIZE"
-config.window_frame = {
-  font_size = 14.0,
-  active_titlebar_bg = '#62AEEF',
-  inactive_titlebar_bg = '#292C34',
+-- WezTerm has no cursor trail; use its closest native animated cursor.
+config.default_cursor_style = "BlinkingBlock"
+config.cursor_blink_rate = 500
+config.cursor_blink_ease_in = "EaseInOut"
+config.cursor_blink_ease_out = "EaseInOut"
+config.animation_fps = 60
+
+config.window_decorations = "NONE"
+config.window_padding = {
+  left = 0,
+  right = 0,
+  top = 0,
+  bottom = 0,
 }
 
 config.keys = {
+  {
+    key = 'c',
+    mods = 'SHIFT|CTRL',
+    action = wezterm.action.CopyTo 'Clipboard',
+  },
+  {
+    key = 'v',
+    mods = 'SHIFT|CTRL',
+    action = wezterm.action.PasteFrom 'Clipboard',
+  },
   {
     key = 'n',
     mods = 'SHIFT|CTRL',
@@ -70,11 +77,7 @@ config.keys = {
   },
 }
 
-config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = true
-config.use_fancy_tab_bar = false
-config.tab_and_split_indices_are_zero_based = true
--- config.enable_tab_bar = false -- optional
+config.enable_tab_bar = false
 
 -- Prefer the Ubuntu WSL distro when a WSL domain is available.
 for _, dom in ipairs(wsl_domains) do
