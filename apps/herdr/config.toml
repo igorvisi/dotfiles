@@ -53,7 +53,13 @@ open_notification_target = "prefix+o"
 # Sidebar
 toggle_sidebar = "prefix+b"
 
-# Popups custom (1) - sans alt (alt peu fiable selon terminal, cf. docs herdr)
+# Custom commands
+[[keys.command]]
+key = "prefix+a"
+type = "shell"
+command = "$HOME/Bin/herdr-development-layout"
+description = "open development layout"
+
 [[keys.command]]
 key = "prefix+shift+g"
 type = "popup"
