@@ -49,6 +49,7 @@
       "gnome-keyring",
       "gnome-online-accounts",
       "hyprland",
+      "kitty",
       "niri",
       "pipewire",
       "pipewire-pulse",
@@ -137,6 +138,7 @@
       "gimp",
       "inkscape",
       "keepassxc",
+      "kitty",
       "libreoffice",
       "thunderbird",
       "vlc"
@@ -191,6 +193,7 @@
       "iterm2",
       "font-jetbrains-mono",
       "keepassxc",
+      "kitty",
       "localsend",
       "obsidian",
       "spotify",

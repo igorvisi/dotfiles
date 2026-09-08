@@ -8,6 +8,7 @@
 - link:
     # Coding tools
     ~/.config/alacritty/alacritty.toml: apps/alacritty/alacritty.toml
+    ~/.config/kitty: apps/kitty
     ~/.config/Code/User/settings.json: apps/vscode/settings.json
     ~/.config/Code/User/keybindings.json: apps/vscode/keybindings.json
     ~/.config/Code/User/snippets/json.json: apps/vscode/snippets/json.json

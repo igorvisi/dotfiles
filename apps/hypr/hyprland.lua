@@ -18,7 +18,7 @@ hl.monitor({
 })
 
 
-local terminal = "alacritty"
+local terminal = "kitty"
 local fileManager = "nautilus"
 local menu = "walker"
 
@@ -139,7 +139,7 @@ hl.device({
 
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("alacritty"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -231,7 +231,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 hl.bind("CTRL + ALT + SPACE", hl.dsp.exec_cmd("handy --toggle-transcription"))
 
-hl.bind("SUPER + Return", hl.dsp.exec_cmd("alacritty -e $HOME/.local/bin/herdr"))
+hl.bind("SUPER + Return", hl.dsp.exec_cmd(terminal .. " $HOME/.local/bin/herdr"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("nautilus"))
 hl.bind("SUPER + Space", hl.dsp.exec_cmd("walker"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("walker -m clipboard"))
@@ -272,7 +272,7 @@ hl.window_rule({
     no_focus = true,
 })
 
-hl.window_rule({ name = "niri-1-terminal", match = { class = "Alacritty" }, workspace = "1" })
+hl.window_rule({ name = "niri-1-terminal", match = { class = "kitty" }, workspace = "1" })
 hl.window_rule({ name = "niri-5-code", match = { class = "^dev\\.zed" }, workspace = "5" })
 hl.window_rule({ name = "niri-6-music-spotify", match = { class = "^spotify$" }, workspace = "6" })
 hl.window_rule({ name = "niri-6-music-vlc", match = { class = "^vlc$" }, workspace = "6" })
@@ -298,7 +298,7 @@ hl.on("window.open", function(win)
         hl.dispatch(hl.dsp.focus({ workspace = ws.id }))
     end
 end)
-hl.bind("SUPER + A", hl.dsp.exec_cmd("alacritty"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd(terminal))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exit())
 
 hl.window_rule({

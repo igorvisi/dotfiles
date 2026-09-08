@@ -315,9 +315,9 @@ window-rule {
     open-on-workspace "ai"
 }
 
-// === 1:terminal — Alacritty (big screen priority) ===================
+// === 1:terminal — Kitty (big screen priority) =======================
 window-rule {
-    match app-id=r#"^Alacritty$"#
+    match app-id=r#"^kitty$"#
     open-on-workspace "terminal"
 }
 
@@ -381,8 +381,8 @@ window-rule {
 
 binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal:" { spawn "alacritty"; }
-    Mod+Return hotkey-overlay-title="Open Herdr:" { spawn-sh "alacritty -e $HOME/.local/bin/herdr"; }
+    Mod+T hotkey-overlay-title="Open a Terminal:" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open Herdr:" { spawn-sh "kitty $HOME/.local/bin/herdr"; }
     Mod+E hotkey-overlay-title="Open the File Explorer:" { spawn "nautilus"; }
     Super+Space hotkey-overlay-title="Run an Application: walker" { spawn "walker"; }
     Super+L hotkey-overlay-title="Lock the Screen: noctalia" { spawn "noctalia" "msg" "session" "lock"; }

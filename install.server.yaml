@@ -1,6 +1,6 @@
 # "Server" overlay: safe links for a server (mbanza, etc.).
 # gitconfig is intentionally excluded (identity/professional credentials are
-# kept out), as are desktop configs (alacritty, niri, zed, vscode, ssh...).
+# kept out), as are desktop configs (alacritty, kitty, niri, zed, vscode, ssh...).
 - defaults:
     link:
       create: true
