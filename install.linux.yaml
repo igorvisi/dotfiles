@@ -20,6 +20,9 @@
     ~/.config/niri: apps/niri
     ~/.config/hypr: apps/hypr
 
+    # Shell
+    ~/.config/noctalia/config.toml: apps/noctalia/config.toml
+
     # App launcher
     ~/.config/walker: apps/walker
 

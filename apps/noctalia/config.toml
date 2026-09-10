@@ -1,0 +1,28 @@
+# Noctalia v5 — comportements d'inactivité (idle).
+#
+# Noctalia v5 lit tous les ~/.config/noctalia/*.toml puis, par-dessus,
+# ~/.local/state/noctalia/settings.toml. Sans section [idle], les comportements
+# intégrés (lock, screen-off, lock-and-suspend) sont bien chargés mais avec
+# enabled = false : ni extinction d'écran ni verrouillage automatique.
+#
+# Le JSON v4 (~/.config/noctalia/settings.json) n'est plus lu par v5.
+# Référence : https://docs.noctalia.dev/v5/services/idle
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 2.0
+
+[idle.behavior.lock]
+timeout = 240
+action = "lock"
+enabled = true
+
+[idle.behavior.screen-off]
+timeout = 300
+action = "screen_off"
+enabled = true
+
+[idle.behavior.lock-and-suspend]
+timeout = 600
+action = "lock_and_suspend"
+enabled = true
