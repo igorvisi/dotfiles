@@ -32,7 +32,7 @@ config.color_schemes = {
   },
 }
 
-config.color_scheme = "One Dark"
+config.color_scheme = "Noctalia"
 
 -- Fallback GPU: WebGpu (Vulkan) est incompatible wayland sur ce système (cf. obsidian vulkan error)
 -- OpenGL est plus stable sous niri 26.04 + mesa. Gardé explicite pour wezterm 20240203.
