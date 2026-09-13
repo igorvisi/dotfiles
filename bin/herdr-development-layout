@@ -25,23 +25,25 @@ created_tab=$("$herdr_bin" tab create \
 tab_id=$(jq -er '.result.tab.tab_id' <<<"$created_tab")
 opencode_pane=$(jq -er '.result.root_pane.pane_id' <<<"$created_tab")
 
+# Layout: opencode (medium, ~1/3) | hunk (large, ~1/2) | nvim (small, ~1/6).
+# `--ratio` keeps that share for the split pane; the new pane takes the rest.
 first_split=$("$herdr_bin" pane split "$opencode_pane" \
     --direction right \
     --ratio 0.333333 \
     --cwd "$working_directory" \
     --no-focus)
-nvim_pane=$(jq -er '.result.pane.pane_id' <<<"$first_split")
+hunk_pane=$(jq -er '.result.pane.pane_id' <<<"$first_split")
 
-second_split=$("$herdr_bin" pane split "$nvim_pane" \
+second_split=$("$herdr_bin" pane split "$hunk_pane" \
     --direction right \
-    --ratio 0.5 \
+    --ratio 0.75 \
     --cwd "$working_directory" \
     --no-focus)
-hunk_pane=$(jq -er '.result.pane.pane_id' <<<"$second_split")
+nvim_pane=$(jq -er '.result.pane.pane_id' <<<"$second_split")
 
 "$herdr_bin" pane run "$opencode_pane" 'exec "$HOME/.opencode/bin/opencode2"' >/dev/null
-"$herdr_bin" pane run "$nvim_pane" 'exec nvim .' >/dev/null
 "$herdr_bin" pane run "$hunk_pane" 'exec hunk diff --watch' >/dev/null
+"$herdr_bin" pane run "$nvim_pane" 'exec nvim .' >/dev/null
 "$herdr_bin" tab focus "$tab_id" >/dev/null
 
 trap - ERR
